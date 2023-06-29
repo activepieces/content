@@ -15,6 +15,7 @@ export type ActionBase = {
   name: string;
   displayName: string;
   description: string;
+  props: Record<string, any>
 };
 
 export type TriggerBase = ActionBase & {

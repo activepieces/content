@@ -2,6 +2,7 @@ import React from "react";
 import PieceLogo from "./PieceLogo";
 import { TriggerBase, TriggerStrategy } from "../utils/piece-helper";
 import Image from "next/image";
+import CollapsibleProperties from "./CollapsibleProperties";
 
 interface TriggerCardProps {
   logoUrl: string;
@@ -41,7 +42,8 @@ const TriggerCard = ({ trigger, logoUrl }: TriggerCardProps) => {
           )}
         </div>
       </div>
-      <div className="text-base text-white mt-4">{trigger.description}</div>
+      <div className="text-base text-white mt-4 flex-grow">{trigger.description}</div>
+      <CollapsibleProperties props={trigger.props} />
     </div>
   );
 };

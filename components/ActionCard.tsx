@@ -1,6 +1,7 @@
 import React from "react";
 import PieceLogo from "./PieceLogo";
 import { ActionBase } from "../utils/piece-helper";
+import CollapsibleProperties from "./CollapsibleProperties";
 
 interface ActionBaseProps {
   logoUrl: string,
@@ -19,7 +20,8 @@ const ActionCard = ({ action, logoUrl }: ActionBaseProps) => {
           <div className="text-white text-lg">{action.displayName}</div>
         </div>
       </div>
-      <div className="text-base text-white mt-4">{action.description}</div>
+      <div className="text-base text-white mt-4 flex-grow">{action.description}</div>
+      <CollapsibleProperties props={action.props} />
     </div>
   );
 };

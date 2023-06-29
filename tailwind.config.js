@@ -14,8 +14,14 @@ module.exports = {
         whiteCard: {
           100: '#F7F7F7',
         },
+        muted: {
+          DEFAULT: '#828282',
+        },
         outline: {
           DEFAULT: '#0000001F'
+        },
+        separator: {
+          DEFAULT: '#FFFFFF21',
         },
         yellow: {
           DEFAULT: '#FFCC4D'

@@ -31,3 +31,7 @@ img {
   max-width: unset;
   height: unset;
 }
+
+body {
+  overflow: scroll; /* Show scrollbars */
+}
