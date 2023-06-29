@@ -33,5 +33,6 @@ img {
 }
 
 body {
-  overflow: scroll; /* Show scrollbars */
+  overflow-y: scroll; /* Show scrollbars */
+  overflow-x: hidden;
 }

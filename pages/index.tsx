@@ -14,7 +14,7 @@ export default function Home() {
           height={84}
         />
         <h1 className="text-5xl font-bold text-center mt-8 text-white max-w-[600px]">
-          Open Source <br></br>Business Automation (KewKew)
+          Open Source <br></br>Place Holder Page
         </h1>
         <p className="text-center mt-8 text-gray-200">
           Our mission is to make everyone more productive by automating their
@@ -29,5 +29,5 @@ export default function Home() {
       <div className="mt-16"></div>
       <ImageSlider />
     </main>
-  );
+  )
 }

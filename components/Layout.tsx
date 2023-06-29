@@ -6,6 +6,6 @@ const Layout = ({ children }: PropsWithChildren) => {
       <Navbar />
       {children}
     </>
-  );
+  )
 };
 export default Layout;

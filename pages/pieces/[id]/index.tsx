@@ -25,6 +25,9 @@ export default function PiecePage() {
       <style jsx global>{`
         body {
           background: url("../dark-background.svg");
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center top;
         }
       `}</style>
       {piece && (

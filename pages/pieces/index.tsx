@@ -42,12 +42,12 @@ export function Index() {
                   <p className="ml-4 text-base ">{piece.displayName}</p>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Index;
