@@ -16,12 +16,18 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes moving {
+  from {transform:translateX(-50%);}
+  to {transform:translateX(0%);}
+}
+
+.image-slider {
+  animation: moving 100s ease-in-out;
+  animation-iteration-count: infinite; 
+}
+
+
+img {
+  max-width: unset;
+  height: unset;
 }
