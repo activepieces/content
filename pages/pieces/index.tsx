@@ -4,13 +4,18 @@ import { GetPiece, GetPieces, PieceBase } from "../../utils/piece-helper";
 import Image from "next/image";
 
 export function Index() {
-  const [BasePieces, setBasePieces] = useState<PieceBase[]
-  >([]);
+  const [BasePieces, setBasePieces] = useState<PieceBase[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
     GetPieces().then((pieces) => {
       setBasePieces(pieces);
     });
   }, []);
+
+  const filteredPieces = BasePieces.filter((piece) =>
+    piece.displayName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="flex justify-center justify-items-center content-center	flex-col">
@@ -24,8 +29,17 @@ export function Index() {
         />
       </div>
       <div className="max-w-[800px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 m-5">
-          {BasePieces.map((piece, i) => {
+        <div className="m-5">
+          <input
+            type="text"
+            placeholder="Search for apps"
+            className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 mb-8"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <div className="max-h-[800px] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 m-5">
+          {filteredPieces.map((piece, i) => {
             return (
               <div
                 className="p-5 rounded-lg text-center cursor-pointer hover:bg-whiteCard-100"
@@ -42,12 +56,12 @@ export function Index() {
                   <p className="ml-4 text-base ">{piece.displayName}</p>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Index;
