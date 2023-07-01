@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PieceLogo from "../../../components/PieceLogo";
 import { DetailedPiece, GetPiece } from "../../../utils/piece-helper";
 import TriggerCard from "../../../components/TriggerCard";
-import ActionCard from "../../../components/ActionCard";
+import ActionCard from "../../../components/pieces/ActionCard";
 import Image from "next/image";
 
 export default function PiecePage() {

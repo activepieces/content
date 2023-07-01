@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import PieceLogo from "../../components/PieceLogo";
 import { GetPiece, GetPieces, PieceBase } from "../../utils/piece-helper";
 import Image from "next/image";
+import PieceLogo from "../../components/pieces/PieceLogo";
 
 export function Index() {
   const [BasePieces, setBasePieces] = useState<PieceBase[]>([]);

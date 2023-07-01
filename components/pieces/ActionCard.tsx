@@ -1,6 +1,6 @@
 import React from "react";
 import PieceLogo from "./PieceLogo";
-import { ActionBase } from "../utils/piece-helper";
+import { ActionBase } from "../../utils/piece-helper";
 import CollapsibleProperties from "./CollapsibleProperties";
 
 interface ActionBaseProps {

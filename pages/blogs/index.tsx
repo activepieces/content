@@ -11,8 +11,8 @@ type BlogPost = {
 
 function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link href="/blogs/hello-world">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <Link href={`/blogs/` + post.slug}>
+      <div className="max-w-sm rounded overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1">
         <div className="relative">
           <Image
             src={`/blogs/` + post.meta.thumbnail}
