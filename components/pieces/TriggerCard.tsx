@@ -1,8 +1,8 @@
 import React from "react";
 import PieceLogo from "./PieceLogo";
-import { TriggerBase, TriggerStrategy } from "../utils/piece-helper";
 import Image from "next/image";
 import CollapsibleProperties from "./CollapsibleProperties";
+import { TriggerBase, TriggerStrategy } from "../../utils/piece-helper";
 
 interface TriggerCardProps {
   logoUrl: string;

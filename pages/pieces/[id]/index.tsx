@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import PieceLogo from "../../../components/PieceLogo";
 import { DetailedPiece, GetPiece } from "../../../utils/piece-helper";
-import TriggerCard from "../../../components/TriggerCard";
 import ActionCard from "../../../components/pieces/ActionCard";
 import Image from "next/image";
+import TriggerCard from "../../../components/pieces/TriggerCard";
+import PieceLogo from "../../../components/pieces/PieceLogo";
 
 export default function PiecePage() {
   const router = useRouter();
