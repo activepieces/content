@@ -5,17 +5,41 @@ import Image from "next/image";
 import Link from "next/link";
 
 type BlogPost = {
-  slug: string;
-  meta: { title: string; description: string; thumbnail: string };
+  link: string;
+  meta: {
+    title: string;
+    description: string;
+    thumbnail: string;
+  };
+};
+
+type Category = {
+  title: string;
+  posts: string[];
+};
+
+const categories: Record<string, Category> = {
+  handbook: {
+    title: "Handbook",
+    posts: ["core-values.mdx", "business-model.mdx", "product-principles.mdx"],
+  },
+  blog: {
+    title: "Blog",
+    posts: []
+  },
+  engineering: {
+    title: "Engineering",
+    posts: ['embracing-simplicity.mdx'],
+  }
 };
 
 function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blogs/` + post.slug}>
+    <Link href={post.link}>
       <div className="max-w-sm rounded overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1">
         <div className="relative">
           <Image
-            src={`/blogs/` + post.meta.thumbnail}
+            src={post.meta.thumbnail}
             alt="Blog thumbnail"
             width={400}
             height={400}
@@ -30,40 +54,51 @@ function BlogCard({ post }: { post: BlogPost }) {
   );
 }
 
-export default function BlogIndex({ posts }: { posts: BlogPost[] }) {
+export default function BlogIndex({
+  posts,
+  title,
+}: {
+  posts: BlogPost[];
+  title: string;
+}) {
   return (
     <main className="container mx-auto px-3 py-4 md:px-0 mt-[50px]">
-      <h1 className="text-5xl font-bold text-center w-full">Blog Posts</h1>
+      <h1 className="text-5xl font-bold text-center w-full">{title}</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mt-[60px]">
         {posts.map((post) => (
-          <BlogCard key={post.slug} post={post} />
+          <BlogCard key={post.link} post={post} />
         ))}
       </div>
     </main>
   );
 }
 
-export async function getStaticProps() {
-  const docsDirectory = join(process.cwd(), "content", "blogs");
-  const fileNames = fs.readdirSync(docsDirectory);
-
-  const posts = fileNames.map((fileName) => {
+export async function getServerSideProps({
+  query: { category },
+}: {
+  query: { category: string };
+}) {
+  const { title, posts } = categories[category];
+  const docsDirectory = join(process.cwd(), "content", category);
+  const parsedPosts = posts.map((fileName) => {
     const fullPath = join(docsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8").toString();
     const { data } = matter(fileContents);
     const meta = {
       title: data.title,
       description: data.description,
-      thumbnail: data.thumbnail,
+      thumbnail: `/${category}/${data.thumbnail}`,
     };
-    const slug = fileName.replace(/\.mdx?$/, "");
+    const link = `/${category}/${fileName.replace(/\.mdx?$/, "")}`;
 
-    return { slug, meta };
+    return { link, meta, category };
   });
 
   return {
     props: {
-      posts,
+      posts: parsedPosts,
+      title,
+      category,
     },
   };
 }

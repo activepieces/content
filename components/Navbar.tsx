@@ -20,10 +20,10 @@ const Navbar = () => {
         <div className="text-sm lg:flex-grow"></div>
         <div>
           <Link
-            href="/blogs"
+            href="/blog"
             className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4 align-right"
           >
-            Blogs
+            Blog
           </Link>
           <Link
             href="/pricing"
