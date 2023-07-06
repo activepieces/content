@@ -1,35 +1,28 @@
-import { useRouter } from "next/router";
+'use client'
+
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { DetailedPiece, GetPiece } from "../../../utils/piece-helper";
-import ActionCard from "../../../components/pieces/ActionCard";
+import PieceLogo from "../../../components/pieces/PieceLogo";
 import Image from "next/image";
 import TriggerCard from "../../../components/pieces/TriggerCard";
-import PieceLogo from "../../../components/pieces/PieceLogo";
+import ActionCard from "../../../components/pieces/ActionCard";
 
 export default function PiecePage() {
-  const router = useRouter();
-
+  const pieceName = usePathname()?.split("/")[2];
   const [piece, setPiece] = useState<DetailedPiece>();
-
+  debugger;
   useEffect(() => {
-    if (router.query.id === undefined) {
+    if (!pieceName) {
       return;
     }
-    GetPiece(`@activepieces/piece-${router.query.id}`).then((piece) => {
+    GetPiece(`@activepieces/piece-${pieceName}`).then((piece) => {
       setPiece(piece);
     });
-  }, [router]);
+  }, [pieceName]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <style jsx global>{`
-        body {
-          background: url("../dark-background.svg");
-          background-repeat: no-repeat;
-          background-size: 100% auto;
-          background-position: center top;
-        }
-      `}</style>
+    <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-no-repeat bg-100 bg-center-top">
       {piece && (
         <div className="flex flex-col items-center justify-center w-full">
           <div className="mt-[80px]"></div>

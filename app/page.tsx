@@ -7,7 +7,7 @@ export const pieceLogoUrl = "https://cdn.activepieces.com/brand/logo.svg";
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
+
     <main className="flex min-h-screen flex-col items-center p-24">
     <div className="flex flex-col items-center justify-center">
       <Image
@@ -43,7 +43,7 @@ export default function Home() {
     
 
   </main>
-    <Footer></Footer>
+
     </>
   
   )

@@ -1,5 +1,6 @@
+'use client';
 import { useEffect, useState } from "react";
-import { GetPiece, GetPieces, PieceBase } from "../../utils/piece-helper";
+import { GetPieces, PieceBase } from "../../utils/piece-helper";
 import Image from "next/image";
 import PieceLogo from "../../components/pieces/PieceLogo";
 
@@ -18,7 +19,7 @@ export function Index() {
   );
 
   return (
-    <div className="flex justify-center justify-items-center content-center	flex-col">
+    <div className="flex justify-center justify-items-center content-center	flex-col bg-white">
       <div>
         <Image
           src="/banner.svg"

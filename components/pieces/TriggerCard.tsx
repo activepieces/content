@@ -43,7 +43,7 @@ const TriggerCard = ({ trigger, logoUrl }: TriggerCardProps) => {
         </div>
       </div>
       <div className="text-base text-white mt-4 flex-grow">{trigger.description}</div>
-      <CollapsibleProperties props={trigger.props} />
+      <CollapsibleProperties key={trigger.name} props={trigger.props} />
     </div>
   );
 };

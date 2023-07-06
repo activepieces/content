@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage :{
+        'planets-bg': "url('/planets-bg.svg')",
+      },
+      backgroundPosition: {
+      'center-top':'center top',
+      },
+      backgroundSize: {
+        '100': '100%',
+      },
       colors: {
         primary: { DEFAULT: '#6e41e2', medium:'#ab90ee', light: '#eee9fc', dark: '#6838e0','10':'rgba(110, 65, 226, 0.1)' },
         card: {

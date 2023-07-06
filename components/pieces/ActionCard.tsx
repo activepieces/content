@@ -21,7 +21,7 @@ const ActionCard = ({ action, logoUrl }: ActionBaseProps) => {
         </div>
       </div>
       <div className="text-base text-white mt-4 flex-grow">{action.description}</div>
-      <CollapsibleProperties props={action.props} />
+      <CollapsibleProperties key={action.name} props={action.props} />
     </div>
   );
 };
