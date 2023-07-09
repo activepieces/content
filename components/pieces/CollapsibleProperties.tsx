@@ -1,4 +1,5 @@
 
+'use client';
 import { MutableRefObject, useRef } from 'react';
 /* eslint-disable-next-line */
 export interface CollapsiblePropertiesProps {

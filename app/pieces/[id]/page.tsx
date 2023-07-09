@@ -1,57 +1,60 @@
-'use client'
 
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { ActionBase, DetailedPiece, GetPiece, TriggerBase } from "../../../utils/piece-helper";
 
+import { ActionBase,  GetPiece, TriggerBase } from "../../../utils/piece-helper";
 import Image from "next/image";
 import TriggerCard from "../../../components/pieces/TriggerCard";
 import ActionCard from "../../../components/pieces/ActionCard";
+import { Metadata} from "next";
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
-
-export default function PiecePage() {
-  const pieceName = usePathname()?.split("/")[2];
-  const [actions,setActions] =useState<ActionBase[][]>([[],[]]);
-  const [triggers,SetTriggers] =useState<TriggerBase[][]>([[],[]]);
-  const [piece, setPiece] = useState<DetailedPiece>();
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  // read route params
+  const pieceName = params.id
+  // fetch data
+  const pieceData = await  GetPiece(`@activepieces/piece-${pieceName}`);
  
-  useEffect(() => {
-    if (!pieceName) {
-      return;
+  return {
+    title: "Activepieces - "+pieceData.displayName,
+    description: pieceData.description,
+    authors: {url:"www.activepieces.com", name:"Activepieces"},
+  }
+}
+
+export default async  function PiecePage({ params }: Props) {
+  const pieceName = params.id;
+  const pieceData = await  GetPiece(`@activepieces/piece-${pieceName}`);
+  const actions: ActionBase[][] = [[], []];
+  Object.values(pieceData.actions).forEach((action, i) => {
+    if (i % 2 === 0) {
+      actions[0].push(action);
+    } else {
+      actions[1].push(action);
     }
-    GetPiece(`@activepieces/piece-${pieceName}`).then((piece) => {
-      setPiece(piece);
-      const tempActions: ActionBase[][] = [[], []];
-      Object.values(piece.actions).forEach((action, i) => {
-        if (i % 2 === 0) {
-          tempActions[0].push(action);
-        } else {
-          tempActions[1].push(action);
-        }
-      });
-      const tempTriggers: TriggerBase[][] = [[], []];
-      Object.values(piece.triggers).forEach((trigger, i) => {
-        if (i % 2 === 0) {
-          tempTriggers[0].push(trigger);
-        } else {
-          tempTriggers[1].push(trigger);
-        }
-      });
-      setActions(tempActions);
-      SetTriggers(tempTriggers);
-    });
-  }, [pieceName]);
+  });
+  const triggers: TriggerBase[][] = [[], []];
+  Object.values(pieceData.triggers).forEach((trigger, i) => {
+    if (i % 2 === 0) {
+      triggers[0].push(trigger);
+    } else {
+      triggers[1].push(trigger);
+    }
+  });
 
   return (
     <>
     <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-no-repeat bg-100 bg-center-top">
-      {piece && (
+      {pieceData && (
         <div className="flex flex-col items-center justify-center w-full pt-[80px]">   
         <div className="flex flex-col items-center justify-center gap-12">
         <div className="bg-[#FFF] p-[26.669px] items-start rounded-[32px]">
           <Image
-          src={piece.logoUrl}
-          alt={piece.displayName}
+          src={pieceData.logoUrl}
+          alt={pieceData.displayName}
           height={100}
           width={100}
           ></Image>
@@ -59,11 +62,11 @@ export default function PiecePage() {
       
             <section>
           <h1 className="text-5xl font-bold text-center  text-white">
-            {piece.displayName}
+            {pieceData.displayName}
           </h1>
     
             <p className="text-center text-lg mt-10 max-w-[700px]  text-white">
-              Activepieces lets you connect {piece.displayName} with the most
+              Activepieces lets you connect {pieceData.displayName} with the most
               popular apps, so you can automate your work and have more time for
               what matters most - no code required.
             </p>
@@ -95,7 +98,7 @@ export default function PiecePage() {
             ></Image>
           </div>
           <div className="text-center text-zinc-300 text-2sm font-normal leading-loose mb-[80px] mt-10" >Triggers that start integration workflows by initiating specific actions.</div>
-          {Object.keys(piece.triggers).length > 0 ? (
+          {Object.keys(pieceData.triggers).length > 0 ? (
            <div className="flex gap-4 w-full max-w-[1016px] ">
            <div id="triggersFirstColumn" className="flex gap-4 flex-col  grow shrink basis-0">
            {triggers[0].map((trigger) => (
@@ -103,7 +106,7 @@ export default function PiecePage() {
                <TriggerCard
                key={trigger.name}
                trigger={trigger}
-               logoUrl={piece.logoUrl}
+               logoUrl={pieceData.logoUrl}
              ></TriggerCard>
              )
            ))}
@@ -115,7 +118,7 @@ export default function PiecePage() {
                <TriggerCard
                key={trigger.name}
                trigger={trigger}
-               logoUrl={piece.logoUrl}
+               logoUrl={pieceData.logoUrl}
              ></TriggerCard>
              )
            ))}
@@ -124,7 +127,7 @@ export default function PiecePage() {
          </div>
           ) : (
             <div className="text-white text-lg  p-4 text-center">
-              There is no triggers available for {piece.displayName}
+              There is no triggers available for {pieceData.displayName}
             </div>
           )}
           <div className="text-green text-3xl font-bold  text-5xl text-center flex relative items-center justify-center  mt-[150px]">
@@ -145,7 +148,7 @@ export default function PiecePage() {
             ></Image>
           </div>
           <div className="text-center text-zinc-300 text-2sm font-normal leading-loose mb-[80px] mt-10" >Triggers that start integration workflows by initiating specific actions.</div>
-          {Object.keys(piece.actions).length > 0 ? (
+          {Object.keys(pieceData.actions).length > 0 ? (
             <div className="flex gap-4 w-full max-w-[1016px] mb-[150px] ">
               <div id="actionsFirstColumn" className="flex gap-4 flex-col basis-0 grow shrink">
               {actions[0].map((action) => (
@@ -153,7 +156,7 @@ export default function PiecePage() {
                   <ActionCard
                   key={action.name}
                   action={action}
-                  logoUrl={piece.logoUrl}
+                  logoUrl={pieceData.logoUrl}
                 ></ActionCard>
                 )
               ))}
@@ -165,7 +168,7 @@ export default function PiecePage() {
                   <ActionCard
                   key={action.name}
                   action={action}
-                  logoUrl={piece.logoUrl}
+                  logoUrl={pieceData.logoUrl}
                 ></ActionCard>
                 )
               ))}
@@ -174,7 +177,7 @@ export default function PiecePage() {
             </div>
           ) : (
             <div className="text-white text-lg  p-4 text-center">
-              There is no actions available for {piece.displayName}
+              There is no actions available for {pieceData.displayName}
             </div>
           )}
         </div>

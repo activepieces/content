@@ -4,6 +4,8 @@ import { GetPieces, PieceBase } from "../../utils/piece-helper";
 import Image from "next/image";
 import PieceLogo from "../../components/pieces/PieceLogo";
 
+
+
 export function Index() {
   const [BasePieces, setBasePieces] = useState<PieceBase[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
