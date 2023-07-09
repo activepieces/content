@@ -39,7 +39,7 @@ export function Index() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="max-h-[800px] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 m-5">
+        <div className="h-full overflow-y-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 m-5">
           {filteredPieces.map((piece, i) => {
             return (
               <div
@@ -53,7 +53,7 @@ export function Index() {
                 }}
               >
                 <div className="flex flex-row items-center">
-                  <PieceLogo pieceLogoUrl={piece.logoUrl} size={70} />
+                  <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} />
                   <p className="ml-4 text-base ">{piece.displayName}</p>
                 </div>
               </div>

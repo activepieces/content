@@ -74,10 +74,10 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
 
       <div className="text-white overflow-hidden h-0 transition-all "  ref={propertiesDiv}>
         <div>
-          {Object.values(props.props).map((property) => (
+          {Object.entries(props.props).map(([key,property]) => (
             <div
               className="border-b-[1px] border-separator py-3 relative"
-              key={property.name}
+              key={key}
             >
               <div>
                 <span className="font-normal text-white block">

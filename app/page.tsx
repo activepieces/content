@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import ImageSlider from "../components/imageSlider";
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 export const pieceLogoUrl = "https://cdn.activepieces.com/brand/logo.svg";
 
 export default function Home() {
