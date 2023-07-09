@@ -5,13 +5,10 @@ import Image from "next/image";
 import TriggerCard from "../../../components/pieces/TriggerCard";
 import ActionCard from "../../../components/pieces/ActionCard";
 import { Metadata} from "next";
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+import { NavigationProps } from "../../../components/navigationProps";
 
 export async function generateMetadata(
-  { params }: Props,
+  { params }: NavigationProps,
 ): Promise<Metadata> {
   // read route params
   const pieceName = params.id
@@ -25,7 +22,7 @@ export async function generateMetadata(
   }
 }
 
-export default async  function PiecePage({ params }: Props) {
+export default async  function PiecePage({ params }: NavigationProps) {
   const pieceName = params.id;
   const pieceData = await  GetPiece(`@activepieces/piece-${pieceName}`);
   const actions: ActionBase[][] = [[], []];
