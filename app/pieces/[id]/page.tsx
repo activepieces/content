@@ -11,7 +11,6 @@ import ActionCard from "../../../components/pieces/ActionCard";
 export default function PiecePage() {
   const pieceName = usePathname()?.split("/")[2];
   const [piece, setPiece] = useState<DetailedPiece>();
-  debugger;
   useEffect(() => {
     if (!pieceName) {
       return;
@@ -51,7 +50,7 @@ export default function PiecePage() {
             Triggers
           </div>
           {Object.keys(piece.triggers).length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 p-8 w-full max-w-[1000px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 p-8 w-full max-w-[1000px] items-start">
               {Object.entries(piece.triggers).map(([key, trigger]) => (
                 <TriggerCard
                   key={key}
@@ -76,7 +75,7 @@ export default function PiecePage() {
             Actions
           </div>
           {Object.keys(piece.actions).length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 p-8 w-full max-w-[1000px]">
+            <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-2 gap-4 p-8 w-full max-w-[1000px] items-start">
               {Object.entries(piece.actions).map(([key, trigger]) => (
                 <ActionCard
                   key={key}
