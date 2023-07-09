@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -40,6 +41,12 @@ module.exports = {
           DEFAULT: '#06FFB4'
         }
       },
+      fontFamily: {
+        'sans': ['Eudoxus Sans', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        '2sm': '1.25rem',
+      }
     },
   },
   plugins: [require('@tailwindcss/typography')],

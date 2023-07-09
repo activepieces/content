@@ -8,6 +8,7 @@ import Image from "next/image";
 import TriggerCard from "../../../components/pieces/TriggerCard";
 import ActionCard from "../../../components/pieces/ActionCard";
 
+
 export default function PiecePage() {
   const pieceName = usePathname()?.split("/")[2];
   const [actions,setActions] =useState<ActionBase[][]>([[],[]]);
@@ -42,6 +43,7 @@ export default function PiecePage() {
   }, [pieceName]);
 
   return (
+    <>
     <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-no-repeat bg-100 bg-center-top">
       {piece && (
         <div className="flex flex-col items-center justify-center w-full pt-[80px]">   
@@ -178,5 +180,5 @@ export default function PiecePage() {
         </div>
       )}
     </main>
-  );
+  </>);
 }

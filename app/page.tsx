@@ -1,11 +1,16 @@
 import Image from 'next/image'
 import ImageSlider from "../components/imageSlider";
+import Head from 'next/head';
 export const pieceLogoUrl = "https://cdn.activepieces.com/brand/logo.svg";
 
 export default function Home() {
   return (
     <>
-
+    <Head>
+      <title>Active Pieces</title>
+      <link rel="preconnect" href="https://stijndv.com"></link>
+      <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css"></link>
+    </Head>
     <main className="flex min-h-screen flex-col items-center p-24">
     <div className="flex flex-col items-center justify-center">
       <Image
