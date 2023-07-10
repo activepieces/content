@@ -8,12 +8,12 @@ interface PieceLogoProps {
 
 const PieceLogo = ({ pieceLogoUrl, size }: PieceLogoProps) => {
   return (
-    <div className="bg-white rounded-md border border-outline flex justify-center items-center" style={{ width: `${size}px`, height: `${size}px` }}>
+    <div className="bg-white rounded-lg p-2.5 border border-outline flex justify-center items-center" >
       <Image
         src={pieceLogoUrl}
         alt="Description of image"
-        width={size - 24}
-        height={size- 24}
+        width={size}
+        height={size}
       />
     </div>
   );

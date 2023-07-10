@@ -1,9 +1,13 @@
+
+'use client';
+import { MutableRefObject, useRef } from 'react';
 /* eslint-disable-next-line */
 export interface CollapsiblePropertiesProps {
   props: Record<string, any>;
 }
 
 export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
+  const propertiesDiv: MutableRefObject<null|HTMLDivElement> = useRef(null);
   const propertyTypeStrings: Record<string, string> = {
     SHORT_TEXT: "Short Text",
     LONG_TEXT: "Long Text",
@@ -28,6 +32,17 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
     return ["CUSTOM_AUTH", "OAUTH2", "SECRET_TEXT", "BASIC_AUTH"].includes(
       type
     );
+  }  
+  function handleClick() {
+    if(propertiesDiv.current?.clientHeight === 0) {
+    
+      propertiesDiv.current?.style.setProperty("height", propertiesDiv.current?.scrollHeight + "px");
+    }
+    else
+    {
+      propertiesDiv.current?.style.setProperty("height", "0px");
+    }
+   
   }
 
   return (
@@ -35,6 +50,7 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
       <input
         type="checkbox"
         className="peer absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
+        onClick={handleClick}
       />
       <div className="h-12 w-full pl-8 flex items-center">
         <h1 className="font-normal text-gray-400">Show Properties</h1>
@@ -45,24 +61,24 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           stroke="currentColor"
           className="w-5 h-5"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M19.5 8.25l-7.5 7.5-7.5-7.5"
           />
         </svg>
       </div>
 
-      <div className="text-white overflow-hidden transition-transform duration-500 max-h-0 peer-checked:max-h-fit">
+      <div className="text-white overflow-hidden h-0 transition-all "  ref={propertiesDiv}>
         <div>
-          {Object.values(props.props).map((property) => (
+          {Object.entries(props.props).map(([key,property]) => (
             <div
               className="border-b-[1px] border-separator py-3 relative"
-              key={property.name}
+              key={key}
             >
               <div>
                 <span className="font-normal text-white block">

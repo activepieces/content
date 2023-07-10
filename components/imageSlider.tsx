@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useState, useEffect } from "react";
+
 
 const supportedPieces = [
   "https://cdn.activepieces.com/pieces/calendly.png",
