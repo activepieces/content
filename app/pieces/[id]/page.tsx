@@ -124,7 +124,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
          </div>
           ) : (
             <div className="text-white text-lg  p-4 text-center">
-              There is no triggers available for {pieceData.displayName}
+              There are no triggers available for {pieceData.displayName}
             </div>
           )}
           <div className="text-green text-3xl font-bold  text-5xl text-center flex relative items-center justify-center  mt-[150px]">
@@ -174,7 +174,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
             </div>
           ) : (
             <div className="text-white text-lg  p-4 text-center">
-              There is no actions available for {pieceData.displayName}
+              There are no actions available for {pieceData.displayName}
             </div>
           )}
         </div>
