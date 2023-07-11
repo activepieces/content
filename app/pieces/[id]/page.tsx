@@ -128,7 +128,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
               There are no triggers available for {pieceData.displayName}
             </div>
           )}
-          <div className="text-green text-3xl font-bold  text-5xl text-center flex relative items-center justify-center  mt-[150px]">
+          <div className="text-[#3cffb4] text-3xl font-bold  text-5xl text-center flex relative items-center justify-center  mt-[150px]">
             <Image
               src="../action.svg"
               alt="Actions"
