@@ -6,17 +6,17 @@ import React, { useRef } from "react";
 import GithubWidget from "./GithubWidget";
 
 const Navbar = () => {
-  const routesList= useRef<null | HTMLDivElement>(null);
+  const routesList= useRef<null | HTMLElement>(null);
   const buttonSvg= useRef<null | SVGSVGElement>(null);
   const showNavbarOnMobile = ()=>{
   routesList.current?.classList.toggle('top-[70px]');
   buttonSvg.current?.classList.toggle('!stroke-green');
 };
   return (
-    <nav  className="bg-black sticky z-50 top-0 shadow-navbar h-[75px] lg:h-[initial]  ">
+    <header  className="bg-black sticky z-50 top-0 shadow-navbar h-[75px] lg:h-[initial]  ">
       
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2 z-20">
-        <div className="absolute top-0 left-0 bg-black lg:static w-full lg:w-[initial] flex gap-4 items-center p-4 lg:p-0 z-50">
+        <div className="absolute top-0 left-0 bg-black lg:static w-full lg:w-[initial] flex gap-4 items-center py-4 px-10 lg:p-0 z-50">
         <Link href="/">
           <Image
             src="https://cdn.activepieces.com/brand/full-logo-white.svg"
@@ -43,8 +43,8 @@ const Navbar = () => {
         </div>
      
 
-    <div ref={routesList} className=" shadow-navbar lg:shadow-none duration-[400ms]  z-10 w-full absolute -top-[225px] transition-all  left-0 bg-black lg:static lg:block lg:w-auto" id="navbar-default">
-      <ul className="text-base flex flex-col gap-6 pl-6 lg:pl-0 lg:gap-0 p-4 lg:p-0 lg:flex-row lg:space-x-8 lg:mt-0">
+    <nav ref={routesList} className=" shadow-navbar lg:shadow-none duration-[400ms]  z-10 w-full absolute -top-[225px] transition-all  left-0 bg-black lg:static lg:block lg:w-auto" id="navbar-default">
+      <ul className="text-base flex flex-col gap-6 pl-10 lg:pl-0 lg:gap-0 p-4 lg:p-0 lg:flex-row lg:space-x-8 lg:mt-0">
         <li className="flex order-4 lg:order-none   justify-start lg:justify-center items-center">
        
         <Link href="/pieces" className="block gap-2 order-3 lg:order-none  text-white hover:text-green flex  justify-start lg:justify-center items-center transition-colors">
@@ -59,7 +59,7 @@ const Navbar = () => {
         </li>
         <li className="flex order-5 lg:order-none   justify-start lg:justify-center items-center">
        
-        <Link href="/pricing" className="block gap-2 text-white hover:text-green flex  justify-start lg:justify-center items-center transition-colors">
+        <Link href="https://www.activepieces.com/pricing" className="block gap-2 text-white hover:text-green flex  justify-start lg:justify-center items-center transition-colors">
           <Image
           alt="Pricing" 
           src="/pricing.png"
@@ -112,9 +112,9 @@ const Navbar = () => {
         </li>
  
       </ul>
-    </div>
-  </div>
     </nav>
+  </div>
+    </header>
   );
 };
 

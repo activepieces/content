@@ -45,7 +45,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
   return (
     <>
     <article>
-    <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-repeat-y bg-100 bg-center-top px-4 lg:px-0">
+    <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-no-repeat bg-cover lg:bg-100 bg-center-top px-4 lg:px-0">
       {pieceData && (
         <div className="flex flex-col items-center justify-center w-full pt-[80px]">   
         <div className="flex flex-col items-center justify-center gap-12">
@@ -77,7 +77,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
           </a>
           </section>
         </div>
-        <div className="md:w-[687px] text-center text-white   font-bold tracking-wider my-[150px]">Revolutionize Your Processes with Triggers and Actions</div>
+        <div className="md:w-[687px] text-center text-white text-3xl md:text-4xl   font-bold tracking-wider my-[150px]">Revolutionize Your Processes with Triggers and Actions</div>
           <div className="text-yellow relative text-3xl font-bold text-5xl   text-center items-center justify-center">
             <Image
               src="../trigger.svg"

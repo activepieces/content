@@ -12,7 +12,7 @@ const PiecesList = ( {pieces} : {pieces:PieceBase[]} ) => {
     piece.displayName.toLowerCase().includes(searchTerm.toLowerCase())
   );
     return (
-      <div className="container mx-auto px-1">
+      <div className="max-w-screen-xl mx-auto px-1">
     <div className=" flex flex-col   gap-10 my-[100px] ">
        <div className="flex justify-center">
        <div className="flex  justify-center w-full gap-0 h-[56px] flex-row-reverse">

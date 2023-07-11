@@ -10,10 +10,17 @@ const exodus = localFont({
 export default function RootLayout({ children }:  { children: React.ReactNode }) {
   return (
     <html lang="en">
+    
       <body  className={exodus.className+" bg-no-repeat bg-black bg-cover bg-center"} >
+    
       <Navbar></Navbar>
+     
         {children}
-        <Footer></Footer></body>
+        
+       <Footer></Footer>
+       </body>
+      
+    
     </html>
   )
 }
