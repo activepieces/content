@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   icons: "/favicon.ico",
 }
 
-export async function  PiecesPage() {
+export default async function  PiecesPage() {
   const pieces = await GetPieces();
   return (
     <div className="flex justify-center justify-items-center content-center	flex-col bg-white">
@@ -37,4 +37,4 @@ export async function  PiecesPage() {
   );
 }
 
-export default PiecesPage;
+
