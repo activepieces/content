@@ -1,172 +1,65 @@
 import Link from "next/link";
-
+import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="pb-4 text-gray-200 bg-black pt-10 mt-10">
-      <div className="max-w-5xl xl:max-w-5xl mx-auto divide-y divide-gray-900 px-4 sm:px-6 md:px-8">
-        <ul className="text-sm font-medium sm:pb-20 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
-          <li className="space-y-5 row-span-2">
-            <h2 className="text-2xl tracking-wide text-white">Company</h2>
-            <ul className="space-y-4 text-md">
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="https://handbook.activepieces.com/"
-                >
-                  Handbook
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Investors
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Brand
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li className="space-y-5 row-span-2">
-            <h2 className="text-2xl tracking-wide text-white">Docs</h2>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  News
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Press
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Blog
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li className="space-y-5 row-span-2">
-            <h2 className="text-2xl tracking-wide text-white">Industries</h2>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Marketing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Sales
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  E Commerce
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li className="space-y-5">
-            <h2 className="text-2xl tracking-wide text-white">Connect</h2>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Twitter
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
-                >
-                  Facebook
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-white transition-colors duration-200 font-semibold text-xl"
-                  href="/"
-                >
-                  Discord
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <div className="flex flex-col-reverse justify-between pt-5 pb-4 border-t lg:flex-row bg-top border-black">
-          <ul className="flex flex-col space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-            <li>
-              <Link
-                href="/"
-                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Terms of Service
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Ad Choices
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Cookie Policy
-              </Link>
-            </li>
-          </ul>
-          <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-            <Link
-              href="/"
-              className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold tracking-tight"
-            >
-              © 2023 Activepieces Inc.
-            </Link>
-          </ul>
+    <footer className="text-center lg:text-left max-w-screen-xl mx-auto px-4 text-gray-200  py-20 lg:py-10 ">
+      <div className="flex justify-between flex-wrap border-b border-solid border-[#242424] pb-4">
+        <div className="flex flex-col gap-4 basis-full lg:basis-[initial]">
+        <Link href="/">
+          <Image
+            src="https://cdn.activepieces.com/brand/full-logo-white.svg"
+            alt="Activepieces Logo"
+            width={215}
+            height={35}
+            className="w-[152px] h-[25px] lg:w-[215px] inline lg:h-[35px]"
+          />
+        </Link>
+        <div >
+        <p className="text-lg text-[#ffffffb3]">
+          Open source, free and self-hosted no-code business automation tool.
+        </p>
+        <p className="text-lg text-[#ffffffb3]">
+         The open source alternative to Zapier.
+        </p>
         </div>
+        <Link href='https://discord.com/invite/2jUXBKDdP8' className="text-green underline mt-4">
+        Join our Discord Community
+        </Link>
+        
+        </div>
+        <aside className=" basis-full lg:basis-[initial]">
+          <nav className="flex flex-col gap-1 lg:gap-2  text-lg mt-9">
+          <Link href='https://www.activepieces.com/terms8' className="text-white underline ">
+            Terms of Service
+           </Link>
+           <Link href='https://www.activepieces.com/privacy' className="text-white underline">
+            Privacy Policy
+           </Link>
+           <Link href='https://www.activepieces.com/google-api-discloure' className="text-white underline ">
+            Google API Disclousure
+           </Link>
+           <div id="spacer1">
+              &nbsp;
+           </div>
+       
+
+           <Link href='https://www.activepieces.com/blog/best-zapier-competitors-and-alternatives' className="text-white underline ">
+           Best Zapier competitors
+           </Link>
+           <Link href='https://www.activepieces.com/blog/top-workato-alternatives-and-competitors' className="text-white underline">
+           Best Workato alternatives
+           </Link>
+           <Link href='https://www.activepieces.com/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai' className="text-white underline ">
+           Automate Blog with AI
+           </Link>
+          </nav>
+        
+        </aside>
+        
       </div>
-    </footer>
+      <div className="text-[#ffffffb3] pt-4">
+      ©2023 <b>Activepieces, Inc.</b> All rights reserved.
+      </div>
+      </footer>
   );
 }

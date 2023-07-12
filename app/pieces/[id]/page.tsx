@@ -19,6 +19,7 @@ export async function generateMetadata(
     title: "Activepieces - "+pieceData.displayName,
     description: pieceData.description,
     authors: {url:"www.activepieces.com", name:"Activepieces"},
+    icons: "/favicon.ico",
   }
 }
 
@@ -44,7 +45,8 @@ export default async  function PiecePage({ params }: NavigationProps) {
 
   return (
     <>
-    <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-no-repeat bg-100 bg-center-top">
+    <article>
+    <main className="flex min-h-screen flex-col items-center bg-planets-bg bg-no-repeat bg-cover lg:bg-100 bg-center-top px-4 lg:px-0">
       {pieceData && (
         <div className="flex flex-col items-center justify-center w-full pt-[80px]">   
         <div className="flex flex-col items-center justify-center gap-12">
@@ -58,7 +60,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
           </div> 
       
             <section>
-          <h1 className="text-5xl font-bold text-center  text-white">
+          <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-center  text-white">
             {pieceData.displayName}
           </h1>
     
@@ -72,11 +74,11 @@ export default async  function PiecePage({ params }: NavigationProps) {
         
           <section >
           <a className=" h-14 p-5 bg-violet-600 rounded justify-center items-center gap-3 inline-flex" href={"https://www.activepieces.com/docs/pieces/apps/"+pieceName} target="_blank" rel="noopener noreferrer" >
-          <div className="text-center text-white text-2sm font-normal leading-loose tracking-wide">Go to the document</div>
+          <div className="text-center text-white text-2sm leading-loose tracking-wide flex gap-2 items-center">Go to documentation <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="mt-2"></Image></div>
           </a>
           </section>
         </div>
-        <div className="w-[687px] text-center text-white text-[42px] font-bold tracking-wider my-[150px]">Revolutionize Your Processes with Triggers and Actions</div>
+        <div className="md:w-[687px] text-center text-white text-3xl md:text-4xl   font-bold tracking-wider my-[150px]">Revolutionize Your Processes with Triggers and Actions</div>
           <div className="text-yellow relative text-3xl font-bold text-5xl   text-center items-center justify-center">
             <Image
               src="../trigger.svg"
@@ -96,8 +98,8 @@ export default async  function PiecePage({ params }: NavigationProps) {
           </div>
           <div className="text-center text-zinc-300 text-2sm font-normal leading-loose mb-[80px] mt-10" >Triggers that start integration workflows by initiating specific actions.</div>
           {Object.keys(pieceData.triggers).length > 0 ? (
-           <div className="flex gap-4 w-full max-w-[1016px] ">
-           <div id="triggersFirstColumn" className="flex gap-4 flex-col  grow shrink basis-0">
+           <div className="flex gap-4 w-full max-w-[1016px] flex-wrap ">
+           <div id="triggersFirstColumn" className="flex gap-4 flex-col  grow shrink basis-full md:basis-0">
            {triggers[0].map((trigger) => (
              (
                <TriggerCard
@@ -109,7 +111,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
            ))}
            </div>
 
-           <div  id="triggersSecondColumn" className="flex gap-4 flex-col grow shrink basis-0">
+           <div  id="triggersSecondColumn" className="flex gap-4 flex-col grow shrink basis-full md:basis-0">
            {triggers[1].map((trigger) => (
              (
                <TriggerCard
@@ -127,7 +129,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
               There are no triggers available for {pieceData.displayName}
             </div>
           )}
-          <div className="text-green text-3xl font-bold  text-5xl text-center flex relative items-center justify-center  mt-[150px]">
+          <div className="text-[#3cffb4] text-3xl font-bold  text-5xl text-center flex relative items-center justify-center  mt-[150px]">
             <Image
               src="../action.svg"
               alt="Actions"
@@ -146,8 +148,8 @@ export default async  function PiecePage({ params }: NavigationProps) {
           </div>
           <div className="text-center text-zinc-300 text-2sm font-normal leading-loose mb-[80px] mt-10" >Triggers that start integration workflows by initiating specific actions.</div>
           {Object.keys(pieceData.actions).length > 0 ? (
-            <div className="flex gap-4 w-full max-w-[1016px] mb-[150px] ">
-              <div id="actionsFirstColumn" className="flex gap-4 flex-col basis-0 grow shrink">
+            <div className="flex gap-4 w-full max-w-[1016px] mb-[150px] flex-wrap">
+              <div id="actionsFirstColumn" className="flex gap-4 flex-col basis-full md:basis-0 grow shrink">
               {actions[0].map((action) => (
                 (
                   <ActionCard
@@ -159,7 +161,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
               ))}
               </div>
 
-              <div  id="actionsSecondColumn" className="flex gap-4 flex-col basis-0  grow shrink">
+              <div  id="actionsSecondColumn" className="flex gap-4 flex-col basis-full md:basis-0 grow shrink">
               {actions[1].map((action) => (
                 (
                   <ActionCard
@@ -179,6 +181,26 @@ export default async  function PiecePage({ params }: NavigationProps) {
           )}
         </div>
       )}
+      
     </main>
+    <section className="bg-[url('/start-building-bg.svg')] w-full bg-no-repeat bg-cover bg-center  flex flex-col items-center justify-center gap-8 h-[450px]">
+              <a href="https://cloud.activepieces.com/" target="_blank" rel="noopener noreferrer" className="flex gap-1 md:gap-3 items-center text-neutral-900  font-bold font-bold  
+              text-3xl px-[18px] py-[18px] mx-4 md:mx-0
+              md:text-5xl md:px-[100px] md:py-[33.5px] 
+              lg:text-[70px] lg:px-[140.5px] lg:py-[47.5px] bg-[#06FFB4] rounded-[15px] md:rounded-[30px]">Start Building Now 
+                <Image
+                  src='/link_icon.svg'
+                  alt="Start Building Now"
+                  width={70}
+                  height={70}
+                  className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px]"
+                  
+                >
+                </Image>
+               </a>
+               <div className="text-white text-[22px] text-center font-normal leading-loose tracking-tight">Automate your work without writing code, keep your data on your machine.</div>
+      </section>
+    </article>
+   
   </>);
 }

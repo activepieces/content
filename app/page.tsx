@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import ImageSlider from "../components/imageSlider";
 import { Metadata } from 'next';
-export const pieceLogoUrl = "https://cdn.activepieces.com/brand/logo.svg";
 
 export const metadata: Metadata = {
   title: 'Activepieces - Home',
@@ -9,6 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+  const pieceLogoUrl = "https://cdn.activepieces.com/brand/logo.svg";
   return (
     <>
     <main className="flex min-h-screen flex-col items-center p-24">

@@ -3,6 +3,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
 
 type BlogPost = {
   link: string;
@@ -33,6 +34,22 @@ const categories: Record<string, Category> = {
   }
 };
 
+export async function generateMetadata(
+
+): Promise<Metadata> {
+  // read route params
+ 
+  return {
+    title: "Activepieces - Blogs",
+    description: "Learn business automation from the top resources - The Automatic Organization",
+    authors: {url:"www.activepieces.com", name:"Activepieces"},
+    icons: "/favicon.ico",
+  }
+}
+
+
+
+
 function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link href={post.link}>
@@ -54,16 +71,29 @@ function BlogCard({ post }: { post: BlogPost }) {
   );
 }
 
-export default function BlogIndex({
-  posts,
-  title,
-}: {
-  posts: BlogPost[];
-  title: string;
-}) {
+export default async function BlogIndex() {
+  // fetch data
+  const posts: BlogPost[] = [];
+  const categoriesNames: string[] = Object.keys(categories);
+  const docsDirectory = join(process.cwd(), "content");
+  for(const category of categoriesNames) {
+    for(const fileName of categories[category].posts) {
+      const fullPath = join(docsDirectory, fileName);
+      const fileContents = await fs.promises.readFile(fullPath, "utf8");
+      const { data } = matter(fileContents);
+      const meta = {
+        title: data.title,
+        description: data.description,
+        thumbnail: `${data.thumbnail}`,
+      };
+      const link = `/blog/${fileName.replace(/\.mdx?$/, "")}`;
+      posts.push({ link, meta });
+    }
+  }
+  console.log(posts);
   return (
     <main className="container mx-auto px-3 py-4 md:px-0 mt-[50px]">
-      <h1 className="text-5xl font-bold text-center w-full">{title}</h1>
+      <h1 className="text-5xl font-bold text-center w-full">Blogs</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mt-[60px]">
         {posts.map((post) => (
           <BlogCard key={post.link} post={post} />
@@ -73,32 +103,4 @@ export default function BlogIndex({
   );
 }
 
-export async function getServerSideProps({
-  query: { category },
-}: {
-  query: { category: string };
-}) {
-  const { title, posts } = categories[category];
-  const docsDirectory = join(process.cwd(), "content", category);
-  const parsedPosts = posts.map((fileName) => {
-    const fullPath = join(docsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8").toString();
-    const { data } = matter(fileContents);
-    const meta = {
-      title: data.title,
-      description: data.description,
-      thumbnail: `/${category}/${data.thumbnail}`,
-    };
-    const link = `/${category}/${fileName.replace(/\.mdx?$/, "")}`;
 
-    return { link, meta, category };
-  });
-
-  return {
-    props: {
-      posts: parsedPosts,
-      title,
-      category,
-    },
-  };
-}
