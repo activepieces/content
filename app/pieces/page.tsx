@@ -2,7 +2,7 @@
 import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
 import PiecesList from "../../components/pieces/List";
-
+import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Activepieces - Pieces',
   icons: "/favicon.ico",
@@ -23,8 +23,16 @@ export async function  PiecesPage() {
     </section>
    
     </div>
-
+    
     <PiecesList pieces={pieces} />
+    <Image
+    src="/clouds.svg"
+    alt="Clouds"
+    width={1440}
+    height={545}
+    className="w-full "
+    ></Image>
+
     </div>
   );
 }
