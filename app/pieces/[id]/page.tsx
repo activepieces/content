@@ -19,6 +19,7 @@ export async function generateMetadata(
     title: "Activepieces - "+pieceData.displayName,
     description: pieceData.description,
     authors: {url:"www.activepieces.com", name:"Activepieces"},
+    icons: "/favicon.ico",
   }
 }
 
@@ -73,7 +74,7 @@ export default async  function PiecePage({ params }: NavigationProps) {
         
           <section >
           <a className=" h-14 p-5 bg-violet-600 rounded justify-center items-center gap-3 inline-flex" href={"https://www.activepieces.com/docs/pieces/apps/"+pieceName} target="_blank" rel="noopener noreferrer" >
-          <div className="text-center text-white text-2sm font-normal leading-loose tracking-wide">Go to the document</div>
+          <div className="text-center text-white text-2sm leading-loose tracking-wide flex gap-2 items-center">Go to documentation <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="mt-2"></Image></div>
           </a>
           </section>
         </div>

@@ -43,6 +43,7 @@ export async function generateMetadata(
     title: "Activepieces - Blogs",
     description: "Learn business automation from the top resources - The Automatic Organization",
     authors: {url:"www.activepieces.com", name:"Activepieces"},
+    icons: "/favicon.ico",
   }
 }
 

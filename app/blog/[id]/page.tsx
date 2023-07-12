@@ -24,6 +24,7 @@ export async function generateMetadata(
     title: "Activepieces - "+data.title,
     description: data.description,
     authors: {url:"www.activepieces.com", name:data.author},
+    icons: "/favicon.ico",
   }
 }
 
@@ -32,10 +33,9 @@ export default async function BlogPost(  { params }: NavigationProps,) {
   const docsDirectory = join(process.cwd(), "content");
   // fetch data
   const fullPath = join(docsDirectory,  blogName+'.mdx');
-  console.log(fullPath);
   const fileContents = await fs.promises.readFile(fullPath, "utf8");
   const { data,content }:GrayMatterFile<string>  = matter(fileContents);
-  console.log(data);
+
   return (
     <main className="px-3 py-4 md:px-0  bg-white">
       <article className="container  mx-auto prose my-8  ">

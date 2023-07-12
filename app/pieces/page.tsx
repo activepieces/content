@@ -4,7 +4,8 @@ import { GetPieces } from "../../utils/piece-helper";
 import PiecesList from "../../components/pieces/List";
 
 export const metadata: Metadata = {
-  title: 'Activepieces - Pieces'
+  title: 'Activepieces - Pieces',
+  icons: "/favicon.ico",
 }
 
 export async function  PiecesPage() {
