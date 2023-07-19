@@ -18,17 +18,17 @@ const repeatedPieces = Array.from({ length: 8 }, () => supportedPieces).flat();
 const ImageSlider = () => {
 
   return (
-    <div className="flex relative w-full h-[100px] overflow-hidden">
+    <div className="flex relative w-full h-[30px] lg:h-[60px]  overflow-hidden">
       <div
-        className="flex absolute image-slider gap-[50px] items-center"
+        className="flex absolute image-slider gap-[25px] lg:gap-[50px] items-center"
       >
         {repeatedPieces.map((piece, index) => (
           <div
             key={index}
           >
-            <Image src={piece} alt="Integration logo" style={{
+            <Image src={piece} alt="Integration logo" className="h-[30px] lg:h-[60px]" style={{
               objectFit: "contain",
-              minHeight: '60px'
+
             }} />
           </div>
         ))}

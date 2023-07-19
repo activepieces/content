@@ -21,6 +21,7 @@ module.exports = {
         black: '#111112',
         primary: { DEFAULT: '#6e41e2', medium:'#ab90ee', light: '#eee9fc', dark: '#6838e0','10':'rgba(110, 65, 226, 0.1)' },
         green: "#c9fa75",
+        divider: "rgba(17, 17, 17, 0.30)",
         card: {
           DEFAULT: '#232429',
         },
