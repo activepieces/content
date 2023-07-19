@@ -22,7 +22,7 @@
 }
 
 .image-slider {
-  animation: moving 100s ease-in-out;
+  animation: moving 50s ease-in-out;
   animation-iteration-count: infinite; 
 }
 

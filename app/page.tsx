@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import ImageSlider from "../components/imageSlider";
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Activepieces - Home',
@@ -8,46 +9,55 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const pieceLogoUrl = "https://cdn.activepieces.com/brand/logo.svg";
+
   return (
     <>
-    <main className="flex min-h-screen flex-col items-center p-24">
-    <div className="flex flex-col items-center justify-center">
-      <Image
-        src={pieceLogoUrl}
-        alt="Description of image"
-        width={84}
-        height={84}
-      />
-      <h1 className="text-5xl font-bold text-center mt-8 text-white max-w-[600px]">
-        Open Source <br></br>Place Holder Page
-      </h1>
-      <p className="text-center mt-8 text-gray-200">
-        Our mission is to make everyone more productive by automating their
-        work. (INSERT TWO MINUTE VIDEO)
-      </p>
-      <div className="mt-8 space-x-4">
-        <button className="px-4 py-2 bg-primary text-white rounded-md">
-          Get Started Free
-        </button>
-      </div>
-    </div>
-    <div className="mt-16"></div>
-    <ImageSlider />
-    <div className="flex flex-col gap-8">
-    <div className="text-center text-5xl text-white ">Section One Features based </div>
-    <div className="text-center text-5xl text-white mt-[100px]">Section Two: Numbers & Creditability & Integrations</div>
-    <div className="text-center text-5xl text-white mt-[100px]">Section Three: 1 click solution (templates)</div>
-    <div className="text-center text-2xl text-white mt-10"> By Industry / Examples / Tutorials (Impact Based)</div>
-    <div className="text-center text-5xl text-white mt-[100px]">Section Three: Open Ecosystem</div>
-    <div className="text-center text-2xl text-white mt-10">Community Numbers</div>
-    <div className="text-center text-2xl text-white mt-10">Customize your pieces / Code Pieces / Http Pieces </div>
-    </div>
-    
+      <main>
+        <section className='bg-black text-white text-[50px] font-bold leading-[60px] lg:text-[80px] px-4 md:px-0'>
+          <div className='container mx-auto  py-8 lg:py-16 flex gap-0 flex-wrap lg:flex-nowrap mb-[40px] lg:mb-[80px]'>
 
-  </main>
+            <div className=' flex gap-[20px] lg:gap-[25px] items-center flex-wrap'>
+              Automate your <div className='flex items-center gap-[20px] lg:gap-[25px]'>
+                <Image alt='marketing' src="/marketing.svg" width={68} height={85} className='h-[45px] w-[35px] lg:h-[85px] lg:w-[68px] '></Image>  marketing
+              </div>
+              <div className='flex items-center gap-[20px] lg:gap-[25px]'>
+                <Image alt='sales' src="/sales.svg" width={68} height={85} className='h-[45px] w-[35px] lg:h-[85px] lg:w-[68px]  '></Image> sales
+              </div>
+              <div className='flex items-center'>
+                <div className='hidden lg:block'
+                >and
+                </div>
+                <div className='lg:hidden'
+                >&
+                </div>
+              </div>   <div className='flex gap-[20px] lg:gap-[25px] items-center'><Image alt='operations' src="/operations.svg" width={68} height={85} className='h-[45px] w-[35px] lg:h-[85px] lg:w-[68px] '></Image> opertaions </div>
+
+              without code
+            </div>
+
+            <div className='flex flex-col justify-end grow mt-[40px] lg:grow-0 lg:mt-[0px]'>
+              <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopner' className='text-center  text-h4-sm lg:text-h4-lg text-black bg-white py-[15px] px-[35px] whitespace-nowrap'>
+                Get Started
+              </Link>
+            </div>
+          </div>
+          <div className='text-center container mx-auto mb-[80px]'>
+            <Image src="/builder-screenshot.png" alt="Builder Screenshot" width={1280} height={728} className='rounded-lg w-full'></Image>
+          </div>
+          <div className='flex justify-center items-center flex-col text-white gap-[50px]'>
+            <div className='w-[162px] text-center lg:w-fit text-h4-sm lg:text-h4-lg  !font-normal'>
+              Everyone else is signing up too
+            </div>
+            <ImageSlider />
+            <div>
+
+            </div>
+          </div>
+
+        </section>
+      </main>
 
     </>
-  
+
   )
 }
