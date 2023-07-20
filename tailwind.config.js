@@ -99,14 +99,14 @@ module.exports = {
           fontWeight: '700',
         }],
         'h6-sm': ['16px',{
-          lineHeight: '60px',
+          lineHeight: '19.2px',
           letterSpacing: '0.4px',
-          fontWeight: '700',
+          fontWeight: '400',
         }],
         'h6-lg': ['22px',{
-          lineHeight: '60px',
+          lineHeight: '26.4px',
           letterSpacing: '0.55px',
-          fontWeight: '700',
+          fontWeight: '400',
         }],
       },
       boxShadow: {

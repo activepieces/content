@@ -17,7 +17,7 @@ const OpenSourceStat = (stat: OpenSourceStatProps) => {
                     {stat.statText}
                 </div>
                 <Link href={stat.ctaUrl} target="_blank" rel="noopener noreferer">
-                    <div className="flex gap-[5px] md:px-[5px]  font-medium text-h6-sm md:text-h6-lg">
+                    <div className="flex gap-[5px] md:px-[5px] mt-[24px] lg:mt-[0px] font-bold lg:font-medium text-h6-sm md:text-h6-lg">
                         {stat.ctaText} <Image alt='arrow' src="/arrow.svg" width={33} height={16}></Image>
                     </div>
                 </Link>
