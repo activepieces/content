@@ -9,7 +9,7 @@ type BlogPost = {
   link: string;
   meta: {
     title: string;
-    description: string;
+    author: string;
     thumbnail: string;
   };
 };
@@ -61,9 +61,9 @@ function BlogCard({ post }: { post: BlogPost }) {
             width={400}
             height={400}
           />
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+          <div className="absolute bottom-0 left-0 right-0 py-8 px-4 bg-white text-black border border-black rounded-md">
             <div className="font-bold text-xl mb-2">{post.meta.title}</div>
-            <p className="text-gray-300 text-base">{post.meta.description}</p>
+            <p className="text-base">{post.meta.author}</p>
           </div>
         </div>
       </div>
@@ -72,35 +72,40 @@ function BlogCard({ post }: { post: BlogPost }) {
 }
 
 export default async function BlogIndex() {
-  // fetch data
+  // Fetch data
   const posts: BlogPost[] = [];
   const categoriesNames: string[] = Object.keys(categories);
   const docsDirectory = join(process.cwd(), "content");
-  for(const category of categoriesNames) {
-    for(const fileName of categories[category].posts) {
+  for (const category of categoriesNames) {
+    for (const fileName of categories[category].posts) {
       const fullPath = join(docsDirectory, fileName);
       const fileContents = await fs.promises.readFile(fullPath, "utf8");
       const { data } = matter(fileContents);
       const meta = {
         title: data.title,
-        description: data.description,
+        author: data.author,
         thumbnail: `${data.thumbnail}`,
       };
       const link = `/blog/${fileName.replace(/\.mdx?$/, "")}`;
       posts.push({ link, meta });
     }
   }
-  console.log(posts);
+
   return (
-    <main className="container mx-auto px-3 py-4 md:px-0 mt-[50px]">
-      <h1 className="text-5xl font-bold text-center w-full">Blogs</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mt-[60px]">
-        {posts.map((post) => (
-          <BlogCard key={post.link} post={post} />
-        ))}
-      </div>
-    </main>
+    <div className="bg-white">
+      <main className="container mx-auto md:px-0">
+        {/* Centered Title */}
+        <h1 className="text-5xl font-bold text-center w-full">Blogs</h1>
+
+        {/* Centered Blog Grid */}
+        <div className="flex justify-center mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-8 mt-[60px] w-3/4">
+            {posts.map((post) => (
+              <BlogCard key={post.link} post={post} />
+            ))}
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }
-
-
