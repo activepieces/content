@@ -4,7 +4,7 @@ import ImageSlider from "./imageSlider";
 const MainSection = () =>
     <>
         <main>
-            <section className='bg-black text-white text-[50px] font-bold leading-[60px] lg:text-[80px] px-4 md:px-0 pb-[100px] lg:pb-[150px]'>
+            <section className='bg-black text-white text-[50px] font-bold leading-[60px] lg:text-[80px] px-4 lg:px-0 pb-[100px] lg:pb-[150px]'>
                 <div className='container mx-auto py-[40px] lg:py-[80px] flex gap-0 flex-wrap lg:flex-nowrap mb-[40px] lg:mb-[80px]'>
 
                     <h1 className='lg:items-start flex gap-[20px] lg:gap-[25px] items-center flex-wrap'>

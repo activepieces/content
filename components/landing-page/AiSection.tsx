@@ -6,9 +6,11 @@ import AiCard from './AiCard';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
+
 const scrollBy = 358;
-const AiSection = (props: { template: FlowTemplate, piecesIcons: string[] }) => {
+const AiSection = (props: {
+    props: { template: FlowTemplate, piecesIcons: string[] }[]
+}) => {
 
     const sectionDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
     const sliderDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
@@ -22,12 +24,12 @@ const AiSection = (props: { template: FlowTemplate, piecesIcons: string[] }) => 
 
     return (<>
         <section className="bg-[#FAEAFF] py-[100px] lg:py-[160px] ">
-            <div ref={sectionDiv} className='container mx-auto px-4 md:px-0'>
+            <div ref={sectionDiv} className='container mx-auto px-4 lg:px-0'>
                 <h2 className='mb-[80px] lg:mb-[100px]'>
                     <div className='hidden md:block text-black text-[50px] font-bold leading-[80px] lg:text-[80px] flex flex-col '>
                         <div>
                             <span className='text-primary relative'>
-                                4 awesome <Image alt='drops' src='/drops.svg' height={39.165} width={61.223} className='absolute top-0 -left-[9px]'></Image>
+                                4 awesome <Image alt='drops' src='/drops.svg' height={39.165} width={61.223} className='absolute md:-top-[5px] lg:top-0 md:-left-[22px]  md:scale-50 lg:scale-100 lg:-left-[9px]'></Image>
                             </span> ways
                         </div>
                         <div >
@@ -51,9 +53,9 @@ const AiSection = (props: { template: FlowTemplate, piecesIcons: string[] }) => 
                     Scale your <br className='lg:hidden'></br> business with AI
                 </div>
                 <div className='flex'>
-                    <div className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-[40px] lg:mb-[80px]'>
+                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-[40px] lg:mb-[80px]'>
                         Grow your team of AIs to scale up your blog content, offer customer service and auto post to your social accounts.
-                    </div>
+                    </h2>
                     <div className='hidden lg:flex gap-[60px] grow justify-end'>
                         <Image alt='arrow' src="/arrow.svg" width={33} height={16} className='rotate-180 cursor-pointer'
                             onClick={() => sliderDiv.current?.scrollBy({
@@ -74,9 +76,12 @@ const AiSection = (props: { template: FlowTemplate, piecesIcons: string[] }) => 
                 {
                     marginLeft: marginLeft
                 }
-            } className='flex gap-[15px] overflow-scroll px-4 lg:px-0 ai-cards-slider' ref={sliderDiv}>
+            } className='flex gap-[15px] overflow-scroll px-4 lg:px-0 ai-cards-slider items-center' ref={sliderDiv}>
+                <Image src="/most_used.svg" width={64} height={48} alt='most used' className='w-[64px] h-[78px] -mr-[30px] z-50'>
+
+                </Image>
                 {
-                    arr.map((_, i) => <AiCard key={_} template={props.template} piecesIcons={props.piecesIcons}></AiCard>)
+                    props.props.map((_, i) => <AiCard key={i} template={_.template} piecesIcons={_.piecesIcons}></AiCard>)
                 }
 
             </div>

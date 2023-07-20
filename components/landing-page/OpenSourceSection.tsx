@@ -48,7 +48,6 @@ const OpenSourceSection = () => <>
                 <div className='flex flex-col gap-[30px] lg:gap-[60px] mt-[30px] lg:mt-[60px]'>
                     <Contributor githubAccount='Thibaut Patel' githubUrl='https://github.com/tpatel' imageUrl='/contributors/Thibaut-Patel.png' tagColor='#D16FFF' imageClasses='w-[138px] h-[138px] lg:h-[230px] lg:w-[230px]' key={1}></Contributor>
                     <Contributor githubAccount='m-tabaza' githubUrl='https://github.com/m-tabaza' imageUrl='/contributors/Tabaza.png' imageClasses='w-[116px] h-[116px] lg:h-[193px] lg:w-[193px]' tagColor='#FF9F0F' key={3}></Contributor>
-
                 </div>
 
                 <div className='flex flex-col gap-[30px] lg:gap-[60px] '>
