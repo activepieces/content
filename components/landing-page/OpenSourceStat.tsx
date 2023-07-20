@@ -11,7 +11,7 @@ export interface OpenSourceStatProps {
 const OpenSourceStat = (stat: OpenSourceStatProps) => {
     return (
         <>
-            <div className='flex flex-wrap md:flex-nowrap'>
+            <div className='flex flex-wrap md:flex-nowrap items-center'>
                 <div className='flex gap-[15px] items-center basis-full md:basis-0  gap-[25px] grow text-h4-sm md:text-h4-lg'>
                     <Image alt={stat.logoAlt} src={stat.logoUrl} width={50} height={50}></Image>
                     {stat.statText}

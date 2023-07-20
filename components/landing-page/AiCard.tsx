@@ -11,7 +11,7 @@ const AiCard = (props: AiCardProps) => {
     return (
         <>
             <div className="border border-solid border-[#000000] rounded-[6px] overflow-hidden lg:min-w-[358px] min-w-[250px]" >
-                <div className="p-[25px] lg:-[35px] bg-white flex flex-col gap-[30px]">
+                <div className="p-[25px] lg:pb-[65px] lg:p-[35px] bg-white flex flex-col gap-[30px]">
                     <div className="flex gap-[10px] lg:gap-[15px]">
                         {
                             props.piecesIcons.map((icon, idx) => (

@@ -5,6 +5,8 @@ import OpenSourceSection from '../components/landing-page/OpenSourceSection';
 import AiSection from '../components/landing-page/AiSection';
 import { FlowTemplate, TriggerType } from '@activepieces/shared';
 import { GetPiece } from '../utils/piece-helper';
+import LeadsSection from '../components/landing-page/LeadsSection';
+import Productivity100XSection from '../components/landing-page/Productivity100XSection';
 
 export const metadata: Metadata = {
   title: 'Activepieces - Home',
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 const template: FlowTemplate = {
-  "id": "jyEi8zZkVYIiP4nqWrH85",
+  "id": "ai-personalized-welcome-email-mailchimp",
   "name": "Send ChatGPT welcome email to MailChimp new subscribers",
   "description": `Scale your SEO content with ChatGPT right into your WordPress site`,
   "tags": [],
@@ -112,8 +114,9 @@ export default async function Home() {
 
       <MainSection></MainSection>
       <OpenSourceSection></OpenSourceSection>
-      <AiSection {...aiCard}></AiSection>
-
+      <AiSection props={[aiCard, aiCard, aiCard, aiCard, aiCard, aiCard]}></AiSection>
+      <LeadsSection props={[aiCard, aiCard, aiCard]}></LeadsSection>
+      <Productivity100XSection props={[aiCard, aiCard, aiCard]}></Productivity100XSection>
     </>
 
   )
