@@ -35,6 +35,9 @@ module.exports = {
         separator: {
           DEFAULT: '#FFFFFF21',
         },
+        border: {
+          DEFAULT: '#111111'
+        },
         yellow: {
           DEFAULT: '#FFCC4D'
         },

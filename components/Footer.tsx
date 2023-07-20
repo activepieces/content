@@ -22,7 +22,7 @@ export default function Footer() {
          The open source alternative to Zapier.
         </p>
         </div>
-        <Link href='https://discord.com/invite/2jUXBKDdP8' className="text-green underline mt-4">
+        <Link href='https://discord.com/invite/2jUXBKDdP8' className="text-white underline mt-4">
         Join our Discord Community
         </Link>
         
