@@ -5,6 +5,7 @@ export default function Footer() {
     <footer className="text-center lg:text-left container mx-auto px-4 text-gray-200  py-20 lg:py-10 ">
       <div className="flex justify-between flex-wrap border-b border-solid border-[#242424] pb-4">
         <div className="flex flex-col gap-4 basis-full lg:basis-[initial]">
+
           <Link href="/">
             <Image
               src="https://cdn.activepieces.com/brand/full-logo-white.svg"
