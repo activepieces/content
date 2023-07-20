@@ -46,3 +46,25 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.apps-menu {
+  border-radius: 6px;
+  overflow: hidden;
+  width: 340px;
+}
+
+.apps-menuitem {
+  color:#FFFFFF;
+  background-color: #2D2E33;
+
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0.025em;
+  text-align: left;
+}
+
+.apps-menuitem .item-container
+{
+  padding:35px;
+}
