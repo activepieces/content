@@ -50,7 +50,7 @@ We'll keep combining them until the end of the flow where we'll have a long arti
 
 ##### Step by Step explanation
 
-!\[6474b35964ba3f4c6f373320\_Screenshot%202023-05-29%20at%2015.14.14.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474b35964ba3f4c6f373320\_Screenshot%202023-05-29%20at%2015.14.14.png)
+![fba0dae2-a7ed-47d9-a242-4884dbedfc82.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/fba0dae2-a7ed-47d9-a242-4884dbedfc82.png)
 
 The first step of the flow is called the trigger. The trigger controls when our flow will run. This flow starts whenever a New Row is added to our Google Sheet (we'll set up the sheet later). As I mentioned earlier, this sheet will be our database, whenever we add a new title to it, the flow will run and generate a long form blog post for it!
 
@@ -58,13 +58,13 @@ The second step is the first use of ChatGPT in our flow. As the name says: Gene
 
 The Code step takes the JSON output from ChatGPT (which is text) and converts it into a real JSON object that we can use in the next loop step.
 
-!\[6474b6287a3a1e1eab975734\_Screenshot%202023-05-29%20at%2015.22.56.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474b6287a3a1e1eab975734\_Screenshot%202023-05-29%20at%2015.22.56.png)
+![68ee362c-a7ab-4208-a8a2-206fd5bc7217.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/68ee362c-a7ab-4208-a8a2-206fd5bc7217.png)
 
 Now we have the outline of the main headings, the Loop on items will iterate over these headings and execute all the steps inside for each of these headings. The child steps start with Ask ChatGPT, this will only ask ChatGPT to write a short article under this main heading and not the original title. It will also give some context to ChatGPT that this is part of the full article so it can use general ideas inside the paragraphs.
 
 Then we use storage pieces (Get and Put) to append the generated content to the previously generated parts so they become one long article altogether.
 
-!\[6474b62ddadc606a3bc8b1b8\_Screenshot%202023-05-29%20at%2015.23.27.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474b62ddadc606a3bc8b1b8\_Screenshot%202023-05-29%20at%2015.23.27.png)
+![f313519a-edc7-45bb-9538-4029f7e3f0fb.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/f313519a-edc7-45bb-9538-4029f7e3f0fb.png)
 
 Once we are done with generating the parts and combining them, we read them and post them to our WordPress website in the Create Post step. The Send Email step (last one) notifies our team about the posted article and gives them a link to review and approve it.
 
@@ -78,7 +78,7 @@ We need a Google Sheet to act like a database of our titles that we'd like ChatG
 
 This is how my sheet looks like:
 
-!\[6474b81649fa7a82961dfa4c\_Screenshot%202023-05-29%20at%2015.34.42.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474b81649fa7a82961dfa4c\_Screenshot%202023-05-29%20at%2015.34.42.png)
+![84efe3a4-2ac9-4547-97ab-19b441943b9c.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/84efe3a4-2ac9-4547-97ab-19b441943b9c.png)
 
 Now, click on the first step in your flow, the **New Row** step. In the sidebar, click on **+ New Connection** to connect your Google account that has this sheet. Once connected, you can choose the Spreadsheet and the sub Sheet in the dropdowns there.
 
@@ -90,11 +90,11 @@ There are two steps that use ChatGPT, we'll need first to make the connection wi
 
 Take a look at the prompt in the step and make sure it expresses the way you'd like to generate the outline of the article. It includes a bit of a technical language, make sure you don't change that language as it could break the flow. This is where you should review the prompt:
 
-!\[6474bfc12e69c1903523e02d\_Screenshot%202023-05-29%20at%2016.05.54.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474bfc12e69c1903523e02d\_Screenshot%202023-05-29%20at%2016.05.54.png)
+![082f9723-824c-4114-83a4-06284cbb7cd9.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/082f9723-824c-4114-83a4-06284cbb7cd9.png)
 
 As you get done with this, jump to the other ChatGPT step, named **Ask ChatGPT**. From the API Key dropdown, choose the same connection you added previously, you don't have to add a new connection for this step. Take a look at the prompt and make any necessary modifications:
 
-!\[6474c05b97c500d190c5e503\_Screenshot%202023-05-29%20at%2016.09.06.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474c05b97c500d190c5e503\_Screenshot%202023-05-29%20at%2016.09.06.png)
+![50ea62fc-968d-49e3-9c22-07a382053617.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/50ea62fc-968d-49e3-9c22-07a382053617.png)
 
 ##### (3) Configure the WordPress step
 
@@ -112,7 +112,7 @@ You're ready to take this automation to real life. Click on the main **Publish**
 
 This is an example of a content I generated using this flow:
 
-!\[6474ce7cdbe65bacc0497aee\_Screenshot%202023-05-29%20at%2017.07.51.png\](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/6474ce7cdbe65bacc0497aee\_Screenshot%202023-05-29%20at%2017.07.51.png)
+![bdcd8e78-d739-4a3b-8432-468790fdc7de.png](/blog/use-chatgpt-to-write-long-blog-posts-on-wordpress-1500-words/images/bdcd8e78-d739-4a3b-8432-468790fdc7de.png)
 
 This article is 1,662 words long and is posted right in my WordPress site 🎉
 

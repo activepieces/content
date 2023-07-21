@@ -34,7 +34,7 @@ We'll build this syncing job in our [Activepieces](https://cloud.activepieces.co
 
 In your Activepieces account, click **Start building** if this is your first automation, or **New flow** if you have other flows. I called this automation "Sync my sheets 🔁📊" but you can give it any name of your liking! This is my fresh automation:
 
-!\[644cedbc52133f0137d1cf77\_Screenshot%202023-04-29%20at%2013.12.50.png\](/blog/sync-two-google-sheets-step-by-step/images/644cedbc52133f0137d1cf77\_Screenshot%202023-04-29%20at%2013.12.50.png)
+![583f5346-ad91-4636-90c9-a000f390cc3c.png](/blog/sync-two-google-sheets-step-by-step/images/583f5346-ad91-4636-90c9-a000f390cc3c.png)
 
 ### 3\. Set up the Google Sheet trigger
 
@@ -42,11 +42,11 @@ Our first step is to set up our automation to listen to any new row from our Goo
 
 Now connect your Google Drive account using the **+ New Connection** button. Once connected, choose your sheet and sub-sheet from the dropdowns. I did it like this:
 
-!\[644cefc6f79be846e62831f3\_Screenshot%202023-04-29%20at%2013.21.09.png\](/blog/sync-two-google-sheets-step-by-step/images/644cefc6f79be846e62831f3\_Screenshot%202023-04-29%20at%2013.21.09.png)
+![e1604ba9-8dcc-444d-9e0b-f1d9b61ecabd.png](/blog/sync-two-google-sheets-step-by-step/images/e1604ba9-8dcc-444d-9e0b-f1d9b61ecabd.png)
 
 Before starting with this automation, my two sheets had the same data and they both had 3 pokemons data like this:
 
-!\[644cefeff9979d66db597c62\_Screenshot%202023-04-29%20at%2013.20.35.png\](/blog/sync-two-google-sheets-step-by-step/images/644cefeff9979d66db597c62\_Screenshot%202023-04-29%20at%2013.20.35.png)
+![6e083a68-029f-4918-ba94-7a3c2b0d7653.png](/blog/sync-two-google-sheets-step-by-step/images/6e083a68-029f-4918-ba94-7a3c2b0d7653.png)
 
 This is from my first sheet, but the second one looked identical in the initial state.
 
@@ -54,7 +54,7 @@ This is from my first sheet, but the second one looked identical in the initial 
 
 Now under **Generate Sample Data** in the sidebar, click on **Load Data** to bring some sample data from our sheet. This will help us use the data from the first sheet in the next step. When I clicked on it, I saw this:
 
-!\[644cf11fc467d88ddd4f7e58\_Screenshot%202023-04-29%20at%2013.27.18.png\](/blog/sync-two-google-sheets-step-by-step/images/644cf11fc467d88ddd4f7e58\_Screenshot%202023-04-29%20at%2013.27.18.png)
+![64cc346c-0bc3-45cf-8cd1-51034eb2bd24.png](/blog/sync-two-google-sheets-step-by-step/images/64cc346c-0bc3-45cf-8cd1-51034eb2bd24.png)
 
 ### 5\. Add a step to insert a new row in the second Google Sheet
 
@@ -68,7 +68,7 @@ The first value will be the Pokemon Name, we'll choose it from the dropdown when
 
 This is how I chose the first value:
 
-!\[644cf2bee475061c389843bd\_Screenshot%202023-04-29%20at%2013.30.53.png\](/blog/sync-two-google-sheets-step-by-step/images/644cf2bee475061c389843bd\_Screenshot%202023-04-29%20at%2013.30.53.png)
+![a292281a-6b65-4211-8299-fc3026ac7d81.png](/blog/sync-two-google-sheets-step-by-step/images/a292281a-6b65-4211-8299-fc3026ac7d81.png)
 
 Add another value, and do the same thing but select **value 1** instead of value 0 now. In case you have a sheet with 5 columns, you'll do this 5 times instead of 2.
 
@@ -82,13 +82,13 @@ Now click the main **Publish** button, you will see a toggle turned on. This mea
 
 I added these to my first sheet:
 
-!\[644cf420f72e53f8a63ec29b\_Screenshot%202023-04-29%20at%2013.40.14.png\](/blog/sync-two-google-sheets-step-by-step/images/644cf420f72e53f8a63ec29b\_Screenshot%202023-04-29%20at%2013.40.14.png)
+![99c25698-4c59-4e75-a6e5-b06eda9a3735.png](/blog/sync-two-google-sheets-step-by-step/images/99c25698-4c59-4e75-a6e5-b06eda9a3735.png)
 
 Note that the Google Sheet New Row trigger fires every 5 minutes and not instantly. That means it runs at multiples of 5 minutes, if your time is 13:41 you'll have to wait until 13:45 for the next run.
 
 When the flow ran, my second sheet updated and I saw these results in it:
 
-!\[644cf578df0aa27ac543de07\_Screenshot%202023-04-29%20at%2013.46.01.png\](/blog/sync-two-google-sheets-step-by-step/images/644cf578df0aa27ac543de07\_Screenshot%202023-04-29%20at%2013.46.01.png)
+![45ae73bc-5de8-49dd-b3b6-61343407b239.png](/blog/sync-two-google-sheets-step-by-step/images/45ae73bc-5de8-49dd-b3b6-61343407b239.png)
 
 Congrats 🎉 you now have a bot that copies data from a Google Sheet to another one while you're sleeping!
 

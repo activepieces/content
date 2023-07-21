@@ -48,21 +48,21 @@ Once connected, you'll see all your Google Forms in the Form field. Select the o
 
 I set up the trigger and it eventually looked like this:
 
-!\[644a6d0f2441432b88502c7e\_Screenshot%202023-04-27%20at%2015.35.04.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644a6d0f2441432b88502c7e\_Screenshot%202023-04-27%20at%2015.35.04.png)
+![7f0a2bcd-776b-49e4-94ec-b79a3e069d86.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/7f0a2bcd-776b-49e4-94ec-b79a3e069d86.png)
 
 We'll pass data from this step to the next one to build our automation, click on Load Data to get some data from your form to use it in the next steps. When I clicked on it and because I have some data in my form, I got this result:
 
-!\[644a6d94c8fc220ee00fa57a\_Screenshot%202023-04-27%20at%2015.40.42.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644a6d94c8fc220ee00fa57a\_Screenshot%202023-04-27%20at%2015.40.42.png)
+![c15d1639-39e0-416f-bff6-fa72f5243603.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/c15d1639-39e0-416f-bff6-fa72f5243603.png)
 
 ### 4\. Check lead score with a conditional step
 
 We'll now classify the received lead to decide on the next step. Our simple criteria is whether the lead has a Gmail address or not. So we'll add a **Branch** step, the first value should come from the form step. Find the attribute that holds the email address as you see in this screen:
 
-!\[644aa36c803a1441765a1288\_Screenshot%202023-04-27%20at%2019.30.19.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644aa36c803a1441765a1288\_Screenshot%202023-04-27%20at%2019.30.19.png)
+![9750cbea-e4cf-4158-bc8b-2ce0b652e829.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/9750cbea-e4cf-4158-bc8b-2ce0b652e829.png)
 
 Condition will be **(Text) Ends with** and the second value will simply be **@gmail.com**. When you set these up, your step will look like this:
 
-!\[644aa3aa2fe72a3401937a3c\_Screenshot%202023-04-27%20at%2019.30.53.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644aa3aa2fe72a3401937a3c\_Screenshot%202023-04-27%20at%2019.30.53.png)
+![8b578845-226d-4ae6-8ee3-463ab28b5613.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/8b578845-226d-4ae6-8ee3-463ab28b5613.png)
 
 ### 5\. Save contact to a MailChimp audience
 
@@ -72,7 +72,7 @@ Click on the **+** under True. Choose MailChimp from the list of pieces to the r
 
 If you'd like to ensure the step is working, click on "Test Step" in the panel below the settings and look for a successful test. When I set up my MailChimp step, the screen looked like this:
 
-!\[644ab04bc28635146ad6ed1f\_Screenshot%202023-04-27%20at%2020.11.51.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644ab04bc28635146ad6ed1f\_Screenshot%202023-04-27%20at%2020.11.51.png)
+![6d8812e4-88de-42f5-b923-e31feaafe206.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/6d8812e4-88de-42f5-b923-e31feaafe206.png)
 
 ### 6\. Save your lead in HubSpot CRM
 
@@ -80,7 +80,7 @@ Now add a new step under **False**, choose the **HubSpot** app and the **Create 
 
 I filled all the settings and tested the step and it worked. My overall screen looked this way:
 
-!\[644ab42dd2029c7c4f3a9550\_Screenshot%202023-04-27%20at%2020.40.37.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644ab42dd2029c7c4f3a9550\_Screenshot%202023-04-27%20at%2020.40.37.png)
+![ef0a60ac-799a-4bc5-bbca-df52abf7c8f2.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/ef0a60ac-799a-4bc5-bbca-df52abf7c8f2.png)
 
 ### 7\. Send an email notification about the lead
 
@@ -88,11 +88,11 @@ When the branches meet, click on the **+** button. This will add a step that run
 
 Add a Gmail step there and select the Send Email action. Fill in the email address you'd like to get your leads notifications to, and construct the email as you like and test the step. I did it like this:
 
-!\[644ab615db4d6527d7642c9b\_Screenshot%202023-04-27%20at%2020.49.50.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644ab615db4d6527d7642c9b\_Screenshot%202023-04-27%20at%2020.49.50.png)
+![09ca14cb-86e1-4075-b2aa-fa6fd6d33670.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/09ca14cb-86e1-4075-b2aa-fa6fd6d33670.png)
 
 When I tested the step, I received this email:
 
-!\[644ab6324a80b748c8f6874d\_Screenshot%202023-04-27%20at%2020.50.45.png\](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/644ab6324a80b748c8f6874d\_Screenshot%202023-04-27%20at%2020.50.45.png)
+![ae2acaa3-22c3-471a-8489-1485343cd80d.png](/blog/leads-from-google-form-to-hubspot-or-mailchimp/images/ae2acaa3-22c3-471a-8489-1485343cd80d.png)
 
 8\. Test and publish your lead flow automation
 ----------------------------------------------

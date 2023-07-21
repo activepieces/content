@@ -38,7 +38,7 @@ Once you're in your Activepieces account, create a new Collection. This is where
 
 Like this 👇
 
-!\[642ac22700b2b66730ff5132\_Screenshot%202023-04-03%20at%2014.09.56.png\](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/642ac22700b2b66730ff5132\_Screenshot%202023-04-03%20at%2014.09.56.png)
+![0238ee5f-739d-4f9c-a48e-a4848cf5f5b9.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/0238ee5f-739d-4f9c-a48e-a4848cf5f5b9.png)
 
 ‍
 
@@ -48,7 +48,7 @@ Click on the trigger step, search for Stripe in the sidebar, choose it and selec
 
 This means that our flow will fire whenever a Stripe payment fails. So far, this is how our screen looks like:
 
-!\[642ac2f428a0c2d2a8214730\_Screenshot%202023-04-03%20at%2014.11.34.png\](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/642ac2f428a0c2d2a8214730\_Screenshot%202023-04-03%20at%2014.11.34.png)
+![bc6c6b04-656b-4876-9211-e49f869bdaa3.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/bc6c6b04-656b-4876-9211-e49f869bdaa3.png)
 
 It's asking us for an API Key. This is like a password that we can generate on Stripe and copy here. I'll show you how.
 
@@ -66,7 +66,7 @@ Click on the **+** right below the Stripe step. You will see the list of action
 
 Now select the "Send Message To A Channel" action from the first dropdown. You'll have some fields to fill in like this:
 
-!\[642af689b92814864dfdadcf\_Screenshot%202023-04-03%20at%2017.53.31.png\](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/642af689b92814864dfdadcf\_Screenshot%202023-04-03%20at%2017.53.31.png)
+![71c9c5aa-b409-4086-8080-8fcef32f222b.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/71c9c5aa-b409-4086-8080-8fcef32f222b.png)
 
 Connect your Slack account by choosing "New Connection", then follow the instructions in the popup to get your account completely connected.
 
@@ -92,7 +92,7 @@ We'll then remove the ALL CAPS words and replace them with dynamic data using t
 
 Your final screen should look about this:
 
-!\[6430b2ab5ac6723604856e72\_Screenshot%202023-04-08%20at%2002.11.56.png\](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/6430b2ab5ac6723604856e72\_Screenshot%202023-04-08%20at%2002.11.56.png)
+![1eb1c638-bcf4-4bf3-b324-4435c764d98b.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/1eb1c638-bcf4-4bf3-b324-4435c764d98b.png)
 
 *   **Note:** The amount returned by Stripe is always in cents (in case of USD), for simplicity, we didn't convert it to whole dollars, so the notification is inaccurate. If you'd like to convert it, you'll have to add a Code step in the middle and do the division.
 
@@ -104,11 +104,11 @@ It's time to see if this really works! The testing functionality generates sampl
 
 We'll see a screen like this if the test was successful. If there are errors, you will also be able to find and fix them from this screen.
 
-!\[6430b467d93147844529217d\_Screenshot%202023-04-08%20at%2002.24.49.png\](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/6430b467d93147844529217d\_Screenshot%202023-04-08%20at%2002.24.49.png)
+![dad97274-096c-4c8c-a5d1-b435cebeae73.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/dad97274-096c-4c8c-a5d1-b435cebeae73.png)
 
 As a result of the test, you'll receive a notification in your Slack channel with sample data, like this:
 
-!\[6430b4ac0926a39823b1553a\_Screenshot%202023-04-08%20at%2002.23.56.png\](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/6430b4ac0926a39823b1553a\_Screenshot%202023-04-08%20at%2002.23.56.png)
+![ff11be33-0d06-462e-8092-4e889cbdd79b.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/ff11be33-0d06-462e-8092-4e889cbdd79b.png)
 
 This means things are working fine. Let's put this automation into work.
 
