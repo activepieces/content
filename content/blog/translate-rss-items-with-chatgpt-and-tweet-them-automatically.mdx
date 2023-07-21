@@ -1,0 +1,94 @@
+---
+title: "Translate RSS items with ChatGPT and Tweet them automatically"
+publishedOn: "Tue May 30 2023 21:59:01 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/thumbnail/translate-rss-items-with-chatgpt-and-tweet-them-automatically.png"
+---
+
+One way to make your Twitter account engaging and keep it active is to Tweet events or news relevant to your followers. This content can be consumed from your favorite RSS feed.
+
+If the content is offered in the RSS in a different language than your audience's, you'll also need to translate it to make it more relevant to them. Fortunately, with ChatGPT you can both put the news in the form of a Tweet (as in summarize it to fit in a Tweet) and translate it to another language.
+
+How can I tweet RSS items in another language automatically?
+------------------------------------------------------------
+
+To achieve this, we'll create an automation that listens to the RSS feed we choose, whenever a new item is added to it, we'll automatically send it to ChatGPT, and ask it to summarize in the form of a Tweet and translate it to another language.
+
+To do this, we'll use an automation tool called [Activepieces](https://cloud.activepieces.com/sign-up). This tool lets us perform these steps automatically without supervising the process for each new item added to the RSS feed.
+
+Steps to automatically translate and Tweet an RSS feed
+------------------------------------------------------
+
+To monitor an RSS feed, summarize new items and translate them into a specific language, then Tweet them, we created a ready-to-use automation template. Follow this guide to see how you can do it within minutes.
+
+###### Prerequisites
+
+Check the following list of tools and accounts you need in hands to build this automation successfully.
+
+*   An [Activepieces](https://cloud.activepieces.com/sign-up) account: We'll build this simple automation on Activepieces.
+*   An RSS feed link: Choose an RSS feed that you'd like to monitor and tweet, get the link of that feed.
+*   An OpenAI account and API Key: Preferably a paid account with a credit card on to avoid API rate limits (sometimes very unexpected).
+*   Your Twitter account and a developer account: You should have a developer account on Twitter (the free one works too).
+
+The following steps will take your through the easiest way to automate an RSS feed into your Twitter account in another language, let's go.
+
+### 1\. Copy the RSS ChatGPT Twitter template.
+
+Start by copying [this template](https://cloud.activepieces.com/templates/ai-translate-tweet-rss) on Activepieces. This is an automation template that starts with an RSS feed step, passes through ChatGPT and ends with a Twitter step.
+
+While copying the template, it will ask you to sign up or login with your Activepieces account, then it will make a copy of the flow in your account. This flow can be customized to your needs, so it's a great basis to start from.
+
+### 2\. Understand this automation between RSS, ChatGPT and Twitter.
+
+Once the automation template is copied as a flow in your account, you'll see the following screen:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/64764e26a17a17e854915a4c_Screenshot%202023-05-30%20at%2020.27.10.png)
+
+The first step in an automation flow is called the trigger. It controls when this flow will run, in this case and as it sounds by its name the flow will run whenever there is a new item in our chosen RSS feed.
+
+When the flow runs, the second step Ask ChatGPT will take the feed's item content and send it to ChatGPT and ask it to put it in the form of a Tweet but also translated into another language (the template translates it to Chinese).
+
+ChatGPT will return the Tweet ready to be posted to our Twitter account, so the third step in the flow will send it as it is to our connected Twitter account. So we don't have to worry about missing a new feed item, translate it and post it manually to Twitter, it all happens automatically by this flow.
+
+### 3\. Complete the RSS, ChatGPT and Twitter steps.
+
+Now that we understand how this automation flow works, we'll visit the steps that need further configuration to make sure they work as we like and with our own accounts. Follow these steps to do so:
+
+##### (1) Pick an RSS feed to Tweet its content
+
+Click on the **New Item in Feed** step (the first step in your flow), check out the RSS Feed URL, if you coincidently wanted to tweet about science news from NY Times, you can keep the URL from the template. Otherwise (and maybe in 95% of the cases), change the feed link to one of your liking.
+
+This is where you should leave the link of the feed you'd like to monitor:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/647654c4e322bce6f3bc0272_Screenshot%202023-05-30%20at%2020.53.28.png)
+
+Click on **Load data** to generate some sample data from that feed. This will assure you that the feed link is working and will provide the next steps in your flow with testing data to use while you're building.
+
+##### (2) Correct Ask ChatGPT settings
+
+The second step is **Ask ChatGPT**. Click on it, and click on **+ New Connection** to add your OpenAI API Key. Follow the instructions in the connection popup. ChatGPT might not give you a successful response if you're on a free OpenAI tier, we recommend that you upgrade to a paid plan then generate the API Key to guarantee successful responses.
+
+While you are on the Ask ChatGPT step, make sure to review the prompt you're sending to ChatGPT. In the template, we ask it to translate the news to Chinese and include emojis. I like it this way but it's very likely that you want a different output from ChatGPT to tweet.
+
+The marked part of the prompt is what you should be modifying to your needs:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6476701b93ef520201352f8e_Screenshot%202023-05-30%20at%2022.50.44.png)
+
+To see what ChatGPT could respond with, click on **Test step**. This will also feed the flow with sample data to use while testing in the builder. If you like the output, you're done with the setup of this step.
+
+##### (3) Configure the Create Tweet step
+
+Click on Create Tweet, then click on **+ New Connection** to connect your Twitter account. It might not be very straightforward to connect your account as you need a Twitter developer account and must make sure you follow the instructions in the connection popup by the details.
+
+Once your Twitter account is connected, you can test the step if you'd like to see if it's Tweeting successfully.
+
+##### (4) Take your RSS, ChatGPT and Twitter automation live
+
+You made it to the end! You're done setting up this automation. All you have to do now is to click on the primary Publish button on the screen, your flow will go live and will be turned on.
+
+My account has automatically Tweeted this in Chinese:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6476715d077db2069c58f69f_Screenshot%202023-05-30%20at%2022.56.34.png)
+
+‍
+

@@ -1,0 +1,94 @@
+---
+title: "How to get notifications about canceled Calendly events on Slack and Email (Tutorial)"
+publishedOn: "Mon May 01 2023 11:55:09 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/thumbnail/how-to-get-notifications-about-canceled-calendly-events-on-slack-and-email-tutorial.png"
+---
+
+You set up your calendar on Calendly, share it with a prospect or a stakeholder, they book a meeting and a day ahead they cancel the meeting without telling you. The last thing you will like is to know about the cancellation just at the meeting's time.
+
+In this tutorial, we'll guide you through setting up Calendly notifications to your preferred channel. For the sake of the tutorial, we'll set up Slack and Email notifications about any canceled meeting from your Calendly account.
+
+Calendly booking notifications
+------------------------------
+
+Calendly offers notifications for some events, like when a meeting is booked or canceled. However, in my experience, I had to set up my own type of notifications to the channels I use more regularly to make sure all my meetings are under control. If you're like me, you need a more flexible solution that can let you (or your team) know what's happening inside Calendly.
+
+###### Prerequisites
+
+To design your own Calendly canceled meetings notifications, specifically to Slack and Email, you'll need the following set of tools:
+
+*   An [Activepieces](https://cloud.activepieces.com/sign-up) account. This is a simple tool to build automations between any stack of tools.
+*   A Calendly account that you'd like to track to send notifications.
+*   A Slack account to receive the notifications on.
+*   A Gmail account to send the email from.
+
+Steps to send notifications about your canceled meetings on Calendly to Slack and Email
+---------------------------------------------------------------------------------------
+
+Let's start with this step by step guide to set up our automation between Calendly, Slack and Email. Follow these steps:
+
+### 1\. Create an Activepieces account
+
+If you don't have an [Activepieces](https://cloud.activepieces.com/sign-up) account, create one. Otherwise, just login to your existing account. We'll build our automation on Activepieces so this is an essential step in our guide.
+
+### 2\. Create a new automation
+
+If you are starting fresh with Activepieces, click on **Start building** to create your first automation flow. If you have existing flows in your account, you'll have to click on the **New flow** button. Let's give our flow a name, I like to use emojis in my flows' names to spice them up in my dashboard. I called my flow "Calendly Tracking 📅🔥".
+
+This is a screenshot of my fresh flow:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644f8b5c6f2c5d6117313738_Screenshot%202023-05-01%20at%2012.35.27.png)
+
+### 3\. Set up the Calendly Event Canceled trigger
+
+The first step of any automation flow is a trigger. It answers the "when to run the flow" question. In our case, we'll design a flow that runs every time a meeting is canceled on Calendly. Click **Select Trigger**, the right sidebar will slide out. Find the Calendly app and choose the **Event Canceled** trigger.
+
+Click on **\+ New Connection** to connect your Calendly account, follow the instructions in the connection popup and save your connection. Now choose User under the **Scope** field.
+
+To be able to continue with the next steps of our flow, we'll need to test this trigger. Click on **Test trigger** in the bottom area of the sidebar. It will ask you to go and cancel an event from Calendly to test the trigger. Go to your Calendly, book a meeting and cancel it in order to generate sample data to use in the next steps.
+
+I did just that and I got these results:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644f9742f17ebc66bdc34ddb_Screenshot%202023-05-01%20at%2013.40.43.png)
+
+### 4\. Add a step to send a Slack message
+
+Now click on the **+** below the trigger step. Find the **Slack** app from the right sidebar and choose the **Send Message To A Channel** action. Click on **+ New Connection** to connect your Slack account if you don't have an existing connection. Once your account is connected, you will see your channels under the **Channel** field.
+
+Choose the channel you'd like to receive the canceled meeting notification to. In the next **Message** field, we'll construct the message we'd like to see on Slack for any canceled event.
+
+This is the template I used for the message:
+
+‍**Heads up: NAME﻿ (EMAIL) canceled their meeting with you. A reschedule link was sent to them.**
+
+Anything all caps was replaced with an actual variable coming from the Calendly step. For example, this is how I set the email variable:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644f99f739046622dc9663ed_Screenshot%202023-05-01%20at%2013.50.05.png)
+
+You can click on Test step to check if it's working, I clicked it and I received the message on Slack:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644f9a15c970cee9059fb776_Screenshot%202023-05-01%20at%2013.51.14.png)
+
+After testing, this is how my screen looked for the Slack step:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644f9a49c970ce1a8a9fd34a_Screenshot%202023-05-01%20at%2013.53.49.png)
+
+### 5\. Add a step to send an email notification about the canceled meeting
+
+Like how we did the Slack notification, we'll do it for the email notification. Click on the **+** again, choose the **Gmail** app and the **Send Email** action.
+
+Use the + New Connection button to connect your email, then construct the **Subject** and **Body** of the notification email. We learnt how to construct an input using data from previous steps in the previous step of this guide.
+
+My settings looked like this:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644f9b223c8180e41f17e52a_Screenshot%202023-05-01%20at%2013.56.30.png)
+
+### 6\. Test your Calendly, Slack and Email automation
+
+Your flow is ready for an end to end test. Click on **Test flow** in the corner and check the result of each of your flow's steps.
+
+### 7\. Launch your Calendly notifications
+
+Congrats 🎉 Your flow is tested and ready to go live. Click on the main Publish button. If it was published successfully, you will see an activated toggle next to the button. Now, you'll start receiving notifications about real events that are canceled from your Calendly.
+

@@ -1,0 +1,94 @@
+---
+title: "Get Slack Notifications About New GitHub Stars (Step by Step)"
+publishedOn: "Sat Apr 22 2023 15:42:39 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/thumbnail/get-slack-notifications-about-new-github-stars-step-by-step.png"
+---
+
+GitHub allows users to give stars on repositories they find helpful or as a way to bookmark such repositories in order to get updates about future modifications or upgrades on these repositories.
+
+The number of stars a repository receives is also used as a metric to determine the popularity of the repository among developers or GitHub users as a whole.
+
+We will set up an automation in this article that sends notification messages to our Slack channel whenever we get a new star on our GitHub repository.
+
+###### **Prerequisites:**
+
+*   An **Activepieces** account for the automation. 
+*   A **GitHub account** that holds the repository.
+*   A **Repository** in which the new stars notification will be gotten.
+*   A **Slack channel** to send these notification messages to.
+
+At the end of this tutorial guide, you will be able to get notification messages for every new GitHub star your repository (of choice) receives on your Slack channel through automation with ease.
+
+‍
+
+**Steps to get GitHub stars in your Slack channel**
+---------------------------------------------------
+
+Here, you will be taken through a series of easy to follow steps to automate GitHub with Slack. We'll simply use Activepieces (a no-code business automation tool) to listen to GitHub star notification and then send it to our Slack channel. Let’s get started!
+
+‍
+
+### **1\. Create an automation**
+
+Go to [Activepieces](https://cloud.activepieces.com/sign-up) and get an account if you have not. This automation will be built there.‍
+
+Click on the "**Start building**" button if this is your first automation or click on the "**New Collection**" button at the top right corner if you already have some existing automations in the account.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/642d818f2ad6a45421b3a715_-86CsOBVgnobNZj92RSDSbR5P_E3-rwgLiNAmWyUtIi3MS1u9agZi3kTWMBD4VJH6XXxJPAWyiPToB6cipI7sBN53xL6h8IazY9xqjCqaEc2xE39OkwTo7v30oMnfR0cpluV3oxFyNsHFZEXga8LkfI.png)
+
+‍
+
+### **2\. Set up the GitHub New Star trigger**
+
+Give the collection a name that you like, click on Select Trigger and then click on the search field, search and pick **GitHub** as the trigger, then choose **New Star** in the Select a Trigger field. 
+
+Click on the **New Connection** to add your GitHub account. Adding your GitHub account will enable Activepieces gain necessary access to the repository with your consent in order to continue with the process.
+
+Click on Repository and select the repository of choice. This process ensures the selected repository will be connected to the automation process so that you will be notified on Slack for every new star a GitHub user gives the repository.
+
+Your screen should look like this after the completion of this process.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/642d81909cdebe54492e9059_bFs1eLa7G7vYl7VXfAYgUTD-y5WAZ-jE2IRFH-5ECY35x9IStE2ywx4M9CoyEFa79ojQfqycdnAZIF--b97HJiu4-zh8dHQdL1eY8XrMqzdvttzfMokEZETclYu_ajZRdryx3V31zkY74zuC5opW7V0.png)
+
+‍
+
+### **3\. Send the notification message to Slack**
+
+Click on the **+** button below the trigger step. This creates a new step to the flow that enables you to add more flow to the automation as required.
+
+Click on the Select step search field at the right corner, then search and select **Slack** in the step, then select “**Send Message To A Channel**” in the Action field.
+
+Click on the **New Connection** box and connect to your Slack account and save it. Then select your preferred **Slack channel** in the Channel field.
+
+Now, Type in “**Hooray! You just received a new star from Person.**” in the message box. Then go to the Data to Insert section, click on **New Star**, scroll down and click on **sender** then select **login**. Replace "Person" in the text we wrote with this variable.  
+
+Your screen should like this after this process.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/642d81904b521e5c1409d53c_g47lypWz2P-GufvtqH6O0u_-Q3ObT5hPnR4TopGHlCRMxYAmF2RvssOIAtF1CeYt9lAK5LdPbHpr7CXNZR1is0-Op37bDDFGLeQX2VtIXL-5VSHc9vXFXy67nCbInxOdwtXmNZ58921gM0gwhS2MdXo.png)
+
+‍
+
+### **4\. Test and Publish the flow**
+
+Run a quick test on the flow to make sure things are working fine. Click on **Test flow** to run the test then click on **Publish** in the right top corner. You will start receiving a Slack notification for every new GitHub star your repository gets from GitHub users.
+
+‍
+
+**Ideas for GitHub Automations**
+--------------------------------
+
+You can create [Activepieces](https://cloud.activepieces.com/sign-up) automations with GitHub in various ways, GitHub stars and Slack were used as an example in this tutorial, you can decide to send telegram notifications for every new GitHub pull request and use it instead of the example we used.
+
+You can as well decide to send an email notification for every new GitHub issue raised.
+
+Other top ideas to automate your GitHub account includes:
+
+*   Send an email notification for each new GitHub star.
+*   Send Telegram notifications for each new GitHub issue.
+*   Insert a Google Sheet row for new GitHub pull request.
+*   Announce new GitHub stars on Discord.
+*   Send Slack messages about new GitHub pull requests.
+
+‍
+

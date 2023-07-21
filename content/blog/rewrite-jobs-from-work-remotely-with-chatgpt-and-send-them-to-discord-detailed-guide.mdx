@@ -1,0 +1,82 @@
+---
+title: "Rewrite jobs from We Work Remotely with ChatGPT and send them to Discord (Detailed Guide)"
+publishedOn: "Mon May 01 2023 13:12:26 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/thumbnail/rewrite-jobs-from-work-remotely-with-chatgpt-and-send-them-to-discord-detailed-guide.png"
+---
+
+If you run a Discord community and you'd like to share job opportunities, it's a good idea to listen on an RSS feed from a job website like We Work Remotely, rewrite these jobs using ChatGPT to brief them down to simple bullet points, then post them to your Discord channel.
+
+Build automations with RSS feeds
+--------------------------------
+
+RSS feeds are technical representations that reflect news updates in XML format. Websites offer these feeds to allow other technical solutions to stay in sync with them. We Work Remotely offers an RSS feed at this link: https://weworkremotely.com/remote-jobs.rss
+
+We'll build an automation that checks this link regularly to see if there are any updates then run the flow to hit OpenAI's ChatGPT and Discord.
+
+Steps to send job opportunities to a Discord server from an RSS feed
+--------------------------------------------------------------------
+
+We'll take you through the process to build this automation step by step, by the end of this tutorial, you'll be able to read an RSS feed's new updates, send them to ChatGPT, and get the results in your Discord channel.
+
+###### Prerequisites
+
+To achieve this automation with RSS and Discord, you need these tools in hands:
+
+*   An [Activepieces](https://cloud.activepieces.com/sign-up) account. This is where we'll build this automation.
+*   The RSS link of the service you'd like to track. In our case, it's the RSS link of We Work Remotely.
+*   An OpenAI account with a credit card on to use to rewrite the job post in simple points.
+*   A Discord server and channel that you'd like to post the content to.
+
+Here are the steps to achieve this:
+
+### 1\. Create an Activepieces account
+
+If you don't have an account on [Activepieces](https://cloud.activepieces.com/sign-up), create one now. This is the tool that we'll use to build the described automation and it won't be possible to continue the tutorial without it.
+
+### 2\. Create a new automation flow
+
+In your Activepieces account, click on **Start building** if your account is still fresh new, or click on **New flow** to create a new automation next to your existing ones. Give your automation a name, I'll call this one "Job alerts in Discord 👪".
+
+### 3\. Set up the RSS trigger step
+
+When we build an automation, it starts with a trigger steps. This step defines when and how often the automation will run. In our case, it's simple, we'd like the automation run whenever there is any new job opportunities in the RSS feed we're tracking.
+
+Click on Select Trigger, the sidebar will slide out, find the **RSS Feed** app and select it. Then select the **New Item In Feed** trigger. Now, copy the RSS feed link in the **RSS Feed URL** field. Our link is: _https://weworkremotely.com/remote-jobs.rss_ but you can use any other feed that offers job news.
+
+This is how my set up looks so far:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644fb5e56318cbe653e5de3f_Screenshot%202023-05-01%20at%2015.51.31.png)
+
+You see data under **Generate Sample Data** because I clicked on **Load Data**. You can do that too to generate sample data that can be used in the next steps of the automation flow.
+
+### 4\. Add the ChatGPT step to brief the job
+
+Now click on the **+** below the trigger step, find the OpenAI app and select the **Ask ChatGPT** action. Click on **+ New Connection** and follow the instructions to connect your OpenAI account.
+
+You'll now construct the question to ChatGPT to rewrite the job post the way you want it to look to your community. You will be able to use data from the RSS feed in the Question field. For example, this is how you add the **Title** of the RSS item to the question:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644fb7ae7678b8c7320db31f_Screenshot%202023-05-01%20at%2015.58.15.png)
+
+I asked ChatGPT to rewrite the job post in a casual community way to brief the requirements and the duties of the job. This is how my **Question** looked:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644fb7d02613f826a6378f14_Screenshot%202023-05-01%20at%2015.57.43.png)
+
+I tested the step by clicking on **Test step** to see how ChatGPT would respond to it. It looks good to me!
+
+### 5\. Add a step to send the rewritten RSS job to the Discord community
+
+Click on the + below the OpenAI step, find the Discord app and select the **Send Message Webhook** action. Go to your Discord, click on the **settings icon** next to your channel's name, then click on **Integrations** and create a New Webhook. Copy the Webhook URL and paste it into the **Webhook URL** field on Activepieces.
+
+Now construct the message using the output of the OpenAI step and the link of the job from the RSS trigger step. This is what I wrote in the **Message** field:
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644fb9d627c5511f5c3c9d37_Screenshot%202023-05-01%20at%2016.08.18.png)
+
+### 6\. Test your RSS jobs Discord notifier
+
+You can now test your flow end to end. Click on the **Test flow** button. This will show you whether the flow works or not and will send you a message to the channel you chose by copying the Webhook URL.
+
+### 7\. Launch your RSS automation
+
+You are ready! Click on the main Publish button now and your flow will get published. This means your community will start receiving friendly notifications about new job posts in the RSS feed of your choice, the We Work Remotely feed in our example.
+

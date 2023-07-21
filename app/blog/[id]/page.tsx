@@ -7,15 +7,14 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { NavigationProps } from "../../../components/navigationProps";
 import Link from "next/link";
-
-
+import { formatDate } from "@/utils/date-helper";
 
 export async function generateMetadata(
   { params }: NavigationProps,
 ): Promise<Metadata> {
   // read route params
   const blogName = params.id
-  const docsDirectory = join(process.cwd(), "content");
+  const docsDirectory = join(process.cwd(), "content", "blog");
   // fetch data
   const fullPath = join(docsDirectory, blogName + '.mdx');
   const fileContents = await fs.promises.readFile(fullPath, "utf8");
@@ -23,33 +22,36 @@ export async function generateMetadata(
 
   return {
     title: "Activepieces - " + data.title,
-    description: data.description,
-    authors: { url: "www.activepieces.com", name: data.author },
+    authors: { url: `www.activepieces.com/blog/${blogName}`, name: data.author },
     icons: "/favicon.ico",
   }
 }
 
-export default async function BlogPost({ params }: NavigationProps,) {
-  const blogName = params.id
-  const docsDirectory = join(process.cwd(), "content");
+
+export default async function BlogPost({ params }: NavigationProps) {
+  const blogName = params.id;
+  const docsDirectory = join(process.cwd(), "content", "blog");
   // fetch data
   const fullPath = join(docsDirectory, blogName + '.mdx');
   const fileContents = await fs.promises.readFile(fullPath, "utf8");
   const { data, content }: GrayMatterFile<string> = matter(fileContents);
 
+  // Format updatedAt to the desired format
+  const formattedPublishOn = formatDate(data.publishedOn);
+
   return (
-    <main className="px-3 py-4 md:px-0  bg-white">
-      <article className="container  mx-auto prose my-8  ">
-      <nav className="text-lg my-4">
-        <Link href="/blog" className="no-underline">
-          {/* Apply your custom styles for the link */}
-          <span className="text-primary no-underline hover:underline cursor-pointer">Blog</span>
-        </Link>{" "}
-        / <span className="text-black">{data.title}</span>
+    <main className="bg-white w-full">
+      <article className="container  px-3 py-4 md:px-0  mx-auto prose my-8  ">
+        <nav className="text-lg my-4">
+          <Link href="/blog" className="no-underline">
+            {/* Apply your custom styles for the link */}
+            <span className="text-primary no-underline hover:underline cursor-pointer">Blog</span>
+          </Link>{" "}
+          / <span className="text-black">{data.title}</span>
         </nav>
         <header className="mb-8 mx-auto text-left">
           <h1 className="text-4xl font-bold">{data.title}</h1>
-          <span>{data.author} | Published on {data.updatedAt}</span>
+          <span>{data.author} | Published on {formattedPublishOn}</span>
           <div>
             <Image className="mx-auto"
               src={data.thumbnail}

@@ -1,0 +1,107 @@
+---
+title: "How to send Bitcoin prices or other crypto to Telegram [Detailed Guide]"
+publishedOn: "Sat Apr 15 2023 02:18:00 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/thumbnail/how-to-send-bitcoin-prices-or-other-cryptocurrencies-to-telegram-a-detailed-guide.png"
+---
+
+With the constant change in the prices of cryptocurrency due to high volatility, it is imperative therefore to keep track of the changes in prices of our favorite cryptocurrency pairs in order to stay informed and make appropriate decisions as deemed necessary.
+
+Trading leverage, investment opportunities, research and informative purposes are few of the reasons people keep track of the changes in the prices of various crypto pairs.
+
+This detailed guide will help you track the prices of your favorite crypto pairs right in Telegram. For example, you can track the price change of Bitcoin in Ethereum or Dogecoin in USDT.
+
+‍
+
+###### **Prerequisites:**
+
+*   An Activepieces account for the automation. 
+*   A Telegram account.
+*   A Telegram bot.
+
+We will set up an automation in this article that sends crypto prices notification messages to our Telegram every one hour in order to keep us updated with the latest prices. For the sake of this guide, we'll get the price of BTC/USDT.
+
+‍
+
+**Detailed steps to send crypto prices to Telegram**
+----------------------------------------------------
+
+### **1\. Create an Activepieces account**
+
+Go to [Activepieces](https://cloud.activepieces.com/sign-up) and get an account if you have not. This automation process will be built there.‍
+
+Click on the "Start building" button if this is your first automation or click on the "New Collection" button at the top right corner if you already have some existing automations in your account.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/64372eb4f3c7a86e2f485819_NNWC0T2JO_G-Okk7GxaW6aGNSih5UpYBULHzGMtuJVv4o45_OeZpLv6ak392Tc_4EC-5Pu48SOw6Y6Gp-zpglfJewBeSDBpuf2eyP7Mf6gk9ivQG54oP1hFQjI5YUnb1ZyYd31LYFzfadakG9S8PJoI.png)
+
+‍
+
+### **2\. Set up the Schedule Trigger**
+
+We will set up a schedule trigger since we will be getting the crypto prices updated every hour. This simply means once it’s an hour past, then it is time to send the current crypto price to our Telegram.
+
+Firstly, rename the collection to suit your preference, but for the purpose of this article, let’s name it “**BTCUSDT Price**”, as this is the crypto pair which price updates will be sent to Telegram.
+
+Then, click on the **Select Trigger** box and search and select “Schedule”, this simply triggers the flow with a fixed schedule, in this case, one hour.
+
+Then click on the **Trigger** field to select a trigger and select **Every Hour**, this triggers the current flow every hour.
+
+If you would like to ensure the flow also runs on the weekends too, toggle on the **Run on weekends, (Sat, Sun)** toggler**.** We are going to toggle it on for the purpose of this tutorial guide.
+
+‍
+
+Your screen should look like this after this process.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/64372eb4dcbf7284e6ef6fd9_zBukqcQ7u4BJMy7BsX3Fe9HOJRZeMFvzgXDpJ0Z1YZG5nVbQZqvkPIfUvJJYxOVlyhiXIcmJhz_-9bvT3j4i7w0PdiDUYpi-RwTuFRRSh4BiZMd4vTN4Lg8DFE1RELtGZdbV34VwWEJ-SacNOZ-fdDM.png)
+
+‍
+
+### **3\. Add the Binance step**
+
+We need to add to the flow the source where we will be generating this information on crypto prices onto our Telegram and for the purpose of this tutorial guide, we will be making use of Binance as our source of information for our crypto price.
+
+Click on the + sign just below the trigger step, click on the **Select Step** field, search and select “Binance”. Then click on the **Action** field and select **Fetch Pair Price**, this simply gets the current price of our crypto pair in real time.
+
+Click on the **First Coin Symbol** and input “BTC”, close the **Data To In Insert** field and click on the **Second Coin Symbol** and input “USDT” and also close the **Data To In Insert** field.
+
+At the end of these steps, the flow should look like this.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/64372eb471395915d5e8dfb9_0Sj6vKFkdlMJ6EwQQYxEMAy8ueCFTUWKUm3t76WfuInGg0NLlw7QdeoTdJOCTfNFcyJnPrvktAse03IS0DPbIbDkSaNnz_i7fdWNFQLmX7y3qgH8NDJousg-zrkZyQZk0WkLA5EeNUS2MpiC8CP72E0.png)
+
+‍
+
+### **4\. Integrate Telegram to the flow**
+
+Upon successful completion of the previous steps, now we have to add the platform where the generated crypto pair price will be sent to. And for the purpose of this tutorial, this crypto price updates will be sent to our Telegram.
+
+To continue, click on the + sign just below the Binance step, click on the **Select Step** field, search “Telegram” and select **Telegram bot**. Then click on the **Action** field and select **Send Text Message**.
+
+Then click on the **Bot Token** field and select **Telegram-bot**, input or copy and paste the Telegram Bot Token and click on save or click on the link provided in that field to refer to the [Telegram piece documentation](https://activepieces.com/docs/pieces/apps/telegram) for more information on how to obtain the Telegram bot token.
+
+Click on the **Chat id** field and input the unique identifier (Chat id) in order to send these crypto prices messages to your Telegram. After this, click on the **\+ Add Input** opposite **Optional Inputs** text and select **Message**.
+
+Click on the **Message** field and type in “Do you know BTC is currently worth this USDT? Now, you do!”,  then click on **Binance** in the **Data to Insert** section, and replace “this” with your selection.
+
+Once done, the current state of the flow should look like this.
+
+![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/64372eb47139593552e8dfa5_0xTnzTmkYrZsd0VaQVE5sMfe7aNxnHPytLr5qUQH_maox-rqSQdN2w7Grz4-K6a0Rm2a1w38ZOwMxTdbItID3-ZMdJL74P73T-wxWM9Yfguba7eRUvX8Ay2m287UaJeUr_dvTU-rfHxTB7zTNjY8Kls.png)
+
+‍
+
+### **5\. Test the Flow and Publish**
+
+Run a quick test on the flow to make sure things are working as appropriate without error. Click on Test flow to run the test then click on Publish at the top right corner of the page. You will start receiving price update notification messages on **BTC/USDT** crypto pair price every hour from Binance on your Telegram.
+
+‍
+
+**Sending crypto prices to other channels**
+-------------------------------------------
+
+Telegram is not the only channel you can receive the prices on, you can also:
+
+*   Send crypto pair prices to your team's Slack channel.
+*   Notify a Discord server about new crypto price.
+*   Send an email notification or an SMS about changes in crypto prices.
+
+We believe that there are no limits to what can be automated, and we built [Activepieces](https://www.activepieces.com/sign-up) to express this vision.
+
