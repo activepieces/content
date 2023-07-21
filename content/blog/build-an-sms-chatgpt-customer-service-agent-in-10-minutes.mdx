@@ -2,7 +2,7 @@
 title: "Build an SMS ChatGPT customer service agent in 10 minutes"
 publishedOn: "Sun May 28 2023 19:39:05 GMT+0000 (Coordinated Universal Time)"
 author: "Ashraf Samhouri"
-thumbnail: "/blog/thumbnail/build-an-sms-chatgpt-customer-service-agent-in-10-minutes.png"
+thumbnail: "/blog/build-an-sms-chatgpt-customer-service-agent-in-10-minutes/thumbnail.png"
 ---
 
 If you fell in love with ChatGPT like the hundreds of millions of users who use it, you might want to offer your own version of ChatGPT to your customers.
@@ -42,7 +42,7 @@ Use [this template](https://cloud.activepieces.com/templates/ai-sms-customer-ser
 
 When you copy the template, you will see something like this:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/64732cb2797bf8730cb039a9_Screenshot%202023-05-28%20at%2011.20.27.png)
+!\[64732cb2797bf8730cb039a9\_Screenshot%202023-05-28%20at%2011.20.27.png\](/blog/build-an-sms-chatgpt-customer-service-agent-in-10-minutes/images/64732cb2797bf8730cb039a9\_Screenshot%202023-05-28%20at%2011.20.27.png)
 
 The flow starts with a **Webhook Trigger**. This means that the flow has a unique link, once requested by another service, the flow will run. We will add this link later to our Twilio account to get notified of new SMS messages to our number. So the first step is the one responsible for receiving new SMS texts from our customers.
 
@@ -62,7 +62,7 @@ Click on the Webhook Trigger step and find your unique Webhook URL in the right 
 
 Click on that number and scroll down to the Messaging Configuration section, under the "A message comes in" title, choose Webhook and paste the Webhook URL you copied earlier into the text field like in this screenshot:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6473419ba7d5677f6faf519a_Screenshot%202023-05-28%20at%2012.56.17.png)
+!\[6473419ba7d5677f6faf519a\_Screenshot%202023-05-28%20at%2012.56.17.png\](/blog/build-an-sms-chatgpt-customer-service-agent-in-10-minutes/images/6473419ba7d5677f6faf519a\_Screenshot%202023-05-28%20at%2012.56.17.png)
 
 Save your configuration and go back to your flow on Activepieces. You can test the trigger step in the bottom part of the sidebar while selecting the Webhook step, click on Send Data. If you initiate the testing, send an SMS over to your Twilio number and you'll see the sample data generated in the same box.
 
@@ -72,7 +72,7 @@ Click on the Ask ChatGPT step in your flow. In the sidebar, click on + New Conn
 
 Now go to the Question field, you'll see a preset prompt that asks ChatGPT to act like a customer service agent. Keep it but edit the section of it that says Business Details, this one:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6473864e89426b47b537ee89_Screenshot%202023-05-28%20at%2017.40.42.png)
+!\[6473864e89426b47b537ee89\_Screenshot%202023-05-28%20at%2017.40.42.png\](/blog/build-an-sms-chatgpt-customer-service-agent-in-10-minutes/images/6473864e89426b47b537ee89\_Screenshot%202023-05-28%20at%2017.40.42.png)
 
 Provide as much information as you'd like about your business to allow ChatGPT to make better responses on behalf of you.
 
@@ -86,5 +86,5 @@ Once your account is connected, you'll see the available numbers from your accou
 
 Now click on Publish to release your first version of the SMS ChatGPT customer service agent. You can now text it from your number, this is an example chat with my agent of StoreX:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6473884eff1a5e892745c1f4_WhatsApp%20Image%202023-05-28%20at%205.58.24%20PM.jpeg)
+!\[6473884eff1a5e892745c1f4\_WhatsApp%20Image%202023-05-28%20at%205.58.24%20PM.jpeg\](/blog/build-an-sms-chatgpt-customer-service-agent-in-10-minutes/images/6473884eff1a5e892745c1f4\_WhatsApp%20Image%202023-05-28%20at%205.58.24%20PM.jpeg)
 

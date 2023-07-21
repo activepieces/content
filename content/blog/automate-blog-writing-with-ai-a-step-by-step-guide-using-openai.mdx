@@ -2,7 +2,7 @@
 title: "Automate Blog Writing with AI: A Step by Step Guide using OpenAI"
 publishedOn: "Mon May 22 2023 19:47:38 GMT+0000 (Coordinated Universal Time)"
 author: "Ashraf Samhouri"
-thumbnail: "/blog/thumbnail/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai.png"
+thumbnail: "/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/thumbnail.png"
 ---
 
 ChatGPT is awesome, you can ask it to write a blog post for you, make some modifications and publish it. But if you have hundreds of ideas that you'd like to convert into blog posts, you will need something that runs in the background while you're on the beach (just kidding, you'll be buried under lots of other work 😳).
@@ -45,7 +45,7 @@ Create an account on [Activepieces](https://cloud.activepieces.com/sign-up) to b
 
 In your Activepieces account, create a new collection. This will land you on an empty collection with 1 flow. Let's call it "AI Blog Writer". Like this:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404af4e4dac7936586824c0_Screenshot%202023-03-05%20at%2018.03.25.png)
+!\[6404af4e4dac7936586824c0\_Screenshot%202023-03-05%20at%2018.03.25.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404af4e4dac7936586824c0\_Screenshot%202023-03-05%20at%2018.03.25.png)
 
 ‍
 
@@ -55,7 +55,7 @@ We'll go to [Google Sheets](https://docs.google.com/spreadsheets/) and create a 
 
 For this guide, I'll set up the sheet to have the columns: **Idea**, and **Guidelines**, and I'll call the sheet "**Blog Ideas Database**". Here is a screenshot of my empty database:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/63ff6e6e3b54b5da21fe1e44_Screenshot%202023-03-01%20at%2018.25.17.png)
+!\[63ff6e6e3b54b5da21fe1e44\_Screenshot%202023-03-01%20at%2018.25.17.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/63ff6e6e3b54b5da21fe1e44\_Screenshot%202023-03-01%20at%2018.25.17.png)
 
 ‍
 
@@ -65,7 +65,7 @@ Now, select New Row as the trigger, create a **New Connection** and connect your
 
 This is how my trigger setup looked like:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404b0306ef05e731e7f87ff_Screenshot%202023-03-05%20at%2018.05.48.png)
+!\[6404b0306ef05e731e7f87ff\_Screenshot%202023-03-05%20at%2018.05.48.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404b0306ef05e731e7f87ff\_Screenshot%202023-03-05%20at%2018.05.48.png)
 
 ‍
 
@@ -81,7 +81,7 @@ Add a **New Connection**, it will ask you for your OpenAI **API Key**.
 
 Go to your OpenAI account, then to **View API Keys** page by clicking on your profile picture in the corner.
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/63ff7a55d3508593e8564621_Screenshot%202023-03-01%20at%2019.01.31.png)
+!\[63ff7a55d3508593e8564621\_Screenshot%202023-03-01%20at%2019.01.31.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/63ff7a55d3508593e8564621\_Screenshot%202023-03-01%20at%2019.01.31.png)
 
 Create a new API Key, copy and keep it in a safe place for later, and copy it into the New Connection back on Activepieces.
 
@@ -97,11 +97,11 @@ This prompt is still static, there are no ideas or guidelines that were taken fr
 
 Here is a screenshot of how I selected this value in the dropdown:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404b42c47e0bdc4965443d3_Screenshot%202023-03-05%20at%2018.23.28.png)
+!\[6404b42c47e0bdc4965443d3\_Screenshot%202023-03-05%20at%2018.23.28.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404b42c47e0bdc4965443d3\_Screenshot%202023-03-05%20at%2018.23.28.png)
 
 And here is a complete view of this OpenAI step settings:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404b4491957902834db6736_Screenshot%202023-03-05%20at%2018.24.46.png)
+!\[6404b4491957902834db6736\_Screenshot%202023-03-05%20at%2018.24.46.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404b4491957902834db6736\_Screenshot%202023-03-05%20at%2018.24.46.png)
 
 ‍
 
@@ -115,7 +115,7 @@ Now the prompt will be:
 
 We'll replace **TITLE** with output of the previous step and **GUIDELINES** with the value of the second column from the sheet trigger. Here is how it should look like:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404b5af715cb7ebf8b354fc_Screenshot%202023-03-05%20at%2018.30.40.png)
+!\[6404b5af715cb7ebf8b354fc\_Screenshot%202023-03-05%20at%2018.30.40.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404b5af715cb7ebf8b354fc\_Screenshot%202023-03-05%20at%2018.30.40.png)
 
 ‍
 
@@ -133,7 +133,7 @@ In the Website URL field, we'll write down the URL of our WordPress site. Unde
 
 This is my WordPress step setup:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404ba1b1814ca410d660105_Screenshot%202023-03-05%20at%2018.49.26.png)
+!\[6404ba1b1814ca410d660105\_Screenshot%202023-03-05%20at%2018.49.26.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404ba1b1814ca410d660105\_Screenshot%202023-03-05%20at%2018.49.26.png)
 
 ‍
 
@@ -157,7 +157,7 @@ Replace **BLOG\_URL** with the url of your WordPress site.
 
 This is how the settings of Gmail look at my end:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404dd3906123eb38d8b5d88_Screenshot%202023-03-05%20at%2021.18.28.png)
+!\[6404dd3906123eb38d8b5d88\_Screenshot%202023-03-05%20at%2021.18.28.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404dd3906123eb38d8b5d88\_Screenshot%202023-03-05%20at%2021.18.28.png)
 
 ‍
 
@@ -173,21 +173,21 @@ Since this is an AI based automation, if things go wrong in the future, you don
 
 It's time for some fun! We'll go to our database, and add any number of blog ideas. I'll add 3 as follows:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404df2eedf61bbfd1b1447a_Screenshot%202023-03-05%20at%2021.25.17.png)
+!\[6404df2eedf61bbfd1b1447a\_Screenshot%202023-03-05%20at%2021.25.17.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404df2eedf61bbfd1b1447a\_Screenshot%202023-03-05%20at%2021.25.17.png)
 
 The Google Sheets trigger runs every 5 minutes, so it can take a couple of minutes until our flow runs for these 3 rows. You can check their status under the **Runs** tab in your main Activepieces dashboard.
 
 These are my runs for these 3 content ideas:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404df8cedf61bb4cab1bf12_Screenshot%202023-03-05%20at%2021.26.52.png)
+!\[6404df8cedf61bb4cab1bf12\_Screenshot%202023-03-05%20at%2021.26.52.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404df8cedf61bb4cab1bf12\_Screenshot%202023-03-05%20at%2021.26.52.png)
 
 It went well! I'll go check my email and see if I received links to review the 3 new blog posts.
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404dfae4476ae2887754ab7_Screenshot%202023-03-05%20at%2021.26.19.png)
+!\[6404dfae4476ae2887754ab7\_Screenshot%202023-03-05%20at%2021.26.19.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404dfae4476ae2887754ab7\_Screenshot%202023-03-05%20at%2021.26.19.png)
 
 Woohoo! I have these in my inbox. I'll go to one of these emails and click on the received link. Here is the middle one:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/6404e00906123eb6138f854b_Screenshot%202023-03-05%20at%2021.31.21.png)
+!\[6404e00906123eb6138f854b\_Screenshot%202023-03-05%20at%2021.31.21.png\](/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai/images/6404e00906123eb6138f854b\_Screenshot%202023-03-05%20at%2021.31.21.png)
 
 I can now make any changes to the article and give it some styling, and finally publish it! 🥳
 

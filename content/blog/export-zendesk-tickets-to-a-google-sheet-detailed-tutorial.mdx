@@ -2,7 +2,7 @@
 title: "Export Zendesk tickets to a Google Sheet (detailed tutorial)"
 publishedOn: "Sat Apr 29 2023 12:59:06 GMT+0000 (Coordinated Universal Time)"
 author: "Ashraf Samhouri"
-thumbnail: "/blog/thumbnail/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial.png"
+thumbnail: "/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/thumbnail.png"
 ---
 
 You receive support tickets in Zendesk and that's great. But if you have custom operations you'd like to do in an external medium, or some manual analytics that work better in a Google Sheet, you'll need a way to export these tickets from Zendesk to the Google Sheet.
@@ -33,7 +33,7 @@ We'll build this automation on [Activepieces](https://cloud.activepieces.com/sig
 
 Inside your Activepieces account, click on **New flow** or **Start building**, depending on whether this is your first automation flow in the account or not. You can give this flow a name like "Zendesk tickets to Google Sheet", this is what I did:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644d0fd418c79944ccde7961_Screenshot%202023-04-29%20at%2015.38.30.png)
+!\[644d0fd418c79944ccde7961\_Screenshot%202023-04-29%20at%2015.38.30.png\](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/644d0fd418c79944ccde7961\_Screenshot%202023-04-29%20at%2015.38.30.png)
 
 ### 3\. Set up the Zendesk New Ticket trigger
 
@@ -43,7 +43,7 @@ Click **+ New Connection** to connect your Zendesk account. Follow the instruct
 
 Click Load Data to get some sample tickets data from your Zendesk account to use them in the next steps of the automation. This is how my settings looked like:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644d10ea069b0b520c71a50b_Screenshot%202023-04-29%20at%2015.41.57.png)
+!\[644d10ea069b0b520c71a50b\_Screenshot%202023-04-29%20at%2015.41.57.png\](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/644d10ea069b0b520c71a50b\_Screenshot%202023-04-29%20at%2015.41.57.png)
 
 ### 4\. Add a step to insert the ticket in a Google Sheet
 
@@ -57,15 +57,15 @@ For each of these values, we'll find the corresponding variable from the previou
 
 For example, the first one is the subject. So we'll use the dropdown to find which variable contains the subject from the Zendesk trigger. I found it here:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644d1269b401f925e16c6c1e_Screenshot%202023-04-29%20at%2015.49.21.png)
+!\[644d1269b401f925e16c6c1e\_Screenshot%202023-04-29%20at%2015.49.21.png\](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/644d1269b401f925e16c6c1e\_Screenshot%202023-04-29%20at%2015.49.21.png)
 
 Repeat the same thing for the 4 values, here is my final screen:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644d12b4410fbd6b6459a186_Screenshot%202023-04-29%20at%2015.50.39.png)
+!\[644d12b4410fbd6b6459a186\_Screenshot%202023-04-29%20at%2015.50.39.png\](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/644d12b4410fbd6b6459a186\_Screenshot%202023-04-29%20at%2015.50.39.png)
 
 You can now test the insertion step by clicking on Test step in the bottom of the sidebar, you should see something like this if it ran successfully:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/644d12ff29267cd7542875ec_Screenshot%202023-04-29%20at%2015.51.48.png)
+!\[644d12ff29267cd7542875ec\_Screenshot%202023-04-29%20at%2015.51.48.png\](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/644d12ff29267cd7542875ec\_Screenshot%202023-04-29%20at%2015.51.48.png)
 
 ### 5\. Test your Zendesk ticket to Google Sheet flow
 

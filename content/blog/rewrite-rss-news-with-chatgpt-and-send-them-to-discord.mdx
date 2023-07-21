@@ -2,7 +2,7 @@
 title: "Rewrite RSS News With ChatGPT And Send Them To Discord"
 publishedOn: "Tue May 23 2023 15:55:53 GMT+0000 (Coordinated Universal Time)"
 author: "Ashraf Samhouri"
-thumbnail: "/blog/thumbnail/rewrite-rss-news-with-chatgpt-and-send-them-to-discord.png"
+thumbnail: "/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/thumbnail.png"
 ---
 
 If you run a Discord community and would like to keep them updated with a certain type of news from the internet, you should automate it!
@@ -49,7 +49,7 @@ In the RSS Feed URL field, I'll use CoinDesk's RSS URL, this one:
 
 This is how my flow looks so far:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/640f587efb3abc49f978a1e0_Screenshot%202023-03-13%20at%2020.06.05.png)
+!\[640f587efb3abc49f978a1e0\_Screenshot%202023-03-13%20at%2020.06.05.png\](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/640f587efb3abc49f978a1e0\_Screenshot%202023-03-13%20at%2020.06.05.png)
 
 ‍
 
@@ -65,7 +65,7 @@ We'll then replace **TITLE** with the Title field from the Trigger step, and **
 
 This should look something like:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/640f636fbf61714aacabd0a0_Screenshot%202023-03-13%20at%2020.54.40.png)
+!\[640f636fbf61714aacabd0a0\_Screenshot%202023-03-13%20at%2020.54.40.png\](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/640f636fbf61714aacabd0a0\_Screenshot%202023-03-13%20at%2020.54.40.png)
 
 ‍
 
@@ -81,12 +81,12 @@ Follow these steps to get your channel's webhook URL:
 2.  Click on the gear icon next to the name of the channel you'd like to receive the news on.
 3.  Go to the Integrations tab, this:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/640f676155db001e5f1e8757_Screenshot%202023-03-13%20at%2021.08.10.png)
+!\[640f676155db001e5f1e8757\_Screenshot%202023-03-13%20at%2021.08.10.png\](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/640f676155db001e5f1e8757\_Screenshot%202023-03-13%20at%2021.08.10.png)
 
 4.  Click on Webhooks and create a New Webhook.
 5.  Copy the Webhook URL:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/640f678de26833b3e215e533_Screenshot%202023-03-13%20at%2021.09.29.png)
+!\[640f678de26833b3e215e533\_Screenshot%202023-03-13%20at%2021.09.29.png\](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/640f678de26833b3e215e533\_Screenshot%202023-03-13%20at%2021.09.29.png)
 
 We'll now paste the URL to the settings of the Discord step on Activepieces, and fill in the Message field with:
 
@@ -98,7 +98,7 @@ We'll now replace **NEWS\_BRIEF** with the output of the OpenAI step, and **NE
 
 This is how it finally looks:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/640f699b82b7db5c277e061c_Screenshot%202023-03-13%20at%2021.20.52.png)
+!\[640f699b82b7db5c277e061c\_Screenshot%202023-03-13%20at%2021.20.52.png\](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/640f699b82b7db5c277e061c\_Screenshot%202023-03-13%20at%2021.20.52.png)
 
 ### 6\. Test your RSS and ChatGPT flow
 
@@ -112,7 +112,7 @@ You're good to go! 🎉 Click on **Publish** in the right top corner. You will s
 
 These are some of the news pieces I received from my flow:
 
-![](https://uploads-ssl.webflow.com/62c21c5254de25f99c48bdfe/640f69b9950fc4cdfcb017ef_Screenshot%202023-03-13%20at%2021.20.22.png)
+!\[640f69b9950fc4cdfcb017ef\_Screenshot%202023-03-13%20at%2021.20.22.png\](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/640f69b9950fc4cdfcb017ef\_Screenshot%202023-03-13%20at%2021.20.22.png)
 
 ‍
 
