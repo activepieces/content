@@ -20,18 +20,11 @@ type Category = {
   title: string;
 };
 
-const categories: Record<string, Category> = {
-  blog: {
-    title: "Blog",
-  },
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   // read route params
   return {
     title: "Activepieces - Blogs",
     description: "Learn business automation from the top resources - The Automatic Organization",
-    authors: { url: "www.activepieces.com", name: "Activepieces" },
     icons: "/favicon.ico",
   };
 }
@@ -40,12 +33,16 @@ function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <div className="max-w-sm rounded overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1">
-        <div className="relative">
-          <Image src={post.meta.thumbnail} alt="Blog thumbnail" width={1000} height={1000} />
-          <div className="absolute bottom-0 left-0 right-0 py-4 px-4 bg-white text-black border border-black rounded-md">
-            <div className="font-bold text-xl mb-2">{post.meta.title}</div>
-            <p className="text-base">{post.meta.author} | Published On {post.meta.publishedOn}</p>
-          </div>
+        <div style={{ width: 400, height: 200 }} className="relative">
+          <Image
+            src={post.meta.thumbnail}
+            alt="Blog thumbnail"
+            fill={true}
+          />
+        </div>
+        <div className="relative py-4 px-4 bg-white text-black border border-black rounded-md">
+          <div className="font-bold text-xl mb-2">{post.meta.title}</div>
+          <p className="text-base">{post.meta.author} | Published On {post.meta.publishedOn}</p>
         </div>
       </div>
     </Link>
