@@ -55,6 +55,7 @@ body {
   max-height: 400px;
   margin-top:10px !important;
   overflow-y: scroll;
+  box-shadow: 0px 3.39516282081604px 6.79032564163208px 0px rgba(0, 0, 0, 0.12);;
 }
 @media screen and (max-width: 1200px) {
   .apps-menu {

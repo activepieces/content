@@ -186,7 +186,7 @@ export default async function PiecePage({ params }: NavigationProps) {
 
         </main>
         <section className="bg-[url('/start-building-bg.svg')] w-full bg-no-repeat bg-cover bg-center  flex flex-col items-center justify-center gap-8 h-[450px]">
-          <a href="https://cloud.activepieces.com/" target="_blank" rel="noopener noreferrer" className="flex gap-1 md:gap-3 items-center text-neutral-900  font-bold font-bold  
+          <Link href="https://cloud.activepieces.com/" target="_blank" rel="noopener noreferrer" className="flex gap-1 md:gap-3 items-center text-neutral-900  font-bold font-bold  
               text-3xl px-[18px] py-[18px] mx-4 md:mx-0
               md:text-5xl md:px-[100px] md:py-[33.5px] 
               lg:text-[70px] lg:px-[140.5px] lg:py-[47.5px] bg-[#06FFB4] rounded-[15px] md:rounded-[30px]">Start Building Now
@@ -199,7 +199,7 @@ export default async function PiecePage({ params }: NavigationProps) {
 
             >
             </Image>
-          </a>
+          </Link>
           <div className="text-white text-[22px] text-center font-normal leading-loose tracking-tight">Automate your work without writing code, keep your data on your machine.</div>
         </section>
       </article>
