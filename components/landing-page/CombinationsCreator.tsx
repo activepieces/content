@@ -52,7 +52,7 @@ export interface CombinationsCreatorProps {
 const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
     const menuItemClassName = ({ hover }: { hover: boolean }) =>
-        hover ? 'apps-menuitem' : 'apps-menuitem';
+        hover ? 'apps-menuitem transitions-all' : 'apps-menuitem';
     const triggerAppDropdown = useRef(null);
     const [isTriggerAppDropdownOpen, setIsTriggerAppDropdownOpen] = useState(false);
     const triggerAppdownAnchorProps = useClick(isTriggerAppDropdownOpen, setIsTriggerAppDropdownOpen);
