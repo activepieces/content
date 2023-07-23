@@ -50,10 +50,42 @@ body {
 .apps-menu {
   border-radius: 6px;
   overflow: hidden;
-  width: 340px;
+  min-width: 400px;
+  max-width: 400px;
+  max-height: 400px;
   margin-top:10px !important;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 1200px) {
+  .apps-menu {
+    min-width: 320px;
+    max-width: 320px;
+  }
 }
 
+.apps-menu::-webkit-scrollbar
+{
+    width: 10px;
+    border-radius: 6px;
+}
+.apps-menu::-webkit-scrollbar-track {
+  background: #2D2E33;
+}
+.apps-menu::-webkit-scrollbar-thumb
+{
+  background: #c2c9d1;
+  border-radius: 40px;
+  scrollbar-width: thin;
+}
+
+.apps-menu::-webkit-scrollbar-thumb:hover
+{
+  background: rgba(179, 179, 179, 0.7);
+
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
 .apps-menuitem {
   color:#FFFFFF;
   background-color: #2D2E33;
@@ -75,9 +107,7 @@ body {
     {
       padding:15px;
     }
-    .apps-menu {
-    width: 200px;
-    }
+ 
 }
 
 li {

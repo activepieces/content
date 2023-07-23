@@ -26,7 +26,7 @@ const CenterOfWorldCard = (props: CenterOfWorldCard) => {
                         {
                             props.piecesIcons.map((icon, idx) => (
                                 <div className="flex items-center p-[6.667px] lg:p-[10px] border border-solid border-outline rounded-lg" key={idx}>
-                                    <Image alt={icon} src={icon} width={20} height={20} className="h-[26.67px] w-[26.67px] lg:h-[40px] lg:w-[40px]"></Image>
+                                    <Image alt={icon} src={icon} width={20} height={20} className="h-[26.67px] object-contain w-[26.67px] lg:h-[40px] lg:w-[40px]"></Image>
                                 </div>
                             ))
                         }
