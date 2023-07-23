@@ -8,6 +8,8 @@ import { GetPiece } from '../utils/piece-helper';
 import LeadsSection from '../components/landing-page/LeadsSection';
 import Productivity100XSection from '../components/landing-page/Productivity100XSection';
 import CenterOfWorldSection from '../components/landing-page/CenterOfWorldSection';
+import CombinationsMakerSection from '../components/landing-page/CombinationsMakerSection';
+import StartBuildingSection from '../components/landing-page/StartBuildingSection';
 
 export const metadata: Metadata = {
   title: 'Activepieces - Home',
@@ -119,7 +121,8 @@ export default async function Home() {
       <LeadsSection props={[aiCard, aiCard, aiCard]}></LeadsSection>
       <CenterOfWorldSection props={[aiCard, aiCard, aiCard, aiCard, aiCard, aiCard]}></CenterOfWorldSection>
       <Productivity100XSection props={[aiCard, aiCard, aiCard]}></Productivity100XSection>
-
+      <CombinationsMakerSection></CombinationsMakerSection>
+      <StartBuildingSection></StartBuildingSection>
     </>
 
   )

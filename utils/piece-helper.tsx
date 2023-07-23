@@ -27,7 +27,12 @@ export enum TriggerStrategy {
   POLLING = "POLLING",
 }
 
-export async function GetPieces() {
+type PieceMetaData = (PieceBase & {
+  actions: number;
+  triggers: number;
+});
+
+export async function GetPieces(): Promise<PieceMetaData[]> {
   const res = await fetch(
     `https://cloud.activepieces.com/api/v1/pieces`
   );

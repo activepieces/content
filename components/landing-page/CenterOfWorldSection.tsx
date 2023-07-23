@@ -22,7 +22,7 @@ const apps: { appName: string, icon: string }[] = [
 
 ];
 const menuItemClassName = ({ hover }: { hover: boolean }) =>
-    hover ? 'apps-menuitem' : 'apps-menuitem';
+    hover ? 'apps-menuitem transition-all ' : 'apps-menuitem';
 
 const scrollBy = 358;
 const CenterOfWorldSection = (props: {
@@ -95,7 +95,7 @@ const CenterOfWorldSection = (props: {
                                                 <Image alt={selectedApp.appName} src={app.icon} width={20} height={20} className="h-[20px] w-[20px] lg:h-[40px] lg:w-[40px]"></Image>
                                             </div>  {app.appName}
                                         </div>
-                                        <div className='border-b border-solid border-white  border-opacity-20 mx-[15px]'></div>
+                                        <div className='border-b border-solid border-white  border-opacity-20 mx-[15px] '></div>
                                     </MenuItem>
                                 )
                             }
