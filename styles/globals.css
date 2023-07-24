@@ -185,3 +185,15 @@ li {
     }
  
 }
+.curtain-animation{
+  animation: curtainAnimation 300s infinite;
+  animation-timing-function:ease-out;
+}
+@keyframes curtainAnimation {
+  100% {background-position: 10000px;}
+}
+
+path[fill="rgb(255,179,44)"]
+{
+  transform:rotate(70deg)
+}

@@ -85,7 +85,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
         template.template.displayName = `${selectedTrigger.displayName} + ${selectedAction.displayName}`;
         template.name = `${selectedTrigger.displayName} + ${selectedAction.displayName}`;
         console.log(Buffer.from(JSON.stringify(template)).toString("base64"));
-        window.open(`https://app.activepieces.com/import-flow-64?flow=${Buffer.from(JSON.stringify(template)).toString("base64")}`, '_blank');
+        window.open(`https://cloud.activepieces.com/import-flow-64?flow=${Buffer.from(JSON.stringify(template)).toString("base64")}`, '_blank');
     }
     return (
         <>
