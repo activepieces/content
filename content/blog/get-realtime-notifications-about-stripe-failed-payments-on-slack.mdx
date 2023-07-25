@@ -1,0 +1,138 @@
+---
+title: "Get Realtime Notifications About Stripe Failed Payments on Slack"
+publishedOn: "Sat Apr 15 2023 02:16:11 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/thumbnail.png"
+---
+
+"What happens on Stripe stays on Stripe" could be one of the death formulas to your business, especially when a failing payment was that what happened.
+
+I ran multiple businesses and at all of them, the first thing I set up was centralized Slack notifications about payments, so I'm putting up this quick guide to help you do it too.
+
+‍
+
+###### Prerequisites
+
+To get Slack notifications about your Stripe payments, you will obviously need the 3 of these:
+
+*   An [Activepieces](https://www.activepieces.com) account: We will use this lightweight tool to create this simple automation.
+*   A Slack team with a channel to receive the notifications in.
+*   A Stripe account in which you're processing payments.
+
+Let's start..
+
+‍
+
+Set up Slack notifications for Stripe failed payments
+-----------------------------------------------------
+
+### 1\. Create an Activepieces account
+
+If you don't have one, go to [Activepieces](https://activepieces.com/) and create an account. This account will be your control panel where you design automations, run and monitor them.
+
+‍
+
+### 2\. Create a new collection
+
+Once you're in your Activepieces account, create a new Collection. This is where your automation will live. I love to use emojis in my collections names, so I'll call this one "Payments Notifications 🚨".
+
+Like this 👇
+
+![0238ee5f-739d-4f9c-a48e-a4848cf5f5b9.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/0238ee5f-739d-4f9c-a48e-a4848cf5f5b9.png)
+
+‍
+
+### 3\. Set up the Stripe (Payment Failed) trigger
+
+Click on the trigger step, search for Stripe in the sidebar, choose it and select the Payment Failed trigger.
+
+This means that our flow will fire whenever a Stripe payment fails. So far, this is how our screen looks like:
+
+![bc6c6b04-656b-4876-9211-e49f869bdaa3.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/bc6c6b04-656b-4876-9211-e49f869bdaa3.png)
+
+It's asking us for an API Key. This is like a password that we can generate on Stripe and copy here. I'll show you how.
+
+Go to your Stripe account, then to the **Developers** tab and then **API Keys**. As a shortcut, you can go [here](https://dashboard.stripe.com/apikeys) for the live environment or [here](https://dashboard.stripe.com/test/apikeys) if you'd like to do it on your Stripe's test environment.
+
+Now reveal your Secret Key (or create one first if you're on the live environment). Copy this Secret Key and add it as a New Connection under the **API Key** field back on the Activepieces builder.
+
+The Stripe trigger is now set up. It's time to set up the Slack step.
+
+‍
+
+### 4\. Set up the Slack notification
+
+Click on the **+** right below the Stripe step. You will see the list of action apps to the right, search for Slack and choose it.
+
+Now select the "Send Message To A Channel" action from the first dropdown. You'll have some fields to fill in like this:
+
+![71c9c5aa-b409-4086-8080-8fcef32f222b.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/71c9c5aa-b409-4086-8080-8fcef32f222b.png)
+
+Connect your Slack account by choosing "New Connection", then follow the instructions in the popup to get your account completely connected.
+
+Once it is, your channels will load in the next field from your connected account. Choose the channel you'd like to receive the payment notifications from Stripe on.
+
+Now, we'll write the message that we'll receive on the channel. This will be constructed of several fields coming from the Stripe trigger.
+
+The text will be something like:
+
+**We lost AMOUNT CURRENCY because of "REASON"**
+
+**Charge ID: ﻿CHARGE**
+
+**Customer ID: ﻿CUSTOMER**
+
+We'll then remove the ALL CAPS words and replace them with dynamic data using the autocomplete interface. This is a quick mapping to the data:
+
+1.  **AMOUNT:** Payment Failed → amount.
+2.  **CURRENCY:** Payment Failed → currency.
+3.  **REASON:** Payment Failed → failure\_message.
+4.  **CHARGE:** Payment Failed → id.
+5.  **CUSTOMER:** Payment Failed → customer.
+
+Your final screen should look about this:
+
+![1eb1c638-bcf4-4bf3-b324-4435c764d98b.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/1eb1c638-bcf4-4bf3-b324-4435c764d98b.png)
+
+*   **Note:** The amount returned by Stripe is always in cents (in case of USD), for simplicity, we didn't convert it to whole dollars, so the notification is inaccurate. If you'd like to convert it, you'll have to add a Code step in the middle and do the division.
+
+‍
+
+### 5\. Test your Stripe / Slack automation
+
+It's time to see if this really works! The testing functionality generates sample data for the sake of the test. We'll click on the purple **Test flow** button in the top right corner of the canvas.
+
+We'll see a screen like this if the test was successful. If there are errors, you will also be able to find and fix them from this screen.
+
+![dad97274-096c-4c8c-a5d1-b435cebeae73.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/dad97274-096c-4c8c-a5d1-b435cebeae73.png)
+
+As a result of the test, you'll receive a notification in your Slack channel with sample data, like this:
+
+![ff11be33-0d06-462e-8092-4e889cbdd79b.png](/blog/get-realtime-notifications-about-stripe-failed-payments-on-slack/images/ff11be33-0d06-462e-8092-4e889cbdd79b.png)
+
+This means things are working fine. Let's put this automation into work.
+
+‍
+
+### 6\. Activate your Stripe to Slack notification
+
+Now that your flow is well tested, it's time to enable it. Click on the **Publish** button at the very top right of the builder.
+
+Once you do this, your flow will get published and enabled all at once. You'll also see a new toggle button that will show the status of the flow. You can always come in and turn it off if you need to.
+
+Congrats 🎉 You have this failed payment notification from Stripe to Slack set up. You'll start receiving new ones right into your Slack channel (I hope they won't be many).
+
+‍
+
+Ideas for your next Stripe notifications and automations
+--------------------------------------------------------
+
+Don't stop there! The idea that you've created notifications about your failed Stripe payments means that you can automate much more of your work! Here are some ideas to automate your Stripe notifications:
+
+1.  Send emails to users who make purchases. You can send emails using SendGrid or your personal email.
+2.  Add new Stripe customers to your MailChimp account. This way you'll guarantee that your next newsletter will arrive in their inbox.
+3.  Centralize all the notifications about New Customers, Failed Payments, Successful Payments from Stripe into your Slack or even to Discord, Telegram or email.
+4.  Add all failed payments from Stripe to a Google Sheet for your operations team to take care of.
+
+We believe that there are no limits to what can be automated, and we built [Activepieces](https://www.activepieces.com) to express this vision.
+

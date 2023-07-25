@@ -1,0 +1,87 @@
+---
+title: "Export Zendesk tickets to a Google Sheet (detailed tutorial)"
+publishedOn: "Sat Apr 29 2023 12:59:06 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/thumbnail.png"
+---
+
+You receive support tickets in Zendesk and that's great. But if you have custom operations you'd like to do in an external medium, or some manual analytics that work better in a Google Sheet, you'll need a way to export these tickets from Zendesk to the Google Sheet.
+
+Sync Zendesk new tickets to a Google Sheet
+------------------------------------------
+
+By the end of this article, you'll be able to sync the tickets you receive in your Zendesk support account to a Google Sheet of your choice. In other words, if you receive a new ticket in Zendesk, it will get automatically copied as text to your Google Sheet. Isn't that great?
+
+###### Prerequisites
+
+In order to do this automation, we'll need the following tools:
+
+*   An [Activepieces](https://cloud.activepieces.com/sign-up) account, this is where we'll build this automation flow.
+*   A Zendesk support account that receives new support tickets.
+*   A Google Sheet that you'll get your Zendesk tickets in.
+
+Steps to copy tickets from Zendesk to a Google Sheet
+----------------------------------------------------
+
+Here is a step by step guide to copy your tickets from the Zendesk account to your Google Sheet:
+
+### 1\. Create an Activepieces account
+
+We'll build this automation on [Activepieces](https://cloud.activepieces.com/sign-up). If you don't have an account there yet, go ahead and sign up.
+
+### 2\. Create a new automation flow
+
+Inside your Activepieces account, click on **New flow** or **Start building**, depending on whether this is your first automation flow in the account or not. You can give this flow a name like "Zendesk tickets to Google Sheet", this is what I did:
+
+![f826eef5-8e1c-4c05-9ff7-74d3410d65ba.png](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/f826eef5-8e1c-4c05-9ff7-74d3410d65ba.png)
+
+### 3\. Set up the Zendesk New Ticket trigger
+
+We'll start by setting up our Zendesk New Ticket trigger. Click on **Select Trigger**, and from the right side panel, find the **Zendesk** app and select the **New ticket in view** trigger.
+
+Click **+ New Connection** to connect your Zendesk account. Follow the instructions in the popup to properly connect your Zendesk account. Once connected, you'll see a list of the views that exist in your Zendesk account under the **View** field. Choose the Zendesk view you'd like to listen to new tickets in. I chose "All unsolved" in my case.
+
+Click Load Data to get some sample tickets data from your Zendesk account to use them in the next steps of the automation. This is how my settings looked like:
+
+![7b72a0c6-bed7-407c-98d5-727dfedd12b2.png](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/7b72a0c6-bed7-407c-98d5-727dfedd12b2.png)
+
+### 4\. Add a step to insert the ticket in a Google Sheet
+
+The second step of the flow is the one that takes the new ticket data and inserts it in a Google Sheet. Click on the **+** button right under the trigger step. From the sidebar, find the Google Sheets app and select the **Insert row** action.
+
+Click on **+ New Connection** to connect your Google Drive account that contains the sheet that you'd like to see your Zendesk tickets in. Once connected, select the Google Sheet and the sub-sheet from the dropdowns in the panel.
+
+Now under Values, we'll add one value per column. Since we're adding rows to the Google Sheet, these values need to be the different values of the columns of the new row. In our case, I'd like to copy the **Subject** of the ticket, the **Body** of the ticket, the **Name** of the requester and their **email** address. So we'll add 4 values here.
+
+For each of these values, we'll find the corresponding variable from the previous step using the dropdown menu when we place the cursor inside the value field.
+
+For example, the first one is the subject. So we'll use the dropdown to find which variable contains the subject from the Zendesk trigger. I found it here:
+
+![7cdde58e-1162-4b5a-adba-934299d7be97.png](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/7cdde58e-1162-4b5a-adba-934299d7be97.png)
+
+Repeat the same thing for the 4 values, here is my final screen:
+
+![7c2fba38-037d-4257-ba5d-10fdd0aa5732.png](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/7c2fba38-037d-4257-ba5d-10fdd0aa5732.png)
+
+You can now test the insertion step by clicking on Test step in the bottom of the sidebar, you should see something like this if it ran successfully:
+
+![aa564383-8f7c-406d-a900-e93166aa124b.png](/blog/export-zendesk-tickets-to-a-google-sheet-detailed-tutorial/images/aa564383-8f7c-406d-a900-e93166aa124b.png)
+
+### 5\. Test your Zendesk ticket to Google Sheet flow
+
+If you'd like to test this automation flow end to end, click on the **Test flow** button to the top right corner of the screen. It will show you each step with its execution status with the reason of failure in case it didn't run successfully.
+
+### 6\. Activate this Zendesk / Google Sheet automation
+
+You are ready to launch this automation. Click on the main **Publish** button in the screen. The flow will go live and you will start receiving any new ticket in that view in your Zendesk account right in your specified Google Sheet. Congrats!
+
+Other things you can sync to Google Sheets
+------------------------------------------
+
+If you're - like many people - in love with Google Sheets, there are many things you can bring into Google Sheets with an automation tool like Activepieces, some ideas are:
+
+*   Get new rows from your Airtable base to a Google Sheet.
+*   Get the pricing of a pair cryptocurrencies and insert it in a Google Sheet.
+*   Take record of anyone who cancels a meeting with you on Calendly or Google Calendar in a Google Sheet.
+*   Get submissions to a Google Form or Typeform in your Google Sheet.
+

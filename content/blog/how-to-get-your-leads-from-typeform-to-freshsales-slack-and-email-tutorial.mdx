@@ -1,0 +1,82 @@
+---
+title: "How to get your leads from Typeform to Freshsales, Slack and Email (Tutorial)"
+publishedOn: "Mon May 01 2023 13:48:23 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/how-to-get-your-leads-from-typeform-to-freshsales-slack-and-email-tutorial/thumbnail.png"
+---
+
+If you use Typeform to collect leads from different channels, you'd want your leads to source into your CRM, and you probably want to see notifications in your Slack and email about these new leads.
+
+In this tutorial, I'll be taking you through the process of automating sourcing leads from Typeform to your Freshsales CRM and get notifications about them in your Slack and your email inbox.
+
+Steps to get your Typeform leads into Freshsales, Slack and Email
+-----------------------------------------------------------------
+
+Let's dive into it, we'll use an automation tool to do it, and design a flow that listens to new Typeform submissions to insert them into Freshsales and send the needed notifications.
+
+###### Prerequisites
+
+In order to get this job done, you'll need the following tools:
+
+*   An [Activepieces](https://cloud.activepieces.com/sign-up) account. This is where we'll build the mentioned automation.
+*   A Typeform form, which will be our source of leads.
+*   A Freshsales account to insert the leads into.
+*   A Slack account to get notifications about the new leads.
+*   A Gmail account to send email notifications about these leads.
+
+### 1\. Create an Activepieces account
+
+If you still don't have one, create an [Activepieces](https://cloud.activepieces.com/sign-up) account to build this automation in. Activepieces is a no-code business automation tool that helps you automate your business.
+
+### 2\. Create a new automation flow
+
+If your Activepieces account is fresh new, click on **Start building** to create your first automation flow. If you have other flows in the account, click **New flow** to start a new flow.
+
+### 3\. Set up the Typeform trigger step to listen to new submissions
+
+The first step in any automation is the trigger step. This is what decides on what will run the flow and how often it will run. In our case, our trigger is any new submission to our Typeform. Click on **Select Trigger**, the sidebar will slide out, find the **Typeform** app and select the **New Submission** trigger.
+
+Click on **+ New Connection** to connect your Typeform account that you'd like to listen to. Once connected, you'll see the list of forms you have in your account under the Form field. Choose your lead generation form you'd like to create the automation based on.
+
+To get sample data to use in the next steps of your automation, click on **Test trigger** in the bottom part of the settings sidebar. My test ran successfully and my setup for the trigger ended up like this:
+
+![1d63208e-9afd-4cb7-8e2b-496a679a09cf.png](/blog/how-to-get-your-leads-from-typeform-to-freshsales-slack-and-email-tutorial/images/1d63208e-9afd-4cb7-8e2b-496a679a09cf.png)
+
+### 4\. Add a step to add the contact to Freshsales
+
+Click on the + button right below the trigger step in your flow. The sidebar will slide out again showing the available apps. Find the Freshsales app and choose the **Create Contact** action.
+
+Now click on **+ New Connection** to connect your Freshsales account. Follow the instructions in the connection popup to connect successfully. Once your account is connected, you'll have to fill out the **Email** field with the lead email from the Typeform step. Click inside the **Email** input, and find the attribute from the Typeform step that has the email address in. I chose mine like this:
+
+![c2b4fac2-83cf-4f08-bb63-f1428c229460.png](/blog/how-to-get-your-leads-from-typeform-to-freshsales-slack-and-email-tutorial/images/c2b4fac2-83cf-4f08-bb63-f1428c229460.png)
+
+You can add more optional inputs if you need them, we'll only send the email to the CRM in this example.
+
+### 5\. Add a Slack notification step
+
+If you'd like to receive Slack notifications after inserting the new lead to your Freshsales CRM, click on the **+** button again, but this time the one under the Freshsales step in your flow. Find the **Slack** app in the sidebar and choose the **Send Message To A Channel** action.
+
+If you have no existing connections for the Slack app, click on **+ New Connection** and connect your Slack account. Once your account is connected, you'll see a list of your available channels in your Slack. Select the one you'd like to receive leads notifications in. Then construct a message that tells you received a new lead. Here are my settings for the Slack step:
+
+![72251b1a-12c0-4a43-bdf2-7bf08bf87267.png](/blog/how-to-get-your-leads-from-typeform-to-freshsales-slack-and-email-tutorial/images/72251b1a-12c0-4a43-bdf2-7bf08bf87267.png)
+
+### 6\. Add an email notification step
+
+If you'd like to receive email notifications about new leads from your Typeform, click the **+** again under the Slack step in your flow. Find the **Gmail** app and select the **Send Email** action.
+
+Click on the + New Connection button to connect your Gmail account. Once it's connected, fill out the settings fields: The **Receiver Email** that you'd like to receive the leads notifications to, the **Subject** of the notification email and the **Body** of the email. You can construct the subject and the body using dynamic data from previous steps like in the Slack step.
+
+I did it like this:
+
+![0cb137bd-0629-4286-8e47-462f89619ed4.png](/blog/how-to-get-your-leads-from-typeform-to-freshsales-slack-and-email-tutorial/images/0cb137bd-0629-4286-8e47-462f89619ed4.png)
+
+### 7\. Test your Typeform, Freshsales, Slack and Email flow
+
+All your steps are ready. Now click on **Test flow** to see if the flow works from start to end. Once it's tested, it will tell you if there are any errors and it will show you the exact errors.
+
+If the test goes smoothly, you should see the contact in your Freshsales CRM, and you should receive notifications both on email and Slack.
+
+### 8\. Publish your lead generation flow
+
+All looks good! Now click on the main **Publish** button on the screen. Once the flow gets published, you will see a toggle button that lets you turn the flow on or off at any time. Now any leads that come through your Typeform will run this flow and send you all the notifications.
+

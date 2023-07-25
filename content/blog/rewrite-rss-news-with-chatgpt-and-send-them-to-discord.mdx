@@ -1,0 +1,133 @@
+---
+title: "Rewrite RSS News With ChatGPT And Send Them To Discord"
+publishedOn: "Tue May 23 2023 15:55:53 GMT+0000 (Coordinated Universal Time)"
+author: "Ashraf Samhouri"
+thumbnail: "/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/thumbnail.png"
+---
+
+If you run a Discord community and would like to keep them updated with a certain type of news from the internet, you should automate it!
+
+‍
+
+RSS Feed to Discord
+-------------------
+
+If you're not familiar with RSS, it's a format that news website uses to publish their news to other mediums in a technical way. So you can build an automation that reads from a website's RSS feed and do some action when a new piece is published. We're focusing on delivering news from an RSS feed to Discord in this tutorial.
+
+‍
+
+Steps To Automate RSS, ChatGPT and Discord
+------------------------------------------
+
+We'll simply use [Activepieces](https://cloud.activepieces.com/sign-up) (a no-code business automation tool) to listen to a news website, use OpenAI's ChatGPT to rewrite the news and then send it to our Discord server. Pretty simple!
+
+For the sake of this tutorial, we'll bring fresh news from the famous crypto news website CoinDesk, reframe them into "Did you know that ...?" pieces and post them to Discord.
+
+‍
+
+Let's build this..
+
+### 1\. Create an Activepieces account
+
+Go to [Activepieces](https://cloud.activepieces.com/sign-up) and get an Activepieces account. This is an implicit step, but without an account, we can't build the automation.
+
+‍
+
+### 2\. Create a new collection
+
+If this is your first automation, click on the "**Start building**" button. If there are existing automations in the account, you'll see a "**New Collection**" button, click on it.
+
+‍
+
+### 3\. Start the automation with an RSS Feed trigger
+
+I'll call my collection "Crypto News 🔥" and choose **RSS Feed** and "New Item In Feed" as the trigger. This trigger allows me to listen on an RSS Feed (through a link) and run the flow once an item is added to the feed.
+
+In the RSS Feed URL field, I'll use CoinDesk's RSS URL, this one:
+
+> https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml
+
+This is how my flow looks so far:
+
+![29199a96-530a-4a5e-8cb0-eddeb43c1f25.png](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/29199a96-530a-4a5e-8cb0-eddeb43c1f25.png)
+
+‍
+
+### 4\. Rewrite news title with ChatGPT
+
+We'll click on the **+** button right below the trigger step. All available apps will show in the right panel, we'll search for OpenAI, select it and then choose the "Ask ChatGPT" action.
+
+Now, add a connection using your OpenAI API Key and write the following question to ChatGPT:
+
+**Rewrite this news with the title "﻿TITLE" and description "DESCRIPTION﻿" in a "Did you know that .. ?" form. Make it short and don't wrap it with quotation marks.**
+
+We'll then replace **TITLE** with the Title field from the Trigger step, and **DESCRIPTION** with the Description field from the same step. Do this using the autocomplete dropdown.
+
+This should look something like:
+
+![90bc2113-9e18-43ae-8ead-118d2f61d322.png](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/90bc2113-9e18-43ae-8ead-118d2f61d322.png)
+
+‍
+
+### 5\. Send Crypto news to Discord
+
+It's time to send the generated news from OpenAI to our Discord server. Click on the **+** again and choose Discord and select the **Send Message** action.
+
+The way Activepieces works with Discord is that you have to provide a Webhook URL from your Discord channel. This makes it easier because you don't have to authenticate with Discord, all what you have to do is to create a webhook link and copy it here.
+
+Follow these steps to get your channel's webhook URL:
+
+1.  Go to your Discord server.
+2.  Click on the gear icon next to the name of the channel you'd like to receive the news on.
+3.  Go to the Integrations tab, this:
+
+![015dfeb7-4dd2-40cb-9943-a25411f3ded6.png](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/015dfeb7-4dd2-40cb-9943-a25411f3ded6.png)
+
+4.  Click on Webhooks and create a New Webhook.
+5.  Copy the Webhook URL:
+
+![af00286c-da56-44ae-9112-805ef8f3aa5b.png](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/af00286c-da56-44ae-9112-805ef8f3aa5b.png)
+
+We'll now paste the URL to the settings of the Discord step on Activepieces, and fill in the Message field with:
+
+**NEWS\_BRIEF**
+
+**You can read more about it here: ﻿ NEWS\_LINK**
+
+We'll now replace **NEWS\_BRIEF** with the output of the OpenAI step, and **NEWS\_LINK** with the link from the Trigger step.
+
+This is how it finally looks:
+
+![03992128-54be-48a3-95e2-9624be4e9d82.png](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/03992128-54be-48a3-95e2-9624be4e9d82.png)
+
+### 6\. Test your RSS and ChatGPT flow
+
+You can run a quick test to the flow to make sure things are working fine. In this case, you'll receive different news than CoinDesk's as it takes sample data for testing purposes. Click on **Test flow** to run the test.
+
+‍
+
+### 7\. Start receiving Crypto news from the RSS feed to your Discord
+
+You're good to go! 🎉 Click on **Publish** in the right top corner. You will start receiving a Discord notification for new items added to CoinDesk's news.
+
+These are some of the news pieces I received from my flow:
+
+![511584bc-d8d3-4e4a-a61a-7926f3232a62.png](/blog/rewrite-rss-news-with-chatgpt-and-send-them-to-discord/images/511584bc-d8d3-4e4a-a61a-7926f3232a62.png)
+
+‍
+
+Ideas for News Automations
+--------------------------
+
+### Read RSS news from different websites
+
+CoinDesk was used as an example in this tutorial, you can go to your favorite news website and get their RSS Feed URL and use it instead of the one we used.
+
+‍
+
+### Experiment with ChatGPT prompts to write news
+
+You don't have to rewrite the news articles as "Did you know that ...?". You can ask ChatGPT to write an article, say a joke, be casual or formal about the news - or anything else. Keep experimenting until you find the best format it generates.
+
+‍
+
