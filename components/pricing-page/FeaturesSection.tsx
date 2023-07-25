@@ -3,6 +3,7 @@ import Image from "next/image";
 import Lottie from "lottie-react";
 import phoneAnimation from "./phone_animation.json"
 import { useState } from "react";
+import Link from "next/link";
 export const FeaturesSection = () => {
     const [expandfeatures, setExpandFeatures] = useState(false)
     return (
@@ -30,7 +31,7 @@ export const FeaturesSection = () => {
                             <div className="text-white text-h6-sm md:text-h6-lg">
                                 Activepieces is an open core software, you can self host it on your machine for free. Our cloud version is built on this core but has more features.
                             </div>
-                            <div className="flex gap-[25px]  items-center">
+                            <Link href="https://github.com/activepieces/activepieces" target="_blank" rel="noopener noreferer" className="flex gap-[25px]  items-center">
                                 <Image src="/github_white.svg" alt="github" width={50} height={50} className="w-[30px] lg:w-[50px]"></Image>
                                 <div className="text-h6-sm font-bold lg:text-h3-lg text-white">
                                     Visit GitHub
@@ -39,7 +40,7 @@ export const FeaturesSection = () => {
                                 <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}>
 
                                 </Image>
-                            </div>
+                            </Link>
                         </div>
                         <div className="phone-lottie relative min-h-[336.469px] min-w-[688.32px]">
                             <Lottie animationData={phoneAnimation} loop={false} className="absolute -scale-x-[1] grow  w-[400px] h-[400px] left-[18px]  top-[65px]  md:left-[222px] md:-top-[135px]  md:h-[700px] md:w-[575px]   lg:w-[946.32px] lg:-top-[90px]  lg:left-[60px] " />
@@ -47,8 +48,7 @@ export const FeaturesSection = () => {
 
                     </div>
                 </div>
-
-            </section >
+            </section>
         </>
     )
 }

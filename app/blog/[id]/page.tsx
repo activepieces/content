@@ -41,28 +41,32 @@ export default async function BlogPost({ params }: NavigationProps) {
 
   return (
     <main className="bg-white w-full">
-      <article className="container  px-3 py-4 md:px-0  mx-auto prose my-8  ">
-        <nav className="text-lg my-4">
+      <section className="container mx-auto px-3 py-[80px] md:px-0  mx-auto  my-8  ">
+        <nav className="text-lg mb-[35px]">
           <Link href="/blog" className="no-underline">
             {/* Apply your custom styles for the link */}
-            <span className="text-primary no-underline hover:underline cursor-pointer">Blog</span>
+            <span className="text-primary no-underline hover:underline cursor-pointer">Blogs</span>
           </Link>{" "}
-          / <span className="text-black">{data.title}</span>
+
         </nav>
-        <header className="mb-8 mx-auto text-left">
-          <h1 className="text-4xl font-bold">{data.title}</h1>
-          <span>{data.author} | Published on {formattedPublishOn}</span>
+        <header className="mb-[35px] mx-auto text-left">
+          <h1 className="text-h1-sm lg:text-h1-lg font-bold mb-[35px]">{data.title}</h1>
+          <div className="text-black text-lg font-normal leading-snug tracking-wide mb-[35px]">{data.author} | Published on {formattedPublishOn}</div>
           <div>
-            <Image className="mx-auto"
+            <Image className="rounded-lg w-full h-full object-cover"
               src={data.thumbnail}
               alt="Blog thumbnail"
-              width={350}
-              height={350}
+              sizes="(max-width: 479px) 74vw, (max-width: 767px) 77vw, (max-width: 991px) 78vw, (max-width: 1279px) 87vw, (max-width: 1439px) 88vw, 1248px"
+              width={1248}
+              height={702}
             />
           </div>
         </header>
-        <ReactMarkdown>{content}</ReactMarkdown>
-      </article>
+        <div className="prose max-w-none  prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
+
+      </section>
     </main>
   );
 }
