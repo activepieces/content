@@ -11,7 +11,7 @@ const scrollBy = 358;
 const AiSection = (props: {
     props: { template: FlowTemplate, piecesIcons: string[] }[]
 }) => {
-
+    const [marginLeft, setMarginLeft] = useState('0px');
     const sectionDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
     const sliderDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
     useEffect(() => {
@@ -19,8 +19,8 @@ const AiSection = (props: {
         handleResize();
         window.addEventListener("resize", handleResize, false);
 
-    });
-    const [marginLeft, setMarginLeft] = useState('0px');
+    }, [marginLeft]);
+
 
     return (<>
         <section className="bg-[#FAEAFF] py-[100px] lg:py-[160px] ">

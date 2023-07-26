@@ -72,7 +72,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h3-sm': ['26px',{
-          lineHeight: '60px',
+          lineHeight: '41px',
           letterSpacing: '0.65px',
           fontWeight: '700',
         }],
@@ -92,7 +92,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h5-sm': ['18px',{
-          lineHeight: '60px',
+          lineHeight: '33px',
           letterSpacing: '0.45px',
           fontWeight: '700',
         }],

@@ -185,12 +185,54 @@ li {
     }
  
 }
-.curtain-animation{
-  animation: curtainAnimation 300s infinite;
-  animation-timing-function:ease-out;
+.curtains-animation{
+  animation: curtainAnimation 30s infinite;
+  background-repeat: repeat-x;
+  animation-timing-function: steps(1,end);
+  background-size: cover;
 }
 @keyframes curtainAnimation {
-  100% {background-position: 10000px;}
+  0% {
+      background-image:url('/curtains/curtains_1.svg');
+  
+  }
+  10% {
+      background-image:url('/curtains/curtains_2.svg');
+     
+  }
+  20% {
+      background-image:url('/curtains/curtains_3.svg');
+ 
+  }
+  30% {
+      background-image:url('/curtains/curtains_4.svg');
+ 
+  }
+  40% {
+      background-image:url('/curtains/curtains_5.svg');
+
+  }
+  50% {
+      background-image:url('/curtains/curtains_6.svg');
+  }
+  60% {
+      background-image:url('/curtains/curtains_7.svg');
+  }
+  70% {
+      background-image:url('/curtains/curtains_8.svg');
+  }
+  80% {
+      background-image:url('/curtains/curtains_9.svg');
+  }
+  90%
+  {
+    background-image:url('/curtains/curtains_1.svg');
+  }
+  100%
+  {
+    background-image:url('/curtains/curtains_2.svg');
+  }
+
 }
 
 .phone-lottie path[fill="rgb(255,179,44)"]
@@ -203,4 +245,8 @@ img[alt="545f2970-1eee-402a-9a52-8ae19c57e650.png"]
 {
   width: unset !important;
   margin:auto !important;
+}
+::marker 
+{
+  margin-right:1ch;
 }

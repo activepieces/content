@@ -1,6 +1,3 @@
-'use client'
-
-
 import { FlowTemplate } from '@activepieces/shared';
 import Image from 'next/image'
 import TemplatesListItem from './TemplatesListItem';

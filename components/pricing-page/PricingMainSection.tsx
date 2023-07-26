@@ -1,6 +1,7 @@
 import PricingCard from "../../components/PricingCard";
 import Link from "next/link";
 import ImageSlider from "../../components/landing-page/imageSlider";
+import { AnimatedCurtains } from "../animated-curtains/AnimatedCurtains";
 
 const businessPlans = [{ "tasks": 5000, "price": "115" }, { "tasks": 10000, "price": "125" }, { "tasks": 25000, "price": "155" }, { "tasks": 50000, "price": "200" }, { "tasks": 100000, "price": "275" }, { "tasks": 200000, "price": "400" }, { "tasks": 500000, "price": "600" }]
 const proPlans = [{ "tasks": 5000, "price": "15" }, { "tasks": 10000, "price": "25" }, { "tasks": 25000, "price": "55" }, { "tasks": 50000, "price": "100" }, { "tasks": 100000, "price": "175" }, { "tasks": 200000, "price": "300" }, { "tasks": 500000, "price": "500" }];
@@ -22,16 +23,15 @@ export const PricingMainSection = () => {
                         Enjoy our pricing model where tasks get cheaper as you grow!
                     </h2>
                     <div className="flex flex-wrap lg:flex-nowrap gap-[30px] justify-center">
-                        <PricingCard bgClass="bg-[#FFE0A3]" categoryName="Hobbyist" features={hobbyistFeats} free={true} plans={[{ price: '0', tasks: 100 }]}></PricingCard>
-                        <PricingCard bgClass="bg-[#DAFD78]" categoryName="Pro" features={proFeats} free={false} plans={proPlans}></PricingCard>
-                        <PricingCard bgClass="bg-[#C0EEFD]" categoryName="Business" features={businessFeats} free={false} plans={businessPlans}></PricingCard>
+                        <PricingCard bgClass="bg-[#98F5F5]" categoryName="Hobbyist" features={hobbyistFeats} free={true} plans={[{ price: '0', tasks: 100 }]}></PricingCard>
+                        <PricingCard bgClass="bg-[#A0FFAA]" categoryName="Pro" features={proFeats} free={false} plans={proPlans}></PricingCard>
+                        <PricingCard bgClass="bg-[#FFF0BB]" categoryName="Business" features={businessFeats} free={false} plans={businessPlans}></PricingCard>
                     </div>
                 </section>
             </main>
             <section className="container mx-auto bg-black px-[30px] lg:px-0">
                 <div className="border border-solid border-white rounded overflow-hidden">
-                    <div className="bg-[url('/curtains.svg')] bg-repeat-x h-[36px] w-full curtain-animation">
-                    </div>
+                    <AnimatedCurtains></AnimatedCurtains>
                     <div className="flex flex-col gap-[80px] px-[50px] py-[80px]">
                         <div className="flex justify-between items-center flex-wrap gap-[35px] ">
                             <h2 className="text-white  text-h2-sm lg:text-h2-lg">
@@ -42,11 +42,11 @@ export const PricingMainSection = () => {
                                 Contact us
                             </Link>
                         </div>
-                        <div className="flex gap-[25px] md:gap-[80px] flex-wrap ">
+                        <div className="flex gap-[25px] lg:gap-[80px] flex-wrap ">
                             <div className="flex flex-col  gap-[25px]">
                                 {
                                     enterpriseFeatsFirstCol.map((feat, idx) => (
-                                        <div className="flex items-center gap-[15px] text-white !leading-[37.5px]  !font-normal text-h4-sm md:text-h4-lg font-normal " key={idx}>
+                                        <div className="flex items-center gap-[15px] text-white !leading-[37.5px]  !font-normal text-h4-sm lg:text-h4-lg font-normal " key={idx}>
                                             <img src="/enterprise_feat.svg" alt="feat" width={22} height={22} ></img>
                                             {feat}
                                         </div>
@@ -57,7 +57,7 @@ export const PricingMainSection = () => {
                             <div className="flex flex-col  gap-[25px]">
                                 {
                                     enterpriseFeatsSecondCol.map((feat, idx) => (
-                                        <div className="flex items-center gap-[15px] text-white  !leading-[37.5px] !font-normal text-h4-sm md:text-h4-lg font-normal " key={idx}>
+                                        <div className="flex items-center gap-[15px] text-white  !leading-[37.5px] !font-normal text-h4-sm lg:text-h4-lg font-normal " key={idx}>
                                             <img src="/enterprise_feat.svg" alt="feat" width={22} height={22} ></img>
                                             {feat}
                                         </div>
