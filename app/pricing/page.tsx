@@ -4,6 +4,7 @@ import { PricingMainSection } from "../../components/pricing-page/PricingMainSec
 import { FeaturesSection } from "../../components/pricing-page/FeaturesSection";
 import { WhiteLabelSection } from "../../components/pricing-page/WhiteLabelSection";
 import { FAQsSection } from "../../components/pricing-page/FAQsSection";
+import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
 
 export const metadata: Metadata = {
   title: 'Activepieces - Pricing',
@@ -18,6 +19,7 @@ export default async function PricingPage() {
       <FeaturesSection></FeaturesSection>
       <WhiteLabelSection></WhiteLabelSection>
       <FAQsSection></FAQsSection>
+      <AutomateWithActivepieces></AutomateWithActivepieces>
     </>
   );
 }

@@ -61,7 +61,7 @@ const Navbar = () => {
             </li>
             <li className="flex order-5 lg:order-none   justify-start lg:justify-center items-center">
 
-              <Link href="https://www.activepieces.com/pricing" className="block gap-2 text-white hover:text-green flex  justify-start lg:justify-center items-center transition-colors">
+              <Link href="/pricing" className="block gap-2 text-white hover:text-green flex  justify-start lg:justify-center items-center transition-colors">
                 <Image
                   alt="Pricing"
                   src="/pricing.png"

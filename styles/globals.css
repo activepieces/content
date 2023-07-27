@@ -124,10 +124,11 @@ li {
 
 .pricing-menu {
   border-radius: 6px;
+  border:1px solid #1111113f;
   overflow: hidden;
   min-width: 336px;
   max-height: 336px;
-  margin-top:5px !important;
+  margin-top:1px !important;
   overflow-y: auto;
   box-shadow: 0px 3.39516282081604px 6.79032564163208px 0px rgba(0, 0, 0, 0.12);;
 }
@@ -140,24 +141,23 @@ li {
 
 .pricing-menu::-webkit-scrollbar
 {
-    width: 10px;
-    border-radius: 6px;
+    width: 16px;
 }
 .pricing-menu::-webkit-scrollbar-track {
   background: #FFFFFF;
 }
 .pricing-menu::-webkit-scrollbar-thumb
 {
-  background: #c2c9d1;
-  border-radius: 40px;
-  scrollbar-width: thin;
+  background: #898A8E;
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 40px;
+    scrollbar-width: thin;
+
+ 
 }
 
-.pricing-menu::-webkit-scrollbar-thumb:hover
-{
-  background: rgba(255, 255, 255, 0.7);
 
-}
 
 .pricing-menuitem {
   color:#111111;
@@ -169,6 +169,7 @@ li {
   text-align: left;
   user-select: none;
   outline: 0px solid transparent;
+  border-bottom: 1px solid #1111113f;
 }
 .pricing-menuitem:hover {
   background-color: #dadada;
@@ -176,12 +177,12 @@ li {
 
 .pricing-menuitem .item-container
 {
-  padding:15px;
+  padding:20px;
 }
 @media screen and (max-width: 768px) {
     .apps-menuitem .item-container
     {
-      padding:15px;
+      padding:20px;
     }
  
 }

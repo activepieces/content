@@ -72,7 +72,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h3-sm': ['26px',{
-          lineHeight: '41px',
+          lineHeight: '26px',
           letterSpacing: '0.65px',
           fontWeight: '700',
         }],

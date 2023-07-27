@@ -56,8 +56,11 @@ const PricingCard = (props: {
                             onClick={() => {
                                 setSelectedPricing(plan);
                             }}>
-                            <div className='item-container cursor-pointer flex gap-2  items-center'>
-                                <div className="truncate  break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                            <div className='item-container cursor-pointer flex  flex-col gap-[10px] '>
+                                <div className="text-h3-sm">
+                                    {props.free ? `$9 Free` : `$${plan.price}/mo`}
+                                </div>
+                                <div className="truncate text-[22px] font-normal leading-[30px] tracking-wide  break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {plan.tasks} {props.free ? 'tasks/day' : 'tasks/month'}
                                 </div>
                             </div>

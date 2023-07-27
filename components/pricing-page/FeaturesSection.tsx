@@ -44,9 +44,7 @@ export const FeaturesSection = () => {
                                     Visit GitHub
                                 </div>
 
-                                <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}>
-
-                                </Image>
+                                <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}></Image>
                             </Link>
                         </div>
                         <div className="phone-lottie relative min-h-[336.469px] min-w-[688.32px]">
