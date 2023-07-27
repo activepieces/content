@@ -1,8 +1,8 @@
 'use client';
 import Image from "next/image";
 import { DetailedPiece } from "../../utils/piece-helper";
-import { useRef, useState } from "react";
-import { ControlledMenu, MenuItem, useClick } from "@szhsin/react-menu";
+import { RefObject, useRef, useState } from "react";
+import { ControlledMenu, FocusableItem, MenuItem, useClick } from "@szhsin/react-menu";
 import { ActionType, FlowTemplate, TriggerType } from "@activepieces/shared";
 const template: FlowTemplate = {
     "id": "jyEi8zZkVYIiP4nqWrH85",
@@ -52,7 +52,7 @@ export interface CombinationsCreatorProps {
 const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
     const menuItemClassName = ({ hover }: { hover: boolean }) =>
-        hover ? 'apps-menuitem transitions-all' : 'apps-menuitem';
+        hover ? 'apps-menuitem transitions-all !font-normal ' : 'apps-menuitem !font-normal ';
     const triggerAppDropdown = useRef(null);
     const [isTriggerAppDropdownOpen, setIsTriggerAppDropdownOpen] = useState(false);
     const triggerAppdownAnchorProps = useClick(isTriggerAppDropdownOpen, setIsTriggerAppDropdownOpen);
@@ -69,6 +69,10 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
     const [isActionDropdownOpen, setIsActionDropdownOpen] = useState(false);
     const actionDropdownAnchorProps = useClick(isActionDropdownOpen, setIsActionDropdownOpen);
     const [selectedAction, setSelectedAction] = useState(props.actionPieces[0].actions[Object.keys(props.actionPieces[0].actions)[0]]);
+    const [searchTriggerAppTerm, setSearchTriggerAppTerm] = useState("");
+    const [searchTriggerTerm, setSearchTriggerTerm] = useState("");
+    const [searchActionAppTerm, setSearchActionAppTerm] = useState("");
+    const [searchActionTerm, setSearchActionTerm] = useState("");
 
     const generateTemplate = () => {
         template.template.trigger.settings.pieceName = selectedTriggerApp.name;
@@ -177,18 +181,26 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 state={isTriggerAppDropdownOpen ? 'open' : 'closed'}
                 anchorRef={triggerAppDropdown}
                 onClose={() => setIsTriggerAppDropdownOpen(false)} menuClassName="apps-menu">
+                <FocusableItem>
+                    {({ ref }) => (
+                        <SearchComp
+                            searchTerm={searchTriggerAppTerm}
+                            setSearchTerm={setSearchTriggerAppTerm}
+                        ></SearchComp>
+                    )}
+                </FocusableItem>
                 {
-                    props.triggerPieces.map((app, idx) =>
+                    props.triggerPieces.filter((app) => app.displayName.toLowerCase().includes(searchTriggerAppTerm.toLowerCase())).map((app, idx) =>
                         <MenuItem className={menuItemClassName} key={idx}
                             onClick={() => {
                                 setSelectedTriggerApp(app);
                                 setSelectedTrigger(app.triggers[Object.keys(app.triggers)[0]])
                             }}>
-                            <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
-                                <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
-                                    <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[40px] lg:w-[40px]"></Image>
+                            <div className='item-container-combinations   cursor-pointer flex gap-2  items-center'>
+                                <div className=" bg-white flex items-center p-[7px] border border-solid border-outline rounded-lg ">
+                                    <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[26px] lg:w-[26px]"></Image>
                                 </div>
-                                <div className="truncate  break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                                <div className="truncate text-[22px] break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {app.displayName}
                                 </div>
                             </div>
@@ -204,11 +216,19 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 state={isTriggerDropdownOpen ? 'open' : 'closed'}
                 anchorRef={triggerDropdown}
                 onClose={() => setIsTriggerDropdownOpen(false)} menuClassName="apps-menu">
+                <FocusableItem>
+                    {({ ref }) => (
+                        <SearchComp
+                            searchTerm={searchTriggerTerm}
+                            setSearchTerm={setSearchTriggerTerm}
+                        ></SearchComp>
+                    )}
+                </FocusableItem>
                 {
                     Object.keys(selectedTriggerApp.triggers).map((key, idx) =>
                         <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedTrigger(selectedTriggerApp.triggers[key])}>
-                            <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
-                                <div className="truncate  break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center'>
+                                <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {selectedTriggerApp.triggers[key].displayName}
                                 </div>
                             </div>
@@ -228,11 +248,19 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 state={isActionDropdownOpen ? 'open' : 'closed'}
                 anchorRef={actionDropdown}
                 onClose={() => setIsActionDropdownOpen(false)} menuClassName="apps-menu">
+                <FocusableItem>
+                    {({ ref }) => (
+                        <SearchComp
+                            searchTerm={searchActionAppTerm}
+                            setSearchTerm={setSearchActionAppTerm}
+                        ></SearchComp>
+                    )}
+                </FocusableItem>
                 {
                     Object.keys(selectedActionApp.actions).map((key, idx) =>
                         <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedAction(selectedActionApp.actions[key])}>
-                            <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
-                                <div className="truncate  break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center'>
+                                <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {selectedActionApp.actions[key].displayName}
                                 </div>
                             </div>
@@ -249,6 +277,14 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 state={isActionAppDropdownOpen ? 'open' : 'closed'}
                 anchorRef={actionAppDropdown}
                 onClose={() => setIsActionAppDropdownOpen(false)} menuClassName="apps-menu">
+                <FocusableItem>
+                    {({ ref }) => (
+                        <SearchComp
+                            searchTerm={searchActionTerm}
+                            setSearchTerm={setSearchActionTerm}
+                        ></SearchComp>
+                    )}
+                </FocusableItem>
                 {
                     props.actionPieces.map((app, idx) =>
                         <MenuItem className={menuItemClassName} key={idx}
@@ -256,11 +292,11 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                 setSelectedActionApp(app);
                                 setSelectedAction(app.actions[Object.keys(app.actions)[0]])
                             }}>
-                            <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
+                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center'>
                                 <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
                                     <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[40px] lg:w-[40px]"></Image>
                                 </div>
-                                <div className="truncate  break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                                <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {app.displayName}
                                 </div>
                             </div>
@@ -277,3 +313,26 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
     );
 };
 export default CombinationsCreator;
+
+const SearchComp = (porps: { searchTerm: string, setSearchTerm: (term: string) => void }) => {
+    const ref = useRef<HTMLInputElement>(null);
+    return <div className="bg-[#2D2E33] p-[15px] pb-[20px]">
+        <div className="flex justify-center w-full gap-0 h-[56px] flex-row-reverse">
+            <input
+                type="text"
+                tabIndex={2}
+                placeholder="Search"
+                value={porps.searchTerm}
+                className="peer text-white w-full bg-[#1B1C20] py-2 pr-2 rounded-r-md border-r border-y border-[#FFFFFF] border-opacity-20 focus:outline-none "
+                ref={ref}
+                onChange={(e) => {
+                    porps.setSearchTerm(e.target.value);
+                }}
+            />
+            <div onClick={() => ref.current?.focus()} className="bg-[#1B1C20] cursor-pointer  pl-4 pr-3 rounded-l-md border-l border-y border-[#FFFFFF] border-opacity-20  peer-focus:outline-none flex flex-items-center">
+                <img src="search_white.svg" alt="search for pieces" width={18} height={18} />
+            </div>
+        </div>
+    </div>
+
+}

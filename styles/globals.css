@@ -52,12 +52,13 @@ html:focus-within {
 .apps-menu {
   border-radius: 6px;
   overflow: hidden;
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 393px;
+  max-width: 393px;
   max-height: 400px;
   margin-top:10px !important;
   overflow-y: auto;
   box-shadow: 0px 3.39516282081604px 6.79032564163208px 0px rgba(0, 0, 0, 0.12);;
+  border:1px solid rgba(255, 255, 255, 0.2);
 }
 @media screen and (max-width: 1200px) {
   .apps-menu {
@@ -68,25 +69,28 @@ html:focus-within {
 
 .apps-menu::-webkit-scrollbar
 {
-    width: 10px;
-    border-radius: 6px;
+    width: 16px;
+   
 }
 .apps-menu::-webkit-scrollbar-track {
   background: #2D2E33;
+  border-top-right-radius:6px;
 }
 .apps-menu::-webkit-scrollbar-thumb
 {
-  background: #c2c9d1;
-  border-radius: 40px;
-  scrollbar-width: thin;
+  background: #6B6C70;
+  background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 40px;
+    scrollbar-width: thin;
 }
 
-.apps-menu::-webkit-scrollbar-thumb:hover
+.apps-menu::-webkit-scrollbar-thumb :hover
 {
-  background: rgba(179, 179, 179, 0.7);
+  background:#c2c9d1;
 
 }
-
+ 
 .apps-menuitem {
   color:#FFFFFF;
   background-color: #2D2E33;
@@ -98,18 +102,23 @@ html:focus-within {
   user-select: none;
   outline: 0px solid transparent;
 }
+
 .apps-menuitem:hover {
   background-color: #43444b;
 }
 
 .apps-menuitem .item-container
 {
-  padding:35px;
+  padding:35px 35px 20px 35px;
+}
+.apps-menuitem .item-container-combinations
+{
+  padding:20px 15px;
 }
 @media screen and (max-width: 768px) {
     .apps-menuitem .item-container
     {
-      padding:15px;
+      padding:30px 30px 20px 30px;
     }
  
 }
@@ -145,6 +154,7 @@ li {
 }
 .pricing-menu::-webkit-scrollbar-track {
   background: #FFFFFF;
+  border-top-right-radius:6px;
 }
 .pricing-menu::-webkit-scrollbar-thumb
 {
@@ -179,13 +189,7 @@ li {
 {
   padding:20px;
 }
-@media screen and (max-width: 768px) {
-    .apps-menuitem .item-container
-    {
-      padding:20px;
-    }
- 
-}
+
 .curtains-animation{
   animation: curtainAnimation 30s infinite;
   background-repeat: repeat-x;
