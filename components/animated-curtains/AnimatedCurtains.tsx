@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 let curtainindex = 0;
 export const AnimatedCurtains = () => {
-    const arrayOfCurtains = new Array(10).fill(0).map((_, i) => i + 1);
+    const arrayOfCurtains = new Array(9).fill(0).map((_, i) => i + 1);
     useEffect(() => {
         const timer = setInterval(() => {
             curtainindex = (curtainindex + 1) % arrayOfCurtains.length;
@@ -16,7 +16,7 @@ export const AnimatedCurtains = () => {
     });
 
     return <>
-        <div id='curtain' className="bg-contain lg:bg-cover bg-[url('/curtains/curtains_1.svg')] h-[36px] w-full transition-none  ">
+        <div id='curtain' className="bg-cover bg-[url('/curtains/curtains_1.svg')] h-[36px] w-full transition-none  ">
             {/* I did this so all images are loaded on component load */}
             {
                 arrayOfCurtains.map((_, i) => <Image key={i} src={`/curtains/curtains_${_}.svg`} width={1440} height={36} alt="curtains" className='hidden'></Image>)
