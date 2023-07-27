@@ -1,5 +1,4 @@
-
-'use client';
+'use client'
 import { MutableRefObject, useRef } from 'react';
 /* eslint-disable-next-line */
 export interface CollapsiblePropertiesProps {
@@ -7,7 +6,7 @@ export interface CollapsiblePropertiesProps {
 }
 
 export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
-  const propertiesDiv: MutableRefObject<null|HTMLDivElement> = useRef(null);
+  const propertiesDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
   const propertyTypeStrings: Record<string, string> = {
     SHORT_TEXT: "Short Text",
     LONG_TEXT: "Long Text",
@@ -32,17 +31,16 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
     return ["CUSTOM_AUTH", "OAUTH2", "SECRET_TEXT", "BASIC_AUTH"].includes(
       type
     );
-  }  
+  }
   function handleClick() {
-    if(propertiesDiv.current?.clientHeight === 0) {
-    
+    if (propertiesDiv.current?.clientHeight === 0) {
+
       propertiesDiv.current?.style.setProperty("height", propertiesDiv.current?.scrollHeight + "px");
     }
-    else
-    {
+    else {
       propertiesDiv.current?.style.setProperty("height", "0px");
     }
-   
+
   }
 
   return (
@@ -73,9 +71,9 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
         </svg>
       </div>
 
-      <div className="text-white overflow-hidden h-0 transition-all "  ref={propertiesDiv}>
+      <div className="text-white overflow-hidden h-0 transition-all " ref={propertiesDiv}>
         <div>
-          {Object.entries(props.props).map(([key,property]) => (
+          {Object.entries(props.props).map(([key, property]) => (
             <div
               className="border-b-[1px] border-separator py-3 relative"
               key={key}
