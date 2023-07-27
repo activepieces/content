@@ -1,6 +1,3 @@
-'use client'
-
-
 import { FlowTemplate } from '@activepieces/shared';
 import Image from 'next/image'
 import TemplatesListItem from './TemplatesListItem';
@@ -11,7 +8,7 @@ const LeadsSection = (props: {
 
 
     return (<>
-        <section className="bg-[#CCF3FF] py-[100px] lg:py-[160px] ">
+        <section className="bg-[#CCF3FF] py-[100px] lg:py-[160px] border-t border-solid border-black ">
             <div className='container mx-auto px-4 lg:px-0'>
 
                 <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center '>

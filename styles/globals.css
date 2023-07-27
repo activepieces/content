@@ -28,7 +28,7 @@
 
 
 img {
-  max-width: 100%;
+  max-width: unset;
   height: unset;
 }
 
@@ -52,12 +52,13 @@ html:focus-within {
 .apps-menu {
   border-radius: 6px;
   overflow: hidden;
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 393px;
+  max-width: 393px;
   max-height: 400px;
   margin-top:10px !important;
   overflow-y: auto;
   box-shadow: 0px 3.39516282081604px 6.79032564163208px 0px rgba(0, 0, 0, 0.12);;
+  border:1px solid rgba(255, 255, 255, 0.2);
 }
 @media screen and (max-width: 1200px) {
   .apps-menu {
@@ -68,25 +69,28 @@ html:focus-within {
 
 .apps-menu::-webkit-scrollbar
 {
-    width: 10px;
-    border-radius: 6px;
+    width: 16px;
+   
 }
 .apps-menu::-webkit-scrollbar-track {
   background: #2D2E33;
+  border-top-right-radius:6px;
 }
 .apps-menu::-webkit-scrollbar-thumb
 {
-  background: #c2c9d1;
-  border-radius: 40px;
-  scrollbar-width: thin;
+  background: #6B6C70;
+  background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 40px;
+    scrollbar-width: thin;
 }
 
-.apps-menu::-webkit-scrollbar-thumb:hover
+.apps-menu::-webkit-scrollbar-thumb :hover
 {
-  background: rgba(179, 179, 179, 0.7);
+  background:#c2c9d1;
 
 }
-
+ 
 .apps-menuitem {
   color:#FFFFFF;
   background-color: #2D2E33;
@@ -98,18 +102,23 @@ html:focus-within {
   user-select: none;
   outline: 0px solid transparent;
 }
+
 .apps-menuitem:hover {
   background-color: #43444b;
 }
 
 .apps-menuitem .item-container
 {
-  padding:35px;
+  padding:35px 35px 20px 35px;
+}
+.apps-menuitem .item-container-combinations
+{
+  padding:20px 15px;
 }
 @media screen and (max-width: 768px) {
     .apps-menuitem .item-container
     {
-      padding:15px;
+      padding:30px 30px 20px 30px;
     }
  
 }
@@ -124,10 +133,11 @@ li {
 
 .pricing-menu {
   border-radius: 6px;
+  border:1px solid #1111113f;
   overflow: hidden;
   min-width: 336px;
   max-height: 336px;
-  margin-top:5px !important;
+  margin-top:1px !important;
   overflow-y: auto;
   box-shadow: 0px 3.39516282081604px 6.79032564163208px 0px rgba(0, 0, 0, 0.12);;
 }
@@ -140,24 +150,24 @@ li {
 
 .pricing-menu::-webkit-scrollbar
 {
-    width: 10px;
-    border-radius: 6px;
+    width: 16px;
 }
 .pricing-menu::-webkit-scrollbar-track {
   background: #FFFFFF;
+  border-top-right-radius:6px;
 }
 .pricing-menu::-webkit-scrollbar-thumb
 {
-  background: #c2c9d1;
-  border-radius: 40px;
-  scrollbar-width: thin;
+  background: #898A8E;
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 40px;
+    scrollbar-width: thin;
+
+ 
 }
 
-.pricing-menu::-webkit-scrollbar-thumb:hover
-{
-  background: rgba(255, 255, 255, 0.7);
 
-}
 
 .pricing-menuitem {
   color:#111111;
@@ -169,6 +179,7 @@ li {
   text-align: left;
   user-select: none;
   outline: 0px solid transparent;
+  border-bottom: 1px solid #1111113f;
 }
 .pricing-menuitem:hover {
   background-color: #dadada;
@@ -176,24 +187,63 @@ li {
 
 .pricing-menuitem .item-container
 {
-  padding:15px;
-}
-@media screen and (max-width: 768px) {
-    .apps-menuitem .item-container
-    {
-      padding:15px;
-    }
- 
-}
-.curtain-animation{
-  animation: curtainAnimation 300s infinite;
-  animation-timing-function:ease-out;
-}
-@keyframes curtainAnimation {
-  100% {background-position: 10000px;}
+  padding:20px;
 }
 
-path[fill="rgb(255,179,44)"]
+.curtains-animation{
+  animation: curtainAnimation 36s infinite;
+  background-repeat: repeat-x;
+  animation-timing-function: steps(1,end);
+  background-size: cover;
+}
+@keyframes curtainAnimation {
+  0% {
+      background-image:url('/curtains/curtains_1.svg');
+  }
+  11.111111% {
+      background-image:url('/curtains/curtains_2.svg');
+  }
+  22.222222% {
+      background-image:url('/curtains/curtains_3.svg');
+ 
+  }
+  33.333333% {
+      background-image:url('/curtains/curtains_4.svg');
+ 
+  }
+  44.444444% {
+      background-image:url('/curtains/curtains_5.svg');
+
+  }
+  55.555555% {
+      background-image:url('/curtains/curtains_6.svg');
+  }
+  66.666666% {
+      background-image:url('/curtains/curtains_7.svg');
+  }
+  77.777777% {
+      background-image:url('/curtains/curtains_8.svg');
+  }
+  88.888888% {
+      background-image:url('/curtains/curtains_9.svg');
+  }
+  99.999999% {
+    background-image:url('/curtains/curtains_1.svg');
+  }
+}
+
+.phone-lottie path[fill="rgb(255,179,44)"]
 {
-  transform:rotate(70deg)
+  transform:rotate(70deg) /* Rotate the play button*/
+}
+
+img[alt="d7c2318f-b731-44a2-a0df-9cd832be3be9.png"],
+img[alt="545f2970-1eee-402a-9a52-8ae19c57e650.png"]
+{
+  width: unset !important;
+  margin:auto !important;
+}
+::marker 
+{
+  margin-right:1ch;
 }

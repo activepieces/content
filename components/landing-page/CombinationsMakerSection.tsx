@@ -30,7 +30,7 @@ const CombinationsMakerSection = async () => {
 
                         <h2 className="text-white text-[50px] font-bold  lg:text-[80px] md:mx-auto md:text-center relative lg:mx-0 lg:text-left max-w-[355px] lg:max-w-[565px]">
                             Infinite possibilities with your favorite apps
-                            <Image alt='planet' src="/planet.svg" height={85.015} width={142.038} className='absolute w-[80px] h-[51.043px] md:h-[85.015px] md:w-[142.038px]  top-[10px] right-[95px]  md:-right-[140px] md:top-0  lg:right-[155px]'></Image>
+                            <Image alt='planet' src="/planet.svg" height={85.015} width={142.038} className='absolute w-[80px] h-[51.043px] md:h-[85.015px] md:w-[142.038px]  top-[10px] right-[95px]  md:-right-[140px] md:top-[25px]  lg:right-[155px]'></Image>
                         </h2>
 
                     </div>
