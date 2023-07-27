@@ -5,24 +5,101 @@ import Image from 'next/image'
 
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { MenuItem, ControlledMenu, useClick } from '@szhsin/react-menu';
-import CenterOfWorldCard from './CenterOfWorldCard';
-const apps: { appName: string, icon: string }[] = [
+import CenterOfWorldCard, { ActionApp, TriggerApp } from './CenterOfWorldCard';
+
+//TODO: correct appNames and actions/triggers names
+const appsUserChanges: ActionApp[] = [
     {
         appName: 'Slack',
-        icon: 'https://cdn.activepieces.com/pieces/slack.png'
+        icon: 'https://cdn.activepieces.com/pieces/slack.png',
+        displayName: 'Slack',
+        actionName: 'Send a message',
     },
     {
-        appName: 'Asana',
-        icon: 'https://cdn.activepieces.com/pieces/asana.png'
+        appName: 'Telegram',
+        icon: 'https://cdn.activepieces.com/pieces/telegram_bot.png',
+        displayName: 'Telgram',
+        actionName: 'Send a message',
+    },
+    {
+        appName: 'Matrix',
+        icon: 'https://cdn.activepieces.com/pieces/matrix.png',
+        displayName: 'Matrix',
+        actionName: 'Send a message',
+    },
+    {
+        appName: 'Mattermost',
+        icon: 'https://cdn.activepieces.com/pieces/mattermost.png',
+        displayName: 'Mattermost',
+        actionName: 'Send a message',
     },
     {
         appName: 'Discord',
-        icon: 'https://cdn.activepieces.com/pieces/discord.png'
+        icon: 'https://cdn.activepieces.com/pieces/discord.png',
+        displayName: 'Discord',
+        actionName: 'Send a message',
     },
 
 ];
+
+const appsUsedAlways: TriggerApp[] = [
+    {
+        iconUrl: 'https://cdn.activepieces.com/pieces/stripe.png',
+        bannerUrl: "/centeralize/stripe.png",
+        templateText: `Celebrate new Stripe subscriptions with your team`,
+        displayName: 'Stripe',
+        appName: 'Stripe',
+        triggerName: 'New subscription'
+    },
+    {
+        iconUrl: "https://cdn.activepieces.com/pieces/calendly.png",
+        bannerUrl: "/centeralize/calendly.png",
+        templateText: "Put your new Calendly bookings in front of your team",
+        displayName: 'Calendly',
+        appName: 'Calendly',
+        triggerName: 'New booking'
+    },
+    {
+        iconUrl: "https://cdn.activepieces.com/pieces/pipedrive.png",
+        bannerUrl: "/centeralize/pipedrive.png",
+        templateText: "Throw a party when a Pipedrive deal is won",
+        displayName: 'Pipedrive',
+        appName: 'Pipedrive',
+        triggerName: 'Deal won'
+    }
+    ,
+    {
+        iconUrl: "https://cdn.activepieces.com/pieces/clickup.png",
+        bannerUrl: "/centeralize/clickup.png",
+        templateText: "Keep your team posted on new ClickUp tasks",
+        displayName: 'ClickUp',
+        appName: 'ClickUp',
+        triggerName: 'New task',
+
+    },
+    {
+        iconUrl: "https://cdn.activepieces.com/pieces/google-forms.png",
+        bannerUrl: "/centeralize/google-forms.png",
+        templateText: "Post your Google Form submissions to your team",
+        displayName: 'Google Forms',
+        appName: 'Google Forms',
+        triggerName: 'New submission'
+    },
+    {
+        iconUrl: "https://cdn.activepieces.com/pieces/mailchimp.png",
+        bannerUrl: "/centeralize/mailchimp.png",
+        templateText: "Share new Mailchimp subscribers with your team",
+        displayName: 'Mailchimp',
+        appName: 'Mailchimp',
+        triggerName: 'New subscriber'
+    }
+]
+
+
+
+
 const menuItemClassName = ({ hover }: { hover: boolean }) =>
-    hover ? 'apps-menuitem transition-all ' : 'apps-menuitem';
+    hover ? 'apps-menuitem transition-all' : 'apps-menuitem ';
 
 const scrollBy = 358;
 const CenterOfWorldSection = (props: {
@@ -33,7 +110,7 @@ const CenterOfWorldSection = (props: {
     const sliderDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
     const menuButtonRef: MutableRefObject<null | HTMLDivElement> = useRef(null);
     const [isAppMenuOpen, setisAppMenuOpen] = useState(false);
-    const [selectedApp, setSelectedApp] = useState(apps[0]);
+    const [selectedApp, setSelectedApp] = useState(appsUserChanges[0]);
     const anchorProps = useClick(isAppMenuOpen, setisAppMenuOpen);
 
     useEffect(() => {
@@ -45,7 +122,7 @@ const CenterOfWorldSection = (props: {
     const [marginLeft, setMarginLeft] = useState('0px');
 
     return (<>
-        <section className="bg-[#E7FFA4] py-[100px] lg:py-[160px] ">
+        <section className="bg-[#E7FFA4] py-[100px] lg:py-[160px] border-t border-solid border-black ">
             <div ref={sectionDiv} className='container mx-auto px-4 lg:px-0'>
                 <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center '>
                     <div className='basis-full lg:basis-auto' >
@@ -54,7 +131,7 @@ const CenterOfWorldSection = (props: {
 
                     <div className='flex gap-[10px] lg:gap-[25px] items-center flex-wrap'>
                         <div>
-                            Make
+                            Centralize notifications in your
                         </div>
                         <div className='select-none cursor-pointer  relative items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
                             { color: isAppMenuOpen ? "#6E41E2" : "#111111" }
@@ -79,16 +156,14 @@ const CenterOfWorldSection = (props: {
                                     </filter>
                                 </defs>
                             </svg>
-                            <Image alt="underline" src="/menu_underline.svg" width={202} height={193} className='absolute -bottom-[9px] left-[10px]'></Image>
-                        </div>  <div className='basis-full lg:basis-auto'>
-                            the center of your world
+                            <Image alt="underline" src="/menu_underline.svg" width={202} height={193} className='absolute w-full -bottom-[16px] left-[10px]'></Image>
                         </div>
                         <ControlledMenu
                             state={isAppMenuOpen ? 'open' : 'closed'}
                             anchorRef={menuButtonRef}
                             onClose={() => setisAppMenuOpen(false)} menuClassName="apps-menu">
                             {
-                                apps.map((app, idx) =>
+                                appsUserChanges.filter(app => app.appName !== selectedApp.appName).map((app, idx) =>
                                     <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedApp(app)}>
                                         <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
                                             <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
@@ -133,7 +208,7 @@ const CenterOfWorldSection = (props: {
                 }
             } className='flex gap-[15px] overflow-scroll px-4 lg:px-0 ai-cards-slider items-center' ref={sliderDiv}>
                 {
-                    props.props.map((_, i) => <CenterOfWorldCard bannerUrl={'/random_' + ((i % 3) + 1) + '.svg'} key={i} template={_.template} piecesIcons={_.piecesIcons}></CenterOfWorldCard>)
+                    appsUsedAlways.map((_, i) => <CenterOfWorldCard actionApp={selectedApp} triggerApp={_} key={i} ></CenterOfWorldCard>)
                 }
 
             </div>

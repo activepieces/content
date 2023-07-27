@@ -5,14 +5,14 @@ const MainSection = () =>
     <>
         <main>
             <section className='bg-black text-white text-[50px] font-bold leading-[60px] lg:text-[80px] px-4 lg:px-0 pb-[100px] lg:pb-[150px]'>
-                <div className='container mx-auto py-[40px] lg:py-[80px] flex gap-0 flex-wrap lg:flex-nowrap mb-[40px] lg:mb-[80px]'>
+                <div className='container justify-between mx-auto py-[40px] lg:py-[80px] flex gap-0 flex-wrap lg:flex-nowrap mb-[40px] lg:mb-[80px]'>
 
-                    <h1 className='lg:items-start flex gap-[20px] lg:gap-[25px] items-center flex-wrap'>
-                        Automate your <div className='flex items-center gap-[20px] lg:gap-[25px]'>
-                            <Image alt='marketing' src="/marketing.svg" width={68} height={85} className='h-[45px] w-[35px] lg:h-[85px] lg:w-[68px] '></Image>  marketing
+                    <h1 className='lg:items-start flex max-w-[962.37px] gap-[20px] lg:gap-[25px] items-center flex-wrap'>
+                        Automate your <div className='text-black bg-[#FFCC4D]  rotate-[2.25deg] text-black p-[5.5px]'>
+                            marketing
                         </div>
-                        <div className='flex items-center gap-[20px] lg:gap-[25px]'>
-                            <Image alt='sales' src="/sales.svg" width={68} height={85} className='h-[45px] w-[35px] lg:h-[85px] lg:w-[68px]  '></Image> sales
+                        <div className='-rotate-[4.52deg] bg-[#FFB2E0] text-black p-[5.5px]'>
+                            sales
                         </div>
                         <div className='flex items-center'>
                             <div className='hidden lg:block'
@@ -21,7 +21,8 @@ const MainSection = () =>
                             <div className='lg:hidden'
                             >&
                             </div>
-                        </div>   <div className='flex gap-[20px] lg:gap-[25px] items-center'><Image alt='operations' src="/operations.svg" width={68} height={85} className='h-[45px] w-[35px] lg:h-[85px] lg:w-[68px] '></Image> opertaions </div>
+                        </div>
+                        <div className='bg-[#06FFB4] text-black -rotate-[1.83deg] text-black p-[5.5px]'>operations </div>
 
                         without code
                     </h1>

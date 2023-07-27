@@ -11,7 +11,7 @@ const Productivity100XSection = (props: {
 
 
     return (<>
-        <section className="bg-[#FFE1A6] py-[100px] lg:py-[160px] ">
+        <section className="bg-[#FFE1A6] py-[100px] lg:py-[160px] border-t border-solid border-black">
             <div className='container mx-auto px-4 lg:px-0'>
 
                 <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center '>
@@ -19,7 +19,7 @@ const Productivity100XSection = (props: {
                         <Image src="/four.svg" alt='one' width={39} height={41} className='w-[30px] h-[24px] lg:w-[43px] lg:h-[34px]'></Image>
                     </div>
 
-                    100X your productivity
+                    Turbocharge your productivity
                 </div>
                 <div className='flex'>
                     <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-[40px] lg:mb-[80px]'>

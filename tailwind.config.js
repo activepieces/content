@@ -18,7 +18,7 @@ module.exports = {
         '100': '100%',
       },
       colors: {
-        black: '#111112',
+        black: '#111111',
         primary: { DEFAULT: '#6e41e2', medium:'#ab90ee', light: '#eee9fc', dark: '#6838e0','10':'rgba(110, 65, 226, 0.1)' },
         green: "#c9fa75",
         divider: "rgba(17, 17, 17, 0.30)",
@@ -72,7 +72,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h3-sm': ['26px',{
-          lineHeight: '60px',
+          lineHeight: '26px',
           letterSpacing: '0.65px',
           fontWeight: '700',
         }],
@@ -92,7 +92,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h5-sm': ['18px',{
-          lineHeight: '60px',
+          lineHeight: '33px',
           letterSpacing: '0.45px',
           fontWeight: '700',
         }],
