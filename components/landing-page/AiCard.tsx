@@ -10,7 +10,7 @@ const AiCard = (props: AiCardProps) => {
 
     return (
         <>
-            <div className="border border-solid border-[#000000] rounded-[6px] overflow-hidden lg:min-w-[358px] min-w-[250px]" >
+            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferrer" className="border border-solid border-[#000000] rounded-md overflow-hidden lg:min-w-[358px] min-w-[250px]" >
                 <div className="p-[25px] lg:pb-[65px] lg:p-[35px] bg-white flex flex-col gap-[30px]">
                     <div className="flex gap-[10px] lg:gap-[15px]">
                         {
@@ -28,10 +28,10 @@ const AiCard = (props: AiCardProps) => {
                     </div>
 
                 </div>
-                <Link target="_blank" rel="noopener noreferrer" className="bg-black text-white text-h4-sm lg:text-h4-lg  text-center py-[15px] lg:py-[10px]  flex justify-center" href={"https://cloud.activepieces.com/templates/" + props.template.id}>
+                <div className="bg-black text-white text-h4-sm lg:text-h4-lg  text-center py-[15px] lg:py-[10px]  flex justify-center" >
                     View automation
-                </Link>
-            </div>
+                </div>
+            </Link>
 
 
         </>

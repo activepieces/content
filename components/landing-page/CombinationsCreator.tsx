@@ -94,7 +94,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
     return (
         <>
             <div className='flex flex-col grow'>
-                <div className='border border-solid border-white border-opacity-20 rounded-[6px] px-[34px] py-[38.75px] overflow-hidden bg-[#2D2E33]'>
+                <div className='border border-solid border-white border-opacity-20 rounded-md px-[34px] py-[38.75px] overflow-hidden bg-[#2D2E33]'>
                     <div className='flex gap-[18.75px] !font-bold text-white text-h6-sm lg:text-h6-lg'>
                         <Image src="/bolt_white.svg" width={12.51} height={22.5} alt='trigger'>
                         </Image>
@@ -132,7 +132,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
                     </Image>
                 </div>
-                <div className='border border-solid border-white border-opacity-20 rounded-[6px] px-[34px] py-[38.75px] overflow-hidden bg-[#2D2E33]'>
+                <div className='border border-solid border-white border-opacity-20 rounded-md px-[34px] py-[38.75px] overflow-hidden bg-[#2D2E33]'>
                     <div className='flex gap-[18.75px] !font-bold text-white text-h6-sm lg:text-h6-lg'>
                         <Image src="/action_white.svg" width={25} height={25} alt='trigger'>
                         </Image>

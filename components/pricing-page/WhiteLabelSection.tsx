@@ -51,7 +51,7 @@ export const WhiteLabelSection = () => {
                                 <div className='text-lg md:text-[26px] font-bold max-w-[499px] text-center leading-[21.6px] md:leading-[31.2px]  tracking-wid'>
                                     Offer an outstanding automation builder to your users in your app
                                 </div>
-                                <div className='border border-solid p-[45px] lg:px-[90px] lg:py-[60px] bg-[#41E2A7] bg-opacity-10 border-[#41E2A7] rounded-[6px] flex gap-[20px] flex-wrap lg:gap-[80px]'>
+                                <div className='border border-solid p-[45px] lg:px-[90px] lg:py-[60px] bg-[#41E2A7] bg-opacity-10 border-[#41E2A7] rounded-md flex gap-[20px] flex-wrap lg:gap-[80px]'>
                                     <div className='flex flex-col  gap-[20px] lg:gap-[48px]'>
                                         <div className='flex gap-4 text-[18px] md:text-[22px]' >
                                             <Image src={"/green_feature.svg"} className='w-[18.33px]' alt='green check' width={18.33} height={18.33}></Image>

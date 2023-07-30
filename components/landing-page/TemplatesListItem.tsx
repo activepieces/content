@@ -8,7 +8,7 @@ export interface TemplatesListItemProps {
 const TemplatesListItem = (props: TemplatesListItemProps) => {
     return (
         <>
-            <div className='flex flex-wrap md:flex-nowrap gap-[25px] items-center'>
+            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferer" className='flex flex-wrap md:flex-nowrap gap-[25px] items-center'>
                 <div className="flex gap-[10px] lg:gap-[15px]">
                     {
                         props.piecesIcons.map((icon, idx) => (
@@ -22,16 +22,16 @@ const TemplatesListItem = (props: TemplatesListItemProps) => {
                     {props.template.description}
                 </div>
                 <div className="flex md:grow md:justify-end">
-                    <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferer">
-                        <div className="flex md:px-[5px]  !font-bold grow  gap-[5px] md:w-[105px] items-center   text-h6-sm md:text-h6-lg">
-                            Try it <Image alt='arrow' src="/arrow.svg" width={33} height={16} className="w-[20.67px] h-[10.34px] md:w-[33px] md:h-[16px] "></Image>
-                        </div>
-                    </Link>
+
+                    <div className="flex md:px-[5px]  !font-bold grow  gap-[5px] md:w-[105px] items-center justify-end   text-h6-sm md:text-h6-lg">
+                        Try it <Image alt='arrow' src="/arrow.svg" width={33} height={16} className="w-[20.67px] h-[10.34px] md:w-[33px] md:h-[16px] "></Image>
+                    </div>
+
                 </div>
 
 
 
-            </div>
+            </Link>
         </>
     );
 };
