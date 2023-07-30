@@ -195,7 +195,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                 setSelectedTriggerApp(app);
                                 setSelectedTrigger(app.triggers[Object.keys(app.triggers)[0]])
                             }}>
-                            <div className='item-container-combinations   cursor-pointer flex gap-2  items-center' style={{ width: (triggerAppDropdown.current?.clientWidth || 100) - 5 + "px" }} >
+                            <div className='item-container-combinations   cursor-pointer flex gap-2  items-center' style={{ width: (triggerAppDropdown.current?.clientWidth || 100) + "px" }} >
                                 <div className=" bg-white flex items-center p-[7px] border border-solid border-outline rounded-lg ">
                                     <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[26px] lg:w-[26px]"></Image>
                                 </div>
@@ -226,7 +226,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 {
                     Object.keys(selectedTriggerApp.triggers).map((key, idx) =>
                         <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedTrigger(selectedTriggerApp.triggers[key])}>
-                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{ width: (triggerDropdown.current?.clientWidth || 100) - 5 + "px" }}>
+                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{ width: (triggerDropdown.current?.clientWidth || 100) + "px" }}>
                                 <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {selectedTriggerApp.triggers[key].displayName}
                                 </div>
@@ -258,7 +258,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 {
                     Object.keys(selectedActionApp.actions).map((key, idx) =>
                         <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedAction(selectedActionApp.actions[key])}>
-                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{ width: (actionDropdown.current?.clientWidth || 100) - 5 + "px" }}>
+                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{ width: (actionDropdown.current?.clientWidth || 100) + "px" }}>
                                 <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {selectedActionApp.actions[key].displayName}
                                 </div>
@@ -291,7 +291,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                 setSelectedActionApp(app);
                                 setSelectedAction(app.actions[Object.keys(app.actions)[0]])
                             }}>
-                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{ width: (actionAppDropdown.current?.clientWidth || 100) - 5 + "px" }}>
+                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{ width: (actionAppDropdown.current?.clientWidth || 100) + "px" }}>
                                 <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
                                     <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[40px] lg:w-[40px]"></Image>
                                 </div>
