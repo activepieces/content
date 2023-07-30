@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import '../styles/globals.css'
 import { Lato } from 'next/font/google'
 
-const lato = Lato({ subsets: ['latin'], weight: ['700', '400'] })
+const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300'] })
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
