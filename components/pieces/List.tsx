@@ -24,7 +24,7 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
         )}?version=${piece.version}`}
       >
         <div className="flex flex-row items-center">
-          <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} />
+          <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
           <p className="ml-4 text-h3-sm text-black font-bold ">{piece.displayName}</p>
         </div>
       </Link>

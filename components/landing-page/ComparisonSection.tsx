@@ -19,12 +19,7 @@ const apps: ComparisonApp[] = [
         miss: ["Extreme limitation of features", "Insance price hikes", "Closed ecosystem"],
         love: ["All features included", "Fair pricing", "Open source"]
     },
-    {
-        appName: "asdasd",
-        icon: "/zapier-icon.svg",
-        miss: ["Extreme limitation of features", "Insance price hikes", "Closed ecosystem"],
-        love: ["All features included", "Fair pricing", "Open source"]
-    }
+
 ]
 export const ComparisionSection = () => {
     const menuItemClassName = ({ hover }: { hover: boolean }) =>
@@ -93,14 +88,14 @@ export const ComparisionSection = () => {
                         discussionPoints={selectedApp.miss}
                         icon={selectedApp.icon}
                         appName={selectedApp.appName}
-                        bgClass='bg-[#AEE241] bg-opacity-10'
+                        bgClass='bg-[#AEE241] bg-opacity-10 basis-1'
                         tagline='You will miss 😂'
                         key={selectedApp.appName + "_miss"}
                     ></ComparisonCard>
                     <ComparisonCard
                         discussionPoints={selectedApp.love}
                         icon="/activepieces_logo.svg" appName="ActivePieces"
-                        bgClass='bg-primary bg-opacity-10'
+                        bgClass='bg-primary bg-opacity-10 basis-1'
                         tagline='You will love 🚀'
                         key={selectedApp.appName + "_love"}
                     ></ComparisonCard>
