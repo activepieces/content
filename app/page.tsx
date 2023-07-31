@@ -11,6 +11,7 @@ import CenterOfWorldSection from '../components/landing-page/CenterOfWorldSectio
 import CombinationsMakerSection from '../components/landing-page/CombinationsMakerSection';
 import { AutomateWithActivepieces } from '../components/animated-curtains/AutomateWithActivepieces';
 import { ComparisionSection } from '../components/landing-page/ComparisonSection';
+import { PiecesDictionarySection } from '../components/landing-page/PiecesDictionarySection';
 
 export const metadata: Metadata = {
   title: 'Activepieces - Home',
@@ -125,6 +126,7 @@ export default async function Home() {
       <CombinationsMakerSection></CombinationsMakerSection>
       <ComparisionSection></ComparisionSection>
       <AutomateWithActivepieces></AutomateWithActivepieces>
+      <PiecesDictionarySection></PiecesDictionarySection>
     </>
 
   )

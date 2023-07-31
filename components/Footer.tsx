@@ -2,11 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="text-center lg:text-left container mx-auto px-4 text-gray-200  py-20 lg:py-10 ">
-      <div className="flex justify-between flex-wrap border-b border-solid border-[#242424] pb-4">
-        <div className="flex flex-col gap-4 basis-full lg:basis-[initial]">
+    <footer className=" lg:text-left   text-[#C3C3C3]  bg-[#000000]">
+      <div className="px-4 lg:px-0 flex items-center h-[1px]">
+        <div className="w-full border-[#242424] border-solid border-t">
 
-          <Link href="/">
+        </div>
+      </div>
+      <div className="flex container mx-auto px-4 lg:px-0 flex-wrap border-solid pb-[80px] pt-[40px] ">
+        <div className="flex flex-col gap-4 basis-full lg:basis-[initial] lg:mr-[150px] mb-[80px] lg:mb-0">
+
+          <Link className="text-center lg:text-left" href="/">
             <Image
               src="https://cdn.activepieces.com/brand/full-logo-white.svg"
               alt="Activepieces Logo"
@@ -14,53 +19,85 @@ export default function Footer() {
               height={35}
               className="w-[152px] h-[25px] lg:w-[215px] inline lg:h-[35px]"
             />
+            <div className="text-white pt-4">
+              ©{new Date().getFullYear()} Activepieces, Inc.
+            </div>
           </Link>
-          <div >
-            <p className="text-lg text-[#ffffffb3]">
-              Open source, free and self-hosted no-code business automation tool.
-            </p>
-            <p className="text-lg text-[#ffffffb3]">
-              The open source alternative to Zapier.
-            </p>
-          </div>
-          <Link href='https://discord.com/invite/2jUXBKDdP8' className="text-green underline mt-4">
-            Join our Discord Community
-          </Link>
-
         </div>
-        <aside className=" basis-full lg:basis-[initial]">
-          <nav className="flex flex-col gap-1 lg:gap-2  text-lg mt-9">
-            <Link href='https://www.activepieces.com/terms8' className="text-white underline ">
-              Terms of Service
-            </Link>
-            <Link href='https://www.activepieces.com/privacy' className="text-white underline">
-              Privacy Policy
-            </Link>
-            <Link href='https://www.activepieces.com/google-api-discloure' className="text-white underline ">
-              Google API Disclousure
-            </Link>
-            <div id="spacer1">
-              &nbsp;
+
+        <nav className="text-lg  flex flex-wrap justify-center  gap-[118px] lg:gap-[180px]">
+          <div>
+            <div className="font-bold mb-[35px] text-white">
+              Product
+            </div>
+            <div className="flex flex-col gap-[25px]">
+              <Link href="/features">Features </Link>
+              <Link href="/pricing">Pricing</Link>
+              <Link href="/pieces">Pieces</Link>
             </div>
 
+          </div>
 
-            <Link href='https://www.activepieces.com/blog/best-zapier-competitors-and-alternatives' className="text-white underline ">
-              Best Zapier competitors
-            </Link>
-            <Link href='https://www.activepieces.com/blog/top-workato-alternatives-and-competitors' className="text-white underline">
-              Best Workato alternatives
-            </Link>
-            <Link href='https://www.activepieces.com/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai' className="text-white underline ">
-              Automate Blog with AI
-            </Link>
-          </nav>
 
-        </aside>
+          <div>
+            <div className="font-bold mb-[35px] text-white">
+              Open source
+            </div>
+            <div className="flex flex-col gap-[25px]">
+              <Link target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">Github </Link>
+              <Link target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/developers/overview">Contribute</Link>
+              <Link href="https://github.com/activepieces/activepieces/blob/main/LICENSE" target="_blank" rel="noopener noreferer">MIT License</Link>
+            </div>
+
+          </div>
+          <div>
+            <div className="font-bold mb-[35px] text-white">
+              Resources
+            </div>
+            <div className="flex flex-col gap-[25px]">
+              {/* <Link href="/blog?category=tutorials" target="_blank" rel="noopener noreferer">Tutorials</Link> */}
+              <Link target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/">Docs </Link>
+              <Link href="/blog">Blog</Link>
+            </div>
+
+          </div>
+          <div>
+            <div className="font-bold mb-[35px] text-white">
+              Get Help
+            </div>
+            <div className="flex flex-col gap-[25px]">
+              {/* <Link href="typeformURL" target="_blank" rel="noopener noreferer">Support</Link> */}
+              <Link target="_blank" rel="noopener noreferer" href="https://discord.com/invite/2jUXBKDdP8">Discord </Link>
+              <Link target="_blank" rel="noopener noreferer" href="https://status.activepieces.com/">System Status</Link>
+            </div>
+
+          </div>
+        </nav>
+
 
       </div>
-      <div className="text-[#ffffffb3] pt-4">
-        ©2023 <b>Activepieces, Inc.</b> All rights reserved.
+      <div className="px-4 lg:px-0 flex items-center h-[1px]">
+        <div className="w-full border-[#242424] border-solid border-t">
+
+        </div>
       </div>
+      <div className="px-4 lg:px-0 flex items-center h-[1px]">
+        <div className="w-full border-[#242424] border-solid border-t">
+        </div>
+      </div>
+      <div className="mx-auto container  flex-wrap items-center px-4 lg:px-0 flex justify-center lg:justify-between py-[40px] ">
+        <div className="flex items-center text-lg gap-[10px] text-white ">
+          Backed by <Image src="/Y_Combinator.svg" height={40.3} width={140} alt="Y Combinator"></Image>
+        </div>
+        <div className="flex gap-[15px] w-[210px] flex-wrap md:w-[initial] justify-center lg:justify-start mt-[40px] lg:mt-0">
+          <Link href="/privacy-policy">Privacy</Link>
+          <div>-</div>
+          <Link href="/terms-of-service">Terms</Link>
+          <div>-</div>
+          <Link href="/google-api-disclosure">Google API Disclosure</Link>
+        </div>
+      </div>
+
     </footer>
   );
 }

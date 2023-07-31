@@ -2,7 +2,6 @@
 import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
 import PiecesList from "../../components/pieces/List";
-import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Activepieces - Pieces',
   icons: "/favicon.ico",

@@ -58,7 +58,7 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
             All pieces
           </div>
           <div className="mt-[20px] text-black text-opacity-60 text-lg font-normal tracking-wide">
-            {(showAllResults ? "All" : "1-30") + " of " + filteredPieces.length + " available pieces"}
+            {(showAllResults || filteredPieces.length <= 30 ? "All" : "1-30") + " of " + filteredPieces.length + " available pieces"}
           </div>
         </div>
         <div className="flex  flex-wrap">
@@ -66,7 +66,7 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
             : <div className="text-center text-gray-400 basis-full">No pieces found</div>}
         </div>
       </div>
-      {!showAllResults && filteredPieces.length > 0 ? <button className="leading-[38px]  text-center text-h4-lg transition-all py-5 px-[75px]  bg-black font-bold  border border-solid border-black rounded mb-5 text-white"
+      {!showAllResults && filteredPieces.length > 30 ? <button className="leading-[38px]  text-center text-h4-lg transition-all py-5 px-[75px]  bg-black font-bold  border border-solid border-black rounded mb-5 text-white"
         onClick={() => setShowAllResults(true)}>
         Load more
       </button> : null}

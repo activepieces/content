@@ -2,8 +2,7 @@
 
 import { ActionBase, GetPiece, TriggerBase } from "../../../utils/piece-helper";
 import Image from "next/image";
-import TriggerCard from "../../../components/pieces/TriggerCard";
-import ActionCard from "../../../components/pieces/ActionCard";
+import TriggerOrActionCard from "../../../components/pieces/TriggerOrActionCard";
 import { Metadata } from "next";
 import { NavigationProps } from "../../../components/navigationProps";
 import Link from "next/link";
@@ -147,13 +146,13 @@ export default async function PiecePage({ params }: NavigationProps) {
                   <div id="triggersFirstColumn" className="flex gap-4 flex-col  grow shrink basis-full md:basis-0">
                     {triggers[0].map((trigger) => (
                       (
-                        <TriggerCard
+                        <TriggerOrActionCard
                           key={trigger.name}
                           triggerOrAction={trigger}
                           logoUrl={pieceData.logoUrl}
                           pieceName={pieceData.name}
                           pieceVersion={pieceData.version}
-                        ></TriggerCard>
+                        ></TriggerOrActionCard>
                       )
                     ))}
                   </div>
@@ -161,13 +160,13 @@ export default async function PiecePage({ params }: NavigationProps) {
                   <div id="triggersSecondColumn" className="flex gap-4 flex-col grow shrink basis-full md:basis-0">
                     {triggers[1].map((trigger) => (
                       (
-                        <TriggerCard
+                        <TriggerOrActionCard
                           key={trigger.name}
                           triggerOrAction={trigger}
                           logoUrl={pieceData.logoUrl}
                           pieceName={pieceData.name}
                           pieceVersion={pieceData.version}
-                        ></TriggerCard>
+                        ></TriggerOrActionCard>
                       )
                     ))}
                   </div>
@@ -192,13 +191,13 @@ export default async function PiecePage({ params }: NavigationProps) {
                   <div id="actionsFirstColumn" className="flex gap-4 flex-col basis-full md:basis-0 grow shrink">
                     {actions[0].map((action) => (
                       (
-                        <TriggerCard
+                        <TriggerOrActionCard
                           key={action.name}
                           triggerOrAction={action}
                           pieceName={pieceData.name}
                           pieceVersion={pieceData.version}
                           logoUrl={pieceData.logoUrl}
-                        ></TriggerCard>
+                        ></TriggerOrActionCard>
                       )
                     ))}
                   </div>
@@ -206,13 +205,13 @@ export default async function PiecePage({ params }: NavigationProps) {
                   <div id="actionsSecondColumn" className="flex gap-4 flex-col basis-full md:basis-0 grow shrink">
                     {actions[1].map((action) => (
                       (
-                        <TriggerCard
+                        <TriggerOrActionCard
                           key={action.name}
                           triggerOrAction={action}
                           logoUrl={pieceData.logoUrl}
                           pieceName={pieceData.name}
                           pieceVersion={pieceData.version}
-                        ></TriggerCard>
+                        ></TriggerOrActionCard>
                       )
                     ))}
                   </div>

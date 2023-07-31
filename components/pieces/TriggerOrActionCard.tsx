@@ -51,7 +51,7 @@ const isTrigger = (triggerOrAction: ActionBase | TriggerBase): boolean => {
   return (triggerOrAction as TriggerBase).type !== undefined;
 };
 
-const TriggerCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion }: TriggerCardProps) => {
+const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion }: TriggerCardProps) => {
   const [showProperties, setShowProperties] = useState(false);
   template.name = triggerOrAction.displayName;
   template.template.displayName = triggerOrAction.displayName;
@@ -87,7 +87,7 @@ const TriggerCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion }: Trig
   return (
     <div className="flex flex-col  bg-card rounded-lg ">
       <div className={(Object.entries(triggerOrAction.props).length > 0 ? "cursor-pointer" : "") + " flex flex-row items-center p-5 border-b border-solid border-white border-opacity-20"} onClick={() => setShowProperties(!showProperties)}>
-        <PieceLogo pieceLogoUrl={logoUrl} size={40} />
+        <PieceLogo pieceLogoUrl={logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
         <div className="flex flex-col ml-4 justify-center">
           <div className="text-white text-lg font-bold">{triggerOrAction.displayName}</div>
           {isTrigger(triggerOrAction) ? (triggerOrAction as TriggerBase).type === TriggerStrategy.WEBHOOK && (
@@ -134,4 +134,4 @@ const TriggerCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion }: Trig
     </div>
   );
 };
-export default TriggerCard;
+export default TriggerOrActionCard;
