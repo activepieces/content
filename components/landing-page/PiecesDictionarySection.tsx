@@ -76,7 +76,7 @@ export const PiecesDictionarySection = () => {
             <div className="flex flex-col gap-[40px] divide-y lg:gap-0 lg:flex-row lg:divide-x lg:divide-y-0 divide-[#37383D] flex-wrap lg:flex-nowrap">
                 {
                     popularStuff.map((popularThing, idx) => {
-                        return <div className={"flex flex-col text-white gap-[35px] " + (idx === 0 ? "lg:pr-[80px]" : "lg:px-[80px] py-[40px] lg:py-0")}>
+                        return <div  key={'piece' + idx} className={"flex flex-col text-white gap-[35px] " + (idx === 0 ? "lg:pr-[80px]" : "lg:px-[80px] py-[40px] lg:py-0")}>
                             <div className="text-h5-sm font-bold">
                                 {popularThing.title}
                             </div>

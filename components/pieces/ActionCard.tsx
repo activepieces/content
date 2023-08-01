@@ -12,6 +12,7 @@ const ActionCard = ({ action, logoUrl }: ActionBaseProps) => {
     <div className="flex flex-col p-8 bg-card rounded-lg p-4">
       <div className="flex flex-row ">
         <PieceLogo
+          imgClasses={''}
           pieceLogoUrl={logoUrl}
           size={40}
         />
