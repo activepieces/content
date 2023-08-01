@@ -26,7 +26,7 @@ const CenterOfWorldCard = (props: CenterOfWorldCard) => {
 
     return (
         <>
-            <Link href={"https://cloud.activepieces.com/templates/"} target="_blank" rel="noopener noreferrer" className="border border-solid  rounded-[6px] overflow-hidden lg:min-w-[358px] min-w-[250px]" >
+            <Link href={"https://cloud.activepieces.com/templates/"} target="_blank" rel="noopener noreferrer" className="border border-solid  rounded-md overflow-hidden lg:min-w-[358px] min-w-[250px]" >
                 <div className={`w-full bg-contain bg-norepeat h-[97px]  lg:h-[140px]`} style={{ backgroundImage: `url('${props.triggerApp.bannerUrl}')` }}></div>
                 <div className="p-[25px] lg:pb-[65px] lg:p-[35px] bg-white flex flex-col gap-[30px] min-h-[189px] lg:min-h-[290px]">
                     <div className="text-h6-sm lg:text-h6-lg text-black  leading:[21.6px] lg:leading-[31.9px] !font-bold  " >

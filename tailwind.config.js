@@ -82,7 +82,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h4-sm': ['22px',{
-          lineHeight: '120%',
+          lineHeight: '26.4px',
           letterSpacing: '0.55px',
           fontWeight: '700',
         }],

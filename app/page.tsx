@@ -10,6 +10,8 @@ import Productivity100XSection from '../components/landing-page/Productivity100X
 import CenterOfWorldSection from '../components/landing-page/CenterOfWorldSection';
 import CombinationsMakerSection from '../components/landing-page/CombinationsMakerSection';
 import { AutomateWithActivepieces } from '../components/animated-curtains/AutomateWithActivepieces';
+import { ComparisionSection } from '../components/landing-page/ComparisonSection';
+import { PiecesDictionarySection } from '../components/landing-page/PiecesDictionarySection';
 
 export const metadata: Metadata = {
   title: 'Activepieces - Home',
@@ -122,7 +124,9 @@ export default async function Home() {
       <CenterOfWorldSection props={[aiCard, aiCard, aiCard, aiCard, aiCard, aiCard]}></CenterOfWorldSection>
       <Productivity100XSection props={[aiCard, aiCard, aiCard]}></Productivity100XSection>
       <CombinationsMakerSection></CombinationsMakerSection>
+      <ComparisionSection></ComparisionSection>
       <AutomateWithActivepieces></AutomateWithActivepieces>
+      <PiecesDictionarySection></PiecesDictionarySection>
     </>
 
   )

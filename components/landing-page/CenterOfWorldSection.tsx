@@ -156,7 +156,7 @@ const CenterOfWorldSection = (props: {
                                     </filter>
                                 </defs>
                             </svg>
-                            <Image alt="underline" src="/menu_underline.svg" width={202} height={193} className='absolute w-full -bottom-[16px] left-[10px]'></Image>
+                            <Image alt="underline" src="/menu_underline.svg" width={202} height={193} className='absolute w-full -bottom-[6px] left-[10px]'></Image>
                         </div>
                         <ControlledMenu
                             state={isAppMenuOpen ? 'open' : 'closed'}

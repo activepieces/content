@@ -1,8 +1,10 @@
 'use client'
-import { MutableRefObject, useRef } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
+import Image from 'next/image';
 /* eslint-disable-next-line */
 export interface CollapsiblePropertiesProps {
   props: Record<string, any>;
+  expand: boolean;
 }
 
 export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
@@ -27,78 +29,61 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
     DATE_TIME: "Date Time",
     FILE: "File",
   };
-  function isSensitiveType(type: string): boolean {
-    return ["CUSTOM_AUTH", "OAUTH2", "SECRET_TEXT", "BASIC_AUTH"].includes(
-      type
-    );
-  }
-  function handleClick() {
-    if (propertiesDiv.current?.clientHeight === 0) {
-
+  const propertyTypeIcons: Record<string, string> = {
+    SHORT_TEXT: "text.svg",
+    LONG_TEXT: "text.svg",
+    DROPDOWN: "dropdown.svg",
+    STATIC_DROPDOWN: "dropdown.svg",
+    NUMBER: "number.svg",
+    CHECKBOX: "checkbox.svg",
+    OAUTH2: "connection.svg",
+    SECRET_TEXT: "connection.svg",
+    ARRAY: "array.svg",
+    OBJECT: "dictionary.svg",
+    BASIC_AUTH: "connection.svg",
+    JSON: "dictionary.svg",
+    MULTI_SELECT_DROPDOWN: "dropdown.svg",
+    STATIC_MULTI_SELECT_DROPDOWN: "dropdown.svg",
+    DYNAMIC: "Dynamic",
+    CUSTOM_AUTH: "connection.svg",
+    DATE_TIME: "date.svg",
+    FILE: "file.svg",
+  };
+  useEffect(() => {
+    if (props.expand) {
       propertiesDiv.current?.style.setProperty("height", propertiesDiv.current?.scrollHeight + "px");
     }
     else {
       propertiesDiv.current?.style.setProperty("height", "0px");
     }
+  }, [props.expand])
 
-  }
+
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <input
-        type="checkbox"
-        className="peer absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
-        onClick={handleClick}
-      />
-      <div className="h-12 w-full pl-8 flex items-center">
-        <h1 className="font-normal text-gray-400">Show Properties</h1>
-      </div>
-
-      <div className="absolute top-[15px] left-0 text-gray-400 transition-transform duration-500 rotate-0 peer-checked:rotate-180">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
-      </div>
-
-      <div className="text-white overflow-hidden h-0 transition-all " ref={propertiesDiv}>
-        <div>
-          {Object.entries(props.props).map(([key, property]) => (
-            <div
-              className="border-b-[1px] border-separator py-3 relative"
-              key={key}
-            >
-              <div>
-                <span className="font-normal text-white block">
-                  {property.displayName}
-                  <span className="ml-2 text-muted">Required</span>
-                </span>
-                <span className="font-normal text-muted absolute top-3 right-3">
-                  {propertyTypeStrings[property.type]}
-                </span>
-              </div>
-              <div className="text-muted text-sm mt-2">
-                {isSensitiveType(property.type) ? null : (
-                  <p>
-                    {property.description}
-                  </p>
-                )}
+    <div className="text-white overflow-hidden h-0 bg-[#1B1C20]  transition-all px-[47px]  " ref={propertiesDiv}>
+      <div>
+        {Object.entries(props.props).filter(([key, prpoperty]) => {
+          return prpoperty.type !== "DYNAMIC";
+        }).map(([key, property]) => (
+          <div
+            key={key}
+            className='flex gap-[25px] items-center'
+          >
+            <Image src={"/properties_icons/" + propertyTypeIcons[property.type]} alt={propertyTypeStrings[property.type]} height={25} width={25}  ></Image>
+            <div>
+              <div className="text-white text-[22px] font-semibold leading-[60px] tracking-wide">
+                {property.displayName}
               </div>
             </div>
-          ))}
-        </div>
+            {property.required && <div className="w-[104px]  h-[30px] p-[7px] bg-zinc-800 rounded justify-center items-center gap-2.5 inline-flex">
+              <div className="text-zinc-300 text-[22px] font-normal leading-[60px] tracking-wide">Required</div>
+            </div>}
+          </div>
+        ))}
       </div>
     </div>
+
   );
 }
 

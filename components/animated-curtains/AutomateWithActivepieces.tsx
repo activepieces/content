@@ -59,10 +59,10 @@ export const AutomateWithActivepieces = () => {
         return () => clearInterval(timer);
     });
     return <>
-        <section className="bg-black ">
+        <section className="bg-[#0B0B0B] ">
             <AnimatedCurtains></AnimatedCurtains>
-            <div className="flex justify-center lg:justify-start flex-wrap gap-[30px] px-4 py-[80px] lg:px-[0px] container mx-auto lg:py-[100px] ">
-                <div className="text-center lg:text-left max-w-[871px] text-white text-[50px]  tracking-wider font-bold  lg:tracking-widest lg:text-[80px] w-full lg:w-auto">
+            <div className="flex justify-center lg:justify-between flex-wrap gap-[30px] px-4 py-[80px] lg:px-[0px] container mx-auto lg:py-[100px] ">
+                <div className="text-center lg:text-left max-w-[861px] text-white text-[50px]  tracking-wider font-bold  lg:tracking-widest lg:text-[80px] w-full lg:w-auto">
                     Automate <br className="lg:hidden"></br> <span id="automatedText" className="text-[#06FFB4]" >tasks</span> <br className="lg:hidden"></br>  with <br className="lg:hidden"></br> Activepieces
                 </div>
                 <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" id="startFree" className="bg-[#06FFB4] px-[75px] text-center whitespace-nowrap rounded  my-[20px] flex items-center justify-center py-[65px] text-black text-[50px] font-bold leading-[60px] tracking-wider ">
