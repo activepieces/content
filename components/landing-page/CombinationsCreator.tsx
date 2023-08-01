@@ -329,7 +329,7 @@ const SearchComp = (porps: { searchTerm: string, setSearchTerm: (term: string) =
                 }}
             />
             <div onClick={() => ref.current?.focus()} className="bg-[#1B1C20] cursor-pointer  pl-4 pr-3 rounded-l-md border-l border-y border-[#FFFFFF] border-opacity-20  peer-focus:outline-none flex flex-items-center">
-                <img src="search_white.svg" alt="search for pieces" width={18} height={18} />
+                <Image src="search_white.svg" alt="search for pieces" width={18} height={18} />
             </div>
         </div>
     </div>

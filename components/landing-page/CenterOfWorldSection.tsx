@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { MenuItem, ControlledMenu, useClick } from '@szhsin/react-menu';
 import CenterOfWorldCard, { ActionApp, TriggerApp } from './CenterOfWorldCard';
+import { Arrow } from '../arrow';
 
 //TODO: correct appNames and actions/triggers names
 const appsUserChanges: ActionApp[] = [
@@ -183,21 +184,29 @@ const CenterOfWorldSection = (props: {
 
                 </div>
                 <div className='flex'>
-                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-[40px] lg:mb-[80px]'>
+                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] '>
                         Align your team by spreading the news where they hang out, send notifications from everywhere to your Slack workspace.
                     </h2>
-                    <div className='hidden lg:flex gap-[60px] grow justify-end'>
-                        <Image alt='arrow' src="/arrow.svg" width={33} height={16} className='rotate-180 cursor-pointer'
-                            onClick={() => sliderDiv.current?.scrollBy({
-                                behavior: 'smooth',
-                                left: -scrollBy,
-                            })}></Image>
-                        <Image alt='arrow'
+                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end'>
+                        <div className='transition-colors hover:fill-primary' onClick={() => sliderDiv.current?.scrollBy({
+                            behavior: 'smooth',
+                            left: -scrollBy,
+                        })}>
+                            <Arrow width={33} height={16} className='rotate-180 cursor-pointer'
+                            ></Arrow>
+                        </div>
+
+                        <div className='transition-colors hover:fill-primary'
                             onClick={() => sliderDiv.current?.scrollBy({
                                 behavior: 'smooth',
                                 left: scrollBy,
-                            })} className='cursor-pointer' src="/arrow.svg" width={33} height={16}></Image>
+                            })}>
+                            <Arrow
+                                className='cursor-pointer' width={33} height={16}></Arrow>
+                        </div>
+
                     </div>
+
                 </div>
 
 
@@ -206,7 +215,7 @@ const CenterOfWorldSection = (props: {
                 {
                     marginLeft: marginLeft
                 }
-            } className='flex gap-[15px] overflow-scroll px-4 lg:px-0 ai-cards-slider items-center' ref={sliderDiv}>
+            } className='flex gap-[15px] pt-[40px] lg:pt-[80px] overflow-scroll px-4 lg:px-0 ai-cards-slider items-center' ref={sliderDiv}>
                 {
                     appsUsedAlways.map((_, i) => <CenterOfWorldCard actionApp={selectedApp} triggerApp={_} key={i} ></CenterOfWorldCard>)
                 }

@@ -13,7 +13,7 @@ const Contributor = (stat: ContributorProps) => {
         <>
             <div>
                 <div className=" flex flex-col w-[115px] items-center   lg:w-[180px]">
-                    <Image alt={stat.githubAccount} src={stat.imageUrl} width={230} height={230} className={stat.imageClasses}></Image>
+                    <Image alt={stat.githubAccount} src={stat.imageUrl} width={230} height={230} className={stat.imageClasses + " rounded-full border border-solid border-black"}></Image>
                     <Link href={stat.githubUrl} rel="noopener noreferer" target="_blank" className="text-white font-bold text-[16px] lg:text-[22px] rounded-full px-[15px] lg:px-[24px]   whitespace-nowrap -mt-[15px] text-center py-[8px]" style={{ backgroundColor: stat.tagColor }}>
                         @{stat.githubAccount}
                     </Link>

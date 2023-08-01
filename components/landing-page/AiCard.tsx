@@ -10,7 +10,7 @@ const AiCard = (props: AiCardProps) => {
 
     return (
         <>
-            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferrer" className="border border-solid border-[#000000] rounded-md overflow-hidden lg:min-w-[358px] min-w-[250px]" >
+            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-3 transition-transform border border-solid border-[#000000] rounded-md overflow-hidden lg:min-w-[358px] min-w-[250px]" >
                 <div className="p-[25px] lg:pb-[65px] lg:p-[35px] bg-white flex flex-col gap-[30px]">
                     <div className="flex gap-[10px] lg:gap-[15px]">
                         {

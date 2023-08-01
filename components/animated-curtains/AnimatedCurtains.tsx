@@ -11,7 +11,7 @@ export const AnimatedCurtains = () => {
             const curtain = document.getElementById('curtain');
             if (!curtain) return;
             curtain.style.backgroundImage = `url(/curtains/curtains_${arrayOfCurtains[curtainindex]}.svg)`;
-        }, 4000);
+        }, 3000);
         return () => clearInterval(timer);
     });
 

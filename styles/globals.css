@@ -17,12 +17,12 @@
 }
 
 @keyframes moving {
-  from {transform:translateX(-50%);}
-  to {transform:translateX(0%);}
+  from {transform:translateX(0%);}
+  to {transform:translateX(-10%);}
 }
 
 .image-slider {
-  animation: moving 50s ease-in-out;
+  animation: moving 100s linear;
   animation-iteration-count: infinite; 
 }
 
@@ -183,47 +183,7 @@ li {
   padding:20px;
 }
 
-.curtains-animation{
-  animation: curtainAnimation 36s infinite;
-  background-repeat: repeat-x;
-  animation-timing-function: steps(1,end);
-  background-size: cover;
-}
-@keyframes curtainAnimation {
-  0% {
-      background-image:url('/curtains/curtains_1.svg');
-  }
-  11.111111% {
-      background-image:url('/curtains/curtains_2.svg');
-  }
-  22.222222% {
-      background-image:url('/curtains/curtains_3.svg');
- 
-  }
-  33.333333% {
-      background-image:url('/curtains/curtains_4.svg');
- 
-  }
-  44.444444% {
-      background-image:url('/curtains/curtains_5.svg');
 
-  }
-  55.555555% {
-      background-image:url('/curtains/curtains_6.svg');
-  }
-  66.666666% {
-      background-image:url('/curtains/curtains_7.svg');
-  }
-  77.777777% {
-      background-image:url('/curtains/curtains_8.svg');
-  }
-  88.888888% {
-      background-image:url('/curtains/curtains_9.svg');
-  }
-  99.999999% {
-    background-image:url('/curtains/curtains_1.svg');
-  }
-}
 
 .phone-lottie path[fill="rgb(255,179,44)"]
 {

@@ -112,10 +112,21 @@ module.exports = {
           fontWeight: '400',
         }],
       },
+      container: {
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1320px',
+          '2xl': '1320px',
+        },
+   
+      },
       boxShadow: {
         'navbar':'1px 1px 20px 1px #000'
       }
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')
+],
 }

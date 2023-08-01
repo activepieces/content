@@ -31,9 +31,9 @@ export default function Footer() {
               Product
             </div>
             <div className="flex flex-col gap-[25px]">
-              <Link href="/features">Features </Link>
-              <Link href="/pricing">Pricing</Link>
-              <Link href="/pieces">Pieces</Link>
+              <Link className="hover:text-white" href="/features">Features </Link>
+              <Link className="hover:text-white" href="/pricing">Pricing</Link>
+              <Link className="hover:text-white" href="/pieces">Pieces</Link>
             </div>
 
           </div>
@@ -44,9 +44,9 @@ export default function Footer() {
               Open source
             </div>
             <div className="flex flex-col gap-[25px]">
-              <Link target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">Github </Link>
-              <Link target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/developers/overview">Contribute</Link>
-              <Link href="https://github.com/activepieces/activepieces/blob/main/LICENSE" target="_blank" rel="noopener noreferer">MIT License</Link>
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">Github </Link>
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/developers/overview">Contribute</Link>
+              <Link className="hover:text-white" href="https://github.com/activepieces/activepieces/blob/main/LICENSE" target="_blank" rel="noopener noreferer">MIT License</Link>
             </div>
 
           </div>
@@ -55,9 +55,9 @@ export default function Footer() {
               Resources
             </div>
             <div className="flex flex-col gap-[25px]">
-              {/* <Link href="/blog?category=tutorials" target="_blank" rel="noopener noreferer">Tutorials</Link> */}
-              <Link target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/">Docs </Link>
-              <Link href="/blog">Blog</Link>
+              {/* <Link className="hover:text-white" href="/blog?category=tutorials" target="_blank" rel="noopener noreferer">Tutorials</Link> */}
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/">Docs </Link>
+              <Link className="hover:text-white" href="/blog">Blog</Link>
             </div>
 
           </div>
@@ -66,9 +66,9 @@ export default function Footer() {
               Get Help
             </div>
             <div className="flex flex-col gap-[25px]">
-              {/* <Link href="typeformURL" target="_blank" rel="noopener noreferer">Support</Link> */}
-              <Link target="_blank" rel="noopener noreferer" href="https://discord.com/invite/2jUXBKDdP8">Discord </Link>
-              <Link target="_blank" rel="noopener noreferer" href="https://status.activepieces.com/">System Status</Link>
+              {/* <Link className="hover:text-white" href="typeformURL" target="_blank" rel="noopener noreferer">Support</Link> */}
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://discord.com/invite/2jUXBKDdP8">Discord </Link>
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://status.activepieces.com/">System Status</Link>
             </div>
 
           </div>
@@ -90,11 +90,11 @@ export default function Footer() {
           Backed by <Image src="/Y_Combinator.svg" height={40.3} width={140} alt="Y Combinator"></Image>
         </div>
         <div className="flex gap-[15px] w-[210px] flex-wrap md:w-[initial] justify-center lg:justify-start mt-[40px] lg:mt-0">
-          <Link href="/privacy-policy">Privacy</Link>
+          <Link className="hover:text-white" href="/privacy-policy">Privacy</Link>
           <div>-</div>
-          <Link href="/terms-of-service">Terms</Link>
+          <Link className="hover:text-white" href="/terms-of-service">Terms</Link>
           <div>-</div>
-          <Link href="/google-api-disclosure">Google API Disclosure</Link>
+          <Link className="hover:text-white" href="/google-api-disclosure">Google API Disclosure</Link>
         </div>
       </div>
 

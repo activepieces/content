@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
-import { NavigationProps } from "../../components/navigationProps";
 import Link from "next/link";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 export const metadata: Metadata = {

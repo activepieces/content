@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { PieceBase } from "../../utils/piece-helper";
 import PieceLogo from "./PieceLogo";
 import Link from "next/link";
-
+import Image from "next/image";
 const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
   const searchInput = useRef<HTMLInputElement>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,7 +49,7 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
               }}
             />
             <div onClick={() => searchInput.current?.focus()} className="bg-white cursor-pointer  px-2 rounded-l-md border-l border-y border-gray-300  peer-focus:outline-none peer-focus:border-blue-500 flex flex-items-center">
-              <img src="search.svg" alt="search for pieces" width={'30px'} height={'30px'} />
+              <Image src="search.svg" alt="search for pieces" width={30} height={30} />
             </div>
           </div>
         </div>
