@@ -2,7 +2,7 @@ import PricingCard from "../../components/PricingCard";
 import Link from "next/link";
 import ImageSlider from "../../components/landing-page/imageSlider";
 import { AnimatedCurtains } from "../animated-curtains/AnimatedCurtains";
-
+import Image from "next/image";
 const businessPlans = [{ "tasks": 5000, "price": "115" }, { "tasks": 10000, "price": "125" }, { "tasks": 25000, "price": "155" }, { "tasks": 50000, "price": "200" }, { "tasks": 100000, "price": "275" }, { "tasks": 200000, "price": "400" }, { "tasks": 500000, "price": "600" }]
 const proPlans = [{ "tasks": 5000, "price": "15" }, { "tasks": 10000, "price": "25" }, { "tasks": 25000, "price": "55" }, { "tasks": 50000, "price": "100" }, { "tasks": 100000, "price": "175" }, { "tasks": 200000, "price": "300" }, { "tasks": 500000, "price": "500" }];
 const hobbyistFeats = ["Unlimited users", "Instant triggers", "15 mins update time", "3 connected accounts", "Community support"]
@@ -22,7 +22,7 @@ export const PricingMainSection = () => {
                     <h2 className="text-center text-[16px] lg:text-[22px] text-white mb-[80px]">
                         Enjoy our pricing model where tasks get cheaper as you grow!
                     </h2>
-                    <div className="flex flex-wrap lg:flex-nowrap gap-[30px] justify-center">
+                    <div className="flex flex-wrap lg:flex-nowrap gap-[30px] justify-center lg:justify-between">
                         <PricingCard bgClass="bg-[#98F5F5]" categoryName="Hobbyist" features={hobbyistFeats} free={true} plans={[{ price: '0', tasks: 100 }]}></PricingCard>
                         <PricingCard bgClass="bg-[#A0FFAA]" categoryName="Pro" features={proFeats} free={false} plans={proPlans}></PricingCard>
                         <PricingCard bgClass="bg-[#FFF0BB]" categoryName="Business" features={businessFeats} free={false} plans={businessPlans}></PricingCard>
@@ -47,7 +47,7 @@ export const PricingMainSection = () => {
                                 {
                                     enterpriseFeatsFirstCol.map((feat, idx) => (
                                         <div className="flex items-center gap-[15px] text-white !leading-[37.5px]  !font-normal text-h4-sm lg:text-h4-lg font-normal " key={idx}>
-                                            <img src="/enterprise_feat.svg" alt="feat" width={22} height={22} ></img>
+                                            <Image src="/enterprise_feat.svg" alt="feat" width={22} height={22} ></Image>
                                             {feat}
                                         </div>
                                     ))
@@ -58,7 +58,7 @@ export const PricingMainSection = () => {
                                 {
                                     enterpriseFeatsSecondCol.map((feat, idx) => (
                                         <div className="flex items-center gap-[15px] text-white  !leading-[37.5px] !font-normal text-h4-sm lg:text-h4-lg font-normal " key={idx}>
-                                            <img src="/enterprise_feat.svg" alt="feat" width={22} height={22} ></img>
+                                            <Image src="/enterprise_feat.svg" alt="feat" width={22} height={22} ></Image>
                                             {feat}
                                         </div>
                                     ))

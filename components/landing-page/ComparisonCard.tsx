@@ -11,7 +11,7 @@ export const ComparisonCard = ({ discussionPoints, icon, bgClass, tagline, appNa
             <div className="flex flex-col gap-5">
                 {
                     discussionPoints.map((point, index) => {
-                        return <div key={'competitor' + index} className="gap-5 flex lg:text-h4-lg text-h4-sm items-center">
+                        return <div key={'competitor' + index} className="gap-5 flex lg:text-h4-lg text-h4-sm items-center" >
                             <div className="bg-white rounded-lg border border-solid border-outline flex items-center justify-center p-[12px]">
                                 <Image alt={appName} src={icon} width={40} height={40} className="h-[26.67px] w-[26.67px] lg:h-[40px] lg:w-[40px]"></Image>
 

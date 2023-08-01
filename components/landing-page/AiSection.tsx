@@ -4,6 +4,7 @@ import { FlowTemplate } from '@activepieces/shared';
 import Image from 'next/image'
 import AiCard from './AiCard';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { Arrow } from '../arrow';
 
 
 
@@ -53,20 +54,27 @@ const AiSection = (props: {
                     Scale your <br className='lg:hidden'></br> business with AI
                 </div>
                 <div className='flex'>
-                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-[40px] lg:mb-[80px]'>
+                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px]'>
                         Grow your team of AIs to scale up your blog content, offer customer service and auto post to your social accounts.
                     </h2>
-                    <div className='hidden lg:flex gap-[60px] grow justify-end'>
-                        <Image alt='arrow' src="/arrow.svg" width={33} height={16} className='rotate-180 cursor-pointer'
-                            onClick={() => sliderDiv.current?.scrollBy({
-                                behavior: 'smooth',
-                                left: -scrollBy,
-                            })}></Image>
-                        <Image alt='arrow'
+                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end'>
+                        <div className='transition-colors hover:fill-primary' onClick={() => sliderDiv.current?.scrollBy({
+                            behavior: 'smooth',
+                            left: -scrollBy,
+                        })}>
+                            <Arrow width={33} height={16} className='rotate-180 cursor-pointer'
+                            ></Arrow>
+                        </div>
+
+                        <div className='transition-colors hover:fill-primary'
                             onClick={() => sliderDiv.current?.scrollBy({
                                 behavior: 'smooth',
                                 left: scrollBy,
-                            })} className='cursor-pointer' src="/arrow.svg" width={33} height={16}></Image>
+                            })}>
+                            <Arrow
+                                className='cursor-pointer' width={33} height={16}></Arrow>
+                        </div>
+
                     </div>
                 </div>
 
@@ -76,7 +84,7 @@ const AiSection = (props: {
                 {
                     marginLeft: marginLeft
                 }
-            } className='flex gap-[15px] overflow-scroll px-4 lg:px-0 ai-cards-slider items-center' ref={sliderDiv}>
+            } className='flex gap-[15px] overflow-x-scroll px-4 lg:px-0 ai-cards-slider items-center pt-[40px] lg:pt-[80px]' ref={sliderDiv}>
                 <Image src="/most_used.svg" width={64} height={48} alt='most used' className='w-[64px] h-[78px] -mr-[30px] z-50'>
 
                 </Image>

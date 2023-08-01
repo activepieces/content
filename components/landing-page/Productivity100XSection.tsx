@@ -31,7 +31,7 @@ const Productivity100XSection = (props: {
                     {
                         props.props.map((stat, i) => (
                             <div key={i + 1} className='flex flex-col gap-[20px] lg:gap-[30px]'>
-                                <TemplatesListItem piecesIcons={stat.piecesIcons} template={stat.template}></TemplatesListItem>
+                                <TemplatesListItem baseColorClass='text-black fill-black' piecesIcons={stat.piecesIcons} template={stat.template}></TemplatesListItem>
                                 {
                                     i !== props.props.length - 1 ? <div className='border-b border-solid border-divider'></div> : null
                                 }

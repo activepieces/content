@@ -21,7 +21,7 @@ const CombinationsMakerSection = async () => {
         <>
             <section style={{ backgroundColor: '#0B0B0D' }} className="bg-[url('/combinations_bg.svg')] px-4 lg:px-0  bg-cover  bg-left-center bg-no-repeat py-[50px] lg:py-[150px]">
                 <div className="container mx-auto md:justify-center lg:justify-start md:items-left flex gap-[80px] lg:flex-nowrap flex-wrap">
-                    <div className='flex flex-col gap-[40px] md:gap-[100px]'>
+                    <div className='flex flex-col gap-[40px] md:gap-[60px]'>
                         <div className='flex flex-col items-start md:items-center lg:items-start'>
                             <div className='text-h6-sm lg:text-h6-lg text-white flex rounded-full bg-black border border-solid border-[#FFCC4D] border-opacity-40 lg:px-[25px] lg:py-[20px] px-[20px] py-[15px] '>
                                 Automate your work in &nbsp;<div className='text-[#FFCC4D]'>15 seconds</div>

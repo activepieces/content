@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Arrow } from "../arrow";
 export interface OpenSourceStatProps {
-    logoUrl: string,
+    logo: JSX.Element,
     ctaText: string,
     statText: string,
     logoAlt: string,
@@ -11,14 +12,15 @@ export interface OpenSourceStatProps {
 const OpenSourceStat = (stat: OpenSourceStatProps) => {
     return (
         <>
-            <Link href={stat.ctaUrl} target="_blank" rel="noopener noreferer" className='flex flex-wrap md:flex-nowrap items-center'>
+            <Link href={stat.ctaUrl} target="_blank" rel="noopener noreferer" className='flex fill-black hover:fill-primary hover:text-primary text-black transition-colors flex-wrap md:flex-nowrap items-center'>
                 <div className='flex gap-[15px] items-center basis-full md:basis-0  gap-[25px] grow text-h4-sm md:text-h4-lg'>
-                    <Image alt={stat.logoAlt} src={stat.logoUrl} width={50} height={50}></Image>
+                    {stat.logo}
                     {stat.statText}
                 </div>
 
-                <div className="flex gap-[5px] md:px-[5px] mt-[24px] lg:mt-[0px] font-bold lg:font-medium text-h6-sm md:text-h6-lg">
-                    {stat.ctaText} <Image alt='arrow' src="/arrow.svg" width={33} height={16}></Image>
+                <div className="flex items-center gap-[5px] md:px-[5px] mt-[24px] lg:mt-[0px] font-bold lg:font-medium text-h6-sm md:text-h6-lg">
+                    {stat.ctaText} <Arrow></Arrow>
+
                 </div>
             </Link>
 

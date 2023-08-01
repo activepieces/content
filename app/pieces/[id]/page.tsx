@@ -123,12 +123,7 @@ export default async function PiecePage({ params }: NavigationProps) {
                 <path d="M113.143 28.7445C113.818 32.1212 116.677 34.1843 120.212 35.227C122.155 35.8006 124.297 36.07 126.401 36.07C129.766 36.07 130.523 41.7935 130.75 47.3538C130.924 51.5941 130.789 55.7426 131.268 57.1782C131.813 58.8072 136.05 58.8357 140.227 58.4443C141.973 58.2795 143.708 58.045 145.158 57.82C138.825 39.209 124.765 24.1729 106.78 16.5701C107.9 18.6095 109.302 20.7582 110.522 22.8419C111.749 24.9383 112.787 26.9681 113.143 28.7445Z" fill="#EEEEEF" />
                 <path d="M47.7145 133.687C46.7289 131.599 44.7973 129.74 42.7374 128.078C39.3654 125.357 35.6495 123.167 35.1694 121.374C34.3961 118.486 37.7855 110.877 35.1694 108.798C32.821 106.933 24.6145 104.174 20.2775 100.633C19.7815 100.229 19.3252 99.8169 18.9464 99.3922C17.5409 97.8219 15.4699 97.4448 13.4416 97.5795C18.4853 116.721 31.5676 132.589 48.8586 141.379C48.9267 138.59 48.678 135.731 47.7145 133.687Z" fill="#EEEEEF" />
               </svg>
-
-
-
-              <div className="lg:w-[855px] text-center text-white text-[50px] lg:text-[80px] md:leading-[90px]  md:text-4xl   font-bold tracking-wider my-[150px]">Explore what you can do with {pieceData.displayName}</div>
-
-
+              <h2 className="lg:w-[855px] text-center text-white text-[50px] lg:text-[80px] md:leading-[90px]  md:text-4xl   font-bold tracking-wider my-[150px]">Explore what you can do with {pieceData.displayName}</h2>
               <div className={Object.keys(pieceData.triggers).length === 0 ? "hidden " : "text-yellow leading-[50px] lg:leading-[60px] font-normal gap-5 text-[50px] lg:text-[80px] flex   mb-[45px] lg:mb-[50px]  text-center items-center justify-center"}>
                 <Image
                   src="../trigger.svg"

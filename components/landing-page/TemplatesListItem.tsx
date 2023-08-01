@@ -1,14 +1,16 @@
 import { FlowTemplate } from "@activepieces/shared";
 import Image from "next/image";
 import Link from "next/link";
+import { Arrow } from "../arrow";
 export interface TemplatesListItemProps {
     template: FlowTemplate,
-    piecesIcons: string[]
+    piecesIcons: string[],
+    baseColorClass: string
 }
 const TemplatesListItem = (props: TemplatesListItemProps) => {
     return (
         <>
-            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferer" className='flex flex-wrap md:flex-nowrap gap-[25px] items-center'>
+            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferer" className={`${props.baseColorClass} hover:text-primary hover:fill-primary transition-all  flex flex-wrap md:flex-nowrap gap-[25px] items-center`}>
                 <div className="flex gap-[10px] lg:gap-[15px]">
                     {
                         props.piecesIcons.map((icon, idx) => (
@@ -24,7 +26,7 @@ const TemplatesListItem = (props: TemplatesListItemProps) => {
                 <div className="flex md:grow md:justify-end">
 
                     <div className="flex md:px-[5px]  !font-bold grow  gap-[5px] md:w-[105px] items-center justify-end   text-h6-sm md:text-h6-lg">
-                        Try it <Image alt='arrow' src="/arrow.svg" width={33} height={16} className="w-[20.67px] h-[10.34px] md:w-[33px] md:h-[16px] "></Image>
+                        Try it <Arrow width={33} height={16} className="w-[20.67px] h-[10.34px] md:w-[33px] md:h-[16px] "></Arrow>
                     </div>
 
                 </div>
