@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { formatDate } from "@/utils/date-helper";
+import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
 
 type BlogPost = {
   slug: string;
@@ -112,26 +113,13 @@ export default async function BlogIndex() {
                 ))}
               </div>
             </div>
-            <div className="bg-black overflow-hidden container   mx-auto rounded-[12px]  lg:py-[61px] p-[30px] lg:px-[50px] mt-5 flex flex-wrap lg:flex-nowrap">
-              <div className="flex flex-col gap-[25px] lg:gap-[51px]">
-                <div className="text-[34px] w-[298px] md:w-[initial] text-white lg:items-center  font-bold leading-[40.80px] flex-col-reverse md:flex-row flex  gap-[20px] tracking-wide">
-                  Community edition <div className="flex items-center"><div className="text-[16px] flex-inline whitespace-nowrap lg:text-[22px] !leading-[26.4px] font-normal tracking-wide px-[15px] py-[10px] lg:px-[25px] lg:py-[14px] text-[#06FFB4] border border-solid border-[#06FFB4] rounded-full"> We are <b>open source</b> </div></div>
-                </div>
-                <div className="text-white text-h6-sm md:text-h6-lg">
-                  Activepieces is an open core software, you can self host it on your machine for free. Our cloud version is built on this core but has more features.
-                </div>
-                <Link href="https://github.com/activepieces/activepieces" target="_blank" rel="noopener noreferer" className="flex gap-[25px]  items-center">
-                  <Image src="/github_white.svg" alt="github" width={50} height={50} className="w-[30px] lg:w-[50px]"></Image>
-                  <div className="text-h6-sm font-bold lg:text-h3-lg text-white">
-                    Visit GitHub
-                  </div>
+            <div className="mx-auto container">
 
-                  <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}>
-
-                  </Image>
-                </Link>
-              </div>
             </div>
+
+
+            <AutomateWithActivepieces ></AutomateWithActivepieces>
+
             <div className="flex justify-start mt-5">
               <div className="flex flex-wrap gap-5  justify-center md:justify-start ">
                 {/* Add justify-items-center to center grid items horizontally */}

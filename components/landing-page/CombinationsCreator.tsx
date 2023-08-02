@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import { DetailedPiece } from "../../utils/piece-helper";
-import { RefObject, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ControlledMenu, FocusableItem, MenuItem, useClick } from "@szhsin/react-menu";
 import { ActionType, FlowTemplate, TriggerType } from "@activepieces/shared";
 const template: FlowTemplate = {
@@ -64,16 +64,16 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
     const actionAppDropdown = useRef<HTMLDivElement | null>(null);
     const [isActionAppDropdownOpen, setIsActionAppDropdownOpen] = useState(false);
     const actionAppdownAnchorProps = useClick(isActionAppDropdownOpen, setIsActionAppDropdownOpen);
-    const [selectedActionApp, setSelectedActionApp] = useState(props.actionPieces[0]);
+    const googlesheetsPiece = props.actionPieces.find((piece) => piece.name === "@activepieces/piece-google-sheets") || props.actionPieces[0];
+    const [selectedActionApp, setSelectedActionApp] = useState(googlesheetsPiece);
     const actionDropdown = useRef<HTMLDivElement | null>(null);
     const [isActionDropdownOpen, setIsActionDropdownOpen] = useState(false);
     const actionDropdownAnchorProps = useClick(isActionDropdownOpen, setIsActionDropdownOpen);
-    const [selectedAction, setSelectedAction] = useState(props.actionPieces[0].actions[Object.keys(props.actionPieces[0].actions)[0]]);
+    const [selectedAction, setSelectedAction] = useState(googlesheetsPiece.actions[Object.keys(googlesheetsPiece.actions)[0]]);
     const [searchTriggerAppTerm, setSearchTriggerAppTerm] = useState("");
     const [searchTriggerTerm, setSearchTriggerTerm] = useState("");
     const [searchActionAppTerm, setSearchActionAppTerm] = useState("");
     const [searchActionTerm, setSearchActionTerm] = useState("");
-
     const generateTemplate = () => {
         template.template.trigger.settings.pieceName = selectedTriggerApp.name;
         template.template.trigger.settings.pieceVersion = `~${selectedTriggerApp.version}`;

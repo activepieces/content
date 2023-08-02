@@ -72,12 +72,12 @@ module.exports = {
           fontWeight: '700',
         }],
         'h3-sm': ['26px',{
-          lineHeight: '26px',
+          lineHeight: '31.2px',
           letterSpacing: '0.65px',
           fontWeight: '700',
         }],
         'h3-lg': ['34px',{
-          lineHeight: '60px',
+          lineHeight: '40.8px',
           letterSpacing: '0.85px',
           fontWeight: '700',
         }],
@@ -92,7 +92,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h5-sm': ['18px',{
-          lineHeight: '33px',
+          lineHeight: '28px',
           letterSpacing: '0.45px',
           fontWeight: '700',
         }],
@@ -102,7 +102,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h6-sm': ['16px',{
-          lineHeight: '19.2px',
+          lineHeight: '',
           letterSpacing: '0.4px',
           fontWeight: '400',
         }],

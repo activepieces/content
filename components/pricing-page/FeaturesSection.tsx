@@ -5,6 +5,33 @@ import phoneAnimation from "./phone_animation.json"
 import { useState } from "react";
 import Link from "next/link";
 import { FeaturesList } from "./FeatureList";
+import { FeatureCardProps } from "./FeatureCard";
+const features: FeatureCardProps[] = [
+    {
+        featImage: "/pricing/feat_1.svg",
+        featText: "Your most intuitive automation builder ever"
+    },
+    {
+        featImage: "/pricing/feat_2.svg",
+        featText: "100+ pieces to use in your automations"
+    },
+    {
+        featImage: "/pricing/feat_3.svg",
+        featText: "Countless templates to start your flows from"
+    },
+    {
+        featImage: "/pricing/feat_4.svg",
+        featText: "Loops and branches to add logic to your flows"
+    },
+    {
+        featImage: "/pricing/feat_5.svg",
+        featText: "Transparent logs to debug or celebrate your runs"
+    },
+    {
+        featImage: "/pricing/feat_6.svg",
+        featText: "Write code when you feel extremely wild"
+    }
+]
 export const FeaturesSection = () => {
     const [expandfeatures, setExpandFeatures] = useState(false)
     return (
@@ -19,7 +46,12 @@ export const FeaturesSection = () => {
                     </div>
 
                     <div className={(expandfeatures ? "max-h-[9999px]" : "max-h-0 ") + " w-full duration-500 transition-all overflow-hidden"}>
-                        <FeaturesList expandList={expandfeatures}></FeaturesList>
+                        <div>
+                            <div className="text-[50px] leading-[65px] lg:text-[80px] p-[40px] md:p-[80px] font-bold lg:leading-[96px] text-center">
+                                You get these <span className="text-primary"> awesome <br className="hidden md:block"></br> features</span> in all our plans
+                            </div>
+                        </div>
+                        <FeaturesList features={features} expandList={expandfeatures}></FeaturesList>
                     </div>
 
 

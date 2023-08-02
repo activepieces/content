@@ -61,6 +61,11 @@ const Navbar = ({ stars }: { stars: number }) => {
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
             </li>
             <li className="flex py-5 lg:py-0  relative items-center  ">
+              <Link href="/blog" className="block  gap-2 peer text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
+                Blogs</Link>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
+            </li>
+            <li className="flex py-5 lg:py-0  relative items-center  ">
               <Link href="https://www.activepieces.com/docs/getting-started/introduction" className="block  gap-2 peer text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
                 Docs</Link>
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>

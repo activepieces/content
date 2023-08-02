@@ -72,7 +72,7 @@ export const PricingMainSection = () => {
             <section>
                 <div className='flex justify-center items-center flex-col text-white mt-[150px] mb-[80px]'>
                     <div className='w-[162px] text-center lg:w-fit text-h4-sm lg:text-h4-lg  mb-[50px] !font-normal'>
-                        Everyone else is signing up too
+                        Everyone else is hopping on
                     </div>
                     <ImageSlider />
 
