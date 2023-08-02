@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 
 let curtainindex = 0;
-export const AnimatedCurtains = () => {
+export const AnimatedCurtains = ({ intervalPeriod }: { intervalPeriod?: number }) => {
     const arrayOfCurtains = new Array(9).fill(0).map((_, i) => i + 1);
     useEffect(() => {
         const timer = setInterval(() => {
@@ -11,7 +11,7 @@ export const AnimatedCurtains = () => {
             const curtain = document.getElementById('curtain');
             if (!curtain) return;
             curtain.style.backgroundImage = `url(/curtains/curtains_${arrayOfCurtains[curtainindex]}.svg)`;
-        }, 3000);
+        }, intervalPeriod ? intervalPeriod : 3000);
         return () => clearInterval(timer);
     });
 

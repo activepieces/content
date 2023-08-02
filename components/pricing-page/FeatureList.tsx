@@ -1,23 +1,13 @@
 import Link from "next/link";
 import { FeatureCard, FeatureCardProps } from "./FeatureCard"
 import Image from "next/image"
-const features: FeatureCardProps[] = new Array(6).fill(0).map((_, i) => {
-    return {
-        featText: "A software engineer's guide to A/B testing",
-        featImage: "/screenshot.png"
-    }
-});
-export const FeaturesList = (props: { expandList: boolean }) => {
+
+export const FeaturesList = (props: { expandList: boolean, features: FeatureCardProps[] }) => {
     return <>
-        <div>
-            <div className="text-[50px] leading-[65px] lg:text-[80px] p-[40px] md:p-[80px] font-bold lg:leading-[96px] text-center">
-                You get these <span className="text-primary"> awesome <br className="hidden md:block"></br> features</span> in all our plans
-            </div>
-        </div>
         <div className="flex justify-center">
             <div className="flex flex-wrap gap-[30px] justify-center">
                 {
-                    features.map((feat, i) => <FeatureCard key={i} featImage={feat.featImage} featText={feat.featText}></FeatureCard>)
+                    props.features.map((feat, i) => <FeatureCard key={i} featImage={feat.featImage} featText={feat.featText}></FeatureCard>)
                 }
             </div>
         </div>

@@ -5,13 +5,12 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 export const metadata: Metadata = {
     title: 'Activepieces - Find apps',
     icons: "/favicon.ico",
-
 }
 
 export default async function FindAppsPage() {
     const pieces = (await GetPieces())
     return (
-        <main className="bg-white py-[80px]">
+        <main className="bg-white py-[80px] min-h-[80vh]">
             <section className="container mx-auto px-4 lg:px-0">
                 <h1 className="text-h2-sm text-center text-black lg:text-h2-lg">
                     Browse all apps
@@ -21,10 +20,13 @@ export default async function FindAppsPage() {
                 </div>
 
                 <ul className="columns-1 md:columns-2 lg:columns-4 text-black text-h5-sm mt-[40px]">
-                    {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={"/pieces/" + piece.name}>{piece.displayName}</Link></li>)}
+                    {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={`/pieces/${piece.name.replace(
+                        "@activepieces/piece-",
+                        ""
+                    )}?version=${piece.version}`} > {piece.displayName}</Link></li>)}
                 </ul>
             </section>
 
-        </main>
+        </main >
     )
 }

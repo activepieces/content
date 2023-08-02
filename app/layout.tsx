@@ -14,7 +14,7 @@ const getStars = async () => {
   }
 
 }
-const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300'] })
+const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300', '100'] })
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const stars = await getStars();
   return (
