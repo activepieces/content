@@ -41,7 +41,7 @@ export default async function BlogPost({ params }: NavigationProps) {
 
   return (
     <main className="bg-white w-full">
-      <section className="container mx-auto px-3 py-[80px] md:px-0  mx-auto  my-8  ">
+      <section className="container mx-auto px-3 py-[80px] md:px-0  mx-auto ">
         <nav className="text-lg mb-[35px]">
           <Link href="/blog" className="no-underline">
             {/* Apply your custom styles for the link */}
