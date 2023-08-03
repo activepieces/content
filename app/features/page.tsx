@@ -11,9 +11,27 @@ import CombinationsMakerSection from "../../components/landing-page/Combinations
 import { VisibilitySection } from "../../components/features-page/VisibilitySection";
 import { FeaturesSection } from "../../components/features-page/FeaturesSection";
 
-export const metadata: Metadata = {
-    title: 'Activepieces - Features',
-    icons: "/favicon.ico",
+
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: 'Activepieces - Features',
+        description: 'Activepieces is a no-code business automation tool that lets you automate your work without writing code, while allowing you to write code when you need it. It gives you great visibility on your runs to fix them when they go wrong.',
+        openGraph: {
+            title: 'Activepieces - Features',
+            description: 'Activepieces is a no-code business automation tool that lets you automate your work without writing code, while allowing you to write code when you need it. It gives you great visibility on your runs to fix them when they go wrong.',
+            url: 'https://www.activepieces.com/features',
+            type: 'website',
+            images: [
+                {
+                    url: 'https://activepieces.com/features/meta2.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Activepieces - Features',
+                },
+            ]
+        },
+        icons: "/favicon.ico",
+    };
 }
 
 export default async function FindAppsPage() {

@@ -22,11 +22,26 @@ type Category = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  // read route params
+  const title = "Blog - Activepieces";
+  const description = "Learn how to automate your business with ChatGPT, Slack, Google Sheets and many other apps. Activepieces is the leading open source business automation tool.";
   return {
-    title: "Activepieces - Blogs",
-    description: "Learn business automation from the top resources - The Automatic Organization",
+    title: title,
+    description: description,
     icons: "/favicon.ico",
+    openGraph: {
+      title: title,
+      description: description,
+      siteName: "Activepieces",
+      images: [
+        {
+          url: "https://www.activepieces.com/meta1.png",
+          width: 1200,
+          height: 630,
+          alt: "Activepieces Blog",
+        },
+      ],
+      url: "https://www.activepieces.com/blog",
+    }
   };
 }
 

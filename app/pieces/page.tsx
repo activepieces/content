@@ -2,10 +2,32 @@
 import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
 import PiecesList from "../../components/pieces/List";
-export const metadata: Metadata = {
-  title: 'Activepieces - Pieces',
-  icons: "/favicon.ico",
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Connect hundreds of apps - Activepieces";
+  const description = "Activepieces offers hundreds of apps to choose from to automate your work with. Including Google Sheets, ChatGPT, Asana, ClickUp, Slack, Discord, YouTube, Facebook Leads, and many more."
+  return {
+    title: title,
+    description: description,
+    icons: "/favicon.ico",
+    openGraph: {
+      title: title,
+      description: description,
+      siteName: "Activepieces",
+      images: [
+        {
+          url: "https://www.activepieces.com/meta1.png",
+          width: 1200,
+          height: 630,
+          alt: "Activepieces",
+        },
+      ],
+      url: "https://www.activepieces.com",
+    }
+  };
 }
+
 
 export default async function PiecesPage() {
   const pieces = await GetPieces();

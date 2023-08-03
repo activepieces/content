@@ -13,9 +13,29 @@ import { AutomateWithActivepieces } from '../components/animated-curtains/Automa
 import { ComparisionSection } from '../components/landing-page/ComparisonSection';
 import { PiecesDictionarySection } from '../components/landing-page/PiecesDictionarySection';
 
-export const metadata: Metadata = {
-  title: 'Activepieces - Home',
-  icons: "/favicon.ico",
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Activepieces - The open source business automation software - Zapier alternative";
+  const description = "Automate your work with Activepieces for free. Trusted by thousands of users who run millions of automated tasks every month. The perfect alternative to Zapier that can be self-hosted or used on the cloud."
+
+  return {
+    title: title,
+    description: description,
+    icons: "/favicon.ico",
+    openGraph: {
+      title: title,
+      description: description,
+      siteName: "Activepieces",
+      images: [
+        {
+          url: "https://www.activepieces.com/meta1.png",
+          width: 1200,
+          height: 630,
+          alt: "Activepieces",
+        },
+      ],
+      url: "https://www.activepieces.com",
+    }
+  };
 }
 
 const template: FlowTemplate = {

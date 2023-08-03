@@ -11,15 +11,26 @@ import { AutomateWithActivepieces } from "../../../components/animated-curtains/
 export async function generateMetadata(
   { params }: NavigationProps,
 ): Promise<Metadata> {
-  // read route params
   const pieceName = params.id
-  // fetch data
-  const pieceData = await GetPiece(`@activepieces/piece-${pieceName}`);
-
+  const title = `${pieceName} Integrations - Connect your apps with Activepieces`
+  const description = `Connect ${pieceName} to hundreds of apps to automate your business. Activepieces is trusted by thousands of users who automate their everyday tasks.`
   return {
-    title: "Activepieces - " + pieceData.displayName,
-    description: pieceData.description,
-    authors: { url: "www.activepieces.com", name: "Activepieces" },
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      siteName: "Activepieces",
+      images: [
+        {
+          url: "https://www.activepieces.com/meta1.png",
+          width: 1200,
+          height: 630,
+          alt: "Activepieces",
+        }
+      ],
+      url: "https://www.activepieces.com/pieces/" + pieceName,
+    },
     icons: "/favicon.ico",
   }
 }
