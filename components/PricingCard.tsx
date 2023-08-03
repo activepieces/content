@@ -13,7 +13,7 @@ const PricingCard = (props: {
 }) => {
     const menuItemClassName = ({ hover }: { hover: boolean }) =>
         hover ? 'pricing-menuitem transitions-all  ' : 'pricing-menuitem ';
-    const pricingDropdown = useRef(null);
+    const pricingDropdown = useRef<HTMLDivElement | null>(null);
     const [isPricingDropdownOpen, setIsPricingDropdownOpen] = useState(false);
     const pricingdownAnchorProps = useClick(isPricingDropdownOpen, setIsPricingDropdownOpen);
     const [selectedPricing, setSelectedPricing] = useState(props.plans[0]);
@@ -56,7 +56,7 @@ const PricingCard = (props: {
                             onClick={() => {
                                 setSelectedPricing(plan);
                             }}>
-                            <div className='item-container cursor-pointer flex  flex-col gap-[10px] '>
+                            <div className='item-container cursor-pointer flex  flex-col gap-[10px] ' style={{ width: (pricingDropdown.current?.clientWidth || 100) - 12.5 + "px" }}>
                                 <div className="text-h3-sm">
                                     {props.free ? `$9 Free` : `$${plan.price}/mo`}
                                 </div>
