@@ -9,6 +9,9 @@ import { NavigationProps } from "../../../components/navigationProps";
 import Link from "next/link";
 import { formatDate } from "@/utils/date-helper";
 
+const paragraphClasses = [1,2,3,4,5,6].map(i=> `prose-h${i}:text-h${i}-sm prose-h${i}:lg:text-h${i}-sm`).join(' ');
+const listClasses = ['p', 'li', 'ol', 'ul'].map(i=> `prose-${i}:text-h6-sm prose-${i}:lg:text-h6-lg`).join(' ');
+
 export async function generateMetadata(
   { params }: NavigationProps,
 ): Promise<Metadata> {
@@ -62,7 +65,7 @@ export default async function BlogPost({ params }: NavigationProps) {
             />
           </div>
         </header>
-        <div className="prose max-w-none  prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover">
+        <div className={"prose max-w-none prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover " + paragraphClasses + " " + listClasses}>
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
 
