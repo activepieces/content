@@ -10,12 +10,12 @@ export interface TemplatesListItemProps {
 const TemplatesListItem = (props: TemplatesListItemProps) => {
     return (
         <>
-            <Link href={"https://cloud.activepieces.com/templates/" + props.template.id} target="_blank" rel="noopener noreferer" className={`${props.baseColorClass} hover:text-primary hover:fill-primary transition-all  flex flex-wrap md:flex-nowrap gap-[25px] items-center`}>
+            <Link href={`https://cloud.activepieces.com/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(props.template))}`} target="_blank" rel="noopener noreferer" className={`${props.baseColorClass} hover:text-primary hover:fill-primary transition-all  flex flex-wrap md:flex-nowrap gap-[25px] items-center`}>
                 <div className="flex gap-[10px] lg:gap-[15px]">
                     {
                         props.piecesIcons.map((icon, idx) => (
                             <div className=" bg-white flex items-center p-[6.667px] lg:p-[10px] border border-solid border-outline rounded-lg" key={idx}>
-                                <Image alt={icon} src={icon} width={20} height={20} className="h-[26.67px] w-[26.67px] lg:h-[40px] lg:w-[40px]"></Image>
+                                <Image alt={icon} src={icon} width={20} height={20} className="h-[26.67px] w-[26.67px] lg:h-[40px] lg:w-[40px] object-contain"></Image>
                             </div>
                         ))
                     }

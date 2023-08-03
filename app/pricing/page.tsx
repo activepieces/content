@@ -19,7 +19,7 @@ export default async function PricingPage() {
       <FeaturesSection></FeaturesSection>
       <WhiteLabelSection></WhiteLabelSection>
       <FAQsSection></FAQsSection>
-      <AutomateWithActivepieces></AutomateWithActivepieces>
+      <AutomateWithActivepieces ></AutomateWithActivepieces>
     </>
   );
 }

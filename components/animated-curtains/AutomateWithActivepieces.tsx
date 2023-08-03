@@ -60,7 +60,7 @@ export const AutomateWithActivepieces = () => {
     });
     return <>
         <section className="bg-[#0B0B0B] ">
-            <AnimatedCurtains></AnimatedCurtains>
+            <AnimatedCurtains id="AnimatedWithAp" intervalPeriod={3000}></AnimatedCurtains>
             <div className="flex justify-center lg:justify-between flex-wrap gap-[30px] px-4 py-[80px] lg:px-[0px] container mx-auto lg:py-[100px] ">
                 <div className="text-center lg:text-left max-w-[861px] text-white text-[50px]   font-bold  tracking-wide lg:text-[80px] w-full lg:w-auto">
                     Automate <br className="lg:hidden"></br> <span id="automatedText" className="text-[#06FFB4]" >tasks</span> <br className="lg:hidden"></br>  with <br className="lg:hidden"></br> Activepieces

@@ -1,6 +1,4 @@
 'use client'
-
-import { FlowTemplate } from '@activepieces/shared';
 import Image from 'next/image'
 import AiCard from './AiCard';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
@@ -10,7 +8,7 @@ import { Arrow } from '../arrow';
 
 const scrollBy = 358;
 const AiSection = (props: {
-    props: { template: FlowTemplate, piecesIcons: string[] }[]
+    templates: { id: string, piecesIcons: string[], description: string }[]
 }) => {
     const [marginLeft, setMarginLeft] = useState('0px');
     const sectionDiv: MutableRefObject<null | HTMLDivElement> = useRef(null);
@@ -85,11 +83,11 @@ const AiSection = (props: {
                     marginLeft: marginLeft
                 }
             } className='flex gap-[15px] overflow-x-scroll px-4 lg:px-0 ai-cards-slider items-center pt-[40px] lg:pt-[80px]' ref={sliderDiv}>
-                <Image src="/most_used.svg" width={64} height={48} alt='most used' className='w-[64px] h-[78px] -mr-[30px] z-50'>
+                <Image src="/most_used.svg" width={64} height={48} alt='most used' className='w-[64px] h-[78px] -mr-[30px] z-40'>
 
                 </Image>
                 {
-                    props.props.map((_, i) => <AiCard key={i} template={_.template} piecesIcons={_.piecesIcons}></AiCard>)
+                    props.templates.map((_, i) => <AiCard key={i} id={_.id} piecesIcons={_.piecesIcons} description={_.description}></AiCard>)
                 }
 
             </div>

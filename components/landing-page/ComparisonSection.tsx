@@ -19,6 +19,32 @@ const apps: ComparisonApp[] = [
         miss: ["Extreme limitation of features", "Insance price hikes", "Closed ecosystem"],
         love: ["All features included", "Fair pricing", "Open source"]
     },
+    {
+        appName: "Make",
+        miss: ["Steep learning curve",
+            "Overwhelming canvas",
+            "Slow support"],
+        icon: "/make-icon.png",
+        love: ["Intuitive interface",
+            "Sleek builder",
+            "Active community"]
+    },
+    {
+        appName: "Workato",
+        miss: ["Hidden pricing",
+            "Steep learning curve",
+            "Unaffordable pricing"],
+        icon: "/workato-icon.svg",
+        love: ["Transparent pricing",
+            "Intuitive interface",
+            "Fair pricing"]
+    },
+    {
+        appName: "n8n",
+        icon: "/n8n-icon.svg",
+        love: ['Intuitive interface', 'MIT license', 'Weekly new apps'],
+        miss: ['Overwhelming canvas', 'Restrictive license', 'Slow apps growth']
+    }
 
 ]
 export const ComparisionSection = () => {
@@ -70,7 +96,7 @@ export const ComparisionSection = () => {
                     {
                         apps.filter(app => app.appName !== selectedApp.appName).map((app, idx) =>
                             <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedApp(app)}>
-                                <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
+                                <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center' style={{ width: (menuButtonRef.current?.clientWidth || 100) + "px" }}>
                                     <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
                                         <Image alt={selectedApp.appName} src={app.icon} width={20} height={20} className="h-[20px] w-[20px] lg:h-[40px] lg:w-[40px]"></Image>
                                     </div>  {app.appName}
@@ -89,14 +115,14 @@ export const ComparisionSection = () => {
                         icon={selectedApp.icon}
                         appName={selectedApp.appName}
                         bgClass='bg-[#AEE241] bg-opacity-10 basis-1'
-                        tagline='You will miss 😂'
+                        tagline="You'll miss their 😂"
                         key={selectedApp.appName + "_miss"}
                     ></ComparisonCard>
                     <ComparisonCard
                         discussionPoints={selectedApp.love}
                         icon="/activepieces_logo.svg" appName="ActivePieces"
                         bgClass='bg-primary bg-opacity-10 basis-1'
-                        tagline='You will love 🚀'
+                        tagline="You'll love our 🚀"
                         key={selectedApp.appName + "_love"}
                     ></ComparisonCard>
                 </div>

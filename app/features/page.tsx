@@ -30,7 +30,7 @@ export default async function FindAppsPage() {
                     </Link>
                 </div>
                 <div className="border  mb-[120px] lg:mb-[150px] border-solid border-white rounded overflow-hidden mt-[40px] lg:mt-[80px]">
-                    <AnimatedCurtains intervalPeriod={7000}></AnimatedCurtains>
+                    <AnimatedCurtains id="indie" intervalPeriod={7000}></AnimatedCurtains>
                     <div className="py-[80px] flex items-center justify-center">
                         <TestimoniesSection></TestimoniesSection>
                     </div>
