@@ -1,10 +1,10 @@
-
 import { join } from "path";
 import fs from "fs";
 import matter, { GrayMatterFile } from "gray-matter";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import Image from "next/image";
 import { Metadata } from "next";
+import Head from "next/head"; // import Head from next/head
 import { NavigationProps } from "../../../components/navigationProps";
 import Link from "next/link";
 import { formatDate } from "@/utils/date-helper";
@@ -44,6 +44,19 @@ export default async function BlogPost({ params }: NavigationProps) {
 
   return (
     <main className="bg-white w-full">
+      <Head>
+        <title>{data.title}</title>
+        <meta name="description" content={data.description} />
+        <meta name="author" content={data.author} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content={data.title} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={data.thumbnail} />
+        <meta property="og:url" content={`www.activepieces.com/blog/${blogName}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={data.publishedOn} />
+        <meta property="article:author" content={data.author} />
+      </Head>
       <section className="container mx-auto px-3 py-[80px] md:px-0  mx-auto ">
         <nav className="text-lg mb-[35px]">
           <Link href="/blog" className="no-underline">
