@@ -90,9 +90,9 @@ export default function Footer() {
           Backed by <Image src="/Y_Combinator.svg" height={40.3} width={140} alt="Y Combinator"></Image>
         </div>
         <div className="flex gap-[15px] w-[210px] flex-wrap md:w-[initial] justify-center lg:justify-start mt-[40px] lg:mt-0">
-          <Link className="hover:text-white" href="/privacy-policy">Privacy</Link>
+          <Link className="hover:text-white" href="/privacy">Privacy</Link>
           <div>-</div>
-          <Link className="hover:text-white" href="/terms-of-service">Terms</Link>
+          <Link className="hover:text-white" href="/terms">Terms</Link>
           <div>-</div>
           <Link className="hover:text-white" href="/google-api-disclosure">Google API Disclosure</Link>
         </div>
