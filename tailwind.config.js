@@ -112,7 +112,7 @@ module.exports = {
           fontWeight: '400',
         }],
       },
-      container: {
+    container: {
         screens: {
           sm: '640px',
           md: '768px',

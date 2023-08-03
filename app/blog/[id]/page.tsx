@@ -9,33 +9,32 @@ import { NavigationProps } from "../../../components/navigationProps";
 import Link from "next/link";
 import { formatDate } from "@/utils/date-helper";
 
-const paragraphClasses = [1,2,3,4,5,6].map(i=> `prose-h${i}:text-h${i}-sm prose-h${i}:lg:text-h${i}-sm`).join(' ');
-const listClasses = ['p', 'li', 'ol', 'ul'].map(i=> `prose-${i}:text-h6-sm prose-${i}:lg:text-h6-lg`).join(' ');
-
-export async function generateMetadata(
-  { params }: NavigationProps,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: NavigationProps): Promise<Metadata> {
   // read route params
-  const blogName = params.id
+  const blogName = params.id;
   const docsDirectory = join(process.cwd(), "content", "blog");
   // fetch data
-  const fullPath = join(docsDirectory, blogName + '.mdx');
+  const fullPath = join(docsDirectory, blogName + ".mdx");
   const fileContents = await fs.promises.readFile(fullPath, "utf8");
   const { data } = matter(fileContents);
 
   return {
     title: "Activepieces - " + data.title,
-    authors: { url: `www.activepieces.com/blog/${blogName}`, name: data.author },
+    authors: {
+      url: `www.activepieces.com/blog/${blogName}`,
+      name: data.author,
+    },
     icons: "/favicon.ico",
-  }
+  };
 }
-
 
 export default async function BlogPost({ params }: NavigationProps) {
   const blogName = params.id;
   const docsDirectory = join(process.cwd(), "content", "blog");
   // fetch data
-  const fullPath = join(docsDirectory, blogName + '.mdx');
+  const fullPath = join(docsDirectory, blogName + ".mdx");
   const fileContents = await fs.promises.readFile(fullPath, "utf8");
   const { data, content }: GrayMatterFile<string> = matter(fileContents);
 
@@ -52,7 +51,10 @@ export default async function BlogPost({ params }: NavigationProps) {
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:image" content={data.thumbnail} />
-        <meta property="og:url" content={`www.activepieces.com/blog/${blogName}`} />
+        <meta
+          property="og:url"
+          content={`www.activepieces.com/blog/${blogName}`}
+        />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={data.publishedOn} />
         <meta property="article:author" content={data.author} />
@@ -61,15 +63,21 @@ export default async function BlogPost({ params }: NavigationProps) {
         <nav className="text-lg mb-[35px]">
           <Link href="/blog" className="no-underline">
             {/* Apply your custom styles for the link */}
-            <span className="text-primary no-underline hover:underline cursor-pointer">Blogs</span>
+            <span className="text-primary no-underline hover:underline cursor-pointer">
+              Blogs
+            </span>
           </Link>{" "}
-
         </nav>
         <header className="mb-[35px] mx-auto text-left">
-          <h1 className="text-h1-sm lg:text-h1-lg font-bold mb-[35px]">{data.title}</h1>
-          <div className="text-black text-lg font-normal leading-snug tracking-wide mb-[35px]">{data.author} | Published on {formattedPublishOn}</div>
+          <h1 className="text-h1-sm lg:text-h1-lg font-bold mb-[35px]">
+            {data.title}
+          </h1>
+          <div className="text-black text-lg font-normal leading-snug tracking-wide mb-[35px]">
+            {data.author} | Published on {formattedPublishOn}
+          </div>
           <div>
-            <Image className="rounded-lg w-full h-full object-cover"
+            <Image
+              className="rounded-lg w-full h-full object-cover"
               src={data.thumbnail}
               alt="Blog thumbnail"
               sizes="(max-width: 479px) 74vw, (max-width: 767px) 77vw, (max-width: 991px) 78vw, (max-width: 1279px) 87vw, (max-width: 1439px) 88vw, 1248px"
@@ -78,10 +86,13 @@ export default async function BlogPost({ params }: NavigationProps) {
             />
           </div>
         </header>
-        <div className={"prose max-w-none prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover " + paragraphClasses + " " + listClasses}>
+        <div
+          className={
+            "prose max-w-none prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover prose-h1:text-h1-sm prose-h1:lg:text-h1-sm prose-h2:text-h2-sm prose-h2:lg:text-h2-sm prose-h3:text-h3-sm prose-h3:lg:text-h3-sm prose-h4:text-h4-sm prose-h4:lg:text-h4-sm prose-h5:text-h5-sm prose-h5:lg:text-h5-sm prose-h6:text-h6-sm prose-h6:lg:text-h6-sm prose-p:text-h6-sm prose-p:lg:text-h6-lg prose-li:text-h6-sm prose-li:lg:text-h6-lg prose-ol:text-h6-sm prose-ol:lg:text-h6-lg prose-ul:text-h6-sm prose-ul:lg:text-h6-lg"
+          }
+        >
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
-
       </section>
     </main>
   );
