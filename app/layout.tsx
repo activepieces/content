@@ -5,6 +5,7 @@ import '../styles/globals.css'
 import { Lato } from 'next/font/google'
 import { PHProvider, PostHogPageview } from './providers'
 import { Suspense } from 'react'
+import Script from 'next/script'
 
 const getStars = async () => {
   try {
@@ -23,6 +24,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const stars = await getStars();
   return (
     <html lang="en">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BL60V50BXE" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-BL60V50BXE');
+        `}
+      </Script>
       <Suspense>
         <PostHogPageview />
       </Suspense>
