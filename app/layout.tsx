@@ -19,6 +19,7 @@ const getStars = async () => {
   }
 
 }
+
 const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300', '100'], variable: '--font-inter', display: 'swap', adjustFontFallback: false },)
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const stars = await getStars();
@@ -38,7 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <PostHogPageview />
       </Suspense>
       <PHProvider>
-        <body className={lato.className + "  relative  font-sans bg-no-repeat bg-black bg-cover bg-center"} >
+        <body className={lato.className + "  relative bg-no-repeat bg-black bg-cover bg-center"} >
 
           <Navbar stars={stars}></Navbar>
 
