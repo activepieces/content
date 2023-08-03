@@ -378,7 +378,7 @@ export default async function Privacy() {
 
             <p>
                 You will retain ownership of any data, information or material originated by you that you transmit through the
-                Service ("User Content") – for example, User Content from your accounts with third party services (e.g., Gmail or
+                Service (&quot;User Content&quot;) - for example, User Content from your accounts with third party services (e.g., Gmail or
                 Dropbox) that passes through the Service. You shall be solely responsible for the accuracy, quality, content and
                 legality of User Content, the means by which User Content is acquired and the transmission of User Content outside
                 of the Service. You represent and warrant that you have all rights necessary to transmit User Content through the
