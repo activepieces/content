@@ -6,18 +6,19 @@ import { usePathname } from 'next/navigation'
 
 export const GithubStickyWidget = ({ stars }: { stars: number }) => {
     const [hide, setHide] = useState(false);
+    const [hideGithubWidget, setHideGithubWidget] = useState(true);
     const pathname = usePathname()
 
     useEffect(() => {
-        if (pathname.startsWith("/blog") && !hide) {
-            setHide(true);
-        } else if (!pathname.startsWith("/blog") && hide) {
-            setHide(false);
+        if (pathname.startsWith("/blog") && !hideGithubWidget) {
+            setHideGithubWidget(true);
+        } else if (!pathname.startsWith("/blog") && hideGithubWidget) {
+            setHideGithubWidget(false);
         }
-    }, [pathname, hide]);
+    }, [pathname, hideGithubWidget]);
 
     return <>
-        <div className={(hide ? "opacity-0 pointer-events-none" : "opacity-100 ") + " -translate-y-[100px] transition-all sticky w-full flex justify-center bottom-[30px] h-0"}>
+        <div className={(hide || hideGithubWidget ? "opacity-0 pointer-events-none" : "opacity-100 ") + " -translate-y-[100px] transition-all sticky w-full flex justify-center bottom-[30px] h-0"}>
             <div
                 className="bg-[#06FFB4] border border-solid border-black border-opacity-50 h-[95px] w-[350px] lg:w-[500px] rounded-xl text-h6-sm lg:text-h6-lg !font-bold  flex justify-center gap-[20px] lg:gap-[50px] items-center">
                 Star us on GitHub
