@@ -32,7 +32,7 @@ export const ScreenshotsSection = () => {
     return (<div className="flex gap-3 lg:gap-6  justify-center items-end">
         {
             screenshotsDimensions.map((dimensions, idx) => (
-                <Image src={`/screenshots/screenshot_${idx + 1}.svg`} height={dimensions.height} width={dimensions.width} className={dimensions.className} alt={`screenshot_${idx + 1}`}></Image>))
+                <Image key={'screenshot'+idx} src={`/screenshots/screenshot_${idx + 1}.svg`} height={dimensions.height} width={dimensions.width} className={dimensions.className} alt={`screenshot_${idx + 1}`}></Image>))
         }
     </div>)
 }
