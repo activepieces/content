@@ -37,7 +37,7 @@ export default async function FindAppsPage({ params }: NavigationProps) {
                 <h1 className="text-h2-sm text-center text-black lg:text-h2-lg">
                     {`Browse apps starting with ${params.id.toUpperCase()}`}
                 </h1>
-                <div className="flex gap-6 text-black  lg:text-h4-sm justify-center  mt-[20px] ">
+                <div className="flex gap-6 text-black  flex-wrap lg:text-h4-sm justify-center  mt-[20px] ">
                     {alphabet.map((letter, idx) => <Link key={idx} href={"/find-apps/" + letter.toLowerCase()}>{letter} </Link>)}
                 </div>
 
