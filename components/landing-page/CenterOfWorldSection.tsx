@@ -42,11 +42,11 @@ const CenterOfWorldSection = (props: {
                         <Image src="/three.svg" alt='one' width={39} height={41} className='w-[30px] h-[24px] lg:w-[43px] lg:h-[34px]'></Image>
                     </div>
 
-                    <div className='flex gap-[10px] lg:gap-[25px] relative items-center flex-wrap'>
+                    <div className='flex  relative items-center flex-wrap'>
                         <div>
-                            Centralize notifications in your
-                        </div>
-                        <div className='select-none cursor-pointer  absolute right-[110px] bottom-0 md:relative md:right-0  items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
+                            Centralize notifications<span className='hidden md:inline'>&nbsp;</span></div>
+                        <div>in your</div>
+                        <div className='select-none ml-[10px] lg:ml-[25px] cursor-pointer  relative   items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
                             { color: isAppMenuOpen ? "#6E41E2" : "#111111" }
                         }>
 
