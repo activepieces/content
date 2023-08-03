@@ -11,9 +11,10 @@ import { AutomateWithActivepieces } from "../../../components/animated-curtains/
 export async function generateMetadata(
   { params }: NavigationProps,
 ): Promise<Metadata> {
-  const pieceName = params.id
-  const title = `${pieceName} Integrations - Connect your apps with Activepieces`
-  const description = `Connect ${pieceName} to hundreds of apps to automate your business. Activepieces is trusted by thousands of users who automate their everyday tasks.`
+  const pieceName = params.id;
+  const pieceData = await GetPiece(`@activepieces/piece-${pieceName}`);
+  const title = `${pieceData.displayName} Integrations - Connect your apps with Activepieces`
+  const description = `Connect ${pieceData.displayName} to hundreds of apps to automate your business. Activepieces is trusted by thousands of users who automate their everyday tasks.`
   return {
     title: title,
     description: description,

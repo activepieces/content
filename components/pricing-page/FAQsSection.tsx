@@ -12,10 +12,6 @@ const FAQs: { question: string, answer: string }[] = [{
     answer: "Your automation is a flow. You add steps to build each of these flows. Folders are used to group flows together to organize your Activepieces dashboard."
 },
 {
-    question: "Do you have bigger plans?",
-    answer: "Once you sign up, you'll be able to purchase up to 500,000 tasks per month. If you need more than that, contact us at sales@activepieces.com"
-},
-{
     question: "What is your open source license?",
     answer: "Activepieces is developed under the MIT license. This license allows you to use, modify and redistribute our code without restrictions."
 }]
