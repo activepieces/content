@@ -3,6 +3,10 @@ import Navbar from '../components/Navbar'
 import { GithubStickyWidget } from '../components/GithubStickyWidget'
 import '../styles/globals.css'
 import { Lato } from 'next/font/google'
+import { PHProvider, PostHogPageview } from './providers'
+import { Suspense } from 'react'
+import Script from 'next/script'
+
 const getStars = async () => {
   try {
     const repo = await fetch("https://api.github.com/repos/activepieces/activepieces", {
@@ -20,18 +24,31 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const stars = await getStars();
   return (
     <html lang="en">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BL60V50BXE" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-BL60V50BXE');
+        `}
+      </Script>
+      <Suspense>
+        <PostHogPageview />
+      </Suspense>
+      <PHProvider>
+        <body className={lato.className + "  relative  font-sans bg-no-repeat bg-black bg-cover bg-center"} >
 
-      <body className={lato.className + " relative  font-sans bg-no-repeat bg-black bg-cover bg-center"} >
+          <Navbar stars={stars}></Navbar>
 
-        <Navbar stars={stars}></Navbar>
+          {children}
 
-        {children}
+          <Footer></Footer>
+          <GithubStickyWidget stars={stars}></GithubStickyWidget>
 
-        <Footer></Footer>
-        <GithubStickyWidget stars={stars}></GithubStickyWidget>
-
-      </body>
-
+        </body>
+      </PHProvider>
     </html>
   )
 }

@@ -7,6 +7,11 @@ const nextConfig = {
             destination: '/pricing',
             permanent: true,
           },
+          {
+            source: '/docs',
+            destination: 'https://activepieces.mintlify.dev/docs/getting-started/introduction',
+            permanent: true,
+          },
         ]
       },
     images: {

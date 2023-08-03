@@ -152,32 +152,32 @@ const baseTemplate: FlowTemplate = {
 }
 export const aiTemplates = [
     {
-      id: 'ai-content-gen',
+      id: 'iK9ktpb8OnzgdPGhPJeoD',
       piecesIcons: ['https://cdn.activepieces.com/pieces/google-sheets.png', 'https://cdn.activepieces.com/pieces/openai.png'],
       description: 'Scale your SEO content with ChatGPT right into your WordPress site'
     },
     {
-      id: 'ai-translate-tweet-rss',
+      id: 'UGHobBCFygpnETHhfrFzC',
       piecesIcons: ['https://cdn.activepieces.com/pieces/rss.png', 'https://cdn.activepieces.com/pieces/openai.png'],
       description: 'Tweet RSS items automatically after translation with ChatGPT'
     },
     {
-      id: 'ai-personalized-welcome-email-mailchimp',
+      id: 'KPZPDYTMWJRLTlSsvqKZT',
       piecesIcons: ['https://cdn.activepieces.com/pieces/mailchimp.png', 'https://cdn.activepieces.com/pieces/openai.png'],
       description: 'Send automated welcome emails with ChatGPT to MailChimp subscribers'
     },
     {
-      id: 'ai-long-blog-posts',
+      id: '41Txbb9JfLbuhHYJOiNSE',
       piecesIcons: ['https://cdn.activepieces.com/pieces/google-sheets.png', 'https://cdn.activepieces.com/pieces/openai.png'],
       description: 'Write 1,500+ words blog posts with ChatGPT in WordPress'
     },
     {
-      id: 'ai-sms-customer-service',
+      id: 'Y1Tb3uIqGPvmPiX6R7giO',
       piecesIcons: ['https://cloud.activepieces.com/assets/img/custom/piece/webhook_mention.png', 'https://cloud.activepieces.com/assets/img/custom/piece/store_mention.png'],
       description: 'Build an SMS customer service agent with ChatGPT'
     },
     {
-      id: 'ai-engaging-tweet',
+      id: 'fgMj1CNBGvoUNyJok4VDe',
       piecesIcons: ['https://cloud.activepieces.com/assets/img/custom/piece/schedule_mention.png', 'https://cdn.activepieces.com/pieces/openai.png'],
       description: 'Post engaging Tweets to your audience with ChatGPT'
     },
