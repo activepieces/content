@@ -25,7 +25,7 @@ export default async function FindAppsPage() {
                     Meant to be <span className="text-[#EEABFF]">simple</span> yet <br className="hidden lg:block"></br> so powerful
                 </h1>
                 <div className="flex items-center justify-center mt-[40px] lg:mt-[80px]  ">
-                    <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopner' className='text-center rounded-sm hover:-translate-y-[6px] transition-transform flex items-center justify-center gap-5  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
+                    <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopener noreferer' className='text-center rounded-sm hover:-translate-y-[6px] transition-transform flex items-center justify-center gap-5  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
                         Get Started <Arrow className="fill-white" width={33.33} height={16.67}></Arrow>
                     </Link>
                 </div>

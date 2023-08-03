@@ -62,7 +62,7 @@ const ImageSlider = () => {
           <div
             key={index}
           >
-            <Image src={company.logo} alt={company.alt} className="h-[30px] lg:h-[60px]" style={{
+            <Image loading="eager" src={company.logo} alt={company.alt} className="h-[30px] lg:h-[60px]" style={{
               objectFit: "contain",
 
             }} />

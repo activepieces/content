@@ -12,7 +12,7 @@ export const AnimatedCurtains = ({ intervalPeriod, id }: { intervalPeriod?: numb
             const curtain = document.getElementById('curtains' + id);
             if (!curtain) return;
             curtain.style.backgroundImage = `url('/curtains/curtains_${arrayOfCurtains[curtainindex]}.svg')`;
-        }, 3000);
+        }, intervalPeriod ? intervalPeriod : 1500);
         return () => clearInterval(timer);
     });
 

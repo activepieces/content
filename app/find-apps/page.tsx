@@ -23,7 +23,7 @@ export default async function FindAppsPage() {
                     {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={`/pieces/${piece.name.replace(
                         "@activepieces/piece-",
                         ""
-                    )}?version=${piece.version}`} > {piece.displayName}</Link></li>)}
+                    )}?`} > {piece.displayName}</Link></li>)}
                 </ul>
             </section>
 

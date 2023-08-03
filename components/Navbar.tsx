@@ -69,7 +69,7 @@ const Navbar = ({ stars }: { stars: number }) => {
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
             </li>
             <li className="flex py-5 lg:py-0  relative items-center  ">
-              <Link onClick={closeMobileNavbar} href="https://www.activepieces.com/docs/getting-started/introduction" className="block  gap-2 peer text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
+              <Link onClick={closeMobileNavbar} href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferrer noopener" className="block  gap-2 peer text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
                 Docs</Link>
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
             </li>
@@ -81,12 +81,12 @@ const Navbar = ({ stars }: { stars: number }) => {
             </li>
             <li className="lg:ml-[45px] py-5 lg:py-0 relative flex items-center">
 
-              <Link onClick={closeMobileNavbar} href="https://cloud.activepieces.com/sign-in" className="block gap-2 peer text-white font-normal  flex   justify-start lg:justify-center items-center transition-colors   ">
+              <Link onClick={closeMobileNavbar} target='_blank' rel='noopener noreferer' href="https://cloud.activepieces.com/sign-in" className="block gap-2 peer text-white font-normal  flex   justify-start lg:justify-center items-center transition-colors   ">
                 Login</Link>
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "></div>
             </li>
             <li onClick={closeMobileNavbar} className="lg:ml-[10px] py-5 lg:py-0  flex items-center">
-              <Link href="https://cloud.activepieces.com/sign-up" className="block hover:-translate-y-[3px] transition-transform	 gap-2 text-black text-h4-sm flex bg-white font-bold  justify-start lg:justify-center items-center px-5 py-2 rounded-sm lg:border lg:border-white ">
+              <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopener noreferer' className="block hover:-translate-y-[3px] transition-transform	 gap-2 text-black text-h4-sm flex bg-white font-bold  justify-start lg:justify-center items-center px-5 py-2 rounded-sm lg:border lg:border-white ">
                 Start free
               </Link>
 

@@ -26,7 +26,7 @@ export default async function FindAppsPage({ params }: NavigationProps) {
                     {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={`/pieces/${piece.name.replace(
                         "@activepieces/piece-",
                         ""
-                    )}?version=${piece.version}`}>{piece.displayName}</Link></li>)}
+                    )}`}>{piece.displayName}</Link></li>)}
                 </ul>
                 {pieces.length === 0 && <div className="text-h5-sm text-center text-black "> No apps found </div>}
             </section>

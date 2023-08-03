@@ -86,7 +86,7 @@ export const WhiteLabelSection = () => {
 
                                     </div>
                                     <div className='flex justify-center w-full lg:w-auto lg:justify-start'>
-                                        <Link href={""} target='_blank' rel='noreferer noopener'>
+                                        <Link href={"mailto:sales@activepieces.com"} target='_blank' rel='noreferer noopener'>
                                             <div className="w-[180px] h-14 px-[35px] py-5 bg-neutral-900 whitespace-nowrap rounded-[3px] justify-start items-center gap-5 inline-flex">
                                                 <div className="text-white text-[22px] font-bold leading-relaxed tracking-wide">Contact us</div>
                                             </div>

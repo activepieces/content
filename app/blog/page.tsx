@@ -73,7 +73,7 @@ export default async function BlogIndex() {
 
 
   return (
-    <main className="bg-white ">
+    <><main className="bg-white ">
       <div className=" container px-4 mx-auto lg:px-0 py-[80px]">
         {/* Centered Title */}
         <div className="flex gap-[85px]">
@@ -117,9 +117,6 @@ export default async function BlogIndex() {
 
             </div>
 
-
-            <AutomateWithActivepieces ></AutomateWithActivepieces>
-
             <div className="flex justify-start mt-5">
               <div className="flex flex-wrap gap-5  justify-center md:justify-start ">
                 {/* Add justify-items-center to center grid items horizontally */}
@@ -136,6 +133,6 @@ export default async function BlogIndex() {
         </div>
 
       </div>
-    </main>
+    </main><AutomateWithActivepieces></AutomateWithActivepieces></>
   );
 }

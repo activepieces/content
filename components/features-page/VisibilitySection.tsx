@@ -29,8 +29,10 @@ export const VisibilitySection = () => {
 
                 </div>
                 <div className='flex items-center justify-center mt-10 lg:mt-20'>
-                    <Image width={1280} height={728} alt='visiblity screenshot' className='w-full' src="/visibility_screenshot.svg">
-                    </Image>
+                    <video autoPlay muted loop width={1280} height={728} className='rounded-lg w-full border border-solid border-black'>
+                        <source src="/runs_video.webm" />
+                    </video>
+
                 </div>
             </div>
         </section>

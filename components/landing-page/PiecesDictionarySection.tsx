@@ -106,10 +106,10 @@ export const PiecesDictionarySection = () => {
                     })
                 }
             </div>
-            <div className="text-h5-sm font-bold">
+            <div className="text-h5-sm font-bold text-white mt-[50px] mb-[35px]">
                 Pieces by name
             </div>
-            <div className="text-[18px] leading-[22px] text-white mt-[50px] flex gap-3 flex-wrap">
+            <div className="text-[18px] leading-[22px] text-white flex gap-3 flex-wrap">
                 {
                     alphabet.map((letter, idx) => { return <Link rel="noopener noreferer" target="_blank" key={idx} className="flex flex-wrap gap-3" href={"/find-apps/" + letter.toLowerCase()}>{letter} {idx === alphabet.length - 1 ? "" : <div>-</div>} </Link> })
                 }

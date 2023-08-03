@@ -31,8 +31,7 @@ const CenterOfWorldSection = (props: {
         const handleResize = () => { setMarginLeft(sectionDiv.current ? getComputedStyle(sectionDiv.current).marginLeft : '0px'); }
         handleResize();
         window.addEventListener("resize", handleResize, false);
-
-    });
+    }, []);
     const [marginLeft, setMarginLeft] = useState('0px');
 
     return (<>

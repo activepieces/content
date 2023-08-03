@@ -3,10 +3,22 @@ import Image from 'next/image'
 import { useRef, useState } from 'react';
 
 
-const FAQs: { question: string, answer: string }[] = new Array(5).fill({
-    question: "Artificial intelligence: Computer systems that can perform tasks that typically require human intelligence.",
-    answer: "You will be notified 30 days before your annual plan is set to renew. At this time, you can change the number of seats on your annual plan for the next year; otherwise, it will renew for the same number of seats again. You could also choose not to renew your annual plan, in which case all of your team editors would be paid monthly."
-})
+const FAQs: { question: string, answer: string }[] = [{
+    question: "What is a task?",
+    answer: "A task is an executed step within a flow. If a flow consists of 5 steps and they all got executed, these are 5 tasks."
+},
+{
+    question: "What are flows, steps and folders?",
+    answer: "Your automation is a flow. You add steps to build each of these flows. Folders are used to group flows together to organize your Activepieces dashboard."
+},
+{
+    question: "Do you have bigger plans?",
+    answer: "Once you sign up, you'll be able to purchase up to 500,000 tasks per month. If you need more than that, contact us at sales@activepieces.com"
+},
+{
+    question: "What is your open source license?",
+    answer: "Activepieces is developed under the MIT license. This license allows you to use, modify and redistribute our code without restrictions."
+}]
 export const FAQsSection = () => {
 
     const [questionsExpanded, setQuestionExpanded] = useState(new Array(FAQs.length).fill(false));
@@ -32,7 +44,7 @@ export const FAQsSection = () => {
                                 </div>
                                 <div ref={answersRefs[idx]} style={{
                                     maxHeight: questionsExpanded[idx] ? answersRefs[idx].current?.scrollHeight : 0,
-                                }} className='pl-[33px] text-base  md:text-[22px] font-normal leading-7 tracking-wide text-black mt-[25px] transition-all overflow-hidden'>
+                                }} className='pl-[33px] text-base  md:text-[22px] font-normal leading-7 tracking-wide text-black mt-[25px] transition-all duration-200 overflow-hidden'>
                                     {faq.answer}
                                 </div>
                                 {idx !== FAQs.length - 1 && <div className=" my-[40px] border border-black border-opacity-70"></div>}

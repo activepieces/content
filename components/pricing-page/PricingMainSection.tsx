@@ -31,14 +31,14 @@ export const PricingMainSection = () => {
             </main>
             <section className="container mx-auto bg-black px-[30px] lg:px-0">
                 <div className="border border-solid border-white rounded overflow-hidden">
-                    <AnimatedCurtains></AnimatedCurtains>
+                    <AnimatedCurtains id="pricing-animate-automation"></AnimatedCurtains>
                     <div className="flex flex-col gap-[80px] px-[50px] py-[80px]">
                         <div className="flex justify-between items-center flex-wrap gap-[35px] ">
                             <h2 className="text-white  text-h2-sm lg:text-h2-lg">
                                 Looking for more? <br></br>
                                 Check out our Enterprise offering
                             </h2>
-                            <Link href={""} target="_blank" rel="noopener noreferer" className="bg-white text-black flex items-center justify-center  text-h4-sm lg:text-h4-lg w-full lg:w-[auto] px-[35px] py-[29px] h-[80px]">
+                            <Link href={"mailto:sales@activepieces.com"} target="_blank" rel="noopener noreferer" className="bg-white text-black flex items-center justify-center  text-h4-sm lg:text-h4-lg w-full lg:w-[auto] px-[35px] py-[29px] h-[80px]">
                                 Contact us
                             </Link>
                         </div>
