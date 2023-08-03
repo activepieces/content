@@ -16,8 +16,8 @@ const apps: ComparisonApp[] = [
     {
         appName: "Zapier",
         icon: "/zapier-icon.svg",
-        miss: ["Extreme limitation of features", "Insane price hikes", "Closed ecosystem"],
-        love: ["All features included", "Fair pricing", "Open source"]
+        miss: ["Sudden price hikes", "Limiting editor", "Slow support"],
+        love: ["Fair pricing", "Flexible builder", "Active community"]
     },
     {
         appName: "Make",

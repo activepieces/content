@@ -222,3 +222,12 @@ img[alt="545f2970-1eee-402a-9a52-8ae19c57e650.png"]
 {
   margin-right:1ch;
 }
+.container{
+  width: 90%;
+}
+@media (max-width: 991px)
+{
+  .container{
+    width: 97%;
+  }
+}

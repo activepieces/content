@@ -41,10 +41,10 @@ export default function Footer() {
 
           <div>
             <div className="font-bold mb-[35px] text-white">
-              Open source
+              Open Source
             </div>
             <div className="flex flex-col gap-[25px]">
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">Github </Link>
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">GitHub </Link>
               <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/developers/overview">Contribute</Link>
               <Link className="hover:text-white" href="https://github.com/activepieces/activepieces/blob/main/LICENSE" target="_blank" rel="noopener noreferer">MIT License</Link>
             </div>
