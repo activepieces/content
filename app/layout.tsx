@@ -19,6 +19,7 @@ const getStars = async () => {
   }
 
 }
+
 const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300', '100'], variable: '--font-inter', display: 'swap', adjustFontFallback: false },)
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const stars = await getStars();
