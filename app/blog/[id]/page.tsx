@@ -86,7 +86,7 @@ export default async function BlogPost({ params }: NavigationProps) {
         </header>
         <div
           className={
-            "prose max-w-none prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover prose-h1:text-h1-sm prose-h1:lg:text-h1-sm prose-h2:text-h2-sm prose-h2:lg:text-h2-sm prose-h3:text-h3-sm prose-h3:lg:text-h3-sm prose-h4:text-h4-sm prose-h4:lg:text-h4-sm prose-h5:text-h5-sm prose-h5:lg:text-h5-sm prose-h6:text-h6-sm prose-h6:lg:text-h6-sm prose-p:text-h6-sm prose-p:lg:text-h6-lg prose-li:text-h6-sm prose-li:lg:text-h6-lg prose-ol:text-h6-sm prose-ol:lg:text-h6-lg prose-ul:text-h6-sm prose-ul:lg:text-h6-lg"
+            "prose max-w-none prose-a:text-primary prose-img:rounded-lg prose-img:w-full prose-img:h-full prose-img:object-cover prose-h1:text-h1-sm prose-h1:lg:text-h1-sm prose-h2:text-h2-sm prose-h2:lg:text-h2-sm prose-h3:text-h3-sm prose-h3:lg:text-h3-sm prose-h4:text-h4-sm prose-h4:lg:text-h4-sm prose-h5:text-h5-sm prose-h5:lg:text-h5-sm prose-h6:text-h6-sm prose-h6:lg:text-h6-sm prose-p:text-h6-sm prose-p:lg:text-h6-lg prose-li:text-h6-sm prose-li:lg:text-h6-lg prose-ol:text-h6-sm prose-ol:lg:text-h6-lg prose-ul:text-h6-sm prose-ul:lg:text-h6-lg"
           }
         >
           <ReactMarkdown>{content}</ReactMarkdown>
