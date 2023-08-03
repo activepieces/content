@@ -210,6 +210,14 @@ img[alt="545f2970-1eee-402a-9a52-8ae19c57e650.png"]
   width: unset !important;
   margin:auto !important;
 }
+@media screen and (max-width: 1200px) {
+  img[alt="d7c2318f-b731-44a2-a0df-9cd832be3be9.png"],
+  img[alt="545f2970-1eee-402a-9a52-8ae19c57e650.png"]
+  {
+    width: 100% !important;
+    margin:auto 
+}}
+
 ::marker 
 {
   margin-right:1ch;

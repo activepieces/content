@@ -29,8 +29,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         <Footer></Footer>
         <GithubStickyWidget stars={stars}></GithubStickyWidget>
-      </body>
 
+      </body>
 
     </html>
   )
