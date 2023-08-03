@@ -49,7 +49,7 @@ export const openSourceStas: OpenSourceStatProps[] = [
 ]
 const OpenSourceSection = () => <>
     <section className='bg-white text-black px-4 lg:px-0'>
-        <div className='justify-center gap-[50px] container mx-auto lg:gap-[0px] overflow-visible py-[80px] lg:py-[100px] flex flex-wrap lg:flex-nowrap'>
+        <div className='justify-center gap-[50px] container mx-auto lg:gap-6 overflow-visible py-[80px] lg:py-[100px] flex flex-wrap lg:flex-nowrap'>
             <div>
                 <h2 className='text-h1-sm lg:text-h1-lg mb-[100px] lg:w-[750px] '>
                     Activepieces is open source with a rapidly growing community

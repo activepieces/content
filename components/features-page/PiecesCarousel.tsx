@@ -26,8 +26,8 @@ export const PiecesCarousel = (props: { pieces: PieceBase[] }) => {
                             <Link id={"piece-" + idx} key={idx} href={`/pieces/${piece.name.replace(
                                 "@activepieces/piece-",
                                 ""
-                            )}?version=${piece.version}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
-                                <Image src={piece.logoUrl} alt={piece.displayName} width={92} height={92} className='h-[67px] w-[67px] lg:w-[92px] lg:h-[92px] object-contain' ></Image>
+                            )}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
+                                <Image loading="eager" src={piece.logoUrl} alt={piece.displayName} width={92} height={92} className='h-[67px] w-[67px] lg:w-[92px] lg:h-[92px] object-contain' ></Image>
                             </Link>
                             <Tooltip
                                 anchorSelect={"#piece-" + idx}

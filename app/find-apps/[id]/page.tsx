@@ -4,10 +4,29 @@ import Link from "next/link";
 import { NavigationProps } from "../../../components/navigationProps";
 import { GetPieces } from "../../../utils/piece-helper";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-export const metadata: Metadata = {
-    title: 'Activepieces - Find apps',
-    icons: "/favicon.ico",
 
+export function generateMetadata(
+    { params }: NavigationProps,
+): Metadata {
+    return {
+        title: `All apps starting with ${params.id} - Connect your apps with Activepieces`,
+        description: `Explore all apps that start with ${params.id} on Activepieces. Connect hundreds of apps to automate your business without writing code.`,
+        icons: "/favicon.ico",
+        openGraph: {
+            title: `All apps starting with ${params.id} - Connect your apps with Activepieces`,
+            description: `Explore all apps that start with ${params.id} on Activepieces. Connect hundreds of apps to automate your business without writing code.`,
+            siteName: "Activepieces",
+            images: [
+                {
+                    url: "https://www.activepieces.com/meta2.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Activepieces",
+                },
+            ],
+            url: "https://www.activepieces.com/",
+        }
+    };
 }
 
 export default async function FindAppsPage({ params }: NavigationProps) {
@@ -26,7 +45,7 @@ export default async function FindAppsPage({ params }: NavigationProps) {
                     {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={`/pieces/${piece.name.replace(
                         "@activepieces/piece-",
                         ""
-                    )}?version=${piece.version}`}>{piece.displayName}</Link></li>)}
+                    )}`}>{piece.displayName}</Link></li>)}
                 </ul>
                 {pieces.length === 0 && <div className="text-h5-sm text-center text-black "> No apps found </div>}
             </section>

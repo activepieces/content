@@ -79,16 +79,16 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
         template.template.trigger.settings.pieceVersion = `~${selectedTriggerApp.version}`;
         template.template.trigger.settings.triggerName = selectedTrigger.name;
         template.template.trigger.displayName = selectedTrigger.displayName;
-        template.template.trigger.valid = true;
+        template.template.trigger.valid = Object.keys(selectedTrigger.props).filter((key) => selectedTrigger.props[key].required).length === 0;
         template.template.trigger.nextAction.settings.pieceName = selectedActionApp.name;
         template.template.trigger.nextAction.settings.pieceVersion = `~${selectedActionApp.version}`;
         template.template.trigger.nextAction.settings.actionName = selectedAction.name;
         template.template.trigger.nextAction.displayName = selectedAction.displayName;
-        template.template.trigger.nextAction.valid = true;
-        template.template.valid = true;
+        template.template.trigger.nextAction.valid = Object.keys(selectedAction.props).filter((key) => selectedAction.props[key].required).length === 0;
+        template.template.valid = false;
         template.template.displayName = `${selectedTrigger.displayName} + ${selectedAction.displayName}`;
         template.name = `${selectedTrigger.displayName} + ${selectedAction.displayName}`;
-        window.open(`http://localhost:4200/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(template))}`, '_blank', 'noopener,noreferrer');
+        window.open(`https://cloud.activepieces.com/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(template))}`, '_blank', 'noopener,noreferrer');
     }
     return (
         <>

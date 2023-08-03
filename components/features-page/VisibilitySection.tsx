@@ -7,13 +7,13 @@ import Image from 'next/image'
 export const VisibilitySection = () => {
     return <>
         <section className='bg-white'>
-            <div className='flex  px-4 container mx-auto lg:px-0'>
+            {/* <div className='flex  px-4 container mx-auto lg:px-0'>
                 <div className='border-t border-solid border-black w-full'></div>
-            </div>
+            </div> */}
             <div className='container mx-auto   lg:py-[150px] py-[100px] px-4 lg:px-0'>
                 <h1 className='text-black text-center text-h4-lg leading-[36px] lg:text-h2-lg'>
                     <div className='flex justify-center '>Get &nbsp;<span className='text-[#0CCF99]'>visibility</span>   <div className='relative  w-[55px] lg:w-[82px]'>
-                        <Lottie animationData={animatedEye} loop={true} className='absolute w-[140.43px] h-[128.15px] lg:w-[230.32px] lg:h-[200.5px] -top-[40px] lg:-top-[63px] -left-[33px] lg:-left-[56px] ' height={80.5} width={109} />
+                        <Lottie animationData={animatedEye} loop={true} className='absolute w-[140.43px] h-[128.15px] lg:w-[230.32px] lg:h-[200.5px] -top-[43.5px] lg:-top-[67px] -left-[33px] lg:-left-[56px] ' height={80.5} width={109} />
                     </div></div>
                     <div className='flex justify-center  '>
                         <div className='w-[358px] lg:w-[auto] '>
@@ -29,8 +29,10 @@ export const VisibilitySection = () => {
 
                 </div>
                 <div className='flex items-center justify-center mt-10 lg:mt-20'>
-                    <Image width={1280} height={728} alt='visiblity screenshot' className='w-full' src="/visibility_screenshot.svg">
-                    </Image>
+                    <video autoPlay muted loop width={1280} height={728} className='rounded-lg w-full border border-solid border-black'>
+                        <source src="/runs_video.webm" />
+                    </video>
+
                 </div>
             </div>
         </section>

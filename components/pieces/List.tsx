@@ -21,7 +21,7 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
         href={`/pieces/${piece.name.replace(
           "@activepieces/piece-",
           ""
-        )}?version=${piece.version}`}
+        )}`}
       >
         <div className="flex flex-row items-center">
           <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />

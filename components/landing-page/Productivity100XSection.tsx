@@ -6,7 +6,7 @@ import Image from 'next/image'
 import TemplatesListItem from './TemplatesListItem';
 
 const Productivity100XSection = (props: {
-    props: { template: FlowTemplate, piecesIcons: string[] }[]
+    templates: { template: FlowTemplate, piecesIcons: string[] }[]
 }) => {
 
 
@@ -29,11 +29,11 @@ const Productivity100XSection = (props: {
 
                 <div className='flex flex-col gap-[20px] lg:gap-[30px]'>
                     {
-                        props.props.map((stat, i) => (
+                        props.templates.map((stat, i) => (
                             <div key={i + 1} className='flex flex-col gap-[20px] lg:gap-[30px]'>
                                 <TemplatesListItem baseColorClass='text-black fill-black' piecesIcons={stat.piecesIcons} template={stat.template}></TemplatesListItem>
                                 {
-                                    i !== props.props.length - 1 ? <div className='border-b border-solid border-divider'></div> : null
+                                    i !== props.templates.length - 1 ? <div className='border-b border-solid border-divider'></div> : null
                                 }
                             </div>))
                     }

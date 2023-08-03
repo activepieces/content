@@ -50,7 +50,9 @@ const MainSection = () =>
                     </div>
                 </div>
                 <div className='text-center container mx-auto mb-[80px]'>
-                    <Image src="/builder-screenshot.png" alt="Builder Screenshot" width={1280} height={728} className='rounded-lg w-full'></Image>
+                    <video autoPlay muted loop width={1280} height={728} className='rounded-lg w-full'>
+                        <source src="/main_video.webm" />
+                    </video>
                 </div>
                 <div className='flex justify-center items-center flex-col text-white '>
                     <div className='w-[162px] text-center lg:w-fit text-h4-sm lg:text-h4-lg  mb-[50px] !font-normal'>
