@@ -1,10 +1,21 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GithubWidget from "./GithubWidget";
+import { usePathname } from 'next/navigation'
 
 export const GithubStickyWidget = ({ stars }: { stars: number }) => {
     const [hide, setHide] = useState(false);
+    const pathname = usePathname()
+
+    useEffect(() => {
+        if (pathname.startsWith("/blog") && !hide) {
+            setHide(true);
+        } else if (!pathname.startsWith("/blog") && hide) {
+            setHide(false);
+        }
+    }, [pathname, hide]);
+
     return <>
         <div className={(hide ? "opacity-0 pointer-events-none" : "opacity-100 ") + " -translate-y-[100px] transition-all sticky w-full flex justify-center bottom-[30px] h-0"}>
             <div

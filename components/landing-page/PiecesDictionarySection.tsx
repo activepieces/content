@@ -54,7 +54,7 @@ const popularStuff = [
         items: [
             {
                 title: "Best Zapier Competitors",
-                link: "http://localhost:1234/blog/best-zapier-competitors-and-alternatives"
+                link: "https://activepieces.com/blog/best-zapier-competitors-and-alternatives"
             },
             {
                 title: "Best Workato Alternatives",
@@ -62,7 +62,7 @@ const popularStuff = [
             },
             {
                 title: "Automate Blog with AI",
-                link: "http://localhost:1234/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai"
+                link: "https://activepieces.com/blog/automate-blog-writing-with-ai-a-step-by-step-guide-using-openai"
             }
         ],
         separator: false
