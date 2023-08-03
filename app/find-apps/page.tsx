@@ -3,8 +3,22 @@ import { GetPieces } from "../../utils/piece-helper";
 import Link from "next/link";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 export const metadata: Metadata = {
-    title: 'Activepieces - Find apps',
+    title: 'All apps - Connect your apps with Activepieces',
     icons: "/favicon.ico",
+    openGraph: {
+        title: `All apps starting - Connect your apps with Activepieces`,
+        description: `Explore all the apps on Activepieces. Connect hundreds of apps to automate your business without writing code.`,
+        siteName: "Activepieces",
+        images: [
+            {
+                url: "https://www.activepieces.com/meta1.png",
+                width: 1200,
+                height: 630,
+                alt: "Activepieces",
+            },
+        ],
+        url: "https://www.activepieces.com/",
+    }
 }
 
 export default async function FindAppsPage() {
