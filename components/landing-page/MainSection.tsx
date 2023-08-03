@@ -50,7 +50,7 @@ const MainSection = () =>
                     </div>
                 </div>
                 <div className='text-center container mx-auto mb-[80px]'>
-                    <video autoPlay muted loop width={1280} height={728} className='rounded-lg w-full'>
+                    <video playsInline autoPlay muted loop width={1280} height={728} className='rounded-lg w-full'>
                         <source src="/main_video.webm" />
                         <source src="/compressed_main_video.mp4" />
                     </video>
