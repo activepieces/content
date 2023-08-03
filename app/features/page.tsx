@@ -49,8 +49,8 @@ export default async function FindAppsPage() {
 
 
         <PiecesCarousel pieces={pieces}></PiecesCarousel>
-        <VisibilitySection></VisibilitySection>
         <FeaturesSection></FeaturesSection>
+        <VisibilitySection></VisibilitySection>
         <CombinationsMakerSection></CombinationsMakerSection>
 
 

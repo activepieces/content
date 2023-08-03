@@ -1,19 +1,6 @@
 import Link from "next/link";
-export const revalidate = 1500;
-// const getStars = async () => {
-//   try{
-//     const repo = await fetch("https://api.github.com/repos/activepieces/activepieces",{
-//     });
-//     const repoData = await repo.json();
-//     const stars = repoData.stargazers_count;
-//     return stars;
-//   }catch(ex){
-//     return 0;
-//   } 
 
-// }
-
-const GithubWidget = ({ stars }: { stars: number }) => {
+const GithubWidget = ({ stars, extraClass }: { stars: number, extraClass?: string }) => {
 
 
   return (
@@ -23,7 +10,7 @@ const GithubWidget = ({ stars }: { stars: number }) => {
       </Link>
       {
         stars > 0 ? (
-          <Link href="https://github.com/activepieces/activepieces/stargazers" className="border-l-2 text-xs border-solid border-[#dededf] font-bold  px-[10px] py-[5px] bg-white text-black hover:text-[#0969da]" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/activepieces/activepieces/stargazers" className={(extraClass ? extraClass : '') + " " + "border-l-2 text-xs border-solid border-[#dededf] font-bold  px-[10px] py-[5px] bg-white text-black hover:text-[#0969da]"} target="_blank" rel="noopener noreferrer">
             {Math.floor(stars / 1000)},{stars % 1000}
           </Link>) : (null)
       }

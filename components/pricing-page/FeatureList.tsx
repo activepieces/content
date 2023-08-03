@@ -5,7 +5,7 @@ import Image from "next/image"
 export const FeaturesList = (props: { expandList: boolean, features: FeatureCardProps[] }) => {
     return <>
         <div className="flex justify-center">
-            <div className="flex flex-wrap gap-[30px] justify-center">
+            <div className="flex flex-wrap gap-8 lg:gap-10 justify-center">
                 {
                     props.features.map((feat, i) => <FeatureCard key={i} featImage={feat.featImage} featText={feat.featText}></FeatureCard>)
                 }

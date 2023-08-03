@@ -1,5 +1,6 @@
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { GithubStickyWidget } from '../components/GithubStickyWidget'
 import '../styles/globals.css'
 import { Lato } from 'next/font/google'
 const getStars = async () => {
@@ -20,13 +21,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
 
-      <body className={lato.className + " bg-no-repeat bg-black bg-cover bg-center"} >
+      <body className={lato.className + "relative bg-no-repeat bg-black bg-cover bg-center"} >
 
         <Navbar stars={stars}></Navbar>
 
         {children}
 
         <Footer></Footer>
+        <GithubStickyWidget stars={stars}></GithubStickyWidget>
       </body>
 
 
