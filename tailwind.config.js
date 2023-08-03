@@ -113,6 +113,7 @@ module.exports = {
         }],
       },
     container: {
+   
         screens: {
           sm: '640px',
           md: '768px',
@@ -120,6 +121,13 @@ module.exports = {
           xl: '1320px',
           '2xl': '1320px',
         },
+        width:{
+          sm: '85%',
+          md: '85%',
+          lg: '85%',
+          xl: '85%',
+          '2xl': '90%',
+        }
    
       },
       boxShadow: {
