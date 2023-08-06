@@ -43,15 +43,15 @@ const companies = Array.from({ length: 20 }, () => supportedCompanies).flat();
 const ImageSlider = () => {
 
   return (
-    <div className="flex relative w-full h-[30px] lg:h-[60px]  overflow-hidden">
+    <div className="flex relative w-full h-[30px] lg:h-[40px]  overflow-hidden">
       <div
-        className="flex absolute image-slider gap-[25px] lg:gap-[50px] items-center"
+        className="flex absolute image-slider gap-[25px] lg:gap-[60px] items-center"
       >
         {companies.map((company, index) => (
           <div
             key={index}
           >
-            <Image height={60} width={60} loading="eager" src={company.logo} alt={company.alt} className="h-[30px] lg:h-[60px] w-auto" style={{
+            <Image height={40} width={40} loading="eager" src={company.logo} alt={company.alt} className="h-[30px] lg:h-[40px] w-auto" style={{
               objectFit: "contain",
 
             }} />

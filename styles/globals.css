@@ -26,7 +26,7 @@
 }
 
 .image-slider {
-  animation: moving 100s linear;
+  animation: moving 120s linear;
   animation-iteration-count: infinite; 
 }
 
