@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
 function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`}>
-      <div className=" rounded overflow-hidden shadow-lg border border-black rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1">
+      <div className="flex flex-col h-[460px] rounded overflow-hidden shadow-lg border border-black rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1">
         <div className="h-[220px] md:w-[469px] w-full relative">
           <Image
             src={post.meta.thumbnail}
@@ -57,8 +57,10 @@ function BlogCard({ post }: { post: BlogPost }) {
             className="object-cover w-full"
           />
         </div>
-        <div className="relative py-4 px-4 bg-white text-black border-t border-solid border-[#000000] min-h-[190px] ">
+
+        <div className="flex flex-col flex-grow relative py-4 px-4 bg-white text-black border-t border-solid border-[#000000] min-h-[190px] ">
           <div className="text-h4-sm lg:text-h5-lg !leading-[31.2px] mb-2 max-w-[358px] md:w-[399px]">{post.meta.title}</div>
+          <div className="flex-grow"></div>
           <p className="text-black text-lg font-normal leading-snug tracking-wide">{post.meta.author} | Published On {post.meta.publishedOn}</p>
         </div>
       </div>
@@ -68,7 +70,7 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default async function BlogIndex() {
   // Fetch data
-  const posts: BlogPost[] = [];
+  let posts: BlogPost[] = [];
   const docsDirectory = join(process.cwd(), "content", "blog");
   const files = fs.readdirSync(docsDirectory);
 
@@ -85,6 +87,7 @@ export default async function BlogIndex() {
     const slug = fileName.replace(/\.mdx?$/, "");
     posts.push({ slug, meta });
   }
+  posts = posts.sort((a, b) => Date.parse(b.meta.publishedOn) - Date.parse(a.meta.publishedOn));
 
 
   return (
@@ -104,10 +107,9 @@ export default async function BlogIndex() {
           </div>
           <div className="md:w-[471px] lg:w-[964px]">
             <div className="flex justify-start"> <h1 className="text-5xl    font-bold ">Blogs</h1> </div>
-
             {/* Centered Blog Grid */}
             <div className="flex justify-start mt-8">
-              <div className="flex flex-wrap gap-5 justify-center md:justify-start ">
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start ">
                 {/* Add justify-items-center to center grid items horizontally */}
                 {posts.slice(0, 4).map((post) => (
                   <div key={post.slug}>
@@ -117,30 +119,22 @@ export default async function BlogIndex() {
               </div>
             </div>
             <div className="flex justify-start mt-5">
-              <div className="flex flex-wrap gap-5  justify-center md:justify-start ">
+              <div className="flex flex-wrap gap-4  justify-center md:justify-start ">
                 {/* Add justify-items-center to center grid items horizontally */}
                 {posts.slice(4, 8).map((post) => (
                   <div key={post.slug}>
                     <BlogCard post={post} />
                   </div>
-
-
                 ))}
               </div>
             </div>
-            <div className="mx-auto container">
-
-            </div>
-
             <div className="flex justify-start mt-5">
-              <div className="flex flex-wrap gap-5  justify-center md:justify-start ">
+              <div className="flex flex-wrap gap-4  justify-center md:justify-start ">
                 {/* Add justify-items-center to center grid items horizontally */}
                 {posts.slice(8).map((post) => (
                   <div key={post.slug}>
                     <BlogCard post={post} />
                   </div>
-
-
                 ))}
               </div>
             </div>

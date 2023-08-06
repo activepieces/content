@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import GithubWidget from "./GithubWidget";
 import { usePathname } from 'next/navigation'
 
