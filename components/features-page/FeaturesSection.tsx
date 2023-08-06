@@ -48,13 +48,13 @@ export const FeaturesSection = () => {
         const handleResize = () => { setMarginLeft(sectionDiv.current ? getComputedStyle(sectionDiv.current).marginLeft : '0px'); }
         handleResize();
         window.addEventListener("resize", handleResize, false);
-    }, [marginLeft]);
+    }, []);
     return <section className="bg-[#F0ECFC] py-[135px] px-4 lg:px-0 overflow-hidden">
         <div style={{ marginLeft: marginLeft }} className="text-[50px] hidden lg:flex lg:text-[80px] whitespace-nowrap ">
-            <div className="font-bold">It comes with sooooooooooooo</div><div className="lg:font-normal">ooooooooo</div><div className="font-light">oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</div>
+            <div className="font-bold">And soooooo</div><div className="lg:font-normal">ooooooooo</div><div className="font-light">oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</div>
         </div>
         <div style={{ marginLeft: marginLeft }} className="text-[50px] lg:hidden flex lg:text-[80px] whitespace-nowrap ">
-            <div className="font-bold">It has soo</div>
+            <div className="font-bold">And soo</div>
             <div className="font-normal">oo</div>
             <div className="font-light">oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</div>
         </div>

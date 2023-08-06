@@ -10,6 +10,7 @@ import { GetPieces } from "../../utils/piece-helper";
 import CombinationsMakerSection from "../../components/landing-page/CombinationsMakerSection";
 import { VisibilitySection } from "../../components/features-page/VisibilitySection";
 import { FeaturesSection } from "../../components/features-page/FeaturesSection";
+import { FeaturesCarousel } from "../../components/features-page/FeaturesCarousel";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -39,7 +40,7 @@ export default async function FindAppsPage() {
     return <>
         <main className="bg-[#000000] pt-[80px] border border-solid border-[#000000]">
             <section className="container mx-auto px-4 lg:px-0">
-                <h1 className="text-white text-[50px] text-center tacking-[58.11px] font-bold lg:text-[80px]">
+                <h1 className="text-white text-[50px] leading-[60px] text-center tacking-[58.11px] lg:leading-[90px] font-bold lg:text-[80px]">
                     Meant to be <span className="text-[#EEABFF]">simple</span> yet <br className="hidden lg:block"></br> so powerful
                 </h1>
                 <div className="flex items-center justify-center mt-[40px] lg:mt-[80px]  ">
@@ -67,8 +68,10 @@ export default async function FindAppsPage() {
 
 
         <PiecesCarousel pieces={pieces}></PiecesCarousel>
-        <FeaturesSection></FeaturesSection>
+        <FeaturesCarousel></FeaturesCarousel>
+
         <VisibilitySection></VisibilitySection>
+        <FeaturesSection></FeaturesSection>
         <CombinationsMakerSection></CombinationsMakerSection>
 
 

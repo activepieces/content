@@ -32,6 +32,7 @@ export const PiecesCarousel = (props: { pieces: PieceBase[] }) => {
                             <Tooltip
                                 anchorSelect={"#piece-" + idx}
                                 content={piece.displayName}
+                                key={idx + "-tooltip"}
                                 place={"bottom"}
                                 className='rounded !bg-black !px-3 !py-3 !bg-opacity-60'
                                 noArrow={true}
@@ -40,7 +41,6 @@ export const PiecesCarousel = (props: { pieces: PieceBase[] }) => {
                     })
                 }
             </div>
-
         </div>
         <div className='container mx-auto flex items-center justify-center'>
             <Link href="/pieces" className='text-h6-sm lg:text-h4-lg font-bold flex gap-4 lg:gap-5 items-center justify-center'>

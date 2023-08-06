@@ -1,15 +1,15 @@
 'use client';
 import Lottie from 'lottie-react'
 import animatedEye from './animated_eye.json'
-import Image from 'next/image'
+
 
 
 export const VisibilitySection = () => {
     return <>
         <section className='bg-white'>
-            {/* <div className='flex  px-4 container mx-auto lg:px-0'>
+            <div className='flex  px-4 container mx-auto lg:px-0'>
                 <div className='border-t border-solid border-black w-full'></div>
-            </div> */}
+            </div>
             <div className='container mx-auto   lg:py-[150px] py-[100px] px-4 lg:px-0'>
                 <h1 className='text-black text-center text-h4-lg leading-[36px] lg:text-h2-lg'>
                     <div className='flex justify-center '>Get &nbsp;<span className='text-[#0CCF99]'>visibility</span>   <div className='relative  w-[55px] lg:w-[82px]'>
