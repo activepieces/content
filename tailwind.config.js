@@ -17,6 +17,13 @@ module.exports = {
       backgroundSize: {
         '100': '100%',
       },
+      spacing:
+      {
+        '37.5': '9.375rem',
+        '25': "6.25rem",
+        '2.5':'0.625rem',
+        '15':'3.75rem',
+      },
       colors: {
         black: '#111111',
         primary: { DEFAULT: '#6e41e2', medium:'#ab90ee', light: '#eee9fc', dark: '#6838e0','10':'rgba(110, 65, 226, 0.1)' },
