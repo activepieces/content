@@ -70,7 +70,7 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default async function BlogIndex() {
   // Fetch data
-  const posts: BlogPost[] = [];
+  let posts: BlogPost[] = [];
   const docsDirectory = join(process.cwd(), "content", "blog");
   const files = fs.readdirSync(docsDirectory);
 
@@ -87,6 +87,7 @@ export default async function BlogIndex() {
     const slug = fileName.replace(/\.mdx?$/, "");
     posts.push({ slug, meta });
   }
+  posts = posts.sort((a, b) => Date.parse(b.meta.publishedOn) - Date.parse(a.meta.publishedOn));
 
 
   return (
