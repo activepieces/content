@@ -7,15 +7,15 @@ const businessPlans = [{ "tasks": 5000, "price": "115" }, { "tasks": 10000, "pri
 const proPlans = [{ "tasks": 5000, "price": "15" }, { "tasks": 10000, "price": "25" }, { "tasks": 25000, "price": "55" }, { "tasks": 50000, "price": "100" }, { "tasks": 100000, "price": "175" }, { "tasks": 200000, "price": "300" }, { "tasks": 500000, "price": "500" }];
 const hobbyistFeats = ["Unlimited users", "Instant triggers", "15 mins update time", "3 connected accounts", "Community support"]
 const proFeats = ["1 user", "Instant triggers", "5 mins update time", "10 connected accounts", "Chat and email support"]
-const businessFeats = ["5 user", "Instant triggers", "1 mins update time", "∞ connected accounts", "Chat and email support"]
-const enterpriseFeatsFirstCol = ["Users and presmissions", "Single sign on", "Audit log"]
+const businessFeats = ["5 users", "Instant triggers", "1 min update time", "∞ connected accounts", "Chat and email support"]
+const enterpriseFeatsFirstCol = ["Users and permissions", "Single sign on", "Audit log"]
 const enterpriseFeatsSecondCol = ["On premise", "Custom log retention", "Dedicated support"]
 
 export const PricingMainSection = () => {
     return (
         <>
             <main>
-                <section className="container mx-auto py-[80px] px-4 md:px-0">
+                <section className="container mx-auto py-20 px-4 md:px-0">
                     <h1 className="text-white text-white text-[50px] text-center md:font-bold leading-[60px] lg:text-[80px] mb-[40px]">
                         Kiss manual work good bye
                     </h1>
@@ -70,7 +70,7 @@ export const PricingMainSection = () => {
                 </div>
             </section>
             <section>
-                <div className='flex justify-center items-center flex-col text-white mt-[150px] mb-[80px]'>
+                <div className='flex justify-center items-center flex-col text-white mt-[150px] mb-20'>
                     <div className='w-[162px] text-center lg:w-fit text-h4-sm lg:text-h4-lg  mb-[50px] !font-normal'>
                         Everyone else is hopping on
                     </div>
