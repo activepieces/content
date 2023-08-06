@@ -10,6 +10,7 @@ import Script from 'next/script'
 const getStars = async () => {
   try {
     const repo = await fetch("https://api.github.com/repos/activepieces/activepieces", {
+      next: { revalidate: 3600 }
     });
     const repoData = await repo.json();
     const stars = repoData.stargazers_count;
