@@ -43,7 +43,7 @@ export const FeaturesSection = () => {
                         </div>
                     </div>
 
-                    <div className={(expandfeatures ? "max-h-[9999px]" : "max-h-0 duration-0 ") + " w-full duration-500 transition-all overflow-hidden"}>
+                    <div className={(expandfeatures ? "max-h-[9999px]" : "max-h-0 !duration-0 ") + " w-full duration-500 transition-all overflow-hidden"}>
                         <div>
                             <div className="text-[50px] leading-[65px] lg:text-[80px] p-[40px] md:p-[80px] font-bold lg:leading-[96px] text-center">
                                 You get these <span className="text-primary"> awesome <br className="hidden md:block"></br> features</span> in all our plans
@@ -59,7 +59,7 @@ export const FeaturesSection = () => {
             </section>
 
             <section className={(expandfeatures ? "min-h-[903px] lg:min-h-[836px] " : "min-h-[500px] lg:min-h-[500px]") + " bg-white  relative py-[100px]  lg:py-[150px] "}>
-                <div className={(expandfeatures ? " top-[90px]  lg:top-[150px]" : "") + " w-full transition-al px-[15px] lg:px-0  duration-[800ms]  -top-[320px]  lg:-top-[225px] absolute"}>
+                <div className={(expandfeatures ? " top-[90px]  lg:top-[150px] " : "") + " w-full transition-al px-[15px] lg:px-0  duration-[800ms]  -top-[320px]  lg:-top-[225px] absolute"}>
                     <div className="bg-black relative  overflow-hidden container   mx-auto rounded-[12px]  lg:py-[100px] p-[30px] lg:px-[80px] flex flex-wrap lg:flex-nowrap">
                         <div className="flex flex-col gap-[25px] lg:gap-[51px]">
                             <div className="text-[34px] w-[298px] md:w-[initial] text-white lg:items-center  font-bold leading-[40.80px] flex-col-reverse md:flex-row flex  gap-[20px] tracking-wide">
