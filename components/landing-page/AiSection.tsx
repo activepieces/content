@@ -17,8 +17,7 @@ const AiSection = (props: {
         const handleResize = () => { setMarginLeft(sectionDiv.current ? getComputedStyle(sectionDiv.current).marginLeft : '0px'); }
         handleResize();
         window.addEventListener("resize", handleResize, false);
-
-    }, [marginLeft]);
+    }, []);
 
 
     return (<>

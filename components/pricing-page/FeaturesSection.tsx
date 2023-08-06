@@ -1,7 +1,5 @@
 'use client';
 import Image from "next/image";
-import Lottie from "lottie-react";
-import phoneAnimation from "./phone_animation.json"
 import { useState } from "react";
 import Link from "next/link";
 import { FeaturesList } from "./FeatureList";
@@ -45,7 +43,7 @@ export const FeaturesSection = () => {
                         </div>
                     </div>
 
-                    <div className={(expandfeatures ? "max-h-[9999px]" : "max-h-0 ") + " w-full duration-500 transition-all overflow-hidden"}>
+                    <div className={(expandfeatures ? "max-h-[9999px]" : "max-h-0 duration-0 ") + " w-full duration-500 transition-all overflow-hidden"}>
                         <div>
                             <div className="text-[50px] leading-[65px] lg:text-[80px] p-[40px] md:p-[80px] font-bold lg:leading-[96px] text-center">
                                 You get these <span className="text-primary"> awesome <br className="hidden md:block"></br> features</span> in all our plans
@@ -61,8 +59,8 @@ export const FeaturesSection = () => {
             </section>
 
             <section className={(expandfeatures ? "min-h-[903px] lg:min-h-[836px] " : "min-h-[500px] lg:min-h-[500px]") + " bg-white  relative py-[100px]  lg:py-[150px] "}>
-                <div className={(expandfeatures ? "lg:!top-[150px] top-[100px] " : "") + "w-full transition-al px-[15px] lg:px-0  duration-[800ms]  -top-[310px]  lg:-top-[225px] absolute"}>
-                    <div className="bg-black overflow-hidden container   mx-auto rounded-[12px]  lg:py-[100px] p-[30px] lg:px-[80px] flex flex-wrap lg:flex-nowrap">
+                <div className={(expandfeatures ? " top-[90px]  lg:top-[150px]" : "") + " w-full transition-al px-[15px] lg:px-0  duration-[800ms]  -top-[320px]  lg:-top-[225px] absolute"}>
+                    <div className="bg-black relative  overflow-hidden container   mx-auto rounded-[12px]  lg:py-[100px] p-[30px] lg:px-[80px] flex flex-wrap lg:flex-nowrap">
                         <div className="flex flex-col gap-[25px] lg:gap-[51px]">
                             <div className="text-[34px] w-[298px] md:w-[initial] text-white lg:items-center  font-bold leading-[40.80px] flex-col-reverse md:flex-row flex  gap-[20px] tracking-wide">
                                 Community edition <div className="flex"><div className="text-[16px] flex-inline whitespace-nowrap lg:text-[22px] !leading-[26.4px] font-normal tracking-wide px-[15px] py-[10px] lg:px-[25px] lg:py-[14px] text-[#06FFB4] border border-solid border-[#06FFB4] rounded-full"> We are <b>open source</b> </div></div>
@@ -79,8 +77,8 @@ export const FeaturesSection = () => {
                                 <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}></Image>
                             </Link>
                         </div>
-                        <div className="phone-lottie relative min-h-[336.469px] min-w-[688.32px]">
-                            <Lottie animationData={phoneAnimation} loop={true} className="absolute -scale-x-[1] grow  w-[400px] h-[400px] left-[18px]  top-[65px]  md:left-[222px] md:-top-[135px]  md:h-[700px] md:w-[575px]   lg:w-[946.32px] lg:-top-[90px]  lg:left-[60px] " />
+                        <div className=" min-h-[336.469px] min-w-[688.32px]">
+                            <Image src="/dog.svg" alt="dog" width={587} height={587} className="w-full md:w-[378px] md:-bottom-[2px] lg:w-[587px]  absolute -bottom-[50px] left-0 md:left-[initial]  lg:bottom-[initial] lg:top-0 md:right-0"></Image>
                         </div>
 
                     </div>
