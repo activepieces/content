@@ -23,20 +23,22 @@ const featuresVideos: FeatureVideo[] = [
         mp4: "/features/compressed_mp4/AP-LoopsBranches_AdobeExpress.mp4",
         webm: "/features/AP-LoopsBranches_AdobeExpress.webm",
         bg: "bg-[#E1F9B0]",
+        positionClass: "!-left-[470px]",
         mobileImage: "/branch-loop.png"
     },
     {
         mp4: "/features/compressed_mp4/AP-HTTP_AdobeExpress.mp4",
         webm: "/features/AP-HTTP_AdobeExpress.webm",
         bg: "bg-[#C2EAF6]",
-        positionClass: "-left-[470px]",
+        positionClass: "!-left-[470px]",
         mobileImage: "/http.png"
     },
     {
         mp4: "/features/compressed_mp4/AP-CODE_AdobeExpress.mp4",
         webm: "/features/AP-CODE_AdobeExpress.webm",
         bg: "bg-[#F1DDF8]",
-        mobileImage: "/code-editor.png"
+        mobileImage: "/code-editor.png",
+
 
     }
 ]
@@ -136,9 +138,9 @@ export const FeaturesCarousel = () => {
                 <div className={featuresVideos[activeIdx].bg + "  h-full  w-full rounded-tl-md rounded-bl-md py-15 pl-15 overflow-hidden "}>
                     {
                         featuresVideos.map((video, idx) => {
-                            return <div className={"w-[1650px] -mr-[550px] h-full relative " + (idx === activeIdx ? "block" : "hidden")}>
+                            return <div key={idx} className={"w-[1650px] -mr-[550px] h-full relative " + (idx === activeIdx ? "block" : "hidden")}>
                                 <div className={"absolute top-0 left-0 h-full bottom-auto right-auto " + video.positionClass} >
-                                    <video key={idx} playsInline autoPlay muted loop width={1028} height={728} className={'rounded-tl-md rounded-bl-md  w-auto h-full  ' + (idx === activeIdx ? "block" : "hidden")}>
+                                    <video playsInline autoPlay muted loop width={1028} height={728} className={'rounded-tl-md rounded-bl-md  w-auto h-full  ' + (idx === activeIdx ? "block" : "hidden")}>
                                         <source src={video.webm} />
                                         <source src={video.mp4} />
                                     </video>
