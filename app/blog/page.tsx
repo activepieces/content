@@ -146,6 +146,7 @@ export default async function BlogIndex() {
         </div>
 
       </div>
-    </main><AutomateWithActivepieces></AutomateWithActivepieces></>
+    </main>
+      <AutomateWithActivepieces></AutomateWithActivepieces></>
   );
 }
