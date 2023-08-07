@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { formatDate } from "@/utils/date-helper";
 import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
+import { NewsLetterComponent } from "../../components/NewsLetterComponent";
 
 type BlogPost = {
   slug: string;
@@ -127,6 +128,9 @@ export default async function BlogIndex() {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="mt-5">
+              <NewsLetterComponent></NewsLetterComponent>
             </div>
             <div className="flex justify-start mt-5">
               <div className="flex flex-wrap gap-4  justify-center md:justify-start ">

@@ -121,7 +121,7 @@ export default async function PiecePage({ params }: NavigationProps) {
 
 
                 <section >
-                  <Link className=" h-14 p-5 bg-white rounded justify-center items-center gap-3 inline-flex" href={"https://www.activepieces.com/docs/pieces/apps/" + pieceName} target="_blank" rel="noopener noreferrer" >
+                  <Link className=" h-14 p-5 bg-white rounded justify-center items-center gap-3 inline-flex" href={"https://cloud.activepieces.com/sign-up"} target="_blank" rel="noopener noreferrer" >
                     <div className="text-center text-black  font-bold text-2sm leading-loose tracking-wide flex gap-2 items-center">Start for free</div>
                   </Link>
                 </section>
