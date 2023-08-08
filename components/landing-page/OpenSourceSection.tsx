@@ -1,3 +1,4 @@
+import { getContributorsCount, getDiscordMembers, getStars } from "../utils";
 import Contributor from "./GitHubContributor";
 import OpenSourceStat, { OpenSourceStatProps } from "./OpenSourceStat";
 
@@ -9,7 +10,7 @@ const Discord = () => {
 
     </>
 }
-export const openSourceStas: OpenSourceStatProps[] = [
+let openSourceStas: OpenSourceStatProps[] = [
 
     {
         ctaText: "Go to our GitHub",
@@ -18,14 +19,14 @@ export const openSourceStas: OpenSourceStatProps[] = [
             <path d="M18.7496 13.5336C20.7682 12.9696 22.8514 12.6876 24.9996 12.6876C27.1478 12.6876 29.2314 12.9696 31.2501 13.5336C36.5703 10.0932 38.1089 10.9738 38.1089 10.9738C39.7306 14.7767 38.3787 17.6026 38.3787 17.6026C40.093 19.4473 40.9507 21.6828 40.9507 24.3086C40.9507 26.153 40.7275 27.7856 40.2834 29.2072C39.8387 30.6291 39.264 31.7676 38.5589 32.6252C37.8531 33.4827 36.974 34.2043 35.9217 34.7899C34.8691 35.3759 33.8487 35.7988 32.8616 36.0595C31.874 36.3201 30.762 36.516 29.5252 36.6462C30.6532 37.6224 31.2174 39.1633 31.2174 41.2682V48.1359C31.2174 48.5261 31.3531 48.8519 31.6247 49.1122C31.8958 49.3721 32.3242 49.4485 32.9102 49.3396C37.9454 47.669 42.0524 44.658 45.2315 40.3068C48.4101 35.956 50 31.0573 50 25.6097C49.9989 21.0754 48.8807 16.8931 46.6465 13.0628C44.4108 9.23246 41.3785 6.19994 37.5484 3.96458C33.7178 1.72915 29.5359 0.611572 24.9998 0.611572C20.4642 0.611572 16.281 1.72943 12.4512 3.96458C8.62081 6.1998 5.58843 9.23246 3.35287 13.0628C1.11765 16.8931 0 21.0758 0 25.6108C0 31.0583 1.58935 35.9569 4.76881 40.3077C7.94799 44.6589 12.0549 47.6698 17.0894 49.3406C17.6755 49.4494 18.1093 49.3729 18.3914 49.1131C18.6736 48.8529 18.8144 48.5271 18.8144 48.137C18.8144 48.0718 18.8089 47.4862 18.798 46.3792C18.7869 45.2723 18.7816 44.578 18.7816 43.754C18.7816 43.754 18.0981 42.8541 17.0085 42.1156C16.352 41.6802 15.6441 41.5789 14.9759 41.4814C13.486 41.2643 12.6195 41.5525 11.6711 41.5667C10.8558 41.5789 9.67037 41.4141 9.00053 40.8049C7.29595 39.2353 6.61297 38.4037 6.18889 37.406C6.06352 37.111 6.16785 36.6289 6.21851 36.4558C6.25104 36.3445 6.54252 36.2648 7.06674 36.3978C7.6696 36.5508 7.88063 37.1378 8.52629 37.825C9.00888 38.3387 9.61353 38.8043 10.4468 39.0411C11.9757 39.5191 14.167 38.5024 15.6028 38.6285C17.5604 38.7639 18.3976 39.6546 18.8468 39.9988C19.042 38.5442 19.5738 37.4268 20.4416 36.6457C19.2047 36.5157 18.0927 36.3199 17.1051 36.0596C16.1179 35.7989 15.0979 35.376 14.0456 34.7895C12.9926 34.2038 12.1192 33.4765 11.4249 32.6088C10.7306 31.7407 10.1607 30.601 9.7162 29.1908C9.27144 27.78 9.04903 26.1526 9.04903 24.3082C9.04903 21.6819 9.90635 19.447 11.6208 17.6023C11.6208 17.6023 10.2521 14.6835 11.8941 10.9251C11.8941 10.9251 13.5969 10.2926 18.7496 13.5336Z" />
         </svg>
         ,
-        statText: "2.8k+ stars",
+        statText: "",
         ctaUrl: "https://github.com/activepieces/activepieces"
     },
     {
         ctaText: "Join our Discord",
         logoAlt: "Discord",
         logo: <Discord></Discord>,
-        statText: "700+ members",
+        statText: "",
         ctaUrl: "https://discord.gg/fA8hYBFkHd"
     },
     {
@@ -43,49 +44,59 @@ export const openSourceStas: OpenSourceStatProps[] = [
             <path d="M43.3862 36.508C47.0364 36.508 50 39.4716 50 43.1218C50 46.7719 47.0364 49.7355 43.3862 49.7355C39.7361 49.7355 36.7725 46.7719 36.7725 43.1218C36.7725 39.4716 39.7361 36.508 43.3862 36.508Z" />
         </svg>
         ,
-        statText: "50+ contributors",
+        statText: "",
         ctaUrl: "https://www.activepieces.com/docs"
     },
 ]
-const OpenSourceSection = () => <>
-    <section className='bg-white text-black px-4 lg:px-0'>
-        <div className='justify-center gap-[50px] container mx-auto lg:gap-25 overflow-visible py-[80px] lg:py-[100px] flex flex-wrap lg:flex-nowrap'>
-            <div>
-                <h2 className='text-h1-sm lg:text-h1-lg mb-5 lg:w-[750px] '>
-                    Activepieces is open source
-                </h2>
-                <div className="text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-20">
-                    Host it on your machine, chat with the community or contribute back to Activepieces
+const OpenSourceSection = async () => {
+    const githubStars = ((await getStars()) / 1000).toFixed(1) + "k+ stars";
+    openSourceStas[0].statText = githubStars;
+    const discordCount = await getDiscordMembers() + " members";
+    openSourceStas[1].statText = discordCount;
+    const contributors = await getContributorsCount() + " contributors";
+    openSourceStas[2].statText = contributors;
+    return <>
+        <section className='bg-white text-black px-4 lg:px-0'>
+            <div className='justify-center gap-[50px] container mx-auto lg:gap-25 overflow-visible py-[80px] lg:py-[100px] flex flex-wrap lg:flex-nowrap'>
+                <div>
+                    <h2 className='text-h1-sm lg:text-h1-lg mb-5 lg:w-[750px] '>
+                        Activepieces is open source
+                    </h2>
+                    <div className="text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-20">
+                        Host it on your machine, chat with the community or contribute back to Activepieces
+                    </div>
+                    <div className='flex  flex-col gap-[20px] lg:gap-[30px]'>
+                        {
+                            openSourceStas.map((stat, i) => (
+                                <>
+                                    <OpenSourceStat ctaUrl={stat.ctaUrl} ctaText={stat.ctaText} logoAlt={stat.logoAlt} logo={stat.logo} statText={stat.statText} key={stat.statText}></OpenSourceStat>
+                                    {
+                                        i !== openSourceStas.length - 1 ? <div className='border-b border-solid border-divider'></div> : null
+                                    }
+                                </>))
+                        }
+                    </div>
                 </div>
-                <div className='flex  flex-col gap-[20px] lg:gap-[30px]'>
-                    {
-                        openSourceStas.map((stat, i) => (
-                            <>
-                                <OpenSourceStat ctaUrl={stat.ctaUrl} ctaText={stat.ctaText} logoAlt={stat.logoAlt} logo={stat.logo} statText={stat.statText} key={stat.statText}></OpenSourceStat>
-                                {
-                                    i !== openSourceStas.length - 1 ? <div className='border-b border-solid border-divider'></div> : null
-                                }
-                            </>))
-                    }
+                <div className=" bg-[url('/map.png')] md:bg-center bg-contain  relative bg-no-repeat  lg:h-[700px] w-[870px] basis-full lg:basis-[auto] flex justify-center gap-[50px] lg:gap-[150px] ">
+                    <div className='flex flex-col gap-[30px] lg:gap-[60px] mt-[30px] lg:mt-[60px]'>
+                        <Contributor githubAccount='kanarelo' githubUrl='https://github.com/kanarelo' imageUrl='/contributors/kanarelo.jpg' tagColor='#D16FFF' imageClasses='w-[138px] h-[138px] lg:h-[180px] lg:w-[180px]' key={1}></Contributor>
+                        <Contributor githubAccount='abuaboud' githubUrl='https://github.com/abuaboud' imageUrl='/contributors/abuAboud.jpg' imageClasses='w-[116px] h-[116px] lg:h-[163px] lg:w-[163px]' tagColor='#FF9F0F' key={3}></Contributor>
+                    </div>
+
+                    <div className='flex flex-col gap-[30px] lg:gap-[60px] '>
+                        <Contributor githubAccount='Ozak93' githubUrl='https://github.com/Ozak93' imageClasses='w-[116px] h-[116px] lg:h-[180px] lg:w-[180px]' imageUrl='/contributors/ozak93.jpg' tagColor='#6FA8FF' key={2}></Contributor>
+                        <Contributor githubAccount='ShayPunter' githubUrl='https://github.com/ShayPunter' imageUrl='/contributors/shaypunter.png' tagColor='#0ACA90' imageClasses='w-[138px] h-[138px] lg:h-[163px] lg:w-[163px]' key={4}></Contributor>
+                    </div>
+
+
+
                 </div>
+
             </div>
-            <div className=" bg-[url('/map.png')] md:bg-center bg-contain  relative bg-no-repeat  lg:h-[700px] w-[870px] basis-full lg:basis-[auto] flex justify-center gap-[50px] lg:gap-[150px] ">
-                <div className='flex flex-col gap-[30px] lg:gap-[60px] mt-[30px] lg:mt-[60px]'>
-                    <Contributor githubAccount='kanarelo' githubUrl='https://github.com/kanarelo' imageUrl='/contributors/kanarelo.jpg' tagColor='#D16FFF' imageClasses='w-[138px] h-[138px] lg:h-[180px] lg:w-[180px]' key={1}></Contributor>
-                    <Contributor githubAccount='abuaboud' githubUrl='https://github.com/abuaboud' imageUrl='/contributors/abuAboud.jpg' imageClasses='w-[116px] h-[116px] lg:h-[163px] lg:w-[163px]' tagColor='#FF9F0F' key={3}></Contributor>
-                </div>
 
-                <div className='flex flex-col gap-[30px] lg:gap-[60px] '>
-                    <Contributor githubAccount='Ozak93' githubUrl='https://github.com/Ozak93' imageClasses='w-[116px] h-[116px] lg:h-[180px] lg:w-[180px]' imageUrl='/contributors/ozak93.jpg' tagColor='#6FA8FF' key={2}></Contributor>
-                    <Contributor githubAccount='ShayPunter' githubUrl='https://github.com/ShayPunter' imageUrl='/contributors/shaypunter.png' tagColor='#0ACA90' imageClasses='w-[138px] h-[138px] lg:h-[163px] lg:w-[163px]' key={4}></Contributor>
-                </div>
+        </section></>
+}
 
-
-
-            </div>
-
-        </div>
-
-    </section></>
 
 export default OpenSourceSection;
+

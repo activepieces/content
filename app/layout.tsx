@@ -6,20 +6,8 @@ import { Lato } from 'next/font/google'
 import { PHProvider, PostHogPageview } from './providers'
 import { Suspense } from 'react'
 import Script from 'next/script'
+import { getStars } from '../components/utils'
 
-const getStars = async () => {
-  try {
-    const repo = await fetch("https://api.github.com/repos/activepieces/activepieces", {
-      next: { revalidate: 3600 }
-    });
-    const repoData = await repo.json();
-    const stars = repoData.stargazers_count;
-    return stars;
-  } catch (ex) {
-    return 0;
-  }
-
-}
 
 const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300', '100'], variable: '--font-inter', display: 'swap', adjustFontFallback: false },)
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
