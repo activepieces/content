@@ -20,11 +20,11 @@ export const NewsLetterComponent = () => {
     return <div className="flex bg-[#DE5532] flex-col lg:flex-row w-[358px] lg:w-full rounded-md overflow-hidden lg:h-[8rem]">
         <div className="h-[120px] lg:h-[auto] lg:w-[195px] bg-[url('/newsLetter_mobile.svg')] lg:bg-[url('/newsLetter.svg')] bg-contain bg-no-repeat">
         </div>
-        <div className={relaeway.className + " grow px-6 py-6 lg:px-10 lg:py-[1rem]"}>
+        <div className={relaeway.className + " grow px-6 py-6 lg:px-10"}>
             <div className={(submitted ? 'hidden' : 'flex') + " flex-col lg:flex-row lg:items-center gap-10"}>
                 <div className="text-center text-white lg:text-left max-w-[19.25rem]">
                     <div className="text-h5-sm lg:text-h6-lg mb-5">
-                        Subscribe to the best newsletter of Activepieces.
+                        Subscribe to our newsletter.
                     </div>
                     <div className="text-h6-sm font-normal">
                         &ensp; •&nbsp;  Delivered twice a month.

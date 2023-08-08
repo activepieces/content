@@ -129,9 +129,9 @@ export default async function BlogIndex() {
                 ))}
               </div>
             </div>
-            <div className="mt-5">
+            {/* <div className="mt-5">
               <NewsLetterComponent></NewsLetterComponent>
-            </div>
+            </div> */}
             <div className="flex justify-start mt-5">
               <div className="flex flex-wrap gap-4  justify-center md:justify-start ">
                 {/* Add justify-items-center to center grid items horizontally */}
