@@ -23,6 +23,7 @@ module.exports = {
         '25': "6.25rem",
         '2.5':'0.625rem',
         '15':'3.75rem',
+        '30': '7.5rem',
       },
       colors: {
         black: '#111111',
@@ -57,6 +58,22 @@ module.exports = {
         'sans': ['Lato', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
+        'page-title-lg': [
+          '5rem',
+          {
+            lineHeight: '5.625rem',
+            letterSpacing: '2.5%',
+            fontWeight: '700',
+          }
+        ],
+        'page-title-sm': [
+          '3.125rem',
+          {
+            lineHeight: '3.75rem',
+            letterSpacing: '2.5%',
+            fontWeight: '700',
+          }
+        ],
         '2sm': '1.25rem',
         'h1-sm': ['36px',{
           lineHeight: '43.2px',
@@ -109,7 +126,7 @@ module.exports = {
           fontWeight: '700',
         }],
         'h6-sm': ['16px',{
-          lineHeight: '',
+          lineHeight: '26.4px',
           letterSpacing: '0.4px',
           fontWeight: '400',
         }],
