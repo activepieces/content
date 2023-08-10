@@ -226,3 +226,34 @@ img[alt="545f2970-1eee-402a-9a52-8ae19c57e650.png"]
     width: 97%;
   }
 }
+.thin-scrollbars::-webkit-scrollbar {
+  width: 16px;
+}
+.thin-scrollbars::-webkit-scrollbar-thumb {
+  background: #898A8E;
+  background-clip: content-box;
+  border: 5px solid transparent;
+  border-radius: 40px;
+  scrollbar-width: thin;
+}
+.thin-scrollbars::-webkit-scrollbar-thumb:hover {
+  background: rgba(179, 179, 179, 0.7);
+  background-clip: content-box;
+  border: 5px solid transparent;
+  border-radius: 40px;
+  scrollbar-width: thin;
+}
+
+.show-dialog-animation{
+  animation: show-dialog 0.1s linear;
+}
+@keyframes show-dialog {
+  0% {
+    opacity: 0;
+ 
+  }
+  100% {
+    opacity: 1;
+
+  }
+}

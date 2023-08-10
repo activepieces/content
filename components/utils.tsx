@@ -1,3 +1,7 @@
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { Database, Tables } from "./supabase";
+
 export const getStars = async () => {
   try {
     const repo = await fetch("https://api.github.com/repos/activepieces/activepieces", {
@@ -34,13 +38,16 @@ export const getDiscordMembers = async () => {
   const members = discordData.approximate_member_count;
   return members;
 }
-type GitHubIssue = {
+export type GitHubIssue = {
+  id: string,
   title: string,
   created_at: string,
   labels: {
     name: string;
   }[];
   state: "open" | "closed";
+  assignees: unknown[];
+  number: number
 };
 export const getPiecesIssuesOnGithub = async () => {
   let currentPage = 1;
@@ -53,6 +60,9 @@ export const getPiecesIssuesOnGithub = async () => {
     const issuesLink = await issuesRequest.headers.get('Link');
     currentPage++;
     const issuesPage: GitHubIssue[] = await issuesRequest.json();
+    if (!Array.isArray(issuesPage)) {
+      break;
+    }
     const issuesThatAreNotBugs = issuesPage.filter(is => is.labels.findIndex(l => l.name === ('🐛 bug')) === -1);
     issues.push(...issuesThatAreNotBugs);
     if (!issuesLink?.includes('rel="next"')) {
@@ -60,4 +70,11 @@ export const getPiecesIssuesOnGithub = async () => {
     }
   }
   return issues;
+}
+
+export const getSupabaseVotes = async () => {
+  const supabase = createServerComponentClient({ cookies })
+  const { data }: { data: Tables<'voting'>[] | null } = await supabase.from('voting').select('*')
+  return data;
+
 }
