@@ -28,6 +28,8 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3a2RteGp3c2F6aGN2b2Npdmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA0NTYyNjYsImV4cCI6MTk5NjAzMjI2Nn0.WaRI99I0gVOmNXlLp_V2gOz0oaCRnsMNO9X1xbFWpZ0
+ENV NEXT_PUBLIC_SUPABASE_URL https://ywkdmxjwsazhcvocivgw.supabase.co
 RUN yarn build
 
 # If using npm comment out above and use below instead
@@ -37,6 +39,8 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3a2RteGp3c2F6aGN2b2Npdmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA0NTYyNjYsImV4cCI6MTk5NjAzMjI2Nn0.WaRI99I0gVOmNXlLp_V2gOz0oaCRnsMNO9X1xbFWpZ0
+ENV NEXT_PUBLIC_SUPABASE_URL https://ywkdmxjwsazhcvocivgw.supabase.co
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
