@@ -21,6 +21,9 @@ const nextConfig = {
     images: {
         domains: ['cdn.activepieces.com','cloud.activepieces.com'],
     },
+    experimental: {
+      serverActions: true
+    }
 }
 
 module.exports = nextConfig
