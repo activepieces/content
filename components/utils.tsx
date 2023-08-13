@@ -49,13 +49,21 @@ export type GitHubIssue = {
   assignees: unknown[];
   number: number
 };
+
+export interface GithubCreateIssueRequest {
+  title: string
+  body: string
+}
 export const getPiecesIssuesOnGithub = async () => {
   let currentPage = 1;
   let issues: GitHubIssue[] = [];
   const per_page = 100;
   while (true) {
     const issuesRequest = await fetch(`https://api.github.com/repos/activepieces/activepieces/issues?state=all&per_page=${per_page}&page=${currentPage}&labels=🔌%20pieces`, {
-      next: { revalidate: 1 }
+      next: { revalidate: 1 },
+      headers: {
+        'Authorization': "Bearer " + process.env.GITHUB_TOKEN,
+      }
     });
     const issuesLink = await issuesRequest.headers.get('Link');
     currentPage++;

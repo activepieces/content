@@ -1,7 +1,7 @@
 
 import { Metadata } from "next";
 import { VotingPageMainSection } from "../../components/voting/VotingMainSection";
-import { VotingPageVotingSection } from "../../components/voting/VotingSectionServer";
+import { VotingSectionServer } from "../../components/voting/VotingSectionServer";
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = "Request a piece - Activepieces";
@@ -28,10 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 export default function PiecesVoting() {
   return <>
-
     <VotingPageMainSection></VotingPageMainSection>
-    <VotingPageVotingSection></VotingPageVotingSection>
-
-
+    <VotingSectionServer></VotingSectionServer>
   </>
 }

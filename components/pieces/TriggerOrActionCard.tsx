@@ -85,7 +85,7 @@ const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion
     }
   }
   return (
-    <div className="flex flex-col  bg-card rounded-lg ">
+    <div className="flex flex-col  bg-card rounded-lg " id={triggerOrAction.displayName}>
       <div className={(Object.entries(triggerOrAction.props).length > 0 ? "cursor-pointer" : "") + " flex flex-row items-center p-5 border-b border-solid border-white border-opacity-20"} onClick={() => setShowProperties(!showProperties)}>
         <PieceLogo pieceLogoUrl={logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
         <div className="flex flex-col ml-4 justify-center">
