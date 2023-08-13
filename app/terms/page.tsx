@@ -1,3 +1,29 @@
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const title = "Privacy Policy - Activepieces";
+    const description = "Activepieces offers hundreds of apps to choose from to automate your work with."
+    return {
+        title: title,
+        description: description,
+        icons: "/favicon.ico",
+        openGraph: {
+            title: title,
+            description: description,
+            siteName: "Activepieces",
+            images: [
+                {
+                    url: "https://www.activepieces.com/meta1.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Activepieces",
+                },
+            ],
+            url: "https://www.activepieces.com",
+        }
+    };
+}
+
 export default async function Privacy() {
     return (
         <div className="container mx-auto p-4 text-white">

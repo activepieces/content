@@ -22,11 +22,14 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3a2RteGp3c2F6aGN2b2Npdmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA0NTYyNjYsImV4cCI6MTk5NjAzMjI2Nn0.WaRI99I0gVOmNXlLp_V2gOz0oaCRnsMNO9X1xbFWpZ0
+ENV NEXT_PUBLIC_SUPABASE_URL https://ywkdmxjwsazhcvocivgw.supabase.co
 RUN yarn build
 
 # If using npm comment out above and use below instead
@@ -36,14 +39,11 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3a2RteGp3c2F6aGN2b2Npdmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA0NTYyNjYsImV4cCI6MTk5NjAzMjI2Nn0.WaRI99I0gVOmNXlLp_V2gOz0oaCRnsMNO9X1xbFWpZ0
+ENV NEXT_PUBLIC_SUPABASE_URL https://ywkdmxjwsazhcvocivgw.supabase.co
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-USER nextjs
 
 COPY --from=builder /app/public ./public
 
@@ -57,4 +57,8 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME localhost
 
-CMD ["node", "server.js"]
+# Set up entrypoint script
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]

@@ -1,3 +1,28 @@
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const title = "Terms of Service - Activepieces";
+    const description = "Activepieces offers hundreds of apps to choose from to automate your work with."
+    return {
+        title: title,
+        description: description,
+        icons: "/favicon.ico",
+        openGraph: {
+            title: title,
+            description: description,
+            siteName: "Activepieces",
+            images: [
+                {
+                    url: "https://www.activepieces.com/meta1.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Activepieces",
+                },
+            ],
+            url: "https://www.activepieces.com",
+        }
+    };
+}
 export default async function Privacy() {
     return (
         <div className="container mx-auto p-4 text-white">
@@ -69,7 +94,7 @@ export default async function Privacy() {
             <p>If you are located in the EEA and wish to make a request for removal (Right to Be Forgotten), you may contact us at  privacy@activepieces.com:</p>
             <p>If we are legally required to comply with such a request, we will confirm your identity and delete your personal data in such time frame as required by law.</p>
             <p>We may be required by law or to retain it to exercise or defend legal claims, or contractual obligations with our customers to retain some information in connection with our obligation to provide the Services. We may de-identify and anonymize some data for purposes of retaining it.</p>
-            <h5 className="text-xl font-bold mt-4 mb-2"id="data-portability">Data Portability</h5>
+            <h5 className="text-xl font-bold mt-4 mb-2" id="data-portability">Data Portability</h5>
             <p>If you are located in the EEA or the UK and you would like us to transmit your Personal Data to another company providing similar services, we will work with them to do so upon request and verification of such request with both the requestor and the company receiving the Personal Data.</p>
             <h5 className="text-2xl font-bold mt-4 mb-2" id="california-privacy-rights">California Privacy Rights</h5>
             <p>We do not believe that we sell Consumer Personal Information as defined by the California Consumer Privacy Act (“CCPA”).</p>
