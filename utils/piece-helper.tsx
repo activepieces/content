@@ -34,7 +34,10 @@ type PieceMetaData = (PieceBase & {
 
 export async function GetPieces(): Promise<PieceMetaData[]> {
   const res = await fetch(
-    `https://cloud.activepieces.com/api/v1/pieces`
+    `https://cloud.activepieces.com/api/v1/pieces`,
+    {
+      cache: "force-cache"
+    }
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -44,7 +47,10 @@ export async function GetPieces(): Promise<PieceMetaData[]> {
 
 export async function GetPiece(Name: string): Promise<DetailedPiece> {
   const res = await fetch(
-    `https://cloud.activepieces.com/api/v1/pieces/${Name}`
+    `https://cloud.activepieces.com/api/v1/pieces/${Name}`,
+    {
+      cache: "force-cache"
+    }
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
