@@ -10,7 +10,7 @@ export const VotingPageMainSection = () => {
                         a piece
                     </div>
                     <div className="text-h6-sm lg:text-h6-lg font-normal">
-                        Draw the path to our 50+ open source contributors by telling them which pieces you'd like to see next
+                        {" Draw the path to our 50+ open source contributors by telling them which pieces you'd like to see next"}
                     </div>
                 </div>
 
