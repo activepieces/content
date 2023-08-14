@@ -72,7 +72,7 @@ const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion
   else {
     template.template.trigger.nextAction = {
       "name": "step_1",
-      ActionType: ActionType.PIECE,
+      type: ActionType.PIECE,
       "valid": Object.keys(triggerOrAction.props).filter((key) => triggerOrAction.props[key].required).length === 0,
       settings: {
         "input": {},
