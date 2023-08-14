@@ -42,7 +42,8 @@ export async function GetPieces(): Promise<PieceMetaData[]> {
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  return await res.json();
+  const resJson: PieceMetaData[] = await res.json();
+  return resJson.filter(p => p.name !== "@activepieces/piece-instagram-business" && p.name !== "@activepieces/piece-shopify" && p.name !== "@activepieces/piece-facebook-pages");
 }
 
 export async function GetPiece(Name: string): Promise<DetailedPiece> {

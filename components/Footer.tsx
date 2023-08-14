@@ -34,6 +34,7 @@ export default function Footer() {
               <Link className="hover:text-white" href="/features">Features </Link>
               <Link className="hover:text-white" href="/pricing">Pricing</Link>
               <Link className="hover:text-white" href="/pieces">Pieces</Link>
+              <Link className="hover:text-white" href="/request-a-piece">Pieces Roadmap</Link>
             </div>
 
           </div>

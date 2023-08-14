@@ -1,6 +1,6 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { Database, Tables } from "./supabase";
+import { Tables } from "./supabase";
 
 export const getStars = async () => {
   try {
