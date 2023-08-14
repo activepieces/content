@@ -15,6 +15,11 @@ const nextConfig = {
             source: '/plans',
             destination: '/pricing',
             permanent: true,
+          },
+          {
+            source: '/request-a-piece',
+            destination: '/pieces-roadmap',
+            permanent: true,
           }
         ]
       },
