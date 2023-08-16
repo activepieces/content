@@ -11,7 +11,7 @@ const GithubWidget = ({ stars, extraClass }: { stars: number, extraClass?: strin
       {
         stars > 0 ? (
           <Link href="https://github.com/activepieces/activepieces/stargazers" className={(extraClass ? extraClass : '') + " " + "border-l-2 text-xs border-solid border-[#dededf] font-bold  px-[10px] py-[5px] bg-white text-black hover:text-[#0969da]"} target="_blank" rel="noopener noreferrer">
-            {stars}
+            {stars.toLocaleString()}
           </Link>) : (null)
       }
 
