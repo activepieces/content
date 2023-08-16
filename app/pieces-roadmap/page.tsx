@@ -5,7 +5,7 @@ import { VotingSectionServer } from "../../components/voting/VotingSectionServer
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = "Request a piece - Activepieces";
-  const description = "Vote for apps you would like to automate with Activepieces, the no-code business automation tool for all your work"
+  const description = "Vote for/suggest apps you would like to automate with Activepieces, the no-code business automation tool for all your work"
   return {
     title: title,
     description: description,

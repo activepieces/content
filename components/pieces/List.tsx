@@ -35,7 +35,11 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
   return (
     <div className="flex-col gap-4 flex justify-center items-center px-1 my-24">
       <div className=" flex flex-col container w-full  gap-10  mb-10">
+        <div className="">
+          You can check our future pieces roadmap or request a piece on <Link className="text-primary" href="/request-a-piece">this page</Link>
+        </div>
         <div className="flex justify-center">
+
           <div className="flex  justify-center w-full gap-0 h-[56px] flex-row-reverse">
             <input
               type="text"

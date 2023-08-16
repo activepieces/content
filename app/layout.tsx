@@ -7,6 +7,7 @@ import { PHProvider, PostHogPageview } from './providers'
 import { Suspense } from 'react'
 import Script from 'next/script'
 import { getStars } from '../components/utils'
+import { CokkieConsent } from '../components/CookieConsent'
 
 
 const lato = Lato({ subsets: ['latin'], weight: ['700', '400', '300', '100'], variable: '--font-inter', display: 'swap', adjustFontFallback: false },)

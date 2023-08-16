@@ -19,7 +19,7 @@ export default function Footer() {
               height={35}
               className="w-[152px] h-[25px] lg:w-[215px] inline lg:h-[35px]"
             />
-            <div className="text-white pt-4">
+            <div className="text-white py-4">
               ©{new Date().getFullYear()} Activepieces, Inc.
             </div>
           </Link>
@@ -34,6 +34,7 @@ export default function Footer() {
               <Link className="hover:text-white" href="/features">Features </Link>
               <Link className="hover:text-white" href="/pricing">Pricing</Link>
               <Link className="hover:text-white" href="/pieces">Pieces</Link>
+              <Link className="hover:text-white" href="/pieces-roadmap">Pieces Roadmap</Link>
             </div>
 
           </div>
