@@ -40,11 +40,12 @@ async function readBlogData(blogName: string, userPassword: string | undefined |
       }
       
     }
+    console.log(blog);
     return {
       title: blog.title,
       content: blog.content,
       author: blog.author,
-      publishedOn: formatDate(blog.publishedOn),
+      publishedOn: formatDate(blog.created_at),
       description: blog.description,
       thumbnail: blog.main_image,
     }
