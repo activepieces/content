@@ -17,7 +17,7 @@ export interface Blog {
   author: string;
   publishedOn: string;
 }
-async function readBlogData(blogName: string, userPassword: string | undefined): Promise<Blog> {
+async function readBlogData(blogName: string, userPassword: string | undefined | string[]): Promise<Blog> {
   const docsDirectory = join(process.cwd(), "content", "blog");
   const fullPath = join(docsDirectory, blogName + ".mdx");
   if (!fs.existsSync(fullPath)) {
