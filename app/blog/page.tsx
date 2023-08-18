@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { formatDate } from "@/utils/date-helper";
 import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
-import { NewsLetterComponent } from "../../components/NewsLetterComponent";
+import { createClient } from "@supabase/supabase-js";
 
 type BlogPost = {
   slug: string;
@@ -16,10 +16,6 @@ type BlogPost = {
     publishedOn: string,
     thumbnail: string;
   };
-};
-
-type Category = {
-  title: string;
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -69,8 +65,34 @@ function BlogCard({ post }: { post: BlogPost }) {
   );
 }
 
-export default async function BlogIndex() {
-  // Fetch data
+const supabaseKey = process.env.SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.SUPABASE_URL!
+
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function getFirebaseBlogs(): Promise<BlogPost[]> {
+  const { data, error } = await supabase
+    .from('blogs')
+    .select('*').eq('status', 'published')
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    return []
+  }
+  return data.map((blog) => {
+    return {
+      slug: blog.slug,
+      meta: {
+        title: blog.title,
+        author: blog.author,
+        publishedOn: formatDate(blog.created_at),
+        thumbnail: `${blog.main_image}`,
+      }
+    }
+  });
+}
+
+async function getLocalBlogs() {
   let posts: BlogPost[] = [];
   const docsDirectory = join(process.cwd(), "content", "blog");
   const files = fs.readdirSync(docsDirectory);
@@ -88,7 +110,17 @@ export default async function BlogIndex() {
     const slug = fileName.replace(/\.mdx?$/, "");
     posts.push({ slug, meta });
   }
-  posts = posts.sort((a, b) => Date.parse(b.meta.publishedOn) - Date.parse(a.meta.publishedOn));
+  return posts;
+}
+
+export default async function BlogIndex() {
+  // Fetch data
+  const localBlogs =  await getLocalBlogs();
+  const firebaseBlogs = await getFirebaseBlogs()
+  const posts = [...localBlogs, ...firebaseBlogs].sort((a, b) => {
+    return new Date(b.meta.publishedOn).getTime() - new Date(a.meta.publishedOn).getTime()
+  })
+
 
 
   return (

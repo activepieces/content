@@ -17,11 +17,16 @@ export interface Blog {
   author: string;
   publishedOn: string;
 }
+
+const supabaseKey = process.env.SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.SUPABASE_URL!
+
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 async function readBlogData(blogName: string, userPassword: string | undefined | string[]): Promise<Blog> {
   const docsDirectory = join(process.cwd(), "content", "blog");
   const fullPath = join(docsDirectory, blogName + ".mdx");
   if (!fs.existsSync(fullPath)) {
-    const supabase = createClient('https://ywkdmxjwsazhcvocivgw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3a2RteGp3c2F6aGN2b2Npdmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA0NTYyNjYsImV4cCI6MTk5NjAzMjI2Nn0.WaRI99I0gVOmNXlLp_V2gOz0oaCRnsMNO9X1xbFWpZ0')
     const { data, error } = await supabase
       .from('blogs')
       .select('*')
@@ -33,14 +38,13 @@ async function readBlogData(blogName: string, userPassword: string | undefined |
       throw new Error('Blog not found')
     }
     const blog = data[0]
-    if(blog.status !== 'published') {
+    if (blog.status !== 'published') {
       const password = process.env.BLOG_PASSWORD
-      if(password !== userPassword) {
+      if (password !== userPassword) {
         throw new Error('Blog not found')
       }
-      
+
     }
-    console.log(blog);
     return {
       title: blog.title,
       content: blog.content,
