@@ -12,6 +12,17 @@ const nextConfig = {
     async redirects() {
         return [
           {
+            source: '/*',
+            has: [
+              {
+                type: 'host',
+                value: '(?!www\\.)(?<host>.+)',
+              },
+            ],
+            permanent: true,
+            destination: 'https://www.$host/:splat',
+          },
+          {
             source: '/plans',
             destination: '/pricing',
             permanent: true,
