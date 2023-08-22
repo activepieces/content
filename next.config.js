@@ -13,8 +13,8 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.activepieces.com' }],
-        destination: 'https://activepieces.com/:path*',
+        has: [{ type: 'host', value: 'activepieces.com' }],
+        destination: 'https://www.activepieces.com/:path*',
         permanent: true
       },
       {
