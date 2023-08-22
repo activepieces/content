@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...simpleRoutes.map((path) => ({
-      url: `https://activepieces.com${path}`,
+      url: `https://www.activepieces.com${path}`,
       lastModified: new Date(),
     })),
   ]
