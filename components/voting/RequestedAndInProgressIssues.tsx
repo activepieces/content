@@ -31,7 +31,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                             {issue.title}
                                         </div>
                                         <div className="text-black text-opacity-60 font-normal">
-                                            Requested at {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                                            Requested on {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                                         </div>
                                     </Link>
                                 </div>
@@ -54,7 +54,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                             {issue.title}
                                         </div>
                                         <div className="text-black text-opacity-60 font-normal">
-                                            Requested at {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                                            Requested on {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                                         </div>
                                     </div>
                                 </Link>

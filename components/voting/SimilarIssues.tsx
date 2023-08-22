@@ -35,10 +35,10 @@ export const SimilarIssues = (props: { issues: GitHubIssue[], search: string, vo
                                     {issue.title}
                                 </div>
                                 <div className="text-black text-opacity-60 font-normal">
-                                    Requested at {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                                    Requested on {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                                 </div>
-                                <div className={issue.state == "open" ? "text-[#AC44B5] font-normal" : "text-[#258D3C] font-normal"}>
-                                    {issue.state == "open" ? "In Progress" : "Completed"}
+                                <div className={issue.assignees.length > 0 ? (issue.state === "open" ? "text-[#AC44B5] font-normal" : "text-[#258D3C] font-normal") : "text-black text-opacity-60 font-normal"}>
+                                    {issue.assignees.length > 0 ? (issue.state === "open" ? "In Progress" : "Completed") : "Requested"}
                                 </div>
                             </Link>
                         </div>
