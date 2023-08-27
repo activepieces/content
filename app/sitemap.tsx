@@ -13,6 +13,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/pricing',
     '/pieces-roadmap',
     '/blog',
+    '/pieces/loops',
+    '/pieces/branches',
+    '/pieces/webhook',
   ]
   const pieces = await GetPieces()
   pieces.forEach((piece) => {
