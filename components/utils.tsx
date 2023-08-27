@@ -1,6 +1,3 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import { Tables } from "./supabase";
 import { PieceBase } from "../utils/piece-helper";
 
 export const getStars = async () => {
@@ -37,15 +34,18 @@ export const allPiecesSort = ((a: (CorePiece | PieceBase), b: (CorePiece | Piece
   if (typeof a === "string" && typeof b === "string") {
     return a.localeCompare(b);
   }
-  if (typeof a === "string" && typeof b !== "string") {
+  else if (typeof a === "string" && typeof b !== "string") {
     return a.localeCompare(b.displayName)
   }
-  if (typeof b === "string" && typeof a !== "string") {
+  else if (typeof b === "string" && typeof a !== "string") {
     return b.localeCompare(a.displayName)
   }
-  if (typeof a !== "string" && typeof b !== "string")
+  else if (typeof a !== "string" && typeof b !== "string") {
     return a.displayName.localeCompare(b.displayName);
+  }
   return 0;
+
+
 })
 export const getDiscordMembers = async () => {
   const discord = await fetch("https://discord.com/api/v9/invites/fA8hYBFkHd?with_counts=true&with_expiration=true", {
@@ -95,11 +95,4 @@ export const getPiecesIssuesOnGithub = async () => {
     }
   }
   return issues;
-}
-
-export const getSupabaseVotes = async () => {
-  const supabase = createServerComponentClient({ cookies })
-  const { data }: { data: Tables<'voting'>[] | null } = await supabase.from('voting').select('*')
-  return data;
-
 }

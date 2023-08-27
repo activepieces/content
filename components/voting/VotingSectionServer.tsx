@@ -1,5 +1,6 @@
 import { DetailedPiece, GetPiece, GetPieces } from "../../utils/piece-helper";
-import { getPiecesIssuesOnGithub, getSupabaseVotes } from "../utils";
+import { getSupabaseVotes } from "../server_utils";
+import { getPiecesIssuesOnGithub } from "../utils";
 import { VotingSectionClient } from "./VotingSectionClient";
 
 export const VotingSectionServer = async () => {
