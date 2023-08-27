@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
 import Link from "next/link";
+import { allPiecesSort, corePieces } from "../../components/utils";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 export const metadata: Metadata = {
     title: 'All apps - Connect your apps with Activepieces',
@@ -22,7 +23,9 @@ export const metadata: Metadata = {
 }
 
 export default async function FindAppsPage() {
-    const pieces = (await GetPieces())
+    const pieces = (await GetPieces());
+    const allPieces = [...pieces, ...corePieces].sort(allPiecesSort);
+
     return (
         <main className="bg-white py-[80px] min-h-[80vh]">
             <section className="container mx-auto px-4 lg:px-0">
@@ -34,10 +37,18 @@ export default async function FindAppsPage() {
                 </div>
 
                 <ul className="columns-1 md:columns-2 lg:columns-4 text-black text-h5-sm mt-[40px]">
-                    {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={`/pieces/${piece.name.replace(
-                        "@activepieces/piece-",
-                        ""
-                    )}?`} > {piece.displayName}</Link></li>)}
+                    {allPieces.map((piece, idx) => <li key={idx} className="underline">
+                        {
+                            piece === "webhook" ? <Link href={`/pieces/webhook`}>Webhook</Link> :
+                                piece === "loops" ? <Link href={`/pieces/loops`}>Loops</Link> :
+                                    piece === "branches" ? <Link href={`/pieces/branches`}>Branches</Link> :
+                                        <Link href={`/pieces/${piece.name.replace(
+                                            "@activepieces/piece-",
+                                            ""
+                                        )}?`} > {piece.displayName}</Link>
+                        }
+
+                    </li>)}
                 </ul>
             </section>
 

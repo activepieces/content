@@ -6,32 +6,61 @@ import { PieceBase } from "../../utils/piece-helper";
 import PieceLogo from "./PieceLogo";
 import Link from "next/link";
 import Image from "next/image";
+import { allPiecesSort, corePieces } from "../utils";
+
 const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
   const searchInput = useRef<HTMLInputElement>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [showAllResults, setShowAllResults] = useState(false);
-  const filteredPieces = pieces.filter((piece) =>
-    piece.displayName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  const mapPieceToHTML = (pieces: PieceBase[]) => pieces.map((piece, i) => {
-    return (
-      <Link
-        className="p-5 basis-full md:basis-1/3 h-[110px] rounded-lg text-center cursor-pointer hover:bg-whiteCard-100 "
-        key={piece.displayName}
-        href={`/pieces/${piece.name.replace(
-          "@activepieces/piece-",
-          ""
-        )}`}
-      >
-        <div className="flex flex-row items-center">
-          <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
-          <p className="ml-4 text-h3-sm text-black font-bold ">{piece.displayName}</p>
-        </div>
-      </Link>
-    );
+  const filteredPieces: (PieceBase | "webhook" | "loops" | "branches")[] = [
+    ...pieces.filter((piece) =>
+      piece.displayName.toLowerCase().startsWith(searchTerm.toLowerCase())),
+    ...corePieces.filter((piece) => piece.toLowerCase().startsWith(searchTerm.toLowerCase()))
+  ].sort(allPiecesSort)
+
+
+
+  const mapPieceToHTML = (pieces: (PieceBase | "webhook" | "loops" | "branches")[]) => pieces.map((piece, i) => {
+    switch (piece) {
+      case "webhook":
+        return CorePieceHTML({ title: "Webhook", image: "https://cloud.activepieces.com/assets/img/custom/piece/webhook.svg", path: "/pieces/webhook" })
+      case "loops":
+        return CorePieceHTML({ title: "Loops", image: "https://cloud.activepieces.com/assets/img/custom/piece/loop.svg", path: "/pieces/loops" })
+      case "branches":
+        return CorePieceHTML({ title: "Branches", image: "https://cloud.activepieces.com/assets/img/custom/piece/branch.svg", path: "/pieces/branches" })
+      default:
+        return (
+          <Link
+            className="p-5 basis-full md:basis-1/3 h-[110px] rounded-lg text-center cursor-pointer hover:bg-whiteCard-100 "
+            key={piece.displayName}
+            href={`/pieces/${piece.name.replace(
+              "@activepieces/piece-",
+              ""
+            )}`}
+          >
+            <div className="flex flex-row items-center">
+              <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
+              <p className="ml-4 text-h3-sm text-black font-bold ">{piece.displayName}</p>
+            </div>
+          </Link>
+        );
+    }
   });
   const allFilteredPieces = () => <>{mapPieceToHTML(filteredPieces)}</>
   const first30FilteredPieces = () => <>{mapPieceToHTML(filteredPieces.slice(0, 30))}</>
+  const CorePieceHTML = (props: { path: string, title: string, image: string }) => {
+    return <Link
+      className="p-5 basis-full md:basis-1/3 h-[110px] rounded-lg text-center cursor-pointer hover:bg-whiteCard-100 "
+      key={props.title}
+      href={props.path}
+    >
+      <div className="flex flex-row items-center">
+        <PieceLogo pieceLogoUrl={props.image} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
+        <p className="ml-4 text-h3-sm text-black font-bold ">{props.title}</p>
+      </div>
+    </Link>
+  }
+
   return (
     <div className="flex-col gap-4 flex justify-center items-center px-1 my-24">
       <div className=" flex flex-col container w-full  gap-10  mb-10">

@@ -1,6 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { Tables } from "./supabase";
+import { PieceBase } from "../utils/piece-helper";
 
 export const getStars = async () => {
   try {
@@ -30,6 +31,22 @@ export const getContributorsCount = async () => {
   }
 
 }
+export type CorePiece = ("webhook" | "loops" | "branches");
+export const corePieces: CorePiece[] = ["webhook", "loops", "branches"]
+export const allPiecesSort = ((a: (CorePiece | PieceBase), b: (CorePiece | PieceBase)) => {
+  if (typeof a === "string" && typeof b === "string") {
+    return a.localeCompare(b);
+  }
+  if (typeof a === "string" && typeof b !== "string") {
+    return a.localeCompare(b.displayName)
+  }
+  if (typeof b === "string" && typeof a !== "string") {
+    return b.localeCompare(a.displayName)
+  }
+  if (typeof a !== "string" && typeof b !== "string")
+    return a.displayName.localeCompare(b.displayName);
+  return 0;
+})
 export const getDiscordMembers = async () => {
   const discord = await fetch("https://discord.com/api/v9/invites/fA8hYBFkHd?with_counts=true&with_expiration=true", {
     next: { revalidate: 3600 }

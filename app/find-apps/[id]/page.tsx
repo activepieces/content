@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { NavigationProps } from "../../../components/navigationProps";
 import { GetPieces } from "../../../utils/piece-helper";
+import { allPiecesSort, corePieces } from "../../../components/utils";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 
 export function generateMetadata(
@@ -30,7 +31,10 @@ export function generateMetadata(
 }
 
 export default async function FindAppsPage({ params }: NavigationProps) {
-    const pieces = (await GetPieces()).filter((piece) => params.id ? piece.displayName.toLowerCase().startsWith(params?.id.toLowerCase()) : true);
+    const pieces = (await GetPieces());
+    const allPieces = [...pieces, ...corePieces].sort(allPiecesSort);
+    const filteredPieces = allPieces
+        .filter((piece) => params.id ? (typeof piece === "string" ? piece.startsWith(params?.id.toLowerCase()) : piece.displayName.toLowerCase().startsWith(params?.id.toLowerCase())) : true);
     return (
         <main className="bg-white py-[80px] min-h-[80vh]">
             <section className="container mx-auto px-4 lg:px-0">
@@ -42,10 +46,17 @@ export default async function FindAppsPage({ params }: NavigationProps) {
                 </div>
 
                 <ul className="columns-1 md:columns-2 lg:columns-4 text-black text-h5-sm mt-[40px]">
-                    {pieces.map((piece, idx) => <li key={idx} className="underline"> <Link href={`/pieces/${piece.name.replace(
-                        "@activepieces/piece-",
-                        ""
-                    )}`}>{piece.displayName}</Link></li>)}
+                    {filteredPieces.map((piece, idx) => <li key={idx} className="underline">
+                        {
+                            piece === "webhook" ? <Link href={`/pieces/webhook`}>Webhook</Link> :
+                                piece === "loops" ? <Link href={`/pieces/loops`}>Loops</Link> :
+                                    piece === "branches" ? <Link href={`/pieces/branches`}>Branches</Link> :
+                                        <Link href={`/pieces/${piece.name.replace(
+                                            "@activepieces/piece-",
+                                            ""
+                                        )}?`} > {piece.displayName}</Link>
+                        }
+                    </li>)}
                 </ul>
                 {pieces.length === 0 && <div className="text-h5-sm text-center text-black "> No apps found </div>}
             </section>
