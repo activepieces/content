@@ -113,12 +113,12 @@ export default async function LoopsPage() {
                             <path d="M47.7145 133.687C46.7289 131.599 44.7973 129.74 42.7374 128.078C39.3654 125.357 35.6495 123.167 35.1694 121.374C34.3961 118.486 37.7855 110.877 35.1694 108.798C32.821 106.933 24.6145 104.174 20.2775 100.633C19.7815 100.229 19.3252 99.8169 18.9464 99.3922C17.5409 97.8219 15.4699 97.4448 13.4416 97.5795C18.4853 116.721 31.5676 132.589 48.8586 141.379C48.9267 138.59 48.678 135.731 47.7145 133.687Z" fill="#EEEEEF" />
                         </svg>
                         <h2 className="lg:w-[855px] text-center text-white text-[50px] lg:text-[80px] md:leading-[90px]  md:text-4xl   font-bold tracking-wider my-[150px]">Explore what you can do with webhooks</h2>
-                        <div className={"text-yellow leading-[50px] lg:leading-[60px] font-normal gap-5 text-[50px] lg:text-[80px] flex   mb-[45px] lg:mb-[50px]  text-center items-center justify-center"}>
+                        <div className={"text-[#3cffb4] leading-[50px] lg:leading-[60px] font-normal gap-5 text-[50px] lg:text-[80px] flex   mb-[45px] lg:mb-[50px]  text-center items-center justify-center"}>
                             <Image
-                                src="../trigger.svg"
-                                alt="Triggers"
-                                width={25}
-                                height={45}
+                                src="../action.svg"
+                                alt="Actions"
+                                width={51.125}
+                                height={51.125}
 
                             />
                             Actions

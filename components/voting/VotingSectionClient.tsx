@@ -144,11 +144,11 @@ export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: 
                             Let us know what piece will make your automation better.
                         </div>
                         <div className="text-h6-sm lg:text-h6-lg bg-white font-normal rounded overflow-hidden p-5 border border-solid border-black  mb-5 ">
-                            <input onChange={(e) => setTitle(e.target.value)} ref={titleElement} required placeholder="Title" id="title" className="focus:outline-none bg-white w-full" ></input>
+                            <input onChange={(e) => setTitle(e.target.value)} ref={titleElement} required placeholder="Piece Name" id="title" className="focus:outline-none bg-white w-full" ></input>
                         </div>
                         <div className="h-[14.5rem] mb-5">
-                            <div className="text-h6-sm lg:text-h6-lg bg-white font-normal p-5 border rounded overflow-hidden border-solid border-black    ">
-                                <textarea ref={descriptionElement} placeholder="Description" id="description" rows={3} className="focus:outline-none bg-white w-full max-h-[11.5625rem] min-h-[4.375rem]" ></textarea>
+                            <div className="text-h6-sm lg:text-h6-lg bg-white font-normal p-5 border rounded overflow-hidden border-solid border-black">
+                                <textarea ref={descriptionElement} placeholder="Which triggers and actions would you like to see?" required id="description" rows={3} className="focus:outline-none bg-white w-full max-h-[11.5625rem] min-h-[4.375rem]" ></textarea>
                             </div>
                         </div>
 
