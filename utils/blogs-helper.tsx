@@ -6,7 +6,11 @@ import matter from "gray-matter";
 
 const supabaseKey = process.env.SUPABASE_ANON_KEY!
 const supabaseUrl = process.env.SUPABASE_URL!
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabase = createClient(supabaseUrl, supabaseKey, {
+  auth: {
+    persistSession: true
+  }
+})
 
 export type BlogPost = {
   slug: string;

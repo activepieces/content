@@ -90,7 +90,7 @@ export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: 
         await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: `http://localhost:1234/request-a-piece?issueId=${issueIdToVoteFor}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
+                redirectTo: `https://www.activepieces.com/request-a-piece?issueId=${issueIdToVoteFor}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
             }
         })
     }
