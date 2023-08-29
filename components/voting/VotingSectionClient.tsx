@@ -27,13 +27,13 @@ const customStyles = {
 
 
 export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: GitHubIssue[], pieces: DetailedPiece[] }) => {
-    const searchParams = useSearchParams()
+    const searchParams = useSearchParams();
     const [votes, setVotes] = useState<Tables<'voting'>[]>(props.votes);
     const [userState, setUser] = useState<User | null>(null);
     const [showDialog, setShowDialog] = useState(false);
     const [issueIdToVoteFor, setissueIdToVoteFor] = useState<string | null>(null);
-    const supabase = createClientComponentClient()
-    const [isPending, startTransition] = useTransition()
+    const supabase = createClientComponentClient();
+    const [isPending, startTransition] = useTransition();
     const [showSuccessfulSubmissionSection, setShowSuccessfulSubmissionSection] = useState(false);
     const [title, setTitle] = useState('');
     const titleElement = useRef<HTMLInputElement>(null);
@@ -90,21 +90,22 @@ export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: 
         await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: `https://activepieces.com/request-a-piece?issueId=${issueIdToVoteFor}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
+                redirectTo: `http://localhost:1234/request-a-piece?issueId=${issueIdToVoteFor}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
             }
         })
     }
 
-    const vote = async (issueId: string, user: User | null) => {
+    const vote = async (issueId: string | number, user: User | null) => {
         debugger;
-        setissueIdToVoteFor(issueId);
+        const stringifiedIssueId = issueId.toString();
+        setissueIdToVoteFor(stringifiedIssueId);
         if (!user) {
             setShowDialog(true)
             return;
         }
-        if (user && !votes.find(v => v.issueId == issueId && v.userId === user.id)) {
-            await supabase.from('voting').insert({ issueId: issueId, userId: user?.id })
-            setVotes([...votes, { issueId: issueId, userId: user.id, created_at: new Date().toISOString() }])
+        if (user && !votes.find(v => v.issueId == stringifiedIssueId && v.userId === user.id)) {
+            await supabase.from('voting').insert({ issueId: stringifiedIssueId, userId: user?.id })
+            setVotes([...votes, { issueId: stringifiedIssueId, userId: user.id, created_at: new Date().toISOString() }])
         }
     }
 

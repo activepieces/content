@@ -56,6 +56,7 @@ export const getDiscordMembers = async () => {
   return members;
 }
 export type GitHubIssue = {
+  //needs to be converted to number
   id: string,
   title: string,
   created_at: string,
