@@ -33,7 +33,7 @@ export const appsUserChanges: ActionApp[] = [
     {
         appName: '@activepieces/piece-telegram-bot',
         icon: 'https://cdn.activepieces.com/pieces/telegram_bot.png',
-        displayName: 'Telgram',
+        displayName: 'Telegram',
         actionName: 'send_text_message',
     },
     {
