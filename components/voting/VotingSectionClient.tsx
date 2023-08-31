@@ -5,7 +5,7 @@ import { GitHubIssue, GithubCreateIssueRequest } from "../utils"
 import { useEffect, useRef, useState, useTransition } from "react"
 import Modal from 'react-modal';
 import { useSearchParams } from "next/navigation"
-import { createIssueAction } from "./CreateIssueAction"
+import { createIssueAction, createVoteAction } from "./VotingServerActions"
 import { DetailedPiece } from "../../utils/piece-helper"
 import { SimilarIssues } from "./SimilarIssues"
 import { ExisttingPieces } from "./ExistingPieces"
@@ -43,7 +43,12 @@ export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: 
     function createIssueAndVoteForIt(issue: GithubCreateIssueRequest, user: User) {
         return async () => {
             const response: { issueId: string } = await createIssueAction(issue)
-            await supabase.from('voting').insert({ issueId: response.issueId, userId: user?.id })
+            await createVoteAction(response.issueId);
+        }
+    }
+    function createVote(issueId: string) {
+        return async () => {
+            await createVoteAction(issueId);
         }
     }
     const toggleRequestAPieceSection = (show: boolean) => {
@@ -104,7 +109,7 @@ export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: 
             return;
         }
         if (user && !votes.find(v => v.issueId == stringifiedIssueId && v.userId === user.id)) {
-            await supabase.from('voting').insert({ issueId: stringifiedIssueId, userId: user?.id })
+            startTransition(createVote(stringifiedIssueId))
             setVotes([...votes, { issueId: stringifiedIssueId, userId: user.id, created_at: new Date().toISOString() }])
         }
     }

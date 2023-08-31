@@ -5,8 +5,7 @@ import { Tables } from "./supabase";
 export const getSupabaseVotes = async () => {
     const supabase = createServerComponentClient({ cookies })
     const { error, count } = await supabase.from('voting').select('*', { count: 'exact' }).limit(1).single();
-    console.log(count);
-    console.log(error);
+    if (error) { console.log(error); }
     const countPerPage = 1000;
     let from = 0;
     let to = countPerPage;
@@ -19,7 +18,6 @@ export const getSupabaseVotes = async () => {
             to += countPerPage;
         }
     }
-    console.log("number of votes:" + fullData?.length)
     return fullData;
 
 }
