@@ -12,7 +12,9 @@ export async function createIssueAction(issue: GithubCreateIssueRequest) {
     if (user.error || user.data === null) {
         throw Error("User not logged in")
     }
+
     const response = await fetch("https://cloud.activepieces.com/api/v1/webhooks/Xiw53fa6hjA1fIoh29ECR/sync", { method: "POST", body: JSON.stringify(issue), headers: { "Content-Type": "application/json" } });
+    const notifyDiscrod = await fetch("https://cloud.activepieces.com/api/v1/webhooks/UQUIwoTLJO3RJb17ZtAze", { method: "POST", body: JSON.stringify(issue), headers: { "Content-Type": "application/json" } });
     return response.json();
 }
 
