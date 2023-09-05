@@ -47,7 +47,7 @@ export function CollapsibleProperties(props: CollapsiblePropertiesProps) {
     DYNAMIC: "Dynamic",
     CUSTOM_AUTH: "connection.svg",
     DATE_TIME: "date.svg",
-    FILE: "file.svg",
+    FILE: "files.svg",
   };
   useEffect(() => {
     if (props.expand) {
