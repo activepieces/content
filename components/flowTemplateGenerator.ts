@@ -198,14 +198,14 @@ export const aiTemplates = [
   export const leadsTemplatesDeps: TemplateDeps[] = [
     {
       trigger: {
-        pieceName: "@activepieces/piece-facebook-leads",
-        triggerName: "new_lead"
+        pieceName: "@activepieces/piece-google-calendar",
+        triggerName: "new_or_updated_event"
       },
       action: {
         pieceName: "@activepieces/piece-hubspot",
         actionName: "create_contact"
       },
-      description: "Add Facebook Leads as HubSpot Contacts"
+      description: "Add Google Calendar attendee as a HubSpot contact"
     },
     {
       trigger:

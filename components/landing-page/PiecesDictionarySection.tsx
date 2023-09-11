@@ -42,7 +42,6 @@ const popularStuff = [
             { title: "Pipedrive", link: "/pieces/pipedrive" },
             { title: "Email", link: "/pieces/imap" },
             { title: "Typeform", link: "/pieces/typeform" },
-            { title: "Facebook leads", link: "/pieces/facebook-leads" },
             { title: "Stripe", link: "/pieces/stripe" },
             { title: "Google Sheets", link: "/pieces/google-sheets" },
             { title: "Spotify", link: "/pieces/spotify" },
