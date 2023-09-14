@@ -13,7 +13,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                     <div className="text-h5-sm lg:text-h3-sm bg-[#ECF2FA] p-5 lg:p-6 border-b border-solid border-[#B2B2B2]">
                         Requested
                     </div>
-                    <div className="thin-scrollbars overflow-y-auto max-h-[36.5625rem] min-h-[36.5625rem] px-6 ">
+                    <div className="thin-scrollbars overflow-y-auto max-h-[36.5625rem] min-h-[36.5625rem] px-6 overflow-x-hidden">
                         <div className="flex flex-col divide-y divide-y-solid  divide-y-white divide-y-opacity-30 ">
                             {props.issues.filter(issue => issue.state === "open" && issue.assignees.length === 0).map((issue, index) => {
                                 return <div key={index + "requested"} className="flex gap-5 py-8 items-center">
@@ -32,9 +32,18 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                         <div className="text-black font-semibold ">
                                             {issue.title}
                                         </div>
-                                        <div className="text-black text-opacity-60 font-normal">
+                                        <div className="text-black text-opacity-60 font-normal ">
                                             Requested on {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+
                                         </div>
+                                        {
+                                            issue.labels.find(l => l.name === "blocked") && <div className="flex">
+                                                <div className="rounded-full bg-danger-dark text-h6-sm text-white !font-bold flex items-center justify-center px-2 ">
+                                                    blocked
+                                                </div>
+                                            </div>
+                                        }
+
                                     </Link>
                                 </div>
 

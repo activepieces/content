@@ -36,6 +36,10 @@ module.exports = {
         whiteCard: {
           100: '#F7F7F7',
         },
+        danger:{
+          DEFAULT: 'rgb(253, 155, 157)',
+          dark: 'rgb(255, 89, 92)'
+        },
         muted: {
           DEFAULT: '#828282',
         },
@@ -135,6 +139,7 @@ module.exports = {
           letterSpacing: '0.55px',
           fontWeight: '400',
         }],
+
       },
     container: {
    
