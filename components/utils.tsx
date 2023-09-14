@@ -97,3 +97,10 @@ export const getPiecesIssuesOnGithub = async () => {
   }
   return issues;
 }
+
+export type IssueVotes = {
+  vote_count: number,
+  issue_id: string,
+  userVoted: boolean,
+
+};

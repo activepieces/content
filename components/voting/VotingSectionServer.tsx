@@ -1,10 +1,10 @@
 import { DetailedPiece, GetPiece, GetPieces } from "../../utils/piece-helper";
-import { getSupabaseVotes } from "../server_utils";
+import { getSupabaseVotes, getSupabaseVotesForIssues } from "../server_utils";
 import { getPiecesIssuesOnGithub } from "../utils";
 import { VotingSectionClient } from "./VotingSectionClient";
 
 export const VotingSectionServer = async () => {
-    const votes = await getSupabaseVotes();
+    ;
     let githubIssues = await getPiecesIssuesOnGithub();
     //sort by how many issueIds have votes
 
@@ -14,12 +14,11 @@ export const VotingSectionServer = async () => {
         const detailedPiece = await GetPiece(piece.name);
         detailedPieces.push(detailedPiece);
     }
-    if (votes === null) {
-        throw Error("Votes are null")
-    }
+    const votes = await getSupabaseVotesForIssues();
+
     githubIssues = githubIssues.sort((a, b) => {
-        const aVotes = votes.filter(v => v.issueId == a.id).length;
-        const bVotes = votes.filter(v => v.issueId == b.id).length;
+        const aVotes = votes.find(v => v.issue_id == a.id)?.vote_count ?? 0;
+        const bVotes = votes.find(v => v.issue_id == b.id)?.vote_count ?? 0;
         if (aVotes > bVotes) {
             return -1;
         }

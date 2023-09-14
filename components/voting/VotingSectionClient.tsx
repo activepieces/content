@@ -1,7 +1,7 @@
 'use client'
 import { User, createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { Tables } from "../supabase"
-import { GitHubIssue, GithubCreateIssueRequest } from "../utils"
+import { GitHubIssue, GithubCreateIssueRequest, IssueVotes } from "../utils"
 import { useEffect, useRef, useState, useTransition } from "react"
 import Modal from 'react-modal';
 import { useSearchParams } from "next/navigation"
@@ -26,9 +26,9 @@ const customStyles = {
 };
 
 
-export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: GitHubIssue[], pieces: DetailedPiece[] }) => {
+export const VotingSectionClient = (props: { votes: IssueVotes[], issues: GitHubIssue[], pieces: DetailedPiece[] }) => {
     const searchParams = useSearchParams();
-    const [votes, setVotes] = useState<Tables<'voting'>[]>(props.votes);
+    const [votes, setVotes] = useState<IssueVotes[]>(props.votes);
     const [userState, setUser] = useState<User | null>(null);
     const [showDialog, setShowDialog] = useState(false);
     const [issueIdToVoteFor, setissueIdToVoteFor] = useState<string | null>(null);
@@ -108,9 +108,14 @@ export const VotingSectionClient = (props: { votes: Tables<'voting'>[], issues: 
             setShowDialog(true)
             return;
         }
-        if (user && !votes.find(v => v.issueId == stringifiedIssueId && v.userId === user.id)) {
+        const issueVotes = votes.find(v => v.issue_id == stringifiedIssueId);
+        if (user && issueVotes && !issueVotes.userVoted) {
             startTransition(createVote(stringifiedIssueId))
-            setVotes([...votes, { issueId: stringifiedIssueId, userId: user.id, created_at: new Date().toISOString() }])
+            const newVotes = [...votes];
+            const idx = newVotes.findIndex(v => v.issue_id == stringifiedIssueId);
+            newVotes[idx].vote_count++;
+            newVotes[idx].userVoted = true;
+            setVotes(newVotes)
         }
     }
 
