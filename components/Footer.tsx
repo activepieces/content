@@ -68,6 +68,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-[25px]">
               {/* <Link className="hover:text-white" href="typeformURL" target="_blank" rel="noopener noreferer">Support</Link> */}
+              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://community.activepieces.com/">Community </Link>
               <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://discord.com/invite/2jUXBKDdP8">Discord </Link>
               <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://status.activepieces.com/">System Status</Link>
             </div>
