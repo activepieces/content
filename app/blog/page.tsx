@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
 import { BlogPost, getBlogs } from "@/utils/blogs-helper";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,9 +37,11 @@ function BlogCard({ post }: { post: BlogPost }) {
       <div className="flex flex-col h-[460px] rounded overflow-hidden shadow-lg border border-black rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1">
         <div className="h-[220px] md:w-[469px] w-full relative">
           <Image
+
             src={post.meta.thumbnail}
             alt="Blog thumbnail"
             fill={true}
+            sizes="50vw"
             className="object-cover w-full"
           />
         </div>
@@ -54,8 +58,8 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default async function BlogIndex() {
   // Fetch data
-
-  const posts = await getBlogs();
+  const supabase = createServerComponentClient({ cookies })
+  const posts = await getBlogs(supabase);
 
   return (
     <><main className="bg-white ">

@@ -1,16 +1,13 @@
-import { createClient } from "@supabase/supabase-js";
+
 import { formatDate } from "@/utils/date-helper";
 import { join } from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { SupabaseClient, createServerActionClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
-const supabaseKey = process.env.SUPABASE_ANON_KEY!
-const supabaseUrl = process.env.SUPABASE_URL!
-const supabase = createClient(supabaseUrl, supabaseKey, {
-  auth: {
-    persistSession: true
-  }
-})
+
+
 
 export type BlogPost = {
   slug: string;
@@ -22,8 +19,8 @@ export type BlogPost = {
   };
 };
 
-async function getFirebaseBlogs(): Promise<BlogPost[]> {
-  const { data, error } = await supabase
+async function getSupabaseBlogs(supabaseClient: SupabaseClient): Promise<BlogPost[]> {
+  const { data, error } = await supabaseClient
     .from('blogs')
     .select('*').eq('status', 'published')
     .order('created_at', { ascending: false })
@@ -48,7 +45,6 @@ async function getLocalBlogs() {
   let posts: BlogPost[] = [];
   const docsDirectory = join(process.cwd(), "content", "blog");
   const files = fs.readdirSync(docsDirectory);
-
   for (const fileName of files) {
     const fullPath = join(docsDirectory, fileName);
     const fileContents = await fs.promises.readFile(fullPath, "utf8");
@@ -66,10 +62,10 @@ async function getLocalBlogs() {
 }
 
 
-export const getBlogs = async () => {
+export const getBlogs = async (supabaseClient: SupabaseClient) => {
   const localBlogs = await getLocalBlogs();
-  const firebaseBlogs = await getFirebaseBlogs()
-  const posts = [...localBlogs, ...firebaseBlogs].sort((a, b) => {
+  const supabaseBlogs = await getSupabaseBlogs(supabaseClient)
+  const posts = [...localBlogs, ...supabaseBlogs].sort((a, b) => {
     return new Date(b.meta.publishedOn).getTime() - new Date(a.meta.publishedOn).getTime()
   })
   return posts

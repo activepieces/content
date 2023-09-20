@@ -6,9 +6,11 @@ import Link from 'next/link'
 import { PieceBase } from '../../utils/piece-helper'
 import { Tooltip } from 'react-tooltip'
 import { allPiecesSort, corePieces, CorePiece } from '../utils'
-const mapPieceToHTML = (piece: (PieceBase), idx: number) => {
+const PieceElement = (props: { piece: (PieceBase), idx: number }) => {
+    const piece = props.piece;
+    const idx = props.idx;
     return <>
-        <Link id={"piece-" + idx} key={idx} href={`/pieces/${piece.name.replace(
+        <Link id={"piece-" + idx} href={`/pieces/${piece.name.replace(
             "@activepieces/piece-",
             ""
         )}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
@@ -24,11 +26,13 @@ const mapPieceToHTML = (piece: (PieceBase), idx: number) => {
         />
     </>
 }
-const mapCorePieceToHtml = (piece: CorePiece, idx: number) => {
+const CorePieceElement = (props: { piece: CorePiece, idx: number }) => {
+    const piece = props.piece;
+    const idx = props.idx;
     const displayName = piece === "webhook" ? "Webhook" : piece === "loops" ? "Loops" : "Branches";
     const logoUrl = piece === "webhook" ? "https://cloud.activepieces.com/assets/img/custom/piece/webhook.svg" : piece === "loops" ? "https://cloud.activepieces.com/assets/img/custom/piece/loop.svg" : "https://cloud.activepieces.com/assets/img/custom/piece/branch.svg";
     return <>
-        <Link id={"piece-" + idx} key={idx} href={`/pieces/${piece}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
+        <Link id={"piece-" + idx} href={`/pieces/${piece}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
             <Image loading="eager" src={logoUrl} alt={displayName} width={92} height={92} className='h-[67px] w-[67px] lg:w-[92px] lg:h-[92px] object-contain' ></Image>
         </Link>
         <Tooltip
@@ -61,8 +65,8 @@ export const PiecesCarousel = (props: { pieces: PieceBase[] }) => {
                 {
                     pieces.map((piece, idx) => {
                         if (typeof piece === "string")
-                            return mapCorePieceToHtml(piece, idx);
-                        return mapPieceToHTML(piece, idx);
+                            return <CorePieceElement piece={piece} idx={idx} key={idx}></CorePieceElement>
+                        return <PieceElement piece={piece} idx={idx} key={idx}></PieceElement>;
                     })
                 }
             </div>
