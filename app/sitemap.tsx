@@ -1,6 +1,8 @@
 import { getBlogs } from '@/utils/blogs-helper'
 import { GetPieces } from '@/utils/piece-helper'
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { MetadataRoute } from 'next'
+import { cookies } from 'next/headers'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const simpleRoutes = [
@@ -21,8 +23,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   pieces.forEach((piece) => {
     simpleRoutes.push(`/pieces/${piece.name.replace('@activepieces/piece-', '')}`)
   })
-
-  const blogs = await getBlogs()
+  const supabase = createServerComponentClient({ cookies })
+  const blogs = await getBlogs(supabase)
   blogs.forEach((blog) => {
     simpleRoutes.push(`/blog/${blog.slug}`)
   })
