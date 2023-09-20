@@ -3,9 +3,8 @@ import { formatDate } from "@/utils/date-helper";
 import { join } from "path";
 import fs from "fs";
 import matter from "gray-matter";
-import { SupabaseClient, createServerActionClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-
+import { SupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@supabase/supabase-js";
 
 
 
@@ -62,7 +61,14 @@ async function getLocalBlogs() {
 }
 
 
-export const getBlogs = async (supabaseClient: SupabaseClient) => {
+export const getBlogs = async () => {
+  const supabaseKey = process.env.SUPABASE_ANON_KEY!
+  const supabaseUrl = process.env.SUPABASE_URL!
+  const supabaseClient = createClient(supabaseUrl, supabaseKey, {
+    auth: {
+      persistSession: false
+    }
+  })
   const localBlogs = await getLocalBlogs();
   const supabaseBlogs = await getSupabaseBlogs(supabaseClient)
   const posts = [...localBlogs, ...supabaseBlogs].sort((a, b) => {

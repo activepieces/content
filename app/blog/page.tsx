@@ -3,8 +3,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
 import { BlogPost, getBlogs } from "@/utils/blogs-helper";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -58,8 +56,8 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default async function BlogIndex() {
   // Fetch data
-  const supabase = createServerComponentClient({ cookies })
-  const posts = await getBlogs(supabase);
+
+  const posts = await getBlogs();
 
   return (
     <><main className="bg-white ">

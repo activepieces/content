@@ -1,7 +1,9 @@
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { DetailedPiece, GetPiece, GetPieces } from "../../utils/piece-helper";
-import { getSupabaseVotes, getSupabaseVotesForIssues } from "../server_utils";
+import { getSupabaseVotesForIssues } from "../server_utils";
 import { getPiecesIssuesOnGithub } from "../utils";
 import { VotingSectionClient } from "./VotingSectionClient";
+import { cookies } from "next/headers";
 
 export const VotingSectionServer = async () => {
     ;
@@ -14,7 +16,8 @@ export const VotingSectionServer = async () => {
         const detailedPiece = await GetPiece(piece.name);
         detailedPieces.push(detailedPiece);
     }
-    const votes = await getSupabaseVotesForIssues();
+    const supabase = createServerComponentClient({ cookies })
+    const votes = await getSupabaseVotesForIssues(supabase);
 
     githubIssues = githubIssues.sort((a, b) => {
         const aVotes = votes.find(v => v.issue_id == a.id)?.vote_count ?? 0;
