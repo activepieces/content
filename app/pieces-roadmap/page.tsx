@@ -2,7 +2,7 @@
 import { Metadata } from "next";
 import { VotingPageMainSection } from "../../components/voting/VotingMainSection";
 import { VotingSectionServer } from "../../components/voting/VotingSectionServer";
-
+export const dynamic = 'force-dynamic'
 export async function generateMetadata(): Promise<Metadata> {
   const title = "Request a piece - Activepieces";
   const description = "Vote for/suggest apps you would like to automate with Activepieces, the no-code business automation tool for all your work"

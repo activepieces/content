@@ -1,30 +1,12 @@
 
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import { Tables } from "./supabase";
+'use server'
+import { SupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { IssueVotes } from "./utils";
-export const getSupabaseVotes = async () => {
-    const supabase = createServerComponentClient({ cookies })
-    const { error, count } = await supabase.from('voting').select('*', { count: 'exact' }).limit(1).single();
-    if (error) { console.log(error); }
-    const countPerPage = 1000;
-    let from = 0;
-    let to = countPerPage;
-    let fullData: Tables<'voting'>[] = [];
-    if (count) {
-        while (from < count) {
-            const { data: newData }: { data: Tables<'voting'>[] | null } = await supabase.from('voting').select('*').range(from, to);
-            fullData = fullData.concat(newData ?? []);
-            from += countPerPage;
-            to += countPerPage;
-        }
-    }
-    return fullData;
 
-}
 
-export const getSupabaseVotesForIssues = async () => {
-    const supabase = createServerComponentClient({ cookies })
+
+export const getSupabaseVotesForIssues = async (supabase: SupabaseClient) => {
+
     const { error, data } = (await supabase.rpc('get_issues_votes'));
     if (error) { console.error(error); }
     if (data === null) {
