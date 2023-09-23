@@ -52,13 +52,12 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-EXPOSE 3000
 
 ENV PORT 3000
-ENV HOSTNAME localhost
 
 # Set up entrypoint script
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
+EXPOSE 3000
