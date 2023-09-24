@@ -31,7 +31,7 @@ const nextConfig = {
   },
   images: {
     formats:['image/avif', 'image/webp'],
-    domains: ['cdn.activepieces.com', 'cloud.activepieces.com', 'auth.activepieces.com', 'ywkdmxjwsazhcvocivgw.supabase.co'],
+    domains: ['cdn.activepieces.com', 'cloud.activepieces.com', 'auth.activepieces.com', 'ywkdmxjwsazhcvocivgw.supabase.co','cdn.llmrails.com'],
   },
   experimental: {
     serverActions: true
