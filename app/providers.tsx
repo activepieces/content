@@ -6,7 +6,8 @@ import { useEffect } from "react";
 
 if (typeof window !== 'undefined') {
   posthog.init('phc_7F92HoXJPeGnTKmYv0eOw62FurPMRW9Aqr0TPrDzvHh', {
-    api_host: 'https://app.posthog.com'
+    api_host: 'https://app.posthog.com',
+    opt_in_site_apps: true
   })
 }
 

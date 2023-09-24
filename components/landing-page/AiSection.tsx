@@ -82,7 +82,7 @@ const AiSection = (props: {
                     marginLeft: marginLeft
                 }
             } className='flex gap-[15px] overflow-x-scroll px-4 lg:px-0 ai-cards-slider items-center pt-[40px] lg:pt-[80px]' ref={sliderDiv}>
-                <Image src="/most_used.svg" width={64} height={48} alt='most used' className='w-[64px] h-[78px] -mr-[30px] z-40'>
+                <Image src="/most_used.svg" width={64} height={78} alt='most used' className='w-[64px] h-[78px] -mr-[30px] z-40'>
 
                 </Image>
                 {
