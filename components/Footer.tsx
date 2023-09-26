@@ -89,7 +89,7 @@ export default function Footer() {
       </div>
       <div className="mx-auto container  flex-wrap items-center px-4 lg:px-0 flex justify-center lg:justify-between py-[40px] ">
         <div className="flex items-center text-lg gap-[10px] text-white ">
-          Backed by <Image src="/Y_Combinator.svg" height={40.3} width={140} alt="Y Combinator"></Image>
+          Backed by <Image src="/Y_Combinator.svg" height={40.3} width={140} className="w-[140px] h-auto" alt="Y Combinator"></Image>
         </div>
         <div className="flex gap-[15px] w-[210px] flex-wrap md:w-[initial] justify-center lg:justify-start mt-[40px] lg:mt-0">
           <Link className="hover:text-white" href="/privacy">Privacy</Link>
