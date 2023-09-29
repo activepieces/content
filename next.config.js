@@ -30,7 +30,7 @@ const nextConfig = {
     ]
   },
   images: {
-    formats:['image/avif', 'image/webp'],
+    unoptimized: true,
     domains: ['cdn.activepieces.com', 'cloud.activepieces.com', 'auth.activepieces.com', 'ywkdmxjwsazhcvocivgw.supabase.co','cdn.llmrails.com'],
   },
   experimental: {
