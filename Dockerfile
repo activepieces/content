@@ -51,7 +51,6 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 ENV PORT 3000
-ENV HOSTNAME localhost
 
 # Set up entrypoint script
 COPY docker-entrypoint.sh /
