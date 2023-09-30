@@ -1,4 +1,5 @@
 FROM node:18-slim AS base
+RUN apt-get update && apt-get install -y curl
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -19,7 +20,6 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
@@ -51,6 +51,7 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 ENV PORT 3000
+ENV HOSTNAME localhost
 
 # Set up entrypoint script
 COPY docker-entrypoint.sh /
