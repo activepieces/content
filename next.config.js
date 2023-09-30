@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  trailingSlash: true,
   async rewrites() {
     return [
       {
@@ -30,6 +29,7 @@ const nextConfig = {
       }
     ]
   },
+  basePath: '',
   images: {
     unoptimized: true,
     domains: ['cdn.activepieces.com', 'cloud.activepieces.com', 'auth.activepieces.com', 'ywkdmxjwsazhcvocivgw.supabase.co','cdn.llmrails.com'],
