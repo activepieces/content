@@ -11,6 +11,7 @@ import CombinationsMakerSection from "../../components/landing-page/Combinations
 import { VisibilitySection } from "../../components/features-page/VisibilitySection";
 import { FeaturesSection } from "../../components/features-page/FeaturesSection";
 import { FeaturesCarousel } from "../../components/features-page/FeaturesCarousel";
+import { redirect } from "next/navigation";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,6 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function FindAppsPage() {
     const pieces = (await GetPieces())
+    if (!pieces) {
+        redirect("/404");
+    }
     return <>
         <main className="bg-[#000000] pt-[80px] border border-solid border-[#000000]">
             <section className="container mx-auto px-4 lg:px-0">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
 import { BlogPost, getBlogs } from "@/utils/blogs-helper";
+import { redirect } from "next/navigation";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -56,8 +57,15 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default async function BlogIndex() {
   // Fetch data
+  let posts: BlogPost[] = [];
+  try {
+    posts = await getBlogs();
+  }
+  catch (ex) {
+    console.error(ex);
+    redirect("/404");
+  }
 
-  const posts = await getBlogs();
 
   return (
     <><main className="bg-white ">
