@@ -104,7 +104,7 @@ export async function generateMetadata({
     };
   }
   catch (ex) {
-    console.error(JSON.stringify(ex));
+    console.error(ex);
     return {};
 
   }
@@ -159,7 +159,7 @@ export default async function BlogPost({ params, searchParams }: NavigationProps
     );
   }
   catch (ex) {
-    console.error(JSON.stringify(ex));
+    console.error((ex));
     redirect("/404");
   }
 

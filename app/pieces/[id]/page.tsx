@@ -43,7 +43,7 @@ export async function generateMetadata(
     return {}
   }
   catch (ex) {
-    console.error(JSON.stringify(ex));
+    console.error((ex));
     return {
 
     }

@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   }
   catch (ex) {
-    console.error(JSON.stringify(ex))
+    console.error(ex)
   }
 
 
