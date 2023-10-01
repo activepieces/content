@@ -18,9 +18,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/pieces/webhook',
   ]
   const pieces = await GetPieces()
-  pieces.forEach((piece) => {
-    simpleRoutes.push(`/pieces/${piece.name.replace('@activepieces/piece-', '')}`)
-  })
+  if (pieces) {
+    pieces.forEach((piece) => {
+      simpleRoutes.push(`/pieces/${piece.name.replace('@activepieces/piece-', '')}`)
+    })
+  }
+
 
   const blogs = await getBlogs()
   blogs.forEach((blog) => {

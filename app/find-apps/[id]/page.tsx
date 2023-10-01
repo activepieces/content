@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NavigationProps } from "../../../components/navigationProps";
 import { GetPieces } from "../../../utils/piece-helper";
 import { allPiecesSort, corePieces } from "../../../components/utils";
+import { redirect } from "next/navigation";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 
 export function generateMetadata(
@@ -32,6 +33,9 @@ export function generateMetadata(
 
 export default async function FindAppsPage({ params }: NavigationProps) {
     const pieces = (await GetPieces());
+    if (!pieces) {
+        redirect("/404")
+    }
     const allPieces = [...pieces, ...corePieces].sort(allPiecesSort);
     const filteredPieces = allPieces
         .filter((piece) => params.id ? (typeof piece === "string" ? piece.startsWith(params?.id.toLowerCase()) : piece.displayName.toLowerCase().startsWith(params?.id.toLowerCase())) : true);

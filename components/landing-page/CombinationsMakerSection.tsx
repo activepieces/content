@@ -6,15 +6,18 @@ import CombinationsCreator from './CombinationsCreator';
 const CombinationsMakerSection = async () => {
 
     const pieces = await GetPieces();
+    if (!pieces) return (<></>);
     const piecesWithTriggers = pieces.filter(piece => piece.triggers > 0);
     const piecesWithActions = pieces.filter(piece => piece.actions > 0);
     const triggersPieces: DetailedPiece[] = []
     const actionsPieces: DetailedPiece[] = [];
     for (const p of piecesWithTriggers) {
-        triggersPieces.push(await GetPiece(p.name));
+        const rp = await GetPiece(p.name);
+        if (rp) { triggersPieces.push(rp); }
     }
     for (const p of piecesWithActions) {
-        actionsPieces.push(await GetPiece(p.name));
+        const rp = await GetPiece(p.name);
+        if (rp) { actionsPieces.push(rp); }
     }
 
     return (
