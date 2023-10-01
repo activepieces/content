@@ -40,6 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `https://www.activepieces.com${path}`,
       lastModified: new Date(),
     })),
+
   ]
 }
 
