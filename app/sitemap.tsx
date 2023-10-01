@@ -24,11 +24,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   }
 
+  try {
+    const blogs = await getBlogs()
+    blogs.forEach((blog) => {
+      simpleRoutes.push(`/blog/${blog.slug}`)
+    })
+  }
+  catch (ex) {
+    console.error(JSON.stringify(ex))
+  }
 
-  const blogs = await getBlogs()
-  blogs.forEach((blog) => {
-    simpleRoutes.push(`/blog/${blog.slug}`)
-  })
 
   return [
     ...simpleRoutes.map((path) => ({
