@@ -77,7 +77,7 @@ export const getPiecesIssuesOnGithub = async () => {
   let issues: GitHubIssue[] = [];
   const per_page = 100;
   while (true) {
-    const issuesRequest = await fetch(`https://api.github.com/repos/activepieces/activepieces/issues?state=all&per_page=${per_page}&page=${currentPage}&labels=🔌%20pieces`, {
+    const issuesRequest = await fetch(`https://api.github.com/repos/activepieces/under-review/issues?state=all&per_page=${per_page}&page=${currentPage}`, {
       next: { revalidate: 1 },
       headers: {
         'Authorization': "Bearer " + process.env.GITHUB_TOKEN,

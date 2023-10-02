@@ -27,7 +27,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                         </div>
 
                                     </button>
-                                    <Link href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
+                                    <Link href={"https://github.com/activepieces/under-review/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
                                         <div className="text-black font-semibold ">
                                             {issue.title}
                                         </div>
@@ -58,7 +58,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                     <div className="thin-scrollbars overflow-y-auto  lg:max-h-[36.5625rem] lg:min-h-[36.5625rem] px-6 ">
                         <div className="flex flex-col divide-y divide-y-solid  divide-y-white divide-y-opacity-30 ">
                             {props.issues.filter(issue => issue.state === "open" && issue.assignees.length > 0).map((issue, index) => {
-                                return <Link key={index + "inprogress"} href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex gap-5 py-8 items-center">
+                                return <Link key={index + "inprogress"} href={"https://github.com/activepieces/under-review/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex gap-5 py-8 items-center">
                                     <div className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
                                         <div className="text-black font-semibold ">
                                             {issue.title}

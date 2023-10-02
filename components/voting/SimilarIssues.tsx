@@ -31,7 +31,7 @@ export const SimilarIssues = (props: { issues: GitHubIssue[], search: string, vo
                                 </div>
 
                             </button>
-                            <Link href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
+                            <Link href={"https://github.com/activepieces/under-review/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
                                 <div className="text-black font-semibold ">
                                     {issue.title}
                                 </div>
