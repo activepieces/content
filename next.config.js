@@ -23,8 +23,13 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/pieces-roadmap',
+        destination: 'https://community.activepieces.com/c/feature-requests/9',
+        permanent: true
+      },
+      {
         source: '/request-a-piece',
-        destination: '/pieces-roadmap',
+        destination: 'https://community.activepieces.com/c/feature-requests/9',
         permanent: true,
       }
     ]
