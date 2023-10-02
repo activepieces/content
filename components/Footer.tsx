@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import { ApLink } from "./MyLink";
 export default function Footer() {
   return (
     <footer className=" lg:text-left   text-[#C3C3C3]  bg-[#000000]">
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="flex container mx-auto px-4 lg:px-0 flex-wrap border-solid pb-[80px] pt-[40px] ">
         <div className="flex flex-col gap-4 basis-full lg:basis-[initial] lg:mr-[150px] mb-[80px] lg:mb-0">
 
-          <Link className="text-center lg:text-left" href="/">
+          <ApLink className="text-center lg:text-left" href="/">
             <Image
               src="https://cdn.activepieces.com/brand/full-logo-white.svg"
               alt="Activepieces Logo"
@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="text-white py-4">
               ©{new Date().getFullYear()} Activepieces, Inc.
             </div>
-          </Link>
+          </ApLink>
         </div>
 
         <nav className="text-lg  flex flex-wrap justify-center  gap-[118px] lg:gap-[180px]">
@@ -31,10 +31,10 @@ export default function Footer() {
               Product
             </div>
             <div className="flex flex-col gap-[25px]">
-              <Link className="hover:text-white" href="/features">Features </Link>
-              <Link className="hover:text-white" href="/pricing">Pricing</Link>
-              <Link className="hover:text-white" href="/pieces">Pieces</Link>
-              <Link className="hover:text-white" href="/pieces-roadmap">Pieces Roadmap</Link>
+              <ApLink className="hover:text-white" href="/features">Features </ApLink>
+              <ApLink className="hover:text-white" href="/pricing">Pricing</ApLink>
+              <ApLink className="hover:text-white" href="/pieces">Pieces</ApLink>
+              <ApLink className="hover:text-white" href="/pieces-roadmap">Pieces Roadmap</ApLink>
             </div>
 
           </div>
@@ -45,9 +45,9 @@ export default function Footer() {
               Open Source
             </div>
             <div className="flex flex-col gap-[25px]">
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">GitHub </Link>
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/developers/overview">Contribute</Link>
-              <Link className="hover:text-white" href="https://github.com/activepieces/activepieces/blob/main/LICENSE" target="_blank" rel="noopener noreferer">MIT License</Link>
+              <ApLink className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://github.com/activepieces/activepieces">GitHub </ApLink>
+              <ApLink className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/developers/overview">Contribute</ApLink>
+              <ApLink className="hover:text-white" href="https://github.com/activepieces/activepieces/blob/main/LICENSE" target="_blank" rel="noopener noreferer">MIT License</ApLink>
             </div>
 
           </div>
@@ -56,9 +56,9 @@ export default function Footer() {
               Resources
             </div>
             <div className="flex flex-col gap-[25px]">
-              {/* <Link className="hover:text-white" href="/blog?category=tutorials" target="_blank" rel="noopener noreferer">Tutorials</Link> */}
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/">Docs </Link>
-              <Link className="hover:text-white" href="/blog">Blog</Link>
+              {/* <ApLink className="hover:text-white" href="/blog?category=tutorials" target="_blank" rel="noopener noreferer">Tutorials</ApLink> */}
+              <ApLink className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://www.activepieces.com/docs/">Docs </ApLink>
+              <ApLink className="hover:text-white" href="/blog">Blog</ApLink>
             </div>
 
           </div>
@@ -67,10 +67,10 @@ export default function Footer() {
               Get Help
             </div>
             <div className="flex flex-col gap-[25px]">
-              {/* <Link className="hover:text-white" href="typeformURL" target="_blank" rel="noopener noreferer">Support</Link> */}
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://community.activepieces.com/">Community </Link>
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://discord.com/invite/2jUXBKDdP8">Discord </Link>
-              <Link className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://status.activepieces.com/">System Status</Link>
+              {/* <ApLink className="hover:text-white" href="typeformURL" target="_blank" rel="noopener noreferer">Support</ApLink> */}
+              <ApLink className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://community.activepieces.com/">Community </ApLink>
+              <ApLink className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://discord.com/invite/2jUXBKDdP8">Discord </ApLink>
+              <ApLink className="hover:text-white" target="_blank" rel="noopener noreferer" href="https://status.activepieces.com/">System Status</ApLink>
             </div>
 
           </div>
@@ -92,11 +92,11 @@ export default function Footer() {
           Backed by <Image src="/Y_Combinator.svg" height={40.3} width={140} className="w-[140px] h-auto" alt="Y Combinator"></Image>
         </div>
         <div className="flex gap-[15px] w-[210px] flex-wrap md:w-[initial] justify-center lg:justify-start mt-[40px] lg:mt-0">
-          <Link className="hover:text-white" href="/privacy">Privacy</Link>
+          <ApLink className="hover:text-white" href="/privacy">Privacy</ApLink>
           <div>-</div>
-          <Link className="hover:text-white" href="/terms">Terms</Link>
+          <ApLink className="hover:text-white" href="/terms">Terms</ApLink>
           <div>-</div>
-          <Link className="hover:text-white" href="/google-api-disclosure">Google API Disclosure</Link>
+          <ApLink className="hover:text-white" href="/google-api-disclosure">Google API Disclosure</ApLink>
         </div>
       </div>
 

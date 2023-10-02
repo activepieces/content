@@ -4,9 +4,9 @@
 import { useRef, useState } from "react";
 import { PieceBase } from "../../utils/piece-helper";
 import PieceLogo from "./PieceLogo";
-import Link from "next/link";
 import Image from "next/image";
 import { allPiecesSort, corePieces } from "../utils";
+import { ApLink } from "../MyLink";
 
 const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
   const searchInput = useRef<HTMLInputElement>(null);
@@ -30,7 +30,7 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
         return CorePieceHTML({ title: "Branches", image: "https://cloud.activepieces.com/assets/img/custom/piece/branch.svg", path: "/pieces/branches" })
       default:
         return (
-          <Link
+          <ApLink
             className="p-5 basis-full md:basis-1/3 h-[110px] rounded-lg text-center cursor-pointer hover:bg-whiteCard-100 "
             key={piece.displayName}
             href={`/pieces/${piece.name.replace(
@@ -42,14 +42,14 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
               <PieceLogo pieceLogoUrl={piece.logoUrl} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
               <p className="ml-4 text-h3-sm text-black font-bold ">{piece.displayName}</p>
             </div>
-          </Link>
+          </ApLink>
         );
     }
   });
   const allFilteredPieces = () => <>{mapPieceToHTML(filteredPieces)}</>
   const first30FilteredPieces = () => <>{mapPieceToHTML(filteredPieces.slice(0, 30))}</>
   const CorePieceHTML = (props: { path: string, title: string, image: string }) => {
-    return <Link
+    return <ApLink
       className="p-5 basis-full md:basis-1/3 h-[110px] rounded-lg text-center cursor-pointer hover:bg-whiteCard-100 "
       key={props.title}
       href={props.path}
@@ -58,14 +58,14 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
         <PieceLogo pieceLogoUrl={props.image} size={40} imgClasses="w-[40px] h-[40px] object-contain" />
         <p className="ml-4 text-h3-sm text-black font-bold ">{props.title}</p>
       </div>
-    </Link>
+    </ApLink>
   }
 
   return (
     <div className="flex-col gap-4 flex justify-center items-center px-1 my-24">
       <div className=" flex flex-col container w-full  gap-10  mb-10">
         <div className="">
-          You can check our future pieces roadmap or request a piece on <Link className="text-primary" href="/request-a-piece">this page</Link>
+          You can check our future pieces roadmap or request a piece on <ApLink className="text-primary" href="/request-a-piece">this page</ApLink>
         </div>
         <div className="flex justify-center">
 

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { Arrow } from "../../components/arrow";
 import { AnimatedCurtains } from "../../components/animated-curtains/AnimatedCurtains";
 import { TestimoniesSection } from "../../components/features-page/TestimoniesSection";
@@ -11,6 +10,7 @@ import CombinationsMakerSection from "../../components/landing-page/Combinations
 import { VisibilitySection } from "../../components/features-page/VisibilitySection";
 import { FeaturesSection } from "../../components/features-page/FeaturesSection";
 import { FeaturesCarousel } from "../../components/features-page/FeaturesCarousel";
+import { ApLink } from "../../components/MyLink";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,9 +44,9 @@ export default async function FindAppsPage() {
                     Meant to be <span className="text-[#EEABFF]">simple</span> yet <br className="hidden lg:block"></br> so powerful
                 </h1>
                 <div className="flex items-center justify-center mt-[40px] lg:mt-[80px]  ">
-                    <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopener noreferer' className='text-center rounded-sm hover:-translate-y-[6px] transition-transform flex items-center justify-center gap-4  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
+                    <ApLink href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopener noreferer' className='text-center rounded-sm hover:-translate-y-[6px] transition-transform flex items-center justify-center gap-4  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
                         Get Started <Arrow className="fill-white" width={33.33} height={16.67}></Arrow>
-                    </Link>
+                    </ApLink>
                 </div>
                 <div className="border  mb-[120px] lg:mb-[150px] border-solid border-white rounded overflow-hidden mt-[40px] lg:mt-[80px]">
                     <AnimatedCurtains id="indie" intervalPeriod={7000}></AnimatedCurtains>

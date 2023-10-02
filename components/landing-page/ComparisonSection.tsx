@@ -3,7 +3,7 @@ import { ControlledMenu, MenuItem, useClick } from '@szhsin/react-menu';
 import Image from 'next/image';
 import { MutableRefObject, useRef, useState } from 'react';
 import { ComparisonCard } from './ComparisonCard';
-import Link from 'next/link';
+import { ApLink } from '../MyLink';
 
 type ComparisonApp = {
     icon: string;
@@ -129,9 +129,9 @@ export const ComparisionSection = () => {
 
                 <div className='mt-[40px] lg:mt-[60px] items-center justify-between flex-wrap flex gap-5 text-h3-sm lg:text-h3-lg '>
                     Activepieces is the best alternative to {selectedApp.appName}
-                    <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noreferer noopener' className='  rounded-sm hover:-translate-y-[6px] transition-transform items-center justify-center px-[43px] w-full lg:w-[initial]  lg:py-[10px] py-[26px] bg-black text-white lg:text-h4-lg text-h4-sm flex gap-5 '>
+                    <ApLink href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noreferer noopener' className='  rounded-sm hover:-translate-y-[6px] transition-transform items-center justify-center px-[43px] w-full lg:w-[initial]  lg:py-[10px] py-[26px] bg-black text-white lg:text-h4-lg text-h4-sm flex gap-5 '>
                         Get started  <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}></Image>
-                    </Link>
+                    </ApLink>
                 </div>
             </div>
 

@@ -1,8 +1,8 @@
 'use client';
-import Link from "next/link"
 import { Arrow } from "../arrow"
 import { useRef, useState } from "react";
 import Image from "next/image"
+import { ApLink } from "../MyLink";
 
 type FeatureVideo = {
     mp4: string;
@@ -104,9 +104,9 @@ const CarouselItemTemplate = (props: { active: boolean, index: number, setActive
             <div className="text-h6-sm lg:text-h6-lg  !font-normal my-5 lg:!font-light lg::my-[2.1875rem] max-w-[33.75rem]">
                 {props.feat.description}
             </div>
-            <Link href="https://cloud.activepieces.com/sign-up" rel="noopener noreferer" target="_blank" className="flex items-center gap-4 text-h6-sm lg:text-h6-lg" >
+            <ApLink href="https://cloud.activepieces.com/sign-up" rel="noopener noreferer" target="_blank" className="flex items-center gap-4 text-h6-sm lg:text-h6-lg" >
                 Start free <Arrow width={20.67} height={10.34} ></Arrow>
-            </Link>
+            </ApLink>
 
         </div>
         <div className={props.video.bg + " lg:max-h-0 lg:hidden flex items-center justify-center px-4 w-[358px] " + (props.active ? "h-[358px]  mt-6 " : 'h-0 overflow-hidden')}>

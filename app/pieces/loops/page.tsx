@@ -1,9 +1,9 @@
 
 import Image from "next/image";
 import { Metadata } from "next";
-import Link from "next/link";
 import { AutomateWithActivepieces } from "../../../components/animated-curtains/AutomateWithActivepieces";
 import LoopsActionsCard from "../../../components/pieces/LoopActionCard";
+import { ApLink } from "../../../components/MyLink";
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -98,9 +98,9 @@ export default async function LoopsPage() {
 
 
                             <section >
-                                <Link className=" h-14 p-5 bg-white rounded justify-center items-center gap-3 inline-flex" href={"https://cloud.activepieces.com/sign-up"} target="_blank" rel="noopener noreferrer" >
+                                <ApLink className=" h-14 p-5 bg-white rounded justify-center items-center gap-3 inline-flex" href={"https://cloud.activepieces.com/sign-up"} target="_blank" rel="noopener noreferrer" >
                                     <div className="text-center text-black  font-bold text-2sm leading-loose tracking-wide flex gap-2 items-center">Start for free</div>
-                                </Link>
+                                </ApLink>
                             </section>
                         </div>
 

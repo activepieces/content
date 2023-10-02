@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { ApLink } from "../MyLink";
+
 export interface AiCardProps {
     id: string,
     piecesIcons: string[],
@@ -10,7 +11,7 @@ const AiCard = (props: AiCardProps) => {
 
     return (
         <>
-            <Link href={"https://cloud.activepieces.com/templates/" + props.id} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-3 transition-transform border border-solid border-[#000000] rounded-md overflow-hidden lg:min-w-[358px] min-w-[250px]" >
+            <ApLink href={"https://cloud.activepieces.com/templates/" + props.id} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-3 transition-transform border border-solid border-[#000000] rounded-md overflow-hidden lg:min-w-[358px] min-w-[250px]" >
                 <div className="p-[25px] lg:pb-[65px] lg:p-[35px] bg-white flex flex-col gap-[30px]">
                     <div className="flex gap-[10px] lg:gap-[15px]">
                         {
@@ -31,7 +32,7 @@ const AiCard = (props: AiCardProps) => {
                 <div className="bg-black text-white text-h4-sm lg:text-h4-lg  text-center py-[15px] lg:py-[10px]  flex justify-center" >
                     View automation
                 </div>
-            </Link>
+            </ApLink>
 
 
         </>

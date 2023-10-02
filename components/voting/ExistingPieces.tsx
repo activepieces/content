@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DetailedPiece } from "../../utils/piece-helper";
-import Link from "next/link";
 import Image from "next/image";
+import { ApLink } from "../MyLink";
 export const ExisttingPieces = (props: { pieces: DetailedPiece[], search: string, setNoExistingPieces: (none: boolean) => void }) => {
     const [suggestedPieces, setSuggestedPiece] = useState<{ displayName: string, logoUrl: string, pieceName: string }[]>([]);
     const [showMore, setShowMore] = useState(false);
@@ -51,13 +51,13 @@ export const ExisttingPieces = (props: { pieces: DetailedPiece[], search: string
                 <div className="flex flex-wrap gap-5 items-center mb-10">
                     {
                         suggestedPieces.slice(0, showMore ? undefined : 20).map((piece, index) => {
-                            return <Link href={`/pieces/${piece.pieceName}`}
+                            return <ApLink href={`/pieces/${piece.pieceName}`}
                                 key={index + "-existing-piece"}
                                 target="_blank" rel="noreferer nopener"
                                 className="border border-solid border-[#B2B2B2] rounded py-2 px-3 text-black text-xl font-bold flex gap-4 ">
                                 <Image alt={piece.displayName} height={30} width={30} src={piece.logoUrl} className="object-contain" ></Image>
                                 {piece.displayName}
-                            </Link>
+                            </ApLink>
 
                         })
                     }

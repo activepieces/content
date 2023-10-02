@@ -5,9 +5,9 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import Image from "next/image";
 import { Metadata } from "next";
 import { NavigationProps } from "../../../components/navigationProps";
-import Link from "next/link";
 import { formatDate } from "@/utils/date-helper";
 import { createClient } from "@supabase/supabase-js";
+import { ApLink } from "../../../components/MyLink";
 
 export interface Blog {
   title: string;
@@ -110,12 +110,12 @@ export default async function BlogPost({ params, searchParams }: NavigationProps
     <main className="bg-white w-full">
       <section className="container mx-auto px-3 py-[80px] md:px-0  mx-auto ">
         <nav className="text-lg mb-[35px]">
-          <Link href="/blog" className="no-underline">
+          <ApLink href="/blog" className="no-underline">
             {/* Apply your custom styles for the link */}
             <span className="text-primary no-underline hover:underline cursor-pointer">
               Blogs
             </span>
-          </Link>{" "}
+          </ApLink>{" "}
         </nav>
         <header className="mb-[35px] mx-auto text-left">
           <h1 className="text-h1-sm lg:text-h1-lg font-bold mb-[35px]">

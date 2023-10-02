@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { GitHubIssue, IssueVotes } from "../utils";
 import { User } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
+import { ApLink } from "../MyLink";
 
 export const SimilarIssues = (props: { issues: GitHubIssue[], search: string, vote: (issueId: string, userState: User | null) => void, userState: User | null, votes: IssueVotes[], setNoSimilarIssues: (none: boolean) => void }) => {
     const [showMore, setShowMore] = useState(false);
@@ -31,7 +31,7 @@ export const SimilarIssues = (props: { issues: GitHubIssue[], search: string, vo
                                 </div>
 
                             </button>
-                            <Link href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
+                            <ApLink href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
                                 <div className="text-black font-semibold ">
                                     {issue.title}
                                 </div>
@@ -41,7 +41,7 @@ export const SimilarIssues = (props: { issues: GitHubIssue[], search: string, vo
                                 <div className={issue.assignees.length > 0 ? (issue.state === "open" ? "text-[#AC44B5] font-normal" : "text-[#258D3C] font-normal") : "text-black text-opacity-60 font-normal"}>
                                     {issue.assignees.length > 0 ? (issue.state === "open" ? "In Progress" : "Completed") : "Requested"}
                                 </div>
-                            </Link>
+                            </ApLink>
                         </div>
 
                     })}

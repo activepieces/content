@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from "react";
 import { AnimatedCurtains } from "./AnimatedCurtains"
-import Link from "next/link";
+import { ApLink } from "../MyLink";
 let automatedThingIdx = 0;
 const automatedThings = [
     {
@@ -65,9 +65,9 @@ export const AutomateWithActivepieces = () => {
                 <div className="text-center lg:text-left max-w-[861px] text-white text-[50px]   font-bold  tracking-wide lg:text-[80px] w-full lg:w-auto">
                     Automate <br className="lg:hidden"></br> <span id="automatedText" className="text-[#06FFB4]" >tasks</span> <br className="lg:hidden"></br>  with <br className="lg:hidden"></br> Activepieces
                 </div>
-                <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" id="startFree" className="hover:-translate-y-[6px] transition-transform bg-[#06FFB4] px-[75px] text-center whitespace-nowrap rounded  my-[20px] flex items-center justify-center py-[65px] text-black text-[50px] font-bold leading-[60px] tracking-wider ">
+                <ApLink href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" id="startFree" className="hover:-translate-y-[6px] transition-transform bg-[#06FFB4] px-[75px] text-center whitespace-nowrap rounded  my-[20px] flex items-center justify-center py-[65px] text-black text-[50px] font-bold leading-[60px] tracking-wider ">
                     Start free
-                </Link>
+                </ApLink>
             </div>
         </section >
 

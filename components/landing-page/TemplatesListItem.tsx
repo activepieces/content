@@ -1,7 +1,7 @@
 import { FlowTemplate } from "@activepieces/shared";
-import Image from "next/image";
-import Link from "next/link";
 import { Arrow } from "../arrow";
+import Image from "next/image";
+import { ApLink } from "../MyLink";
 export interface TemplatesListItemProps {
     template: FlowTemplate,
     piecesIcons: string[],
@@ -10,7 +10,7 @@ export interface TemplatesListItemProps {
 const TemplatesListItem = (props: TemplatesListItemProps) => {
     return (
         <>
-            <Link href={`https://cloud.activepieces.com/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(props.template))}`} target="_blank" rel="noopener noreferer" className={`${props.baseColorClass} hover:text-primary hover:fill-primary transition-all  flex flex-wrap md:flex-nowrap gap-[25px] items-center`}>
+            <ApLink href={`https://cloud.activepieces.com/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(props.template))}`} target="_blank" rel="noopener noreferer" className={`${props.baseColorClass} hover:text-primary hover:fill-primary transition-all  flex flex-wrap md:flex-nowrap gap-[25px] items-center`}>
                 <div className="flex gap-[10px] lg:gap-[15px]">
                     {
                         props.piecesIcons.map((icon, idx) => (
@@ -33,7 +33,7 @@ const TemplatesListItem = (props: TemplatesListItemProps) => {
 
 
 
-            </Link>
+            </ApLink>
         </>
     );
 };

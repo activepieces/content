@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { ApLink } from "../MyLink";
 import { Arrow } from "../arrow";
 export interface OpenSourceStatProps {
     logo: JSX.Element,
@@ -12,7 +11,7 @@ export interface OpenSourceStatProps {
 const OpenSourceStat = (stat: OpenSourceStatProps) => {
     return (
         <>
-            <Link href={stat.ctaUrl} target="_blank" rel="noopener noreferer" className='flex fill-black hover:fill-primary hover:text-primary text-black transition-colors flex-wrap md:flex-nowrap items-center'>
+            <ApLink href={stat.ctaUrl} target="_blank" rel="noopener noreferer" className='flex fill-black hover:fill-primary hover:text-primary text-black transition-colors flex-wrap md:flex-nowrap items-center'>
                 <div className='flex gap-[15px] items-center basis-full md:basis-0  gap-[25px] grow text-h4-sm md:text-h4-lg'>
                     {stat.logo}
                     {stat.statText}
@@ -22,7 +21,7 @@ const OpenSourceStat = (stat: OpenSourceStatProps) => {
                     {stat.ctaText} <Arrow></Arrow>
 
                 </div>
-            </Link>
+            </ApLink>
 
 
 
