@@ -12,12 +12,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'activepieces.com' }],
-        destination: 'https://www.activepieces.com/:path*',
-        permanent: true
-      },
-      {
         source: '/plans',
         destination: '/pricing',
         permanent: true,
