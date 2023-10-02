@@ -2,20 +2,20 @@
 import 'react-tooltip/dist/react-tooltip.css'
 import Image from 'next/image'
 import { Arrow } from '../arrow'
+import Link from 'next/link'
 import { PieceBase } from '../../utils/piece-helper'
 import { Tooltip } from 'react-tooltip'
 import { allPiecesSort, corePieces, CorePiece } from '../utils'
-import { ApLink } from '../MyLink'
 const PieceElement = (props: { piece: (PieceBase), idx: number }) => {
     const piece = props.piece;
     const idx = props.idx;
     return <>
-        <ApLink id={"piece-" + idx} href={`/pieces/${piece.name.replace(
+        <Link id={"piece-" + idx} href={`/pieces/${piece.name.replace(
             "@activepieces/piece-",
             ""
         )}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
             <Image loading="eager" src={piece.logoUrl} alt={piece.displayName} width={92} height={92} className='h-[67px] w-[67px] lg:w-[92px] lg:h-[92px] object-contain' ></Image>
-        </ApLink>
+        </Link>
         <Tooltip
             anchorSelect={"#piece-" + idx}
             content={piece.displayName}
@@ -32,9 +32,9 @@ const CorePieceElement = (props: { piece: CorePiece, idx: number }) => {
     const displayName = piece === "webhook" ? "Webhook" : piece === "loops" ? "Loops" : "Branches";
     const logoUrl = piece === "webhook" ? "https://cloud.activepieces.com/assets/img/custom/piece/webhook.svg" : piece === "loops" ? "https://cloud.activepieces.com/assets/img/custom/piece/loop.svg" : "https://cloud.activepieces.com/assets/img/custom/piece/branch.svg";
     return <>
-        <ApLink id={"piece-" + idx} href={`/pieces/${piece}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
+        <Link id={"piece-" + idx} href={`/pieces/${piece}`} className='flex items-center p-4 lg:p-6 rounded-xl bg-white border border-solid border-[#D3D3D3] hover:border-black hover:-translate-y-1 hover:scale-[1.1] transition-transform '>
             <Image loading="eager" src={logoUrl} alt={displayName} width={92} height={92} className='h-[67px] w-[67px] lg:w-[92px] lg:h-[92px] object-contain' ></Image>
-        </ApLink>
+        </Link>
         <Tooltip
             anchorSelect={"#piece-" + idx}
             content={displayName}
@@ -72,9 +72,9 @@ export const PiecesCarousel = (props: { pieces: PieceBase[] }) => {
             </div>
         </div>
         <div className='container mx-auto flex items-center justify-center'>
-            <ApLink href="/pieces" className='text-h6-sm lg:text-h4-lg font-bold flex gap-4 lg:gap-5 items-center justify-center'>
+            <Link href="/pieces" className='text-h6-sm lg:text-h4-lg font-bold flex gap-4 lg:gap-5 items-center justify-center'>
                 Explore all pieces <Arrow className='fill-black  w-[20.67px] h-[10.34px] lg:w-[33.33px] lg:h-[16.67px]' ></Arrow>
-            </ApLink>
+            </Link>
         </div>
     </section>
 }

@@ -1,5 +1,5 @@
-
-import { ApLink } from "../MyLink";
+import Link from 'next/link';
+import Image from 'next/image'
 import ImageSlider from "./imageSlider";
 const MainSection = () =>
     <>
@@ -44,9 +44,9 @@ const MainSection = () =>
                     </h1>
 
                     <div className='flex flex-col justify-end grow mt-[40px] lg:grow-0 lg:mt-[0px]'>
-                        <ApLink href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopner' className='rounded-sm text-center hover:-translate-y-[6px] transition-transform  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
+                        <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopner' className='rounded-sm text-center hover:-translate-y-[6px] transition-transform  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
                             Get Started
-                        </ApLink>
+                        </Link>
                     </div>
                 </div>
                 <div className='text-center container mx-auto mb-[80px]'>

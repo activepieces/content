@@ -1,4 +1,4 @@
-import { ApLink } from "../MyLink";
+import Link from "next/link"
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 const popularStuff = [
@@ -83,7 +83,7 @@ export const PiecesDictionarySection = () => {
                                 popularThing.separator && <div className="flex max-w-[320px] gap-[18px] text-[18px] leading-[22px] flex-wrap">
                                     {
                                         popularThing.items.map((item, idx) => {
-                                            return <ApLink key={idx} href={item.link} className="flex gap-[18px]" target="_blank" rel="noopener noreferer">{item.title} {idx === popularThing.items.length - 1 ? "" : <div> •</div>}</ApLink>
+                                            return <Link key={idx} href={item.link} className="flex gap-[18px]" target="_blank" rel="noopener noreferer">{item.title} {idx === popularThing.items.length - 1 ? "" : <div> •</div>}</Link>
                                         })
                                     }
                                 </div>
@@ -93,7 +93,7 @@ export const PiecesDictionarySection = () => {
                                 !popularThing.separator && <div className="flex-col flex max-w-[320px] gap-[18px] text-[18px] leading-[22px]">
                                     {
                                         popularThing.items.map((item, idx) => {
-                                            return <ApLink key={idx} href={item.link} target="_blank" rel="noopener noreferer">{item.title} </ApLink>
+                                            return <Link key={idx} href={item.link} target="_blank" rel="noopener noreferer">{item.title} </Link>
                                         })
                                     }
                                 </div>
@@ -110,7 +110,7 @@ export const PiecesDictionarySection = () => {
             </div>
             <div className="text-[18px] leading-[22px] text-white flex gap-3 flex-wrap">
                 {
-                    alphabet.map((letter, idx) => { return <ApLink rel="noopener noreferer" target="_blank" key={idx} className="flex flex-wrap gap-3" href={"/find-apps/" + letter.toLowerCase()}>{letter} {idx === alphabet.length - 1 ? "" : <div>-</div>} </ApLink> })
+                    alphabet.map((letter, idx) => { return <Link rel="noopener noreferer" target="_blank" key={idx} className="flex flex-wrap gap-3" href={"/find-apps/" + letter.toLowerCase()}>{letter} {idx === alphabet.length - 1 ? "" : <div>-</div>} </Link> })
                 }
             </div>
 

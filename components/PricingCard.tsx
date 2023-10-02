@@ -1,8 +1,8 @@
 'use client';
+import Link from "next/link";
 import Image from "next/image";
 import { ControlledMenu, MenuItem, useClick } from "@szhsin/react-menu";
 import { useRef, useState } from "react";
-import { ApLink } from "./MyLink";
 
 const PricingCard = (props: {
     bgClass: string,
@@ -31,9 +31,9 @@ const PricingCard = (props: {
                     }
                 </div>
 
-                <ApLink href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noopener noreferer" className="w-[115px]  whitespace-nowrap  flex items-center justify-center h-[65px] bg-black rounded">
+                <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noopener noreferer" className="w-[115px]  whitespace-nowrap  flex items-center justify-center h-[65px] bg-black rounded">
                     <div className="text-center text-white text-h4-sm font-bold">Try free</div>
-                </ApLink>
+                </Link>
 
                 <div className="flex flex-col">
                     {props.features.map((feature, idx) => (

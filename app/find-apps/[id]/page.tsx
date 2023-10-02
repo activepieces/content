@@ -1,10 +1,9 @@
 import { Metadata } from "next";
 
-
+import Link from "next/link";
 import { NavigationProps } from "../../../components/navigationProps";
 import { GetPieces } from "../../../utils/piece-helper";
 import { allPiecesSort, corePieces } from "../../../components/utils";
-import { ApLink } from "../../../components/MyLink";
 import { redirect } from "next/navigation";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 
@@ -47,19 +46,19 @@ export default async function FindAppsPage({ params }: NavigationProps) {
                     {`Browse apps starting with ${params.id.toUpperCase()}`}
                 </h1>
                 <div className="flex gap-6 text-black  flex-wrap lg:text-h4-sm justify-center  mt-[20px] ">
-                    {alphabet.map((letter, idx) => <ApLink key={idx} href={"/find-apps/" + letter.toLowerCase()}>{letter} </ApLink>)}
+                    {alphabet.map((letter, idx) => <Link key={idx} href={"/find-apps/" + letter.toLowerCase()}>{letter} </Link>)}
                 </div>
 
                 <ul className="columns-1 md:columns-2 lg:columns-4 text-black text-h5-sm mt-[40px]">
                     {filteredPieces.map((piece, idx) => <li key={idx} className="underline">
                         {
-                            piece === "webhook" ? <ApLink href={`/pieces/webhook`}>Webhook</ApLink> :
-                                piece === "loops" ? <ApLink href={`/pieces/loops`}>Loops</ApLink> :
-                                    piece === "branches" ? <ApLink href={`/pieces/branches`}>Branches</ApLink> :
-                                        <ApLink href={`/pieces/${piece.name.replace(
+                            piece === "webhook" ? <Link href={`/pieces/webhook`}>Webhook</Link> :
+                                piece === "loops" ? <Link href={`/pieces/loops`}>Loops</Link> :
+                                    piece === "branches" ? <Link href={`/pieces/branches`}>Branches</Link> :
+                                        <Link href={`/pieces/${piece.name.replace(
                                             "@activepieces/piece-",
                                             ""
-                                        )}?`} > {piece.displayName}</ApLink>
+                                        )}?`} > {piece.displayName}</Link>
                         }
                     </li>)}
                 </ul>

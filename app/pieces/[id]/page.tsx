@@ -5,8 +5,8 @@ import Image from "next/image";
 import TriggerOrActionCard from "../../../components/pieces/TriggerOrActionCard";
 import { Metadata } from "next";
 import { NavigationProps } from "../../../components/navigationProps";
+import Link from "next/link";
 import { AutomateWithActivepieces } from "../../../components/animated-curtains/AutomateWithActivepieces";
-import { ApLink } from "../../../components/MyLink";
 import { redirect } from 'next/navigation'
 
 
@@ -142,9 +142,9 @@ export default async function PiecePage({ params }: NavigationProps) {
 
 
                 <section >
-                  <ApLink className=" h-14 p-5 bg-white rounded justify-center items-center gap-3 inline-flex" href={"https://cloud.activepieces.com/sign-up"} target="_blank" rel="noopener noreferrer" >
+                  <Link className=" h-14 p-5 bg-white rounded justify-center items-center gap-3 inline-flex" href={"https://cloud.activepieces.com/sign-up"} target="_blank" rel="noopener noreferrer" >
                     <div className="text-center text-black  font-bold text-2sm leading-loose tracking-wide flex gap-2 items-center">Start for free</div>
-                  </ApLink>
+                  </Link>
                 </section>
               </div>
 

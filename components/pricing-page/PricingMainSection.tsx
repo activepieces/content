@@ -1,8 +1,8 @@
 import PricingCard from "../../components/PricingCard";
+import Link from "next/link";
 import ImageSlider from "../../components/landing-page/imageSlider";
 import { AnimatedCurtains } from "../animated-curtains/AnimatedCurtains";
 import Image from "next/image";
-import { ApLink } from "../MyLink";
 const businessPlans = [{ "tasks": 5000, "price": "115" }, { "tasks": 10000, "price": "125" }, { "tasks": 25000, "price": "155" }, { "tasks": 50000, "price": "200" }, { "tasks": 100000, "price": "275" }, { "tasks": 200000, "price": "400" }, { "tasks": 500000, "price": "600" }]
 const proPlans = [{ "tasks": 5000, "price": "15" }, { "tasks": 10000, "price": "25" }, { "tasks": 25000, "price": "55" }, { "tasks": 50000, "price": "100" }, { "tasks": 100000, "price": "175" }, { "tasks": 200000, "price": "300" }, { "tasks": 500000, "price": "500" }];
 const hobbyistFeats = ["Unlimited users", "Instant triggers", "15 mins update time", "3 connected accounts", "Community support"]
@@ -38,9 +38,9 @@ export const PricingMainSection = () => {
                                 Looking for more? <br></br>
                                 Check out our Enterprise offering
                             </h2>
-                            <ApLink href={"mailto:sales@activepieces.com"} target="_blank" rel="noopener noreferer" className="bg-white text-black flex items-center justify-center  text-h4-sm lg:text-h4-lg w-full lg:w-[auto] px-[35px] py-[29px] h-[80px]">
+                            <Link href={"mailto:sales@activepieces.com"} target="_blank" rel="noopener noreferer" className="bg-white text-black flex items-center justify-center  text-h4-sm lg:text-h4-lg w-full lg:w-[auto] px-[35px] py-[29px] h-[80px]">
                                 Contact us
-                            </ApLink>
+                            </Link>
                         </div>
                         <div className="flex gap-[25px] lg:gap-[80px] flex-wrap ">
                             <div className="flex flex-col  gap-[25px]">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import CollapsibleProperties from "./CollapsibleProperties";
 import { ActionBase, TriggerBase, TriggerStrategy } from "../../utils/piece-helper";
 import { ActionType, FlowTemplate, TriggerType } from "@activepieces/shared";
-import { ApLink } from "../MyLink";
+import Link from "next/link";
 
 let template: FlowTemplate = {
   "id": "YiwKlvgwmhYIIVKT0EMqx",
@@ -128,9 +128,9 @@ const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion
       </div>
       {Object.entries(triggerOrAction.props).length > 0 ? (<CollapsibleProperties expand={showProperties} key={triggerOrAction.name} props={triggerOrAction.props} />) : null}
 
-      <ApLink href={`http://cloud.activepieces.com/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(template))}`} target="_blank" rel="noopener noreferer" className="p-5  bg-card rounded-lg text-white text-lg font-bold justify-end text-center  items-center flex gap-[5px] ">
+      <Link href={`http://cloud.activepieces.com/import-flow-uri-encoded?flow=${encodeURIComponent(JSON.stringify(template))}`} target="_blank" rel="noopener noreferer" className="p-5  bg-card rounded-lg text-white text-lg font-bold justify-end text-center  items-center flex gap-[5px] ">
         Try it   <Image alt='arrow' src="/arrow_white.svg" width={23} height={11} className="w-[23px] h-[11px] "></Image>
-      </ApLink>
+      </Link>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 'use client';
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 import { FeaturesList } from "./FeatureList";
 import { FeatureCardProps } from "./FeatureCard";
-import { ApLink } from "../MyLink";
 const features: FeatureCardProps[] = [
     {
         featImage: "/pricing/feat_1.svg",
@@ -68,14 +68,14 @@ export const FeaturesSection = () => {
                             <div className="text-white text-h6-sm md:text-h6-lg">
                                 Activepieces is an open core software, you can self host it on your machine for free. Our cloud version is built on this core but has more features.
                             </div>
-                            <ApLink href="https://github.com/activepieces/activepieces" target="_blank" rel="noopener noreferer" className="flex gap-[25px]  items-center">
+                            <Link href="https://github.com/activepieces/activepieces" target="_blank" rel="noopener noreferer" className="flex gap-[25px]  items-center">
                                 <Image src="/github_white.svg" alt="github" width={50} height={50} className="w-[30px] lg:w-[50px]"></Image>
                                 <div className="text-h6-sm font-bold lg:text-h3-lg text-white">
                                     Visit GitHub
                                 </div>
 
                                 <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}></Image>
-                            </ApLink>
+                            </Link>
                         </div>
                         <div className=" min-h-[336.469px] min-w-[688.32px]">
                             <Image src="/dog.svg" alt="dog" width={587} height={587} className="w-full md:w-[378px] md:-bottom-[2px] lg:w-[587px]  absolute -bottom-[50px] left-0 md:left-[initial]  lg:bottom-[initial] lg:top-0 md:right-0"></Image>

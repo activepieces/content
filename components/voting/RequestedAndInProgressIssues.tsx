@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { GitHubIssue, IssueVotes } from "../utils";
 import { User } from "@supabase/supabase-js";
-import { ApLink } from "../MyLink";
 
 
 export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], search: string, showEmptyResult: boolean, votes: IssueVotes[], userState: User | null, vote: (issueId: string, userState: User | null) => void }) => {
@@ -27,7 +27,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                         </div>
 
                                     </button>
-                                    <ApLink href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
+                                    <Link href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
                                         <div className="text-black font-semibold ">
                                             {issue.title}
                                         </div>
@@ -43,7 +43,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                             </div>
                                         }
 
-                                    </ApLink>
+                                    </Link>
                                 </div>
 
                             })}
@@ -58,7 +58,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                     <div className="thin-scrollbars overflow-y-auto  lg:max-h-[36.5625rem] lg:min-h-[36.5625rem] px-6 ">
                         <div className="flex flex-col divide-y divide-y-solid  divide-y-white divide-y-opacity-30 ">
                             {props.issues.filter(issue => issue.state === "open" && issue.assignees.length > 0).map((issue, index) => {
-                                return <ApLink key={index + "inprogress"} href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex gap-5 py-8 items-center">
+                                return <Link key={index + "inprogress"} href={"https://github.com/activepieces/activepieces/issues/" + issue.number} rel="noopener noreferer" target="_blank" className="flex gap-5 py-8 items-center">
                                     <div className="flex flex-col gap-4 text-h6-sm  lg:text-h4-sm ">
                                         <div className="text-black font-semibold ">
                                             {issue.title}
@@ -67,7 +67,7 @@ export const RequestedAndInProgressIssues = (props: { issues: GitHubIssue[], sea
                                             Requested on {issue.created_at && new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                                         </div>
                                     </div>
-                                </ApLink>
+                                </Link>
 
                             })}
                         </div>

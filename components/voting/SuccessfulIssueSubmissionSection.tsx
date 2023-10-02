@@ -1,4 +1,4 @@
-import { ApLink } from "../MyLink";
+import Link from "next/link";
 
 export const SuccessfullIssueSubmissionSection = ({ setShowSuccessfulSubmissionSection, toggleRequestAPieceSection }: { setShowSuccessfulSubmissionSection: (show: boolean) => void, toggleRequestAPieceSection: (show: boolean) => void }) => {
     return (<>
@@ -25,7 +25,7 @@ export const SuccessfullIssueSubmissionSection = ({ setShowSuccessfulSubmissionS
                     setShowSuccessfulSubmissionSection(false);
                     toggleRequestAPieceSection(true)
                 }} className="bg-black text-white rounded overflow-hidden p-5 w-full lg:w-auto">New request</button>
-                <ApLink href="/" className="bg-white text-black border border-solid border-black rounded overflow-hidden p-5 w-full lg:w-auto whitespace-nowrap">Go to homepage</ApLink>
+                <Link href="/" className="bg-white text-black border border-solid border-black rounded overflow-hidden p-5 w-full lg:w-auto whitespace-nowrap">Go to homepage</Link>
             </div>
         </div>
     </>)

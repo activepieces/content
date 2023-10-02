@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ApLink } from '../MyLink'
+import Link from 'next/link'
 export const WhiteLabelSection = () => {
     return <>
         <section className="bg-white pb-[23.875rem] lg:pb-[13.875rem] px-4 lg:px-0 ">
@@ -86,11 +86,11 @@ export const WhiteLabelSection = () => {
 
                                     </div>
                                     <div className='flex justify-center w-full lg:w-auto lg:justify-start'>
-                                        <ApLink href={"mailto:support@activepieces.com"} target='_blank' rel='noreferer noopener'>
+                                        <Link href={"mailto:support@activepieces.com"} target='_blank' rel='noreferer noopener'>
                                             <div className="w-[180px] h-14 px-[35px] py-5 bg-neutral-900 whitespace-nowrap rounded-[3px] justify-start items-center gap-5 inline-flex">
                                                 <div className="text-white text-[22px] font-bold leading-relaxed tracking-wide">Contact us</div>
                                             </div>
-                                        </ApLink>
+                                        </Link>
                                     </div>
 
 

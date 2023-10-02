@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
 import { AutomateWithActivepieces } from "../../components/animated-curtains/AutomateWithActivepieces";
 import { BlogPost, getBlogs } from "@/utils/blogs-helper";
-import { ApLink } from "../../components/MyLink";
 import { redirect } from "next/navigation";
 
 
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <ApLink href={`/blog/${post.slug}`}>
+    <Link href={`/blog/${post.slug}`}>
       <div className="flex flex-col h-[460px] rounded overflow-hidden shadow-lg border border-black rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1">
         <div className="h-[220px] md:w-[469px] w-full relative">
           <Image
@@ -51,7 +51,7 @@ function BlogCard({ post }: { post: BlogPost }) {
           <p className="text-black text-lg font-normal leading-snug tracking-wide">{post.meta.author} | Published On {post.meta.publishedOn}</p>
         </div>
       </div>
-    </ApLink>
+    </Link>
   );
 }
 
