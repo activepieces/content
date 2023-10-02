@@ -24,7 +24,6 @@ export const VotingSectionServer = async () => {
 
     const supabase = createServerComponentClient({ cookies })
     const votes = await getSupabaseVotesForIssues(supabase);
-
     githubIssues = githubIssues.sort((a, b) => {
         const aVotes = votes.find(v => v.issue_id == a.id)?.vote_count ?? 0;
         const bVotes = votes.find(v => v.issue_id == b.id)?.vote_count ?? 0;
