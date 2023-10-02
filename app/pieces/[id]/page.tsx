@@ -7,38 +7,59 @@ import { Metadata } from "next";
 import { NavigationProps } from "../../../components/navigationProps";
 import { AutomateWithActivepieces } from "../../../components/animated-curtains/AutomateWithActivepieces";
 import { ApLink } from "../../../components/MyLink";
+import { redirect } from 'next/navigation'
+
+
 
 export async function generateMetadata(
   { params }: NavigationProps,
 ): Promise<Metadata> {
-  const pieceName = params.id;
-  const pieceData = await GetPiece(`@activepieces/piece-${pieceName}`);
-  const title = `${pieceData.displayName} Integrations - Connect your apps with Activepieces`
-  const description = `Connect ${pieceData.displayName} to hundreds of apps to automate your business. Activepieces is trusted by thousands of users who automate their everyday tasks.`
-  return {
-    title: title,
-    description: description,
-    openGraph: {
-      title: title,
-      description: description,
-      siteName: "Activepieces",
-      images: [
-        {
-          url: "https://www.activepieces.com/meta1.png",
-          width: 1200,
-          height: 630,
-          alt: "Activepieces",
-        }
-      ],
-      url: "https://www.activepieces.com/pieces/" + pieceName,
-    },
-    icons: "/favicon.ico",
+  try {
+    const pieceName = params.id;
+    const pieceData = await GetPiece(`@activepieces/piece-${pieceName}`);
+    if (pieceData) {
+      const title = `${pieceData.displayName} Integrations - Connect your apps with Activepieces`
+      const description = `Connect ${pieceData.displayName} to hundreds of apps to automate your business. Activepieces is trusted by thousands of users who automate their everyday tasks.`
+      return {
+        title: title,
+        description: description,
+        openGraph: {
+          title: title,
+          description: description,
+          siteName: "Activepieces",
+          images: [
+            {
+              url: "https://www.activepieces.com/meta1.png",
+              width: 1200,
+              height: 630,
+              alt: "Activepieces",
+            }
+          ],
+          url: "https://www.activepieces.com/pieces/" + pieceName,
+        },
+        icons: "/favicon.ico",
+      }
+    }
+    return {}
   }
+  catch (ex) {
+    console.error((ex));
+    return {
+
+    }
+  }
+
+
+
 }
 
 export default async function PiecePage({ params }: NavigationProps) {
   const pieceName = params.id;
+
   const pieceData = await GetPiece(`@activepieces/piece-${pieceName}`);
+  if (!pieceData) {
+    redirect('/404')
+  }
   const actions: ActionBase[][] = [[], []];
   Object.values(pieceData.actions).forEach((action, i) => {
     if (i % 2 === 0) {

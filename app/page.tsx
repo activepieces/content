@@ -12,6 +12,8 @@ import { ComparisionSection } from '../components/landing-page/ComparisonSection
 import { PiecesDictionarySection } from '../components/landing-page/PiecesDictionarySection';
 import { DetailedPiece, GetPiece, GetPieces } from '../utils/piece-helper';
 import { aiTemplates, generateTemplateFromDependencies, leadsTemplatesDeps, productivityTemplatesDeps } from '../components/flowTemplateGenerator';
+import { redirect } from 'next/navigation';
+
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,8 +46,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const pieces = await GetPieces();
   const detailedPieces: DetailedPiece[] = [];
+  if (!pieces) { redirect("/404"); }
   for (const p of pieces) {
-    detailedPieces.push(await GetPiece(p.name));
+    const piece = await GetPiece(p.name);
+    if (piece) {
+      detailedPieces.push(piece);
+    }
   }
   const leadsTemplates = leadsTemplatesDeps.map((t) => generateTemplateFromDependencies(t.description, detailedPieces, t.trigger, t.action));
   const productivityTemplates = productivityTemplatesDeps.map((t) => generateTemplateFromDependencies(t.description, detailedPieces, t.trigger, t.action));

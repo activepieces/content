@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
 import { allPiecesSort, corePieces } from "../../components/utils";
 import { ApLink } from "../../components/MyLink";
+import { redirect } from "next/navigation";
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 export const metadata: Metadata = {
     title: 'All apps - Connect your apps with Activepieces',
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
 
 export default async function FindAppsPage() {
     const pieces = (await GetPieces());
+    if (!pieces) {
+        redirect("/404");
+    }
     const allPieces = [...pieces, ...corePieces].sort(allPiecesSort);
 
     return (

@@ -32,7 +32,7 @@ type PieceMetaData = (PieceBase & {
   triggers: number;
 });
 
-export async function GetPieces(): Promise<PieceMetaData[]> {
+export async function GetPieces(): Promise<PieceMetaData[] | null> {
   const res = await fetch(
     `https://cloud.activepieces.com/api/v1/pieces`,
     {
@@ -40,26 +40,28 @@ export async function GetPieces(): Promise<PieceMetaData[]> {
     }
   );
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    console.error("Failed to fetch pieces ")
+    return null;
   }
   const resJson: PieceMetaData[] = await res.json();
   return resJson.filter(p => p.name !== "@activepieces/piece-instagram-business" && p.name !== "@activepieces/piece-shopify" && p.name !== "@activepieces/piece-facebook-pages");
 }
 
-export async function GetPiece(Name: string): Promise<DetailedPiece> {
+export async function GetPiece(pieceName: string): Promise<DetailedPiece | null> {
   const res = await fetch(
-    `https://cloud.activepieces.com/api/v1/pieces/${Name}`,
+    `https://cloud.activepieces.com/api/v1/pieces/${pieceName}`,
     {
       cache: "force-cache"
     }
   );
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    console.error("Failed to fetch piece " + pieceName)
+    return null;
   }
 
   const data = await res.json();
   return {
-    name: Name,
+    name: pieceName,
     version: data.version,
     displayName: data.displayName,
     description: data.description,

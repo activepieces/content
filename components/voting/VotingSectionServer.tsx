@@ -12,10 +12,16 @@ export const VotingSectionServer = async () => {
 
     const pieces = await GetPieces();
     const detailedPieces: DetailedPiece[] = []
-    for (const piece of pieces) {
-        const detailedPiece = await GetPiece(piece.name);
-        detailedPieces.push(detailedPiece);
+    if (pieces) {
+        for (const piece of pieces) {
+            const detailedPiece = await GetPiece(piece.name);
+            if (detailedPiece) {
+                detailedPieces.push(detailedPiece);
+            }
+
+        }
     }
+
     const supabase = createServerComponentClient({ cookies })
     const votes = await getSupabaseVotesForIssues(supabase);
 

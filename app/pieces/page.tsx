@@ -2,6 +2,8 @@
 import { Metadata } from "next";
 import { GetPieces } from "../../utils/piece-helper";
 import PiecesList from "../../components/pieces/List";
+import { redirect } from "next/navigation";
+
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,6 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PiecesPage() {
   const pieces = await GetPieces();
+  if (!pieces) {
+    redirect("/404")
+  }
   return (
     <div className="flex justify-center justify-items-center content-center	flex-col bg-white overflow-hidden">
       <div className="bg-[url('/banner.svg')] py-4 md:py-0 bg-no-repeat  sm:bg-[0%_0%] md:bg-[-360px]  bg-black  lg:bg-cover xl:bg-center text-white">
