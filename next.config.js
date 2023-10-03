@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  async rewrites() {
+    return [
+      {
+        source: "/docs/:path*",
+        destination: "https://activepieces.mintlify.dev/docs/:path*",
+        basePath: '/docs',
+      },
+    ];
+  },
   async redirects() {
     return [
       {
