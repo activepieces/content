@@ -6,7 +6,6 @@ const nextConfig = {
       {
         source: "/docs/:path*",
         destination: "https://activepieces.mintlify.dev/docs/:path*",
-        basePath: '/docs',
       },
     ];
   },
