@@ -16,7 +16,7 @@ const Navbar = ({ stars }: { stars: number }) => {
       routesList.current?.classList.toggle('!top-[80px]');
   }
   return (
-    <header className="bg-[#000000] sticky z-50 top-0 shadow-navbar h-[75px] lg:h-[initial]  ">
+    <header className="bg-[#000000] sticky z-[101] top-0 shadow-navbar h-[75px] lg:h-[initial]  ">
       <div className="container justify-between flex flex-wrap items-center mx-auto px-4 py-3 z-20">
         <div className="absolute top-0 left-0 bg-[#000000] lg:static w-full lg:w-[initial] flex gap-4 items-center py-5 px-4 lg:p-0 z-50">
           <Link href="/" onClick={closeMobileNavbar}>
