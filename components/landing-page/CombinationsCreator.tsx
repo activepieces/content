@@ -49,26 +49,69 @@ export interface CombinationsCreatorProps {
     actionPieces: DetailedPiece[];
 }
 
-const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
+const CombinationsCreator = (props: CombinationsCreatorProps) => {
+    const controlledMenuWhenActionRef = useRef(null as HTMLElement | null);
+    const controlledMenuWhenPropRef = useRef(null as HTMLElement | null);
+    const controlledMenuDoActionRef = useRef(null as HTMLElement | null);
+    const controlledMenuDoPropRef = useRef(null as HTMLElement | null);
+
+    const focusInnerInput = (type: number) => {
+        let inputElement = null;
+        switch(type){
+            case 0:
+                inputElement = controlledMenuWhenActionRef?.current?.querySelector("input");
+                break;
+            case 1:
+                inputElement = controlledMenuWhenPropRef?.current?.querySelector("input");
+                break;
+            case 2:
+                inputElement = controlledMenuDoActionRef?.current?.querySelector("input");
+                break;
+            case 3:
+                inputElement = controlledMenuDoPropRef?.current?.querySelector("input");
+                break;
+        }
+        inputElement?.focus()
+    }
     const menuItemClassName = ({ hover }: { hover: boolean }) =>
         hover ? 'apps-menuitem transitions-all !font-normal ' : 'apps-menuitem !font-normal ';
     const triggerAppDropdown = useRef<HTMLDivElement | null>(null);
     const [isTriggerAppDropdownOpen, setIsTriggerAppDropdownOpen] = useState(false);
-    const triggerAppdownAnchorProps = useClick(isTriggerAppDropdownOpen, setIsTriggerAppDropdownOpen);
+    const triggerAppdownAnchorAction = () => {
+        setIsTriggerAppDropdownOpen(true)
+        setTimeout(() => {
+            focusInnerInput(0)
+        });
+    }
     const [selectedTriggerApp, setSelectedTriggerApp] = useState(props.triggerPieces[0]);
     const triggerDropdown = useRef<HTMLDivElement | null>(null);
     const [isTriggerDropdownOpen, setIsTriggerDropdownOpen] = useState(false);
-    const triggerDropdownAnchorProps = useClick(isTriggerDropdownOpen, setIsTriggerDropdownOpen);
+    const triggerDropdownAnchorAction = () => {
+        setIsTriggerDropdownOpen(true)
+        setTimeout(() => {
+            focusInnerInput(1)
+        });
+    }
     const [selectedTrigger, setSelectedTrigger] = useState(props.triggerPieces[0].triggers[Object.keys(props.triggerPieces[0].triggers)[0]]);
     const actionAppDropdown = useRef<HTMLDivElement | null>(null);
     const [isActionAppDropdownOpen, setIsActionAppDropdownOpen] = useState(false);
-    const actionAppdownAnchorProps = useClick(isActionAppDropdownOpen, setIsActionAppDropdownOpen);
+    const triggerActionAppdownAnchorProps = () => {
+        setIsActionAppDropdownOpen(true)
+        setTimeout(() => {
+            focusInnerInput(2)
+        });
+    }
     const googlesheetsPiece = props.actionPieces.find((piece) => piece.name === "@activepieces/piece-google-sheets") || props.actionPieces[0];
     const [selectedActionApp, setSelectedActionApp] = useState(googlesheetsPiece);
     const actionDropdown = useRef<HTMLDivElement | null>(null);
     const [isActionDropdownOpen, setIsActionDropdownOpen] = useState(false);
-    const actionDropdownAnchorProps = useClick(isActionDropdownOpen, setIsActionDropdownOpen);
+    const triggerActionDropdownAnchorProps = () => {
+        setIsActionDropdownOpen(true)
+        setTimeout(() => {
+            focusInnerInput(3)
+        });
+    }
     const [selectedAction, setSelectedAction] = useState(googlesheetsPiece.actions[Object.keys(googlesheetsPiece.actions)[0]]);
     const [searchTriggerAppTerm, setSearchTriggerAppTerm] = useState("");
     const [searchTriggerTerm, setSearchTriggerTerm] = useState("");
@@ -100,7 +143,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                         When
                     </div>
                     <div className="flex flex-col md:flex-row gap-[10px] mt-[20px]">
-                        <div role="menu" {...triggerAppdownAnchorProps} ref={triggerAppDropdown} about="triggerAppDropdown" className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
+                        <div role="menu" onClick={triggerAppdownAnchorAction} ref={triggerAppDropdown} about="triggerAppDropdown" className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
                             <div className=" justify-start items-center gap-5 flex">
                                 <div className="p-[6.67px] bg-white rounded-md border border-black border-opacity-10 justify-center whitespace-nowrap items-center flex">
                                     <Image src={selectedTriggerApp.logoUrl} width={27} height={27} alt={selectedTriggerApp.displayName} className="object-contain"></Image>
@@ -116,7 +159,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                         <div className="flex justify-center items-center">
                             <div className="border-t-2 rounded-full border-solid border-[#5D5D61] w-[16.42px]"></div>
                         </div>
-                        <div about="triggerDropdown"  {...triggerDropdownAnchorProps} ref={triggerDropdown} className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
+                        <div about="triggerDropdown" onClick={triggerDropdownAnchorAction} ref={triggerDropdown} className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
                             <div className="justify-start items-center gap-5 flex whitespace-nowrap">
                                 <div className="text-white text-[22px] break-keep whitespace-nowrap font-normal truncate  text-ellipsis overflow-hidden leading-[60px] tracking-wide">{selectedTrigger.displayName}</div>
                             </div>
@@ -138,7 +181,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                         Do
                     </div>
                     <div className="flex flex-col md:flex-row gap-[10px] mt-[20px]">
-                        <div role="menu" {...actionAppdownAnchorProps} ref={actionAppDropdown} about="action piece Dropdown" className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
+                        <div role="menu" onClick={triggerActionAppdownAnchorProps} ref={actionAppDropdown} about="action piece Dropdown" className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
                             <div className=" justify-start items-center gap-5 flex">
                                 <div className="p-[6.67px] bg-white rounded-md border border-black border-opacity-10 justify-center items-center flex">
                                     <Image src={selectedActionApp.logoUrl} width={27} height={27} alt={selectedActionApp.displayName} className="object-contain"></Image>
@@ -154,7 +197,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                         <div className="flex justify-center items-center">
                             <div className="border-t-2 rounded-full border-solid border-[#5D5D61] w-[16.42px]"></div>
                         </div>
-                        <div about="action dropdown"  {...actionDropdownAnchorProps} ref={actionDropdown} className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
+                        <div about="action dropdown" onClick={triggerActionDropdownAnchorProps} ref={actionDropdown} className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
                             <div className="justify-start items-center gap-5 flex">
                                 <div className="text-white text-[22px] font-normal truncate whitespace-nowrap text-ellipsis overflow-hidden leading-[60px] tracking-wide">{selectedAction.displayName}</div>
                             </div>
@@ -174,9 +217,8 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
 
 
-
-
             <ControlledMenu
+                ref={controlledMenuWhenActionRef}
                 state={isTriggerAppDropdownOpen ? 'open' : 'closed'}
                 anchorRef={triggerAppDropdown}
                 onClose={() => setIsTriggerAppDropdownOpen(false)} menuClassName="apps-menu">
@@ -216,6 +258,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
 
             <ControlledMenu
+                ref={controlledMenuWhenPropRef}
                 state={isTriggerDropdownOpen ? 'open' : 'closed'}
                 anchorRef={triggerDropdown}
                 onClose={() => setIsTriggerDropdownOpen(false)} menuClassName="apps-menu">
@@ -248,10 +291,8 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
 
 
-
-
-
             <ControlledMenu
+                ref={controlledMenuDoPropRef}
                 state={isActionDropdownOpen ? 'open' : 'closed'}
                 anchorRef={actionDropdown}
                 onClose={() => setIsActionDropdownOpen(false)} menuClassName="apps-menu">
@@ -285,6 +326,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
 
             <ControlledMenu
+                ref={controlledMenuDoActionRef}
                 state={isActionAppDropdownOpen ? 'open' : 'closed'}
                 anchorRef={actionAppDropdown}
                 onClose={() => setIsActionAppDropdownOpen(false)} menuClassName="apps-menu">
@@ -321,27 +363,24 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                     )
                 }
             </ControlledMenu>
-
-
-
         </>
     );
 };
 export default CombinationsCreator;
 
-const SearchComp = (porps: { searchTerm: string, setSearchTerm: (term: string) => void, width: string }) => {
+const SearchComp = (props: { searchTerm: string, setSearchTerm: (term: string) => void, width: string }) => {
     const ref = useRef<HTMLInputElement>(null);
-    return <div className="bg-[#2D2E33] p-[15px] pb-[20px]" style={{ minWidth: porps.width }}>
+    return <div className="bg-[#2D2E33] p-[15px] pb-[20px]" style={{ minWidth: props.width }}>
         <div className="flex justify-center w-full gap-0 h-[56px] flex-row-reverse">
             <input
                 type="text"
                 tabIndex={2}
                 placeholder="Search"
-                value={porps.searchTerm}
+                value={props.searchTerm}
                 className="peer text-white w-full bg-[#1B1C20] py-2 pr-2 rounded-r-md border-r border-y border-[#FFFFFF] border-opacity-20 focus:outline-none "
                 ref={ref}
                 onChange={(e) => {
-                    porps.setSearchTerm(e.target.value);
+                    props.setSearchTerm(e.target.value);
                 }}
             />
             <div onClick={() => ref.current?.focus()} className="bg-[#1B1C20] cursor-pointer  pl-4 pr-3 rounded-l-md border-l border-y border-[#FFFFFF] border-opacity-20  peer-focus:outline-none flex flex-items-center">
