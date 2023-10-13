@@ -16,7 +16,7 @@ const Navbar = ({ stars }: { stars: number }) => {
       routesList.current?.classList.toggle('!top-[80px]');
   }
   return (
-    <header className="bg-[#000000] sticky z-[101] top-0 shadow-navbar h-[75px] lg:h-[initial]  ">
+    <header className="bg-[#000000] sticky z-[101] top-0 shadow-navbar h-[75px] lg:h-[initial]">
       <div className="container justify-between flex flex-wrap items-center mx-auto px-4 py-3 z-20">
         <div className="absolute top-0 left-0 bg-[#000000] lg:static w-full lg:w-[initial] flex gap-4 items-center py-5 px-4 lg:p-0 z-50">
           <Link href="/" onClick={closeMobileNavbar}>
@@ -42,55 +42,45 @@ const Navbar = ({ stars }: { stars: number }) => {
           </div>
         </div>
 
-
-        <nav ref={routesList} className="shadow-navbar lg:shadow-none duration-[400ms]  z-10 w-full absolute -top-[490px] transition-all  left-0 bg-[#2D2E33] lg:bg-[#000000] lg:static lg:block lg:w-auto" id="navbar-default">
+        <nav ref={routesList} className="shadow-navbar lg:shadow-none duration-[400ms] z-10 w-full absolute -top-[490px] transition-all left-0 bg-[#2D2E33] lg:bg-[#000000] lg:static lg:block lg:w-auto" id="navbar-default">
           <ul className="text-h5-sm flex flex-col gap-0 divide-y divide-[#57585C] lg:divide-y-0 lg:gap-[35px] px-4 lg:p-0 lg:flex-row lg:mt-0">
             <li className="flex justify-start relative lg:justify-center items-center">
-              <Link href="/features" onClick={closeMobileNavbar} className="block gap-2 peer  py-5 lg:py-0  text-white  flex font-normal justify-start lg:justify-center items-center transition-colors">
+              <Link href="/features" onClick={closeMobileNavbar} className="block gap-2 peer py-5 lg:py-0 text-white flex font-normal justify-start lg:justify-center items-center transition-colors">
                 Features</Link>
-              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
-
-            <li className="flex py-5 lg:py-0  relative justify-start lg:justify-center items-center">
-
-              <Link onClick={closeMobileNavbar} href="/pieces" className="block gap-2 peer  text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
+            <li className="flex py-5 lg:py-0 relative justify-start lg:justify-center items-center">
+              <Link onClick={closeMobileNavbar} href="/pieces" className="block gap-2 peer text-white font-normal flex justify-start lg:justify-center items-center transition-colors">
                 Pieces</Link>
-              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
-            <li className="flex py-5 lg:py-0  relative  justify-start lg:justify-center items-center">
-
-              <Link onClick={closeMobileNavbar} href="/pricing" className="block gap-2 text-white   font-normal peer flex  justify-start lg:justify-center items-center transition-colors">
+            <li className="flex py-5 lg:py-0 relative justify-start lg:justify-center items-center">
+              <Link onClick={closeMobileNavbar} href="/pricing" className="block gap-2 text-white font-normal peer flex justify-start lg:justify-center items-center transition-colors">
                 Pricing</Link>
-              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
-            <li className="flex py-5 lg:py-0  relative items-center  ">
-              <Link onClick={closeMobileNavbar} href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferrer noopener" className="block  gap-2 peer text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
+            <li className="flex py-5 lg:py-0 relative items-center">
+              <Link onClick={closeMobileNavbar} href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferrer noopener" className="block gap-2 peer text-white font-normal flex justify-start lg:justify-center items-center transition-colors">
                 Docs</Link>
-              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
-            <li className="flex py-5 lg:py-0 relative  items-center  ">
-
-              <Link onClick={closeMobileNavbar} href="https://community.activepieces.com/" className="block   peer gap-2 text-white font-normal flex  justify-start lg:justify-center items-center transition-colors">
+            <li className="flex py-5 lg:py-0 relative items-center">
+              <Link onClick={closeMobileNavbar} href="https://community.activepieces.com/" className="block peer gap-2 text-white font-normal flex justify-start lg:justify-center items-center transition-colors">
                 Community</Link>
-              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "> </div>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
             <li className="lg:ml-[45px] py-5 lg:py-0 relative flex items-center">
-
-              <Link onClick={closeMobileNavbar} target='_blank' rel='noopener noreferer' href="https://cloud.activepieces.com/sign-in" className="block gap-2 peer text-white font-normal  flex   justify-start lg:justify-center items-center transition-colors   ">
+              <Link onClick={closeMobileNavbar} target='_blank' rel='noopener noreferer' href="https://cloud.activepieces.com/sign-in" className="block gap-2 peer text-white font-normal flex justify-start lg:justify-center items-center transition-colors">
                 Login</Link>
-              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t border-solid border-white border-opacity-0 "></div>
+              <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"></div>
             </li>
-            <li onClick={closeMobileNavbar} className="lg:ml-[10px] py-5 lg:py-0  flex items-center">
-              <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopener noreferer' className="block hover:-translate-y-[3px] transition-transform	 gap-2 text-black text-h4-sm flex bg-white font-bold  justify-start lg:justify-center items-center px-5 py-2 rounded-sm lg:border lg:border-white ">
+            <li onClick={closeMobileNavbar} className="lg:ml-[10px] py-5 lg:py-0 flex items-center">
+              <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopener noreferer' className="block hover:-translate-y-[3px] transition-transform	 gap-2 text-black text-h4-sm flex bg-white font-bold justify-start lg:justify-center items-center px-5 py-2 rounded-sm lg:border lg:border-white">
                 Start free
               </Link>
-
             </li>
           </ul>
-
-
         </nav>
-
       </div>
     </header>
   );
