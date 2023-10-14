@@ -55,11 +55,11 @@ export const ComparisionSection = () => {
     const [selectedApp, setSelectedApp] = useState(apps[0]);
     const menuButtonRef: MutableRefObject<null | HTMLDivElement> = useRef(null);
     return <>
-        <section className="bg-white px-4 lg:px-0 py-[100px] lg:py-[150px]">
+        <section className="bg-white px-4 lg:px-0 py-[100px] lg:py-[130px]">
             <div className="mx-auto container">
-                <div className="text-black text-[50px] leading-[50px] lg:leading-[60px]  font-bold   lg:text-[80px] mb-[40px] lg:mb-[80px] ">
+                <div className="text-black text-[50px] leading-[50px] lg:leading-[60px] font-bold lg:text-[80px] mb-[40px] lg:mb-[80px]">
                     <div className='flex gap-[10px] flex-wrap lg:gap-[25px] mb-[10px] lg:mb-[30px]'>
-                        Switching from <div className='select-none cursor-pointer  relative items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
+                        Switching from <div className='select-none cursor-pointer relative items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
                             { color: isAppMenuOpen ? "#6E41E2" : "#111111" }
                         }>
 
@@ -96,12 +96,12 @@ export const ComparisionSection = () => {
                     {
                         apps.filter(app => app.appName !== selectedApp.appName).map((app, idx) =>
                             <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedApp(app)}>
-                                <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center' style={{ width: (menuButtonRef.current?.clientWidth || 100) + "px" }}>
-                                    <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
+                                <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2 items-center' style={{ width: (menuButtonRef.current?.clientWidth || 100) + "px" }}>
+                                    <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg">
                                         <Image alt={selectedApp.appName} src={app.icon} width={20} height={20} className="h-[20px] w-[20px] lg:h-[40px] lg:w-[40px]"></Image>
-                                    </div>  {app.appName}
+                                    </div> {app.appName}
                                 </div>
-                                <div className='border-b border-solid border-white  border-opacity-20 mx-[15px] '></div>
+                                <div className='border-b border-solid border-white border-opacity-20 mx-[15px]'></div>
                             </MenuItem>
                         )
                     }
@@ -109,7 +109,7 @@ export const ComparisionSection = () => {
 
                 </ControlledMenu>
 
-                <div className='flex gap-[15px] lg:gap-[30px] flex-wrap '>
+                <div className='flex gap-[15px] lg:gap-[30px] flex-wrap'>
                     <ComparisonCard
                         discussionPoints={selectedApp.miss}
                         icon={selectedApp.icon}
@@ -127,9 +127,9 @@ export const ComparisionSection = () => {
                     ></ComparisonCard>
                 </div>
 
-                <div className='mt-[40px] lg:mt-[60px] items-center justify-between flex-wrap flex gap-5 text-h3-sm lg:text-h3-lg '>
+                <div className='mt-[40px] lg:mt-[60px] items-center justify-between flex-wrap flex gap-5 text-h3-sm lg:text-h3-lg'>
                     Activepieces is the best alternative to {selectedApp.appName}
-                    <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noreferer noopener' className='  rounded-sm hover:-translate-y-[6px] transition-transform items-center justify-center px-[43px] w-full lg:w-[initial]  lg:py-[10px] py-[26px] bg-black text-white lg:text-h4-lg text-h4-sm flex gap-5 '>
+                    <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noreferer noopener' className='rounded-sm hover:-translate-y-[6px] transition-transform items-center justify-center px-[43px] w-full lg:w-[initial] lg:py-[10px] py-[26px] bg-black text-white lg:text-h4-lg text-h4-sm flex gap-5'>
                         Get started  <Image src="/arrow_white.svg" alt="arrow" width={33.3} height={16.6}></Image>
                     </Link>
                 </div>

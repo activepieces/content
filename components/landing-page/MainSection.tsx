@@ -4,11 +4,11 @@ import ImageSlider from "./imageSlider";
 const MainSection = () =>
     <>
         <main>
-            <section className='bg-black text-white text-[50px] font-bold leading-[60px] lg:text-[80px] px-4 lg:px-0 pb-[100px] lg:pb-[150px]'>
-                <div className='container justify-between mx-auto py-[40px] lg:py-[80px] flex gap-0 flex-wrap lg:flex-nowrap '>
+            <section className='bg-black text-white text-[50px] font-bold leading-[60px] lg:text-[80px] px-4 lg:px-0 pb-[100px] lg:pb-[120px]'>
+                <div className='container justify-between mx-auto py-[40px] lg:py-[80px] flex gap-0 flex-wrap lg:flex-nowrap'>
 
-                    <h1 className='lg:items-start flex max-w-[962.37px] gap-[5px] lg:gap-[25px] items-center flex-wrap '>
-                        <div className='basis-full md:basis-1'>Automate</div> <div>your</div>  <div className=' relative '>
+                    <h1 className='lg:items-start flex max-w-[962.37px] gap-[5px] lg:gap-[25px] items-center flex-wrap'>
+                        <div className='basis-full md:basis-1'>Automate</div> <div>your</div>  <div className=' relative'>
                             <div className='z-20 relative'>marketing,</div>
                             <div className='absolute -rotate-[0.35deg] -bottom-[11px] z-10'>
                                 <svg className='w-[229px] lg:w-[auto]' width="361" height="9" viewBox="0 0 361 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@ const MainSection = () =>
                     </h1>
 
                     <div className='flex flex-col justify-end grow mt-[40px] lg:grow-0 lg:mt-[0px]'>
-                        <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopner' className='rounded-sm text-center hover:-translate-y-[6px] transition-transform  text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
+                        <Link href="https://cloud.activepieces.com/sign-up" target='_blank' rel='noopner' className='rounded-sm text-center hover:-translate-y-[6px] transition-transform text-h4-sm lg:text-h4-lg text-white bg-primary py-[15px] px-[35px] whitespace-nowrap'>
                             Get Started
                         </Link>
                     </div>
@@ -55,8 +55,8 @@ const MainSection = () =>
                         <source src="/compressed_main_video.mp4" />
                     </video>
                 </div>
-                <div className='flex justify-center items-center flex-col text-white '>
-                    <div className='w-[162px] text-center lg:w-fit text-h4-sm lg:text-h4-lg  mb-[50px] !font-normal'>
+                <div className='flex justify-center items-center flex-col text-white'>
+                    <div className='w-[162px] text-center lg:w-fit text-h4-sm lg:text-h4-lg mb-[50px] !font-normal'>
                         Everyone else is hopping on
                     </div>
                     <ImageSlider />

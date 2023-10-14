@@ -59,7 +59,7 @@ const OpenSourceSection = async () => {
         <section className='bg-white text-black px-4 lg:px-0'>
             <div className='justify-center gap-[50px] container mx-auto lg:gap-25 overflow-visible py-[80px] lg:py-[100px] flex flex-wrap lg:flex-nowrap'>
                 <div>
-                    <h2 className='text-h1-sm lg:text-h1-lg mb-5 lg:w-[750px] '>
+                    <h2 className='text-h1-sm lg:text-h1-lg mb-5 lg:w-[750px]'>
                         Activepieces is open source
                     </h2>
                     <div className="text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] mb-20">
@@ -77,13 +77,13 @@ const OpenSourceSection = async () => {
                         }
                     </div>
                 </div>
-                <div className=" bg-[url('/map.png')] md:bg-center bg-contain  relative bg-no-repeat  lg:h-[700px] w-[870px] basis-full lg:basis-[auto] flex justify-center gap-[50px] lg:gap-[150px] ">
+                <div className=" bg-[url('/map.png')] md:bg-center bg-contain relative bg-no-repeat lg:h-[600px] w-[870px] basis-full lg:basis-[auto] flex justify-center gap-[50px] lg:gap-[150px] ">
                     <div className='flex flex-col gap-[30px] lg:gap-[60px] mt-[30px] lg:mt-[60px]'>
                         <Contributor githubAccount='kanarelo' githubUrl='https://github.com/kanarelo' imageUrl='/contributors/kanarelo.jpg' tagColor='#D16FFF' imageClasses='w-[138px] h-[138px] lg:h-[180px] lg:w-[180px]' key={1}></Contributor>
                         <Contributor githubAccount='abuaboud' githubUrl='https://github.com/abuaboud' imageUrl='/contributors/abuAboud.jpg' imageClasses='w-[116px] h-[116px] lg:h-[163px] lg:w-[163px]' tagColor='#FF9F0F' key={3}></Contributor>
                     </div>
 
-                    <div className='flex flex-col gap-[30px] lg:gap-[60px] '>
+                    <div className='flex flex-col gap-[30px] lg:gap-[60px]'>
                         <Contributor githubAccount='Ozak93' githubUrl='https://github.com/Ozak93' imageClasses='w-[116px] h-[116px] lg:h-[180px] lg:w-[180px]' imageUrl='/contributors/ozak93.jpg' tagColor='#6FA8FF' key={2}></Contributor>
                         <Contributor githubAccount='ShayPunter' githubUrl='https://github.com/ShayPunter' imageUrl='/contributors/shaypunter.png' tagColor='#0ACA90' imageClasses='w-[138px] h-[138px] lg:h-[163px] lg:w-[163px]' key={4}></Contributor>
                     </div>
