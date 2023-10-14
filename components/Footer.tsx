@@ -9,7 +9,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex container mx-auto px-4 lg:px-0 flex-wrap border-solid pb-[80px] pt-[40px] ">
-        <div className="flex flex-col gap-4 basis-full lg:basis-[initial] lg:mr-[150px] mb-[80px] lg:mb-0">
+        <div className="flex flex-col basis-full lg:basis-[initial] lg:mr-[150px] mb-[80px] lg:mb-0">
 
           <Link className="text-center lg:text-left" href="/">
             <Image
@@ -19,10 +19,10 @@ export default function Footer() {
               height={35}
               className="w-[152px] h-[25px] lg:w-[215px] inline lg:h-[35px]"
             />
-            <div className="text-white py-4">
-              ©{new Date().getFullYear()} Activepieces, Inc.
-            </div>
           </Link>
+          <div className="lg:text-left text-center text-white py-4">
+            ©{new Date().getFullYear()} Activepieces, Inc.
+          </div>
         </div>
 
         <nav className="text-lg  flex flex-wrap justify-center  gap-[118px] lg:gap-[180px]">
