@@ -65,7 +65,7 @@ const Navbar = ({ stars }: { stars: number }) => {
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
             <li className="flex py-5 lg:py-0 relative items-center">
-              <Link onClick={closeMobileNavbar} href="https://community.activepieces.com/" className="block peer gap-2 text-white font-normal flex justify-start lg:justify-center items-center transition-colors">
+              <Link onClick={closeMobileNavbar} href="https://community.activepieces.com/" target="_blank" className="block peer gap-2 text-white font-normal flex justify-start lg:justify-center items-center transition-colors">
                 Community</Link>
               <div className="peer-hover:border-opacity-100 absolute transition-all hidden lg:block -bottom-[12px] w-full border-t-2 border-solid border-white border-opacity-0"> </div>
             </li>
