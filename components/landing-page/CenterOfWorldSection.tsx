@@ -99,7 +99,7 @@ const CenterOfWorldSection = (props: {
                     <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px]'>
                         Align your team by spreading the news where they hang out, send notifications from everywhere to your Slack workspace.
                     </h2>
-                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end'>
+                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end items-center'>
                         <div className='transition-colors hover:fill-primary' onClick={() => sliderDiv.current?.scrollBy({
                             behavior: 'smooth',
                             left: -scrollBy,

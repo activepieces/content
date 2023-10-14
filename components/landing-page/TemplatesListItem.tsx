@@ -25,7 +25,7 @@ const TemplatesListItem = (props: TemplatesListItemProps) => {
                 </div>
                 <div className="flex md:grow md:justify-end">
 
-                    <div className="flex md:px-[5px]  !font-bold grow  gap-[5px] md:w-[105px] items-center justify-end   text-h6-sm md:text-h6-lg">
+                    <div className="flex md:px-[5px]  !font-bold grow  gap-[10px] md:w-[105px] items-center justify-end   text-h6-sm md:text-h6-lg">
                         Try it <Arrow width={33} height={16} className="w-[20.67px] h-[10.34px] md:w-[33px] md:h-[16px] "></Arrow>
                     </div>
 

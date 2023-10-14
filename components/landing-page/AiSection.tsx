@@ -54,7 +54,7 @@ const AiSection = (props: {
                     <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px]'>
                         Grow your team of AIs to scale up your blog content, offer customer service and auto post to your social accounts.
                     </h2>
-                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end'>
+                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end items-center'>
                         <div className='transition-colors hover:fill-primary' onClick={() => sliderDiv.current?.scrollBy({
                             behavior: 'smooth',
                             left: -scrollBy,
