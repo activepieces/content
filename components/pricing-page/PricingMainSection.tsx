@@ -6,8 +6,8 @@ import Image from "next/image";
 const businessPlans = [{ "tasks": 5000, "price": "115" }, { "tasks": 10000, "price": "125" }, { "tasks": 25000, "price": "155" }, { "tasks": 50000, "price": "200" }, { "tasks": 100000, "price": "275" }, { "tasks": 200000, "price": "400" }, { "tasks": 500000, "price": "600" }]
 const proPlans = [{ "tasks": 5000, "price": "15" }, { "tasks": 10000, "price": "25" }, { "tasks": 25000, "price": "55" }, { "tasks": 50000, "price": "100" }, { "tasks": 100000, "price": "175" }, { "tasks": 200000, "price": "300" }, { "tasks": 500000, "price": "500" }];
 const hobbyistFeats = ["Unlimited users", "Instant triggers", "15 mins update time", "3 connected accounts", "Community support"]
-const proFeats = ["1 user", "Instant triggers", "5 mins update time", "10 connected accounts", "Chat and email support"]
-const businessFeats = ["5 users", "Instant triggers", "1 min update time", "∞ connected accounts", "Chat and email support"]
+const proFeats = ["1 user", "Instant triggers", "5 mins update time", "10 connected accounts", "Community support"]
+const businessFeats = ["5 users", "Instant triggers", "1 min update time", "∞ connected accounts", "Email support"]
 const enterpriseFeatsFirstCol = ["Users and permissions", "Single sign on", "Audit log"]
 const enterpriseFeatsSecondCol = ["On premise", "Custom log retention", "Dedicated support"]
 
