@@ -66,7 +66,6 @@ module.exports = {
           '5rem',
           {
             lineHeight: '5.625rem',
-            letterSpacing: '2.5%',
             fontWeight: '700',
           }
         ],
@@ -74,19 +73,16 @@ module.exports = {
           '3.125rem',
           {
             lineHeight: '3.75rem',
-            letterSpacing: '2.5%',
             fontWeight: '700',
           }
         ],
         '2sm': '1.25rem',
         'h1-sm': ['36px',{
           lineHeight: '43.2px',
-          letterSpacing: '2.5%',
           fontWeight: '700',
         }],
         'h1-lg': ['50px',{
           lineHeight: '60px',
-          letterSpacing: '2.5%',
           fontWeight: '700',
         }],
         'h2-sm': ['32px',{
@@ -139,10 +135,8 @@ module.exports = {
           letterSpacing: '0.55px',
           fontWeight: '400',
         }],
-
       },
     container: {
-   
         screens: {
           sm: '640px',
           md: '768px',
@@ -157,7 +151,6 @@ module.exports = {
           xl: '85%',
           '2xl': '90%',
         }
-   
       },
       boxShadow: {
         'navbar':'1px 1px 20px 1px #000'
