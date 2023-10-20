@@ -135,7 +135,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
     }
     return (
         <>
-            <div className='flex flex-col grow'>
+            <div className='flex flex-col grow max-w-full'>
                 <div className='border border-solid border-white border-opacity-20 rounded-md px-[34px] py-[38.75px] overflow-hidden bg-[#2D2E33]'>
                     <div className='flex gap-[18.75px] !font-bold text-white text-h6-sm lg:text-h6-lg'>
                         <Image src="/bolt_white.svg" width={12.51} height={22.5} alt='trigger'>
@@ -144,14 +144,14 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-[10px] mt-[20px]">
                         <div role="menu" onClick={triggerAppdownAnchorAction} ref={triggerAppDropdown} about="triggerAppDropdown" className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
-                            <div className=" justify-start items-center gap-5 flex">
+                            <div className=" justify-start items-center gap-5 flex flex-1 max-w-[calc(100%-50px)]">
                                 <div className="p-[6.67px] bg-white rounded-md border border-black border-opacity-10 justify-center whitespace-nowrap items-center flex">
                                     <Image src={selectedTriggerApp.logoUrl} width={27} height={27} alt={selectedTriggerApp.displayName} className="object-contain"></Image>
                                 </div>
-                                <div className="text-white text-[22px] break-keep whitespace-nowrap font-normal leading-[60px] tracking-wide">{selectedTriggerApp.displayName}</div>
+                                <div className="text-white sm:text-[22px] text-[18px] truncate text-ellipsis overflow-hidden break-keep whitespace-nowrap font-normal leading-[60px] tracking-wide">{selectedTriggerApp.displayName}</div>
                             </div>
                             <div className="w-[30px] items-center flex">
-                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px] "></Image>
+                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px]"></Image>
                             </div>
 
                         </div>
@@ -160,11 +160,11 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                             <div className="border-t-2 rounded-full border-solid border-[#5D5D61] w-[16.42px]"></div>
                         </div>
                         <div about="triggerDropdown" onClick={triggerDropdownAnchorAction} ref={triggerDropdown} className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
-                            <div className="justify-start items-center gap-5 flex whitespace-nowrap">
-                                <div className="text-white text-[22px] break-keep whitespace-nowrap font-normal truncate  text-ellipsis overflow-hidden leading-[60px] tracking-wide">{selectedTrigger.displayName}</div>
+                            <div className="justify-start items-center gap-5 flex flex-1 max-w-[calc(100%-50px)] whitespace-nowrap">
+                                <div className="text-white sm:text-[22px] text-[18px] break-keep whitespace-nowrap font-normal truncate text-ellipsis overflow-hidden leading-[60px] tracking-wide">{selectedTrigger.displayName}</div>
                             </div>
                             <div className="w-[30px] items-center flex">
-                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px] "></Image>
+                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px]"></Image>
                             </div>
                         </div>
                     </div>
@@ -182,14 +182,14 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-[10px] mt-[20px]">
                         <div role="menu" onClick={triggerActionAppdownAnchorProps} ref={actionAppDropdown} about="action piece Dropdown" className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
-                            <div className=" justify-start items-center gap-5 flex">
+                            <div className=" justify-start items-center gap-5 flex flex-1 max-w-[calc(100%-50px)]">
                                 <div className="p-[6.67px] bg-white rounded-md border border-black border-opacity-10 justify-center items-center flex">
                                     <Image src={selectedActionApp.logoUrl} width={27} height={27} alt={selectedActionApp.displayName} className="object-contain"></Image>
                                 </div>
-                                <div className="text-white text-[22px] font-normal leading-[60px] whitespace-nowrap tracking-wide">{selectedActionApp.displayName}</div>
+                                <div className="text-white sm:text-[22px] text-[18px] font-normal truncate text-ellipsis overflow-hidden leading-[60px] whitespace-nowrap tracking-wide">{selectedActionApp.displayName}</div>
                             </div>
                             <div className="w-[30px] items-center flex">
-                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px] "></Image>
+                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px]"></Image>
                             </div>
 
                         </div>
@@ -198,11 +198,11 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                             <div className="border-t-2 rounded-full border-solid border-[#5D5D61] w-[16.42px]"></div>
                         </div>
                         <div about="action dropdown" onClick={triggerActionDropdownAnchorProps} ref={actionDropdown} className="basis-[45%] min-h-[70px] p-[15px] bg-zinc-900  border border-white border-opacity-20 justify-between items-center gap-5 inline-flex grow cursor-pointer">
-                            <div className="justify-start items-center gap-5 flex">
-                                <div className="text-white text-[22px] font-normal truncate whitespace-nowrap text-ellipsis overflow-hidden leading-[60px] tracking-wide">{selectedAction.displayName}</div>
+                            <div className="justify-start items-center gap-5 flex flex-1 max-w-[calc(100%-50px)]">
+                                <div className="text-white sm:text-[22px] text-[18px] font-normal truncate whitespace-nowrap text-ellipsis overflow-hidden leading-[60px] tracking-wide">{selectedAction.displayName}</div>
                             </div>
                             <div className="w-[30px] items-center flex">
-                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px] "></Image>
+                                <Image src="/chevron.svg" alt="chevron" height={14} width={7} className="rotate-90 w-[30px] h-[20px]"></Image>
                             </div>
                         </div>
                     </div>
@@ -238,11 +238,11 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                 setSelectedTriggerApp(app);
                                 setSelectedTrigger(app.triggers[Object.keys(app.triggers)[0]])
                             }}>
-                            <div className='item-container-combinations   cursor-pointer flex gap-2  items-center' style={{
+                            <div className='item-container-combinations cursor-pointer flex gap-2 items-center' style={{
                                 minWidth: (triggerAppDropdown.current?.clientWidth || 100) + "px",
                                 maxWidth: (triggerAppDropdown.current?.clientWidth || 100) + "px"
                             }} >
-                                <div className=" bg-white flex items-center p-[7px] border border-solid border-outline rounded-lg ">
+                                <div className=" bg-white flex items-center p-[7px] border border-solid border-outline rounded-lg">
                                     <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[26px] lg:w-[26px]"></Image>
                                 </div>
                                 <div className="truncate text-[22px] break-keep whitespace-nowrap text-ellipsis overflow-hidden">
@@ -250,7 +250,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                 </div>
                             </div>
 
-                            {idx !== props.triggerPieces.length - 1 && <div className='border-b border-solid border-white  border-opacity-20 mx-[15px]'></div>}
+                            {idx !== props.triggerPieces.length - 1 && <div className='border-b border-solid border-white border-opacity-20 mx-[15px]'></div>}
                         </MenuItem>
                     )
                 }
@@ -274,7 +274,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 {
                     Object.keys(selectedTriggerApp.triggers).filter((trigger) => trigger.toLowerCase().includes(searchTriggerTerm.toLowerCase())).map((key, idx) =>
                         <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedTrigger(selectedTriggerApp.triggers[key])}>
-                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{
+                            <div className='item-container-combinations cursor-pointer flex gap-2 items-center' style={{
                                 minWidth: (triggerDropdown.current?.clientWidth || 100) + "px",
                                 maxWidth: (triggerDropdown.current?.clientWidth || 100) + "px"
                             }}>
@@ -282,7 +282,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                     {selectedTriggerApp.triggers[key].displayName}
                                 </div>
                             </div>
-                            {idx !== Object.keys(selectedTriggerApp.triggers).length - 1 && <div className='border-b border-solid border-white  border-opacity-20 mx-[15px]'></div>}
+                            {idx !== Object.keys(selectedTriggerApp.triggers).length - 1 && <div className='border-b border-solid border-white border-opacity-20 mx-[15px]'></div>}
 
                         </MenuItem>
                     )
@@ -308,15 +308,15 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                 {
                     Object.keys(selectedActionApp.actions).filter((action) => action.toLowerCase().includes(searchActionTerm.toLowerCase())).map((key, idx) =>
                         <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedAction(selectedActionApp.actions[key])}>
-                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{
+                            <div className='item-container-combinations cursor-pointer flex gap-2 items-center' style={{
                                 minWidth: (actionDropdown.current?.clientWidth || 100) + "px",
                                 maxWidth: (actionDropdown.current?.clientWidth || 100) + "px"
                             }}>
-                                <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                                <div className="truncate text-[22px] break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {selectedActionApp.actions[key].displayName}
                                 </div>
                             </div>
-                            {idx !== Object.keys(selectedActionApp.actions).length - 1 && <div className='border-b border-solid border-white  border-opacity-20 mx-[15px]'></div>}
+                            {idx !== Object.keys(selectedActionApp.actions).length - 1 && <div className='border-b border-solid border-white border-opacity-20 mx-[15px]'></div>}
 
                         </MenuItem>
                     )
@@ -346,19 +346,19 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
                                 setSelectedActionApp(app);
                                 setSelectedAction(app.actions[Object.keys(app.actions)[0]])
                             }}>
-                            <div className='item-container-combinations cursor-pointer flex gap-2  items-center' style={{
+                            <div className='item-container-combinations cursor-pointer flex gap-2 items-center' style={{
                                 minWidth: (actionAppDropdown.current?.clientWidth || 100) + "px",
                                 maxWidth: (actionAppDropdown.current?.clientWidth || 100) + "px",
                             }}>
-                                <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
+                                <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg">
                                     <Image alt={app.displayName} src={app.logoUrl} width={20} height={20} className="h-[20px] w-[20px] object-contain lg:h-[40px] lg:w-[40px]"></Image>
                                 </div>
-                                <div className="truncate text-[22px]   break-keep whitespace-nowrap text-ellipsis overflow-hidden">
+                                <div className="truncate text-[22px] break-keep whitespace-nowrap text-ellipsis overflow-hidden">
                                     {app.displayName}
                                 </div>
                             </div>
 
-                            {idx !== props.actionPieces.length - 1 && <div className='border-b border-solid border-white  border-opacity-20 mx-[15px]'></div>}
+                            {idx !== props.actionPieces.length - 1 && <div className='border-b border-solid border-white border-opacity-20 mx-[15px]'></div>}
                         </MenuItem>
                     )
                 }
@@ -377,13 +377,13 @@ const SearchComp = (props: { searchTerm: string, setSearchTerm: (term: string) =
                 tabIndex={2}
                 placeholder="Search"
                 value={props.searchTerm}
-                className="peer text-white w-full bg-[#1B1C20] py-2 pr-2 rounded-r-md border-r border-y border-[#FFFFFF] border-opacity-20 focus:outline-none "
+                className="peer text-white w-full bg-[#1B1C20] py-2 pr-2 rounded-r-md border-r border-y border-[#FFFFFF] border-opacity-20 focus:outline-none"
                 ref={ref}
                 onChange={(e) => {
                     props.setSearchTerm(e.target.value);
                 }}
             />
-            <div onClick={() => ref.current?.focus()} className="bg-[#1B1C20] cursor-pointer  pl-4 pr-3 rounded-l-md border-l border-y border-[#FFFFFF] border-opacity-20  peer-focus:outline-none flex flex-items-center">
+            <div onClick={() => ref.current?.focus()} className="bg-[#1B1C20] cursor-pointer pl-4 pr-3 rounded-l-md border-l border-y border-[#FFFFFF] border-opacity-20 peer-focus:outline-none flex flex-items-center">
                 <Image src="search_white.svg" alt="search for pieces" width={18} height={18} />
             </div>
         </div>

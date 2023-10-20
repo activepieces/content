@@ -142,7 +142,6 @@ module.exports = {
           md: '768px',
           lg: '1024px',
           xl: '1320px',
-          '2xl': '1320px',
         },
         width:{
           sm: '85%',
