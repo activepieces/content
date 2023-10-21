@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-    const title = "Terms of Service - Activepieces";
+    const title = "Privacy Policy - Activepieces";
     const description = "Activepieces offers hundreds of apps to choose from to automate your work with."
     return {
         title: title,

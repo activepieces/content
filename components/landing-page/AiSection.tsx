@@ -21,10 +21,10 @@ const AiSection = (props: {
 
 
     return (<>
-        <section className="bg-[#FAEAFF] py-[100px] lg:py-[160px] ">
+        <section className="bg-[#FAEAFF] py-[100px] lg:py-[130px]">
             <div ref={sectionDiv} className='container mx-auto px-4 lg:px-0'>
                 <h2 className='mb-[80px] lg:mb-[100px]'>
-                    <div className='hidden md:block text-black text-[50px] font-bold leading-[80px] lg:text-[80px] flex flex-col '>
+                    <div className='hidden md:block text-black text-[50px] font-bold leading-[80px] lg:text-[80px] flex flex-col'>
                         <div>
                             <span className='text-primary relative'>
                                 4 awesome <Image alt='drops' src='/drops.svg' height={39.165} width={61.223} className='absolute md:-top-[5px] lg:top-0 md:-left-[22px]  md:scale-50 lg:scale-100 lg:-left-[9px]'></Image>
@@ -34,7 +34,7 @@ const AiSection = (props: {
                             to automate your business  <Image src='/twirlled_arrow.svg' height={70} width={83} className='ml-[20px] h-[41.5px] w-[35px] lg:h-[83px] lg:w-[70px] -mt-[5px] lg:-mt-[40px] inline' alt='arrow'></Image>
                         </div>
                     </div>
-                    <div className='block md:hidden text-black text-[50px] font-bold leading-[53px]  '>
+                    <div className='block md:hidden text-black text-[50px] font-bold leading-[53px]'>
                         <span className='text-primary relative'>
                             4 awesome <Image alt='drops' src='/drops.svg' height={23} width={36} className='absolute -top-[3px] -left-[4px]'></Image>
                         </span> ways to automate your business
@@ -43,7 +43,7 @@ const AiSection = (props: {
 
 
                 </h2>
-                <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center '>
+                <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center'>
                     <div className='basis-full lg:basis-auto' >
                         <Image src="/one.svg" alt='one' width={39} height={41} className='w-[30px] h-[24px] lg:w-[43px] lg:h-[34px]'></Image>
                     </div>
@@ -54,7 +54,7 @@ const AiSection = (props: {
                     <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px]'>
                         Grow your team of AIs to scale up your blog content, offer customer service and auto post to your social accounts.
                     </h2>
-                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end'>
+                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end items-center'>
                         <div className='transition-colors hover:fill-primary' onClick={() => sliderDiv.current?.scrollBy({
                             behavior: 'smooth',
                             left: -scrollBy,

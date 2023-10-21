@@ -1,3 +1,26 @@
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const title = "Google API Disclosure - Activepieces";
+    return {
+        title: title,
+        icons: "/favicon.ico",
+        openGraph: {
+            title: title,
+            siteName: "Activepieces",
+            images: [
+                {
+                    url: "https://www.activepieces.com/meta1.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Activepieces",
+                },
+            ],
+            url: "https://www.activepieces.com",
+        }
+    };
+}
+
 export default async function GoogleDisclosure() {
     return (
         <div className="container mx-auto p-4 text-white pt-10 lg:pt-20 h-[57vh]">

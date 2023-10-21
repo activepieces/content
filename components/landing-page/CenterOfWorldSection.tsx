@@ -35,18 +35,18 @@ const CenterOfWorldSection = (props: {
     const [marginLeft, setMarginLeft] = useState('0px');
 
     return (<>
-        <section className="bg-[#E7FFA4] py-[100px] lg:py-[160px] border-t border-solid border-black ">
+        <section className="bg-[#E7FFA4] py-[100px] lg:py-[130px] border-t border-solid border-black">
             <div ref={sectionDiv} className='container mx-auto px-4 lg:px-0'>
-                <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center '>
+                <div className='flex text-h2-sm lg:text-h2-lg flex-wrap gap-[20px] lg:gap-[10px] items-center'>
                     <div className='basis-full lg:basis-auto' >
                         <Image src="/three.svg" alt='one' width={39} height={41} className='w-[30px] h-[24px] lg:w-[43px] lg:h-[34px]'></Image>
                     </div>
 
-                    <div className='flex  relative items-center flex-wrap'>
+                    <div className='flex relative items-center flex-wrap'>
                         <div>
                             Centralize notifications<span className='hidden md:inline'>&nbsp;</span></div>
                         <div>in your</div>
-                        <div className='select-none ml-[10px] lg:ml-[25px] cursor-pointer  relative   items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
+                        <div className='select-none ml-[10px] lg:ml-[25px] cursor-pointer relative items-center select-none flex gap-[8.5px]' {...anchorProps} ref={menuButtonRef} style={
                             { color: isAppMenuOpen ? "#6E41E2" : "#111111" }
                         }>
 
@@ -78,12 +78,12 @@ const CenterOfWorldSection = (props: {
                             {
                                 appsUserChanges.filter(app => app.appName !== selectedApp.appName).map((app, idx) =>
                                     <MenuItem className={menuItemClassName} key={idx} onClick={() => setSelectedApp(app)}>
-                                        <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2  items-center'>
+                                        <div className='item-container text-h4-sm lg:text-h4-lg cursor-pointer flex gap-2 items-center'>
                                             <div className=" bg-white flex items-center p-[5px] lg:p-[10px] border border-solid border-outline rounded-lg ">
                                                 <Image alt={selectedApp.displayName} src={app.icon} width={20} height={20} className="h-[20px] w-[20px] lg:h-[40px] lg:w-[40px]"></Image>
                                             </div>  {app.displayName}
                                         </div>
-                                        <div className='border-b border-solid border-white  border-opacity-20 mx-[15px] '></div>
+                                        <div className='border-b border-solid border-white border-opacity-20 mx-[15px]'></div>
                                     </MenuItem>
                                 )
                             }
@@ -96,10 +96,10 @@ const CenterOfWorldSection = (props: {
 
                 </div>
                 <div className='flex'>
-                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px] '>
+                    <h2 className='text-black text-h6-sm lg:text-h6-lg mt-[20px] lg:mt-[40px] max-w-[958px]'>
                         Align your team by spreading the news where they hang out, send notifications from everywhere to your Slack workspace.
                     </h2>
-                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end'>
+                    <div className='hidden  fill-black lg:flex gap-[60px] grow justify-end items-center'>
                         <div className='transition-colors hover:fill-primary' onClick={() => sliderDiv.current?.scrollBy({
                             behavior: 'smooth',
                             left: -scrollBy,

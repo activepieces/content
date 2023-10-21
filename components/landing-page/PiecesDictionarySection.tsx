@@ -57,7 +57,7 @@ const popularStuff = [
             },
             {
                 title: "Best Workato Alternatives",
-                link: "/blog/top-workato-alternatives-and-competitors"
+                link: "https://activepieces.com/blog/top-workato-alternatives-and-competitors"
             },
             {
                 title: "Automate Blog with AI",
