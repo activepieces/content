@@ -3,12 +3,18 @@ import { useState, useEffect } from "react";
 import { initTooltips } from "flowbite";
 import Link from "next/link";
 
-export default function PricingTable() {
+export default function PricingTable(isCloud: any) {
   initTooltips();
+  let cloud = isCloud.isCloud;  
   const proPlans: { [key: string]: any } = [{ "tasks": "1,000", "price": "0" }, { "tasks": "5,000", "price": "15" }, { "tasks": "10,000", "price": "25" }, { "tasks": "25,000", "price": "55" }, { "tasks": "50,000", "price": "100" }, { "tasks": "100,000", "price": "175" }, { "tasks": "200,000", "price": "300" }, { "tasks": "500,000", "price": "500" }, { "tasks": "1 million", "price": "900" }, { "tasks": "1 million+", "price": "Custom ✨" }];
-  const proSpecs: { [key: string]: any } = [
+  const proSpecsCloud: { [key: string]: any } = [
     {"spec": "1 user then $5/user/mo", "desc": "1 user then $5/user/mo - This is tooltip description"},
     {"spec": "Community support", "desc": "Community support - This is tooltip description"}
+  ];
+  const proSpecsPrem: { [key: string]: any } = [
+    {"spec": "1 user then $5/user/mo", "desc": "1 user then $5/user/mo - This is tooltip description"},
+    {"spec": "Community support", "desc": "Community support - This is tooltip description"},
+    {"spec": "MIT-licensed", "desc": "MIT-licensed - This is tooltip description"}
   ];
   const platformSpecs: { [key: string]: any } = [
     {"spec": "25 users then $10/user/mo"},
@@ -19,9 +25,18 @@ export default function PricingTable() {
     {"spec": "Remove our branding (+$299/mo)", "desc": "Remove our branding (+$299/mo) - This is tooltip description"},
     {"spec": "Email and community support", "desc": "Email and community support - This is tooltip description"}
   ];
-  const enterpriseSpecs: { [key: string]: any } = [
+  const enterpriseSpecsCloud: { [key: string]: any } = [
     {"spec": "1 million+ monthly tasks", "desc": "1 million+ monthly tasks - This is tooltip description"},
     {"spec": "150+ users", "desc": "150+ users - This is tooltip description"},
+    {"spec": "Single Sign On (SSO)", "desc": "Single Sign On (SSO) - This is tooltip description"},
+    {"spec": "Permissions and audit log", "desc": "Permissions and audit log - This is tooltip description"},
+    {"spec": "Unlimited private pieces", "desc": "Unlimited private pieces - This is tooltip description"},
+    {"spec": "Whitelabeling", "desc": "Whitelabeling - This is tooltip description"},
+    {"spec": "Custom reports", "desc": "Custom reports - This is tooltip description"},
+    {"spec": "SLA", "desc": "SLA - This is tooltip description"},
+    {"spec": "Dedicated Support", "desc": "Dedicated Support - This is tooltip description"}
+  ];
+  const enterpriseSpecsPrem: { [key: string]: any } = [
     {"spec": "Single Sign On (SSO)", "desc": "Single Sign On (SSO) - This is tooltip description"},
     {"spec": "Permissions and audit log", "desc": "Permissions and audit log - This is tooltip description"},
     {"spec": "Unlimited private pieces", "desc": "Unlimited private pieces - This is tooltip description"},
@@ -61,29 +76,42 @@ export default function PricingTable() {
       <div className="w-full border border-black rounded-md flex flex-row">
         <div className="flex-1 border-r border-black">
           <div className="bg-[#98F5F5] px-[30px] py-[22px] border-b border-black rounded-tl-[5px]">
-            <p className="text-black text-[28px] font-bold leading-[35px]">Pro</p>
+            {(cloud && <p className="text-black text-[28px] font-bold leading-[35px]">Pro</p>)}
+            {(!cloud && <p className="text-black text-[28px] font-bold leading-[35px]">Open Source</p>)}
           </div>
           <div className="px-[30px] py-[40px] min-h-[388px]">
-            <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your team&apos;s work seamlessly</p>
+            {(cloud && <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your team&apos;s work seamlessly</p>)}
+            {(!cloud && <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Advanced management, security, reporting and whitelabel</p>)}
             <hr className="h-px border-0 border-t border-[#11111133] my-10" />
-              {isProCustom
-              ? <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
-                  <span className="text-[60px] font-bold leading-[80px]">{ price }</span>
-                </p>
-              : <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
-                  <span className="flex flex-row items-start">
-                    <span className="text-[42px]">$</span>
-                    <span className="text-[80px] font-bold leading-[80px]">{ price }</span>
-                  </span>
-                  <span className="text-[22px] font-semibold">{ proMessage }</span>
-                </p>
-              }
-            <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px] mb-2">{tasks} tasks per month</p>
-            <input onChange={(e) => setSlider(e.target.value)} value={proSlider} type="range" min={0} max={9} step={1} className="w-full h-4 bg-[#E1E1E1] rounded-lg appearance-none cursor-pointer range-lg" />
+            {(cloud && 
+              <div>
+                {isProCustom
+                  ? <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
+                      <span className="text-[60px] font-bold leading-[80px]">{ price }</span>
+                    </p>
+                  : <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
+                      <span className="flex flex-row items-start">
+                        <span className="text-[42px]">$</span>
+                        <span className="text-[80px] font-bold leading-[80px]">{ price }</span>
+                      </span>
+                      <span className="text-[22px] font-semibold">{ proMessage }</span>
+                    </p>
+                }
+                <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px] mb-2">{tasks} tasks per month</p>
+                <input onChange={(e) => setSlider(e.target.value)} value={proSlider} type="range" min={0} max={9} step={1} className="w-full h-4 bg-[#E1E1E1] rounded-lg appearance-none cursor-pointer range-lg" />
+              </div>
+            )}
+            {(!cloud && 
+                <div>
+                  <p className="text-[60px] font-bold leading-[60px] mb-[42px]">Free</p>
+                  <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>
+                </div>
+              )
+            }
           </div>
           <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
-            {
-              proSpecs.map(function(specItem: any, index: number){
+            {(cloud && 
+              proSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
                     <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
@@ -113,12 +141,51 @@ export default function PricingTable() {
                   );
                 }
               })
-            }      
+            )}
+            {(!cloud && 
+              proSpecsPrem.map(function(specItem: any, index: number){
+                if(specItem.desc){
+                  return (
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
+                      </svg>
+                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                        {specItem.spec}
+                      </p>
+                      <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                        <div className="p-5 bg-[#2D2E33] rounded-md">
+                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                        </div>
+                      </div>
+                    </div>  
+                  );
+                }else{
+                  return (
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
+                      </svg>
+                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                        {specItem.spec}
+                      </p>
+                    </div>  
+                  );
+                }
+              })
+            )}
           </div>
           <div className="border-t border-[#11111133] p-[30px]">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
-              { proPlanBtnLabel }
-            </Link>
+            {(cloud &&
+              <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+                { proPlanBtnLabel }
+              </Link>
+            )}
+            {(!cloud &&
+              <Link href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+                Go to docs
+              </Link>
+            )}
           </div>
         </div>
         <div className="flex-1 border-r border-black">
@@ -135,7 +202,8 @@ export default function PricingTable() {
               </span>
               <span className="text-[22px] font-semibold">monthly</span>
             </p>
-            <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>
+            {(cloud && <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
+            {(!cloud && <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
           </div>
           <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
             {
@@ -187,8 +255,8 @@ export default function PricingTable() {
             <p className="text-black text-[60px] font-bold tracking-[1.5px] leading-[70px]">Custom Pricing</p>
           </div>
           <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
-            {
-              enterpriseSpecs.map(function(specItem: any, index: number){
+            {(cloud && 
+              enterpriseSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
                     <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
@@ -218,7 +286,39 @@ export default function PricingTable() {
                   );
                 }
               })
-            } 
+            )}
+            {(!cloud && 
+              enterpriseSpecsPrem.map(function(specItem: any, index: number){
+                if(specItem.desc){
+                  return (
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
+                      </svg>
+                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                        {specItem.spec}
+                      </p>
+                      <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                        <div className="p-5 bg-[#2D2E33] rounded-md">
+                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                        </div>
+                      </div>
+                    </div>  
+                  );
+                }else{
+                  return (
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
+                      </svg>
+                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                        {specItem.spec}
+                      </p>
+                    </div>  
+                  );
+                }
+              })
+            )}
           </div>
           <div className="border-t border-[#11111133] p-[30px]">
             <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">

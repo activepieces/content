@@ -56,7 +56,7 @@ export const PricingMainSection = () => {
                         </div>
                     </div>
                     <div className="mb-[150px]">
-                        <PricingTable />
+                    <PricingTable isCloud={ isCloud } />
                     </div>
                     <div className="mb-[50px] flex flex-row justify-between items-center">
                         <p className="text-black text-[50px] font-bold leading-[60px]">
