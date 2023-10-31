@@ -4,7 +4,9 @@ import { initTooltips } from "flowbite";
 import Link from "next/link";
 
 export default function PricingTable(isCloud: any) {
-  initTooltips();
+  useEffect(() => { // important so that flowbite doesn't throw error on build
+    initTooltips();
+  })
   let cloud = isCloud.isCloud;  
   const proPlans: { [key: string]: any } = [{ "tasks": "1,000", "price": "0" }, { "tasks": "5,000", "price": "15" }, { "tasks": "10,000", "price": "25" }, { "tasks": "25,000", "price": "55" }, { "tasks": "50,000", "price": "100" }, { "tasks": "100,000", "price": "175" }, { "tasks": "200,000", "price": "300" }, { "tasks": "500,000", "price": "500" }, { "tasks": "1 million", "price": "900" }, { "tasks": "1 million+", "price": "Custom ✨" }];
   const proSpecsCloud: { [key: string]: any } = [

@@ -4,7 +4,9 @@ import { initTooltips } from "flowbite";
 import Link from "next/link";
 
 export default function PricingTable(isCloud: any) {
-  initTooltips();
+  useEffect(() => { // important so that flowbite doesn't throw error on build
+    initTooltips();
+  })
   let cloud = isCloud.isCloud;  
   const featuresCloud: { [key: string]: any } = [
     {
