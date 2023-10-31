@@ -18,7 +18,7 @@ export const FAQsSection = () => {
     const [questionsExpanded, setQuestionExpanded] = useState(new Array(FAQs.length).fill(false));
     const answersRefs = new Array(FAQs.length).fill(useRef<HTMLDivElement | null>(null));
     return <>
-        <section className="bg-white px-4 lg:px-0 py-[80px]">
+        <section className="bg-white px-4 lg:px-0 pb-[80px]">
             <div className='container mx-auto'>
                 <h2 className="text-[50px] mb-[80px] lg:text-[80px] font-bold text-center">
                     FAQs

@@ -6,323 +6,345 @@ import Link from "next/link";
 export default function PricingTable(isCloud: any) {
   initTooltips();
   let cloud = isCloud.isCloud;  
-  const proPlans: { [key: string]: any } = [{ "tasks": "1,000", "price": "0" }, { "tasks": "5,000", "price": "15" }, { "tasks": "10,000", "price": "25" }, { "tasks": "25,000", "price": "55" }, { "tasks": "50,000", "price": "100" }, { "tasks": "100,000", "price": "175" }, { "tasks": "200,000", "price": "300" }, { "tasks": "500,000", "price": "500" }, { "tasks": "1 million", "price": "900" }, { "tasks": "1 million+", "price": "Custom ✨" }];
-  const proSpecsCloud: { [key: string]: any } = [
-    {"spec": "1 user then $5/user/mo", "desc": "1 user then $5/user/mo - This is tooltip description"},
-    {"spec": "Community support", "desc": "Community support - This is tooltip description"}
-  ];
-  const proSpecsPrem: { [key: string]: any } = [
-    {"spec": "1 user then $5/user/mo", "desc": "1 user then $5/user/mo - This is tooltip description"},
-    {"spec": "Community support", "desc": "Community support - This is tooltip description"},
-    {"spec": "MIT-licensed", "desc": "MIT-licensed - This is tooltip description"}
-  ];
-  const platformSpecs: { [key: string]: any } = [
-    {"spec": "25 users then $10/user/mo"},
-    {"spec": "2 private pieces", "desc": "2 private pieces - This is tooltip description"},
-    {"spec": "Multiple projects", "desc": "Multiple projects - This is tooltip description"},
-    {"spec": "Custom templates", "desc": "Custom templates - This is tooltip description"},
-    {"spec": "Custom colors and logo", "desc": "Custom colors and logo - This is tooltip description"},
-    {"spec": "Remove our branding (+$299/mo)", "desc": "Remove our branding (+$299/mo) - This is tooltip description"},
-    {"spec": "Email and community support", "desc": "Email and community support - This is tooltip description"}
-  ];
-  const enterpriseSpecsCloud: { [key: string]: any } = [
-    {"spec": "1 million+ monthly tasks", "desc": "1 million+ monthly tasks - This is tooltip description"},
-    {"spec": "150+ users", "desc": "150+ users - This is tooltip description"},
-    {"spec": "Single Sign On (SSO)", "desc": "Single Sign On (SSO) - This is tooltip description"},
-    {"spec": "Permissions and audit log", "desc": "Permissions and audit log - This is tooltip description"},
-    {"spec": "Unlimited private pieces", "desc": "Unlimited private pieces - This is tooltip description"},
-    {"spec": "Whitelabeling", "desc": "Whitelabeling - This is tooltip description"},
-    {"spec": "Custom reports", "desc": "Custom reports - This is tooltip description"},
-    {"spec": "SLA", "desc": "SLA - This is tooltip description"},
-    {"spec": "Dedicated Support", "desc": "Dedicated Support - This is tooltip description"}
-  ];
-  const enterpriseSpecsPrem: { [key: string]: any } = [
-    {"spec": "Single Sign On (SSO)", "desc": "Single Sign On (SSO) - This is tooltip description"},
-    {"spec": "Permissions and audit log", "desc": "Permissions and audit log - This is tooltip description"},
-    {"spec": "Unlimited private pieces", "desc": "Unlimited private pieces - This is tooltip description"},
-    {"spec": "Whitelabeling", "desc": "Whitelabeling - This is tooltip description"},
-    {"spec": "Custom reports", "desc": "Custom reports - This is tooltip description"},
-    {"spec": "SLA", "desc": "SLA - This is tooltip description"},
-    {"spec": "Dedicated Support", "desc": "Dedicated Support - This is tooltip description"}
-  ];
-  const [proMessage, setProMessage] = useState("free");
-  const [isProCustom, setIsProCustom] = useState(false);
-  const [tasks, setTasks] = useState("1,000");
-  const [price, setPrice] = useState("0");
-  const [proSlider, setSlider] = useState("0");
-  const [proPlanBtnLabel, setProPlanBtnLabel] = useState("Start free");
-  useEffect(() => {
-    setTasks(proPlans[proSlider].tasks);
-    setPrice(proPlans[proSlider].price);
-
-    if(proSlider == "0"){
-      setProMessage("free")
-      setIsProCustom(false)
-      setProPlanBtnLabel("Start free");
-    } else if(proSlider == "9"){
-      setProMessage("monthly")
-      setProPlanBtnLabel("Talk to us");
-      setIsProCustom(true)
-    } else {
-      setProMessage("monthly")
-      setIsProCustom(false)
-      setProPlanBtnLabel("Try free");
+  const features: { [key: string]: any } = [
+    {
+      "title": "Title 1",
+      "features": [
+        {
+          "title": "Feature 1",
+          "tooltip": "Feature 1 - Tooltip descirption",
+          "pro": {
+            "ticked": true
+          },
+          "platform": {
+            "ticked": true
+          },
+          "enterprise": {
+            "ticked": true
+          }
+        },
+        {
+          "title": "Feature 2",
+          "tooltip": "Feature 2 - Tooltip descirption",
+          "pro": {
+            "value": "Up to 5",
+            "tooltip": "Up to 5 - Tooltip descirption"
+          },
+          "platform": {
+            "value": "Unlimited",
+            "tooltip": "Unlimited - Tooltip descirption"
+          },
+          "enterprise": {
+            "ticked": true
+          }
+        },
+        {
+          "title": "Feature 3",
+          "pro": {
+            "ticked": false
+          },
+          "platform": {
+            "value": "Unlimited"
+          },
+          "enterprise": {
+            "ticked": true
+          }
+        }
+      ]
+    },
+    {
+      "title": "Title 2",
+      "features": [
+        {
+          "title": "Feature 1",
+          "tooltip": "Feature 1 - Tooltip descirption",
+          "pro": {
+            "ticked": true
+          },
+          "platform": {
+            "ticked": true
+          },
+          "enterprise": {
+            "ticked": true
+          }
+        },
+        {
+          "title": "Feature 2",
+          "tooltip": "Feature 2 - Tooltip descirption",
+          "pro": {
+            "value": "Up to 5",
+            "tooltip": "Up to 5 - Tooltip descirption"
+          },
+          "platform": {
+            "value": "Unlimited",
+            "tooltip": "Unlimited - Tooltip descirption"
+          },
+          "enterprise": {
+            "ticked": true
+          }
+        },
+        {
+          "title": "Feature 3",
+          "pro": {
+            "ticked": false
+          },
+          "platform": {
+            "value": "Unlimited"
+          },
+          "enterprise": {
+            "ticked": true
+          }
+        }
+      ]
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [proSlider]);
+  ];
 
   return (
     <>
-      <div className="w-full border border-black rounded-md flex flex-row">
-        <div className="flex-1 border-r border-black">
-          <div className="bg-[#98F5F5] px-[30px] py-[22px] border-b border-black rounded-tl-[5px]">
-            {(cloud && <p className="text-black text-[28px] font-bold leading-[35px]">Pro</p>)}
-            {(!cloud && <p className="text-black text-[28px] font-bold leading-[35px]">Open Source</p>)}
-          </div>
-          <div className="px-[30px] py-[40px] min-h-[388px]">
-            {(cloud && <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your team&apos;s work seamlessly</p>)}
-            {(!cloud && <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Advanced management, security, reporting and whitelabel</p>)}
-            <hr className="h-px border-0 border-t border-[#11111133] my-10" />
-            {(cloud && 
+      <div className="w-full border border-[#000] rounded-md">
+        <div className="border-b border-[#000]">
+          <div className="flex flex-row">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"><p className="text-black text-[22px] tracking-[0.44px] font-bold">Features</p></div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#98F5F5]">
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Pro</p>
               <div>
-                {isProCustom
-                  ? <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
-                      <span className="text-[60px] font-bold leading-[80px]">{ price }</span>
-                    </p>
-                  : <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
-                      <span className="flex flex-row items-start">
-                        <span className="text-[42px]">$</span>
-                        <span className="text-[80px] font-bold leading-[80px]">{ price }</span>
-                      </span>
-                      <span className="text-[22px] font-semibold">{ proMessage }</span>
-                    </p>
-                }
-                <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px] mb-2">{tasks} tasks per month</p>
-                <input onChange={(e) => setSlider(e.target.value)} value={proSlider} type="range" min={0} max={9} step={1} className="w-full h-4 bg-[#E1E1E1] rounded-lg appearance-none cursor-pointer range-lg" />
+                <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
+                  <span className="text-sm font-normal">$</span>
+                  0
+                </p>
+                <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">free</p>
               </div>
-            )}
-            {(!cloud && 
-                <div>
-                  <p className="text-[60px] font-bold leading-[60px] mb-[42px]">Free</p>
-                  <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>
-                </div>
-              )
-            }
-          </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
-            {(cloud && 
-              proSpecsCloud.map(function(specItem: any, index: number){
-                if(specItem.desc){
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
-                        {specItem.spec}
-                      </p>
-                      <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
-                    </div>  
-                  );
-                }else{
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
-                        {specItem.spec}
-                      </p>
-                    </div>  
-                  );
-                }
-              })
-            )}
-            {(!cloud && 
-              proSpecsPrem.map(function(specItem: any, index: number){
-                if(specItem.desc){
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
-                        {specItem.spec}
-                      </p>
-                      <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
-                    </div>  
-                  );
-                }else{
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
-                        {specItem.spec}
-                      </p>
-                    </div>  
-                  );
-                }
-              })
-            )}
-          </div>
-          <div className="border-t border-[#11111133] p-[30px]">
-            {(cloud &&
-              <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
-                { proPlanBtnLabel }
-              </Link>
-            )}
-            {(!cloud &&
-              <Link href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
-                Go to docs
-              </Link>
-            )}
+            </div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#06FFB4]">
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Platform</p>
+              <div>
+                <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
+                  <span className="text-sm font-normal">$</span>
+                  249
+                </p>
+                <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">monthly</p>
+              </div>
+            </div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 bg-[#FFF0BB] rounded-tr-[5px]">
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Enterprise</p>
+              <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px] max-w-[52px] text-center">Custom Pricing</p>
+            </div>
           </div>
         </div>
-        <div className="flex-1 border-r border-black">
-          <div className="bg-[#06FFB4] px-[30px] py-[22px] border-b border-black">
-            <p className="text-black text-[28px] font-bold leading-[35px]">Platform</p>
+        <div className="flex flex-row min-h-[78px] border-b border-[#000]">
+          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
+          <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
+            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+              <p className="text-xl text-primary font-bold">Start free</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+              </svg>
+            </Link>
           </div>
-          <div className="px-[30px] py-[40px] min-h-[388px]">
-            <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your <span className="font-bold">agency</span> clients work or embed Activepieces in your <span className="font-bold">SaaS</span></p>
-            <hr className="h-px border-0 border-t border-[#11111133] my-10" />
-            <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
-              <span className="flex flex-row items-start">
-                <span className="text-[42px]">$</span>
-                <span className="text-[80px] font-bold leading-[80px]">249</span>
-              </span>
-              <span className="text-[22px] font-semibold">monthly</span>
-            </p>
-            {(cloud && <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
-            {(!cloud && <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
+          <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
+            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+              <p className="text-xl text-primary font-bold">Talk to us</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+              </svg>
+            </Link>
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
-            {
-              platformSpecs.map(function(specItem: any, index: number){
-                if(specItem.desc){
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p data-tooltip-target={'platform-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
-                        {specItem.spec}
-                      </p>
-                      <div data-tooltip id={'platform-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
-                    </div>  
-                  );
-                }else{
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
-                        {specItem.spec}
-                      </p>
-                    </div>  
-                  );
-                }
-              })
-            } 
-          </div>
-          <div className="border-t border-[#11111133] p-[30px]">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
-              Talk to us
+          <div className="flex flex-row items-center px-[30px] py-4 flex-1">
+            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+              <p className="text-xl text-primary font-bold">Talk to us</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+              </svg>
             </Link>
           </div>
         </div>
-        <div className="flex-1">
-          <div className="bg-[#FFF0BB] px-[30px] py-[22px] border-b border-black rounded-tr-[5px]">
-            <p className="text-black text-[28px] font-bold leading-[35px]">Enterprise</p>
-          </div>
-          <div className="px-[30px] py-[40px] min-h-[388px]">
-            <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Advanced management, security, reporting and whitelabeling</p>
-            <hr className="h-px border-0 border-t border-[#11111133] my-10" />
-            <p className="text-black text-[60px] font-bold tracking-[1.5px] leading-[70px]">Custom Pricing</p>
-          </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
-            {(cloud && 
-              enterpriseSpecsCloud.map(function(specItem: any, index: number){
-                if(specItem.desc){
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
-                        {specItem.spec}
-                      </p>
-                      <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+        {
+          features.map(function(feature: any, index: number){
+            return (
+              <div key={index} className="border-b border-[#000]">
+                <div className="flex flex-row items-center bg-[#000] min-h-[78px] px-[30px] py-4">
+                  <p className="text-white text-[22px] tracking-[0.44px] font-semibold">{ feature.title }</p>
+                </div>
+                {
+                  feature.features.map(function(item: any, itemIndex: number)
+                  {
+                    return (
+                      <div key={itemIndex} className="odd:bg-[#F2F2F2] even:bg-white">
+                        <div className="flex flex-row min-h-[78px]">
+                          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]">
+                          {
+                            (!item.tooltip &&
+                              <p className="text-black text-[22px] tracking-[0.44px] font-bold">{ item.title }</p>
+                            )
+                          }
+                          {
+                            (item.tooltip &&
+                              <div>
+                                <p data-tooltip-target={'table-section-tooltip-' + itemIndex} data-tooltip-placement="right" className="text-black text-[22px] tracking-[0.44px] font-bold border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.title }</p>
+                                <div data-tooltip id={'table-section-tooltip-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
+                                  <div className="p-5 bg-[#2D2E33] rounded-md">
+                                    <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.tooltip }</p>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          }
+                          </div>
+                          <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
+                            {
+                              (item.pro.ticked && 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                  <path d="M8.06167 14.5497L4.23917 10.7272L2.9375 12.0197L8.06167 17.1438L19.0617 6.14382L17.7692 4.85132L8.06167 14.5497Z" fill="#373737"/>
+                                </svg>  
+                              )
+                            }
+                            {
+                              (!item.pro.ticked && !item.pro.value &&
+                                <p className="text-[22px] text-[#373737]">—</p>
+                              )
+                            }
+                            {
+                              (item.pro.value && !item.pro.tooltip &&
+                                <p className="text-[22px] text-black tracking-[0.44px]">{ item.pro.value }</p>
+                              )
+                            }
+                            {
+                              (item.pro.value && item.pro.tooltip && 
+                                <div>
+                                  <p data-tooltip-target={'pro-tooltip-table' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.pro.value }</p>
+                                  <div data-tooltip id={'pro-tooltip-table' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
+                                    <div className="p-5 bg-[#2D2E33] rounded-md">
+                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.pro.tooltip }</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              )
+                            }
+                          </div>
+                          <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
+                            {
+                              (item.platform.ticked && 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                  <path d="M8.06167 14.5497L4.23917 10.7272L2.9375 12.0197L8.06167 17.1438L19.0617 6.14382L17.7692 4.85132L8.06167 14.5497Z" fill="#373737"/>
+                                </svg>  
+                              )
+                            }
+                            {
+                              (!item.platform.ticked && !item.platform.value &&
+                                <p className="text-[22px] text-[#373737]">—</p>
+                              )
+                            }
+                            {
+                              (item.platform.value && !item.platform.tooltip &&
+                                <p className="text-[22px] text-black tracking-[0.44px]">{ item.platform.value }</p>
+                              )
+                            }
+                            {
+                              (item.platform.value && item.platform.tooltip && 
+                                <div>
+                                  <p data-tooltip-target={'platform-tooltip-table' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.platform.value }</p>
+                                  <div data-tooltip id={'platform-tooltip-table' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
+                                    <div className="p-5 bg-[#2D2E33] rounded-md">
+                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.platform.tooltip }</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              )
+                            }
+                          </div>
+                          <div className="flex flex-row items-center px-[30px] py-4 flex-1">
+                            {
+                              (item.enterprise.ticked && 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                  <path d="M8.06167 14.5497L4.23917 10.7272L2.9375 12.0197L8.06167 17.1438L19.0617 6.14382L17.7692 4.85132L8.06167 14.5497Z" fill="#373737"/>
+                                </svg>  
+                              )
+                            }
+                            {
+                              (!item.enterprise.ticked && !item.enterprise.value &&
+                                <p className="text-[22px] text-[#373737]">—</p>
+                              )
+                            }
+                            {
+                              (item.enterprise.value && !item.enterprise.tooltip &&
+                                <p className="text-[22px] text-black tracking-[0.44px]">{ item.enterprise.value }</p>
+                              )
+                            }
+                            {
+                              (item.enterprise.value && item.enterprise.tooltip && 
+                                <div>
+                                  <p data-tooltip-target={'enterprise-tooltip-table' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.enterprise.value }</p>
+                                  <div data-tooltip id={'enterprise-tooltip-table' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
+                                    <div className="p-5 bg-[#2D2E33] rounded-md">
+                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.enterprise.tooltip }</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              )
+                            }
+                          </div>
                         </div>
                       </div>
-                    </div>  
-                  );
-                }else{
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
-                        {specItem.spec}
-                      </p>
-                    </div>  
-                  );
+                    );
+                  })
                 }
-              })
-            )}
-            {(!cloud && 
-              enterpriseSpecsPrem.map(function(specItem: any, index: number){
-                if(specItem.desc){
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
-                        {specItem.spec}
-                      </p>
-                      <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
-                    </div>  
-                  );
-                }else{
-                  return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
-                      </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
-                        {specItem.spec}
-                      </p>
-                    </div>  
-                  );
-                }
-              })
-            )}
+              </div>
+            );
+          })
+        }
+        <div className="border-b border-[#000]">
+          <div className="flex flex-row">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#98F5F5]">
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Pro</p>
+              <div>
+                <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
+                  <span className="text-sm font-normal">$</span>
+                  0
+                </p>
+                <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">free</p>
+              </div>
+            </div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#06FFB4]">
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Platform</p>
+              <div>
+                <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
+                  <span className="text-sm font-normal">$</span>
+                  249
+                </p>
+                <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">monthly</p>
+              </div>
+            </div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 bg-[#FFF0BB]">
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Enterprise</p>
+              <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px] max-w-[52px] text-center">Custom Pricing</p>
+            </div>
           </div>
-          <div className="border-t border-[#11111133] p-[30px]">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
-              Talk to us
+        </div>
+        <div className="flex flex-row min-h-[78px]">
+          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
+          <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
+            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+              <p className="text-xl text-primary font-bold">Start free</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+              </svg>
+            </Link>
+          </div>
+          <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
+            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+              <p className="text-xl text-primary font-bold">Talk to us</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+              </svg>
+            </Link>
+          </div>
+          <div className="flex flex-row items-center px-[30px] py-4 flex-1">
+            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+              <p className="text-xl text-primary font-bold">Talk to us</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+              </svg>
             </Link>
           </div>
         </div>

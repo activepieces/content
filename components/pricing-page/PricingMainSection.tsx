@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect} from "react";
+import PricingOverview from "../../components/PricingOverview";
 import PricingTable from "../../components/PricingTable";
 
 export const PricingMainSection = () => {
@@ -56,7 +57,7 @@ export const PricingMainSection = () => {
                         </div>
                     </div>
                     <div className="mb-[150px]">
-                    <PricingTable isCloud={ isCloud } />
+                        <PricingOverview isCloud={ isCloud } />
                     </div>
                     <div className="mb-[50px] flex flex-row justify-between items-center">
                         <p className="text-black text-[50px] font-bold leading-[60px]">
@@ -85,6 +86,9 @@ export const PricingMainSection = () => {
                             </p>
                             <div className={`transform translate-x-${toggleBgPosition} bg-primary shadow-md rounded-md w-[280px] h-[50px] absolute transition duration-500`}></div>
                         </div>
+                    </div>
+                    <div>
+                        <PricingTable isCloud={ isCloud } />
                     </div>
                 </section>
             </main>
