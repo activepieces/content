@@ -902,28 +902,40 @@ export default function PricingTable(isCloud: any) {
         <div className="flex flex-row min-h-[78px] border-b border-[#000]">
           <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
           <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
-              <p className="text-xl text-primary font-bold">Start free</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
-                <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
-              </svg>
-            </Link>
+            {
+              (cloud && 
+              <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+                <p className="text-xl text-primary font-bold">Start free</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                  <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+                </svg>
+              </Link>)
+            }
+            {
+              (!cloud &&
+              <Link href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+                <p className="text-xl text-primary font-bold">Go to docs</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
+                  <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
+                </svg>
+              </Link>)
+            }
           </div>
           <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+            <div className="flex flex-row items-center justify-between flex-1 cursor-pointer" data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Platform">
               <p className="text-xl text-primary font-bold">Talk to us</p>
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
                 <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
               </svg>
-            </Link>
+            </div>
           </div>
           <div className="flex flex-row items-center px-[30px] py-4 flex-1">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+            <div className="flex flex-row items-center justify-between flex-1 cursor-pointer" data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Enterprise">
               <p className="text-xl text-primary font-bold">Talk to us</p>
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
                 <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
               </svg>
-            </Link>
+            </div>
           </div>
         </div>
         { // needs refactor in order not to repeat code
@@ -1236,20 +1248,20 @@ export default function PricingTable(isCloud: any) {
             </Link>
           </div>
           <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+            <div className="flex flex-row items-center justify-between flex-1 cursor-pointer" data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Platform">
               <p className="text-xl text-primary font-bold">Talk to us</p>
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
                 <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
               </svg>
-            </Link>
+            </div>
           </div>
           <div className="flex flex-row items-center px-[30px] py-4 flex-1">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
+            <div className="flex flex-row items-center justify-between flex-1 cursor-pointer" data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Enterprise">
               <p className="text-xl text-primary font-bold">Talk to us</p>
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="41" viewBox="0 0 28 41" fill="none">
                 <path d="M20.4685 19.3048L0.569904 19.1311L0.540986 22.4448L20.4396 22.6185L20.3962 27.589L27.0648 21.0193L20.5119 14.3343L20.4685 19.3048Z" fill="#6E41E2"/>
               </svg>
-            </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -15,19 +15,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const stars = await getStars();
   return (
     <html lang="en">
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BL60V50BXE" />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-BL60V50BXE');
-        `}
-      </Script>
-      <Suspense>
-        <PostHogPageview />
-      </Suspense>
+      <head>
+        <Script async src="https://tally.so/widgets/embed.js" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-BL60V50BXE" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', 'G-BL60V50BXE');
+          `}
+        </Script>
+        <Suspense>
+          <PostHogPageview />
+        </Suspense>
+      </head>
       <PHProvider>
         <body className={lato.className + "  relative bg-no-repeat bg-black bg-cover bg-center"} >
 

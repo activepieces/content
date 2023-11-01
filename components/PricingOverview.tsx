@@ -176,10 +176,15 @@ export default function PricingTable(isCloud: any) {
             )}
           </div>
           <div className="border-t border-[#11111133] p-[30px]">
-            {(cloud &&
+            {(cloud && (proPlanBtnLabel == 'Start free' || proPlanBtnLabel == 'Try free') &&
               <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
                 { proPlanBtnLabel }
               </Link>
+            )}
+            {(cloud && proPlanBtnLabel == 'Talk to us' &&
+              <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Pro" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+                Talk to us
+              </button>
             )}
             {(!cloud &&
               <Link href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
@@ -240,9 +245,9 @@ export default function PricingTable(isCloud: any) {
             } 
           </div>
           <div className="border-t border-[#11111133] p-[30px]">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+            <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Platform" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
               Talk to us
-            </Link>
+            </button>
           </div>
         </div>
         <div className="flex-1">
@@ -321,9 +326,9 @@ export default function PricingTable(isCloud: any) {
             )}
           </div>
           <div className="border-t border-[#11111133] p-[30px]">
-            <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+            <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Enterprise" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
               Talk to us
-            </Link>
+            </button>
           </div>
         </div>
       </div>
