@@ -76,65 +76,65 @@ export default function PricingTable(isCloud: any) {
     <>
       <div className="w-full border border-[#000] rounded-md flex flex-row">
         <div className="flex-1 border-r border-[#000]">
-          <div className="bg-[#98F5F5] px-[30px] py-[22px] border-b border-[#000] rounded-tl-[5px]">
-            {(cloud && <p className="text-black text-[28px] font-bold leading-[35px]">Pro</p>)}
-            {(!cloud && <p className="text-black text-[28px] font-bold leading-[35px]">Open Source</p>)}
+          <div className="bg-[#98F5F5] px-[30px] py-[10px] border-b border-[#000] rounded-tl-[5px]">
+            {(cloud && <p className="text-black text-[20px] font-bold leading-[35px]">Pro</p>)}
+            {(!cloud && <p className="text-black text-[20px] font-bold leading-[35px]">Open Source</p>)}
           </div>
-          <div className="px-[30px] py-[40px] min-h-[388px]">
-            <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your team&apos;s work seamlessly</p>
-            <hr className="h-px border-0 border-t border-[#11111133] my-10" />
+          <div className="px-[30px] py-[20px] min-h-[270px]">
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-w-[300px]">Automate your team&apos;s work seamlessly</p>
+            <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             {(cloud && 
               <div>
                 {isProCustom
                   ? <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
-                      <span className="text-[60px] font-bold leading-[80px]">{ price }</span>
+                      <span className="text-[40px] font-bold leading-[40px]">{ price }</span>
                     </p>
                   : <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
                       <span className="flex flex-row items-start">
-                        <span className="text-[42px]">$</span>
-                        <span className="text-[80px] font-bold leading-[80px]">{ price }</span>
+                        <span className="text-[22px]">$</span>
+                        <span className="text-[40px] font-bold leading-[40px]">{ price }</span>
                       </span>
-                      <span className="text-[22px] font-semibold">{ proMessage }</span>
+                      <span className="text-[18px] font-semibold">{ proMessage }</span>
                     </p>
                 }
-                <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px] mb-2">{tasks} tasks per month</p>
+                <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px] mb-2">{tasks} tasks per month</p>
                 <input onChange={(e) => setSlider(e.target.value)} value={proSlider} type="range" min={0} max={9} step={1} className="w-full h-4 bg-[#E1E1E1] rounded-lg appearance-none cursor-pointer range-lg" />
               </div>
             )}
             {(!cloud && 
                 <div>
-                  <p className="text-[60px] font-bold leading-[60px] mb-[42px]">Free</p>
-                  <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>
+                  <p className="text-[40px] font-bold leading-[40px] mb-[24px]">Free</p>
+                  <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>
                 </div>
               )
             }
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px]">
             {(cloud && 
               proSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
                       <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
                         <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
                         </div>
                       </div>
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                      <p className="text-[#666666] text-[18px] tracking-[0.44px] pb-0.5">
                         {specItem.spec}
                       </p>
                     </div>  
@@ -146,27 +146,27 @@ export default function PricingTable(isCloud: any) {
               proSpecsPrem.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
                       <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
                         <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
                         </div>
                       </div>
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                      <p className="text-[#666666] text-[18px] tracking-[0.44px] pb-0.5">
                         {specItem.spec}
                       </p>
                     </div>  
@@ -175,67 +175,67 @@ export default function PricingTable(isCloud: any) {
               })
             )}
           </div>
-          <div className="border-t border-[#11111133] p-[30px]">
+          <div className="border-t border-[#11111133] px-[30px] py-[20px]">
             {(cloud && (proPlanBtnLabel == 'Start free' || proPlanBtnLabel == 'Try free') &&
-              <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+              <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
                 { proPlanBtnLabel }
               </Link>
             )}
             {(cloud && proPlanBtnLabel == 'Talk to us' &&
-              <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Pro" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+              <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Pro" className="hover:-translate-y-[6px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
                 Talk to us
               </button>
             )}
             {(!cloud &&
-              <Link href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+              <Link href="https://www.activepieces.com/docs/getting-started/introduction" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[6px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
                 Go to docs
               </Link>
             )}
           </div>
         </div>
         <div className="flex-1 border-r border-[#000]">
-          <div className="bg-[#06FFB4] px-[30px] py-[22px] border-b border-[#000]">
-            <p className="text-black text-[28px] font-bold leading-[35px]">Platform</p>
+          <div className="bg-[#06FFB4] px-[30px] py-[10px] border-b border-[#000]">
+            <p className="text-black text-[20px] font-bold leading-[35px]">Platform</p>
           </div>
-          <div className="px-[30px] py-[40px] min-h-[388px]">
-            <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your <span className="font-bold">agency</span> clients work or embed Activepieces in your <span className="font-bold">SaaS</span></p>
-            <hr className="h-px border-0 border-t border-[#11111133] my-10" />
+          <div className="px-[30px] py-[20px] min-h-[270px]">
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your <span className="font-bold">agency</span> clients work or embed Activepieces in your <span className="font-bold">SaaS</span></p>
+            <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
               <span className="flex flex-row items-start">
-                <span className="text-[42px]">$</span>
-                <span className="text-[80px] font-bold leading-[80px]">249</span>
+                <span className="text-[22px]">$</span>
+                <span className="text-[40px] font-bold leading-[40px]">249</span>
               </span>
-              <span className="text-[22px] font-semibold">monthly</span>
+              <span className="text-[18px] font-semibold">monthly</span>
             </p>
-            {(cloud && <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
-            {(!cloud && <p className="text-black text-[22px] leading-[34px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
+            {(cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
+            {(!cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px]">
             {
               platformSpecs.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'platform-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-target={'platform-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
                       <div data-tooltip id={'platform-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
                         <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
                         </div>
                       </div>
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                      <p className="text-[#666666] text-[18px] tracking-[0.44px] pb-0.5">
                         {specItem.spec}
                       </p>
                     </div>  
@@ -244,47 +244,47 @@ export default function PricingTable(isCloud: any) {
               })
             } 
           </div>
-          <div className="border-t border-[#11111133] p-[30px]">
-            <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Platform" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+          <div className="border-t border-[#11111133] px-[30px] py-[20px]">
+            <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Platform" className="hover:-translate-y-[6px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
               Talk to us
             </button>
           </div>
         </div>
         <div className="flex-1">
-          <div className="bg-[#FFF0BB] px-[30px] py-[22px] border-b border-[#000] rounded-tr-[5px]">
-            <p className="text-black text-[28px] font-bold leading-[35px]">Enterprise</p>
+          <div className="bg-[#FFF0BB] px-[30px] py-[10px] border-b border-[#000] rounded-tr-[5px]">
+            <p className="text-black text-[20px] font-bold leading-[35px]">Enterprise</p>
           </div>
-          <div className="px-[30px] py-[40px] min-h-[388px]">
-            <p className="text-[22px] text-[#666] leading-[28px] tracking-[0.44px]">Advanced management, security, reporting and whitelabeling</p>
-            <hr className="h-px border-0 border-t border-[#11111133] my-10" />
-            <p className="text-black text-[60px] font-bold tracking-[1.5px] leading-[70px]">Custom Pricing</p>
+          <div className="px-[30px] py-[20px] min-h-[270px]">
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px]">Advanced management, security, reporting and whitelabeling</p>
+            <hr className="h-px border-0 border-t border-[#11111133] my-5" />
+            <p className="text-black text-[40px] font-bold tracking-[1.5px] leading-[50px] max-w-[280px]">Custom Pricing</p>
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[500px]">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px]">
             {(cloud && 
               enterpriseSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
                       <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
                         <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
                         </div>
                       </div>
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                      <p className="text-[#666666] text-[18px] tracking-[0.44px] pb-0.5">
                         {specItem.spec}
                       </p>
                     </div>  
@@ -296,27 +296,27 @@ export default function PricingTable(isCloud: any) {
               enterpriseSpecsPrem.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[22px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
                       <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
                         <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
+                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
                         </div>
                       </div>
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-3">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p className="text-[#666666] text-[22px] tracking-[0.44px] pb-0.5">
+                      <p className="text-[#666666] text-[18px] tracking-[0.44px] pb-0.5">
                         {specItem.spec}
                       </p>
                     </div>  
@@ -325,8 +325,8 @@ export default function PricingTable(isCloud: any) {
               })
             )}
           </div>
-          <div className="border-t border-[#11111133] p-[30px]">
-            <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Enterprise" className="hover:-translate-y-[6px] transition p-5 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[22px] font-bold tracking-[-0.11px] leading-4 w-fit">
+          <div className="border-t border-[#11111133] px-[30px] py-[20px]">
+            <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Enterprise" className="hover:-translate-y-[6px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
               Talk to us
             </button>
           </div>

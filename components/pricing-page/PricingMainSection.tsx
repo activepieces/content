@@ -27,7 +27,7 @@ export const PricingMainSection = () => {
     return (
         <>
             <main className="bg-white">
-                <section className="container mx-auto py-20 px-4 md:px-0 scale-[0.8] -my-[27%]">
+                <section className="container mx-auto py-20 px-4 md:px-0">
                     <div className="mb-[80px] flex flex-row justify-between items-end">
                         <h1 className="text-black text-[80px] font-black leading-[88px] max-w-[580px]">
                             Plans that work for everyone
@@ -56,7 +56,7 @@ export const PricingMainSection = () => {
                             <div className={`pricing-translate-${toggleBgPosition} bg-primary shadow-md rounded-md w-[280px] h-[50px] absolute transition duration-500`}></div>
                         </div>
                     </div>
-                    <div className="mb-[150px]">
+                    <div className="mb-[150px] mx-auto max-w-[1150px]">
                         <PricingOverview isCloud={ isCloud } />
                     </div>
                     <div className="mb-[50px] flex flex-row justify-between items-center">
