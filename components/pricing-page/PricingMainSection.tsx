@@ -27,7 +27,7 @@ export const PricingMainSection = () => {
     return (
         <>
             <main className="bg-white">
-                <section className="container mx-auto py-20 px-4 md:px-0">
+                <section className="container mx-auto py-20 px-4 md:px-0 scale-[0.8] -my-[27%]">
                     <div className="mb-[80px] flex flex-row justify-between items-end">
                         <h1 className="text-black text-[80px] font-black leading-[88px] max-w-[580px]">
                             Plans that work for everyone
