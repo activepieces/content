@@ -7,7 +7,7 @@ import PricingTable from "../../components/PricingTable";
 export const PricingMainSection = () => {
     const [cloudColor, setCloudColor] = useState("white");
     const [primColor, setPrimColor] = useState("primary");
-    const [toggleBgPosition, setToggleBgPosition] = useState("0");
+    const [toggleBgPosition, setToggleBgPosition] = useState("cloud");
     const [isCloud, setMode] = useState(true);
     const toggleMode = (mode: boolean) => {
         setMode(mode)
@@ -16,11 +16,11 @@ export const PricingMainSection = () => {
         if (isCloud) {
             setCloudColor("white");
             setPrimColor("primary");
-            setToggleBgPosition("0");
+            setToggleBgPosition("cloud");
         }else {
             setCloudColor("primary");
             setPrimColor("white");
-            setToggleBgPosition("full");
+            setToggleBgPosition("prem");
         }
     }, [isCloud]);
 
@@ -53,7 +53,7 @@ export const PricingMainSection = () => {
                                 </svg>
                                 <span>On-Prem <span className="font-normal">(You host)</span></span>
                             </p>
-                            <div className={`transform translate-x-${toggleBgPosition} bg-primary shadow-md rounded-md w-[280px] h-[50px] absolute transition duration-500`}></div>
+                            <div className={`pricing-translate-${toggleBgPosition} bg-primary shadow-md rounded-md w-[280px] h-[50px] absolute transition duration-500`}></div>
                         </div>
                     </div>
                     <div className="mb-[150px]">
@@ -84,7 +84,7 @@ export const PricingMainSection = () => {
                                 </svg>
                                 <span>On-Prem <span className="font-normal">(You host)</span></span>
                             </p>
-                            <div className={`transform translate-x-${toggleBgPosition} bg-primary shadow-md rounded-md w-[280px] h-[50px] absolute transition duration-500`}></div>
+                            <div className={`pricing-translate-${toggleBgPosition} bg-primary shadow-md rounded-md w-[280px] h-[50px] absolute transition duration-500`}></div>
                         </div>
                     </div>
                     <div>

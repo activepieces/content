@@ -136,7 +136,7 @@ li {
 
 
 
- /********** Range Input Styles **********/
+/********** Range Input Styles **********/
 /*Range Reset*/
 input[type="range"] {
   -webkit-appearance: none;
@@ -165,6 +165,13 @@ input[type="range"]::-moz-range-thumb {
   width: 25px;
 }
 
+/********** Pricing cloud/prem toggle styles **********/
+.pricing-translate-cloud{
+  transform: translateX(0px);
+}
+.pricing-translate-prem{
+  transform: translateX(100%);
+}
 
 
 .pricing-menu {
