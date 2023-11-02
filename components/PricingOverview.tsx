@@ -73,14 +73,14 @@ export default function PricingTable(isCloud: any) {
 
   return (
     <>
-      <div className="w-full border border-[#000] rounded-md flex flex-row">
-        <div className="flex-1 border-r border-[#000]">
-          <div className="bg-[#98F5F5] px-[30px] py-[10px] border-b border-[#000] rounded-tl-[5px]">
+      <div className="pricing-overview w-full border border-[#000] rounded-md flex flex-row max-[779px]:flex-col max-[779px]:max-w-[360px] max-[779px]:w-full max-[779px]:mx-auto max-[779px]:border-0">
+        <div className="flex-1 border-r border-[#000] max-[779px]:mb-7 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md">
+          <div className="bg-[#98F5F5] px-[30px] py-[10px] border-b border-[#000] rounded-tl-[5px] max-[779px]:rounded-tr-[5px]">
             {(cloud && <p className="text-black text-[20px] font-bold leading-[35px]">Pro</p>)}
             {(!cloud && <p className="text-black text-[20px] font-bold leading-[35px]">Open Source</p>)}
           </div>
-          <div className="px-[30px] py-[20px] min-h-[270px]">
-            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-w-[300px]">Automate your team&apos;s work seamlessly</p>
+          <div className="px-[30px] py-[20px] min-h-[270px] max-[1319px]:min-h-[288px] max-[1023px]:min-h-[333px] max-[779px]:min-h-full">
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full max-w-[300px]">Automate your team&apos;s work seamlessly</p>
             <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             {(cloud && 
               <div>
@@ -108,12 +108,12 @@ export default function PricingTable(isCloud: any) {
               )
             }
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px]">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
             {(cloud && 
               proSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -125,14 +125,14 @@ export default function PricingTable(isCloud: any) {
                         html={specItem.desc}
                         key={'pro-tooltip-' + index}
                         place={"right"}
-                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 max-w-[250px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                         noArrow={true}
                       />
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -148,7 +148,7 @@ export default function PricingTable(isCloud: any) {
               proSpecsPrem.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -160,14 +160,14 @@ export default function PricingTable(isCloud: any) {
                         html={specItem.desc}
                         key={'pro-tooltip-' + index}
                         place={"right"}
-                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 max-w-[250px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                         noArrow={true}
                       />
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -198,12 +198,12 @@ export default function PricingTable(isCloud: any) {
             )}
           </div>
         </div>
-        <div className="flex-1 border-r border-[#000]">
-          <div className="bg-[#06FFB4] px-[30px] py-[10px] border-b border-[#000]">
+        <div className="flex-1 border-r border-[#000] max-[779px]:mb-7 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md">
+          <div className="bg-[#06FFB4] px-[30px] py-[10px] border-b border-[#000] max-[779px]:rounded-tr-[5px] max-[779px]:rounded-tl-[5px]">
             <p className="text-black text-[20px] font-bold leading-[35px]">Platform</p>
           </div>
-          <div className="px-[30px] py-[20px] min-h-[270px]">
-            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px]">Automate your <span className="font-bold">agency</span> clients work or embed Activepieces in your <span className="font-bold">SaaS</span></p>
+          <div className="px-[30px] py-[20px] min-h-[270px] max-[1319px]:min-h-[288px] max-[1023px]:min-h-[333px] max-[779px]:min-h-full">
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Automate your <span className="font-bold">agency</span> clients work or embed Activepieces in your <span className="font-bold">SaaS</span></p>
             <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
               <span className="flex flex-row items-start">
@@ -215,12 +215,12 @@ export default function PricingTable(isCloud: any) {
             {(cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
             {(!cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px]">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
             {
               platformSpecs.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -232,14 +232,14 @@ export default function PricingTable(isCloud: any) {
                         html={specItem.desc}
                         key={'platform-tooltip-' + index}
                         place={"right"}
-                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 max-w-[250px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                         noArrow={true}
                       />
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -258,21 +258,21 @@ export default function PricingTable(isCloud: any) {
             </button>
           </div>
         </div>
-        <div className="flex-1">
-          <div className="bg-[#FFF0BB] px-[30px] py-[10px] border-b border-[#000] rounded-tr-[5px]">
+        <div className="flex-1 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md">
+          <div className="bg-[#FFF0BB] px-[30px] py-[10px] border-b border-[#000] rounded-tr-[5px] max-[779px]:rounded-tl-[5px]">
             <p className="text-black text-[20px] font-bold leading-[35px]">Enterprise</p>
           </div>
-          <div className="px-[30px] py-[20px] min-h-[270px]">
-            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px]">Advanced management, security, reporting and whitelabeling</p>
+          <div className="px-[30px] py-[20px] min-h-[270px] max-[1319px]:min-h-[288px] max-[1023px]:min-h-[333px] max-[779px]:min-h-full">
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Advanced management, security, reporting and whitelabeling</p>
             <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             <p className="text-black text-[40px] font-bold tracking-[1.5px] leading-[50px] max-w-[280px]">Custom Pricing</p>
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px]">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
             {(cloud && 
               enterpriseSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -284,14 +284,14 @@ export default function PricingTable(isCloud: any) {
                         html={specItem.desc}
                         key={'enterprise-tooltip-' + index}
                         place={"right"}
-                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 max-w-[250px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                         noArrow={true}
                       />
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -307,7 +307,7 @@ export default function PricingTable(isCloud: any) {
               enterpriseSpecsPrem.map(function(specItem: any, index: number){
                 if(specItem.desc){
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
@@ -319,14 +319,14 @@ export default function PricingTable(isCloud: any) {
                         html={specItem.desc}
                         key={'enterprise-tooltip-' + index}
                         place={"right"}
-                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 max-w-[250px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                         noArrow={true}
                       />
                     </div>  
                   );
                 }else{
                   return (
-                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2">
+                    <div key={index} className="flex flex-row items-center gap-x-[15px] mb-2 relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>

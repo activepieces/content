@@ -175,6 +175,18 @@ input[type="range"]::-moz-range-thumb {
   transform: translateX(100%);
 }
 
+/********** pricing tooltip on mobile **********/
+.pricing-overview .react-tooltip{
+  z-index: 1;
+}
+@media (max-width: 779px) {
+  .pricing-overview .react-tooltip{
+    left: 32px!important;
+    top: 30px!important;
+    z-index: 1;
+  }
+}
+
 
 .pricing-menu {
   border-radius: 6px;

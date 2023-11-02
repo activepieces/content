@@ -870,8 +870,8 @@ export default function PricingTable(isCloud: any) {
       <div className="w-full border border-[#000] rounded-md">
         <div className="border-b border-[#000]">
           <div className="flex flex-row">
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"><p className="text-black text-[22px] tracking-[0.44px] font-bold">Features</p></div>
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#98F5F5]">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px] max-[1319px]:w-[320px] max-[1090px]:w-[250px] max-[1023px]:w-[25%]"><p className="text-black text-[22px] tracking-[0.44px] font-bold">Features</p></div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#98F5F5]">
               <p className="text-black text-[22px] tracking-[0.44px] font-bold">Pro</p>
               <div>
                 <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
@@ -881,7 +881,7 @@ export default function PricingTable(isCloud: any) {
                 <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">free</p>
               </div>
             </div>
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#06FFB4]">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#06FFB4]">
               <p className="text-black text-[22px] tracking-[0.44px] font-bold">Platform</p>
               <div>
                 <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
@@ -891,14 +891,14 @@ export default function PricingTable(isCloud: any) {
                 <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">monthly</p>
               </div>
             </div>
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 bg-[#FFF0BB] rounded-tr-[5px]">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#FFF0BB] rounded-tr-[5px]">
               <p className="text-black text-[22px] tracking-[0.44px] font-bold">Enterprise</p>
               <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px] max-w-[52px] text-center">Custom Pricing</p>
             </div>
           </div>
         </div>
         <div className="flex flex-row min-h-[78px] border-b border-[#000]">
-          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
+          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px] max-[1319px]:w-[320px] max-[1090px]:w-[250px] max-[1023px]:w-[25%]"></div>
           <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
             {
               (cloud && 
@@ -950,7 +950,7 @@ export default function PricingTable(isCloud: any) {
                     return (
                       <div key={itemIndex} className="odd:bg-[#F2F2F2] even:bg-white">
                         <div className="flex flex-row min-h-[78px]">
-                          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]">
+                          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px] max-[1319px]:w-[320px] max-[1090px]:w-[250px] max-[1023px]:w-[25%]">
                           {
                             (!item.tooltip &&
                               <p className="text-black text-[22px] tracking-[0.44px] font-bold">{ item.title }</p>
@@ -965,7 +965,7 @@ export default function PricingTable(isCloud: any) {
                                   html={item.tooltip}
                                   key={'table-section-tooltip-' + index + '-' + itemIndex}
                                   place={"right"}
-                                  className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                  className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                   noArrow={true}                          
                                 />
                               </div>
@@ -999,7 +999,7 @@ export default function PricingTable(isCloud: any) {
                                     html={item.pro.tooltip}
                                     key={'pro-tooltip-table' + index + '-' + itemIndex}
                                     place={"right"}
-                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                     noArrow={true}                            
                                   />
                                 </div>
@@ -1033,7 +1033,7 @@ export default function PricingTable(isCloud: any) {
                                     html={item.platform.tooltip}
                                     key={'platform-tooltip-table' + index + '-' + itemIndex}
                                     place={"right"}
-                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                     noArrow={true}                            
                                   />
                                 </div>
@@ -1067,7 +1067,7 @@ export default function PricingTable(isCloud: any) {
                                     html={item.enterprise.tooltip}
                                     key={'enterprise-tooltip-table' + index + '-' + itemIndex}
                                     place={"right"}
-                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                     noArrow={true}                            
                                   />
                                 </div>
@@ -1097,7 +1097,7 @@ export default function PricingTable(isCloud: any) {
                     return (
                       <div key={itemIndex} className="odd:bg-[#F2F2F2] even:bg-white">
                         <div className="flex flex-row min-h-[78px]">
-                          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]">
+                          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px] max-[1319px]:w-[320px] max-[1090px]:w-[250px] max-[1023px]:w-[25%]">
                           {
                             (!item.tooltip &&
                               <p className="text-black text-[22px] tracking-[0.44px] font-bold">{ item.title }</p>
@@ -1112,7 +1112,7 @@ export default function PricingTable(isCloud: any) {
                                   html={item.tooltip}
                                   key={'table-section-tooltip-' + index + '-' + itemIndex}
                                   place={"right"}
-                                  className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                  className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                   noArrow={true}                          
                                 />
                               </div>
@@ -1146,7 +1146,7 @@ export default function PricingTable(isCloud: any) {
                                     html={item.pro.tooltip}
                                     key={'pro-tooltip-table' + index + '-' + itemIndex}
                                     place={"right"}
-                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                     noArrow={true}                            
                                   />
                                 </div>
@@ -1180,7 +1180,7 @@ export default function PricingTable(isCloud: any) {
                                     html={item.platform.tooltip}
                                     key={'platform-tooltip-table' + index + '-' + itemIndex}
                                     place={"right"}
-                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                     noArrow={true}                            
                                   />
                                 </div>
@@ -1214,7 +1214,7 @@ export default function PricingTable(isCloud: any) {
                                     html={item.enterprise.tooltip}
                                     key={'enterprise-tooltip-table' + index + '-' + itemIndex}
                                     place={"right"}
-                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px] !opacity-100'
                                     noArrow={true}                            
                                   />
                                 </div>
@@ -1232,8 +1232,8 @@ export default function PricingTable(isCloud: any) {
         }
         <div className="border-b border-[#000]">
           <div className="flex flex-row">
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#98F5F5]">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px] max-[1319px]:w-[320px] max-[1090px]:w-[250px] max-[1023px]:w-[25%]"></div>
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#98F5F5]">
               <p className="text-black text-[22px] tracking-[0.44px] font-bold">Pro</p>
               <div>
                 <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
@@ -1243,7 +1243,7 @@ export default function PricingTable(isCloud: any) {
                 <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">free</p>
               </div>
             </div>
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 bg-[#06FFB4]">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#06FFB4]">
               <p className="text-black text-[22px] tracking-[0.44px] font-bold">Platform</p>
               <div>
                 <p className="text-[#333] text-[22px] tracking-[0.44px] flex flex-row items-start font-bold leading-[28px]">
@@ -1253,14 +1253,14 @@ export default function PricingTable(isCloud: any) {
                 <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px]">monthly</p>
               </div>
             </div>
-            <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 bg-[#FFF0BB]">
+            <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#FFF0BB]">
               <p className="text-black text-[22px] tracking-[0.44px] font-bold">Enterprise</p>
               <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px] max-w-[52px] text-center">Custom Pricing</p>
             </div>
           </div>
         </div>
         <div className="flex flex-row min-h-[78px]">
-          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px]"></div>
+          <div className="flex flex-row items-center justify-between px-[30px] py-4 border-r border-[#000] w-[400px] max-[1319px]:w-[320px] max-[1090px]:w-[250px] max-[1023px]:w-[25%]"></div>
           <div className="flex flex-row items-center px-[30px] py-4 border-r border-[#000] flex-1">
             <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="flex flex-row items-center justify-between flex-1">
               <p className="text-xl text-primary font-bold">Start free</p>
