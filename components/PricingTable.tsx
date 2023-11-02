@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 export default function PricingTable(isCloud: any) {
   let cloud = isCloud.isCloud;  
@@ -41,7 +43,7 @@ export default function PricingTable(isCloud: any) {
             "tooltip": "Admin, editor and viewer roles"
           },
           "platform": {
-            "value": "Basicper month",
+            "value": "Basic",
             "tooltip": "Admin, editor and viewer roles"
           },
           "enterprise": {
@@ -59,7 +61,7 @@ export default function PricingTable(isCloud: any) {
           "tooltip": "Every executed step in a flow counts as a task",
           "pro": {
             "value": "Free up to 1,000 monthly tasks, packaged pricing after",
-            "tooltip": "Tasks pricing packages are: $0 - 1,000 tasks / mo $15 - 5,000 tasks / mo $25 - 10,000 tasks / mo $55 - 25,000 tasks / mo $100 - 50,000 tasks / mo $175 - 100,000 tasks / mo $300 - 200,000 tasks / mo $500 - 500,000 tasks / mo $900 - 1 million tasks / mo"
+            "tooltip": "Tasks pricing packages are:<br/> $0 - 1,000 tasks / mo<br/> $15 - 5,000 tasks / mo<br/> $25 - 10,000 tasks / mo<br/> $55 - 25,000 tasks / mo<br/> $100 - 50,000 tasks / mo<br/> $175 - 100,000 tasks / mo<br/> $300 - 200,000 tasks / mo<br/> $500 - 500,000 tasks / mo<br/> $900 - 1 million tasks / mo"
           },
           "platform": {
             "value": "50,000 monthly tasks (+$1.5 per extra 1,000)"
@@ -471,7 +473,7 @@ export default function PricingTable(isCloud: any) {
             "tooltip": "Admin, editor and viewer roles"
           },
           "platform": {
-            "value": "Basicper month",
+            "value": "Basic",
             "tooltip": "Admin, editor and viewer roles"
           },
           "enterprise": {
@@ -957,12 +959,15 @@ export default function PricingTable(isCloud: any) {
                           {
                             (item.tooltip &&
                               <div>
-                                <p data-tooltip-target={'table-section-tooltip-' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-black text-[22px] tracking-[0.44px] font-bold border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.title }</p>
-                                <div data-tooltip id={'table-section-tooltip-' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                  <div className="p-5 bg-[#2D2E33] rounded-md">
-                                    <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.tooltip }</p>
-                                  </div>
-                                </div>
+                                <p data-tooltip-id={'table-section-tooltip-' + index + '-' + itemIndex} className="text-black text-[22px] tracking-[0.44px] font-bold border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.title }</p>
+                                <Tooltip
+                                  id={'table-section-tooltip-' + index + '-' + itemIndex}
+                                  html={item.tooltip}
+                                  key={'table-section-tooltip-' + index + '-' + itemIndex}
+                                  place={"right"}
+                                  className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                  noArrow={true}                          
+                                />
                               </div>
                             )
                           }
@@ -988,12 +993,15 @@ export default function PricingTable(isCloud: any) {
                             {
                               (item.pro.value && item.pro.tooltip && 
                                 <div>
-                                  <p data-tooltip-target={'pro-tooltip-table' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.pro.value }</p>
-                                  <div data-tooltip id={'pro-tooltip-table' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                    <div className="p-5 bg-[#2D2E33] rounded-md">
-                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.pro.tooltip }</p>
-                                    </div>
-                                  </div>
+                                  <p data-tooltip-id={'pro-tooltip-table' + index + '-' + itemIndex} className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.pro.value }</p>
+                                  <Tooltip
+                                    id={'pro-tooltip-table' + index + '-' + itemIndex}
+                                    html={item.pro.tooltip}
+                                    key={'pro-tooltip-table' + index + '-' + itemIndex}
+                                    place={"right"}
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    noArrow={true}                            
+                                  />
                                 </div>
                               )
                             }
@@ -1019,12 +1027,15 @@ export default function PricingTable(isCloud: any) {
                             {
                               (item.platform.value && item.platform.tooltip && 
                                 <div>
-                                  <p data-tooltip-target={'platform-tooltip-table' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.platform.value }</p>
-                                  <div data-tooltip id={'platform-tooltip-table' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                    <div className="p-5 bg-[#2D2E33] rounded-md">
-                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.platform.tooltip }</p>
-                                    </div>
-                                  </div>
+                                  <p data-tooltip-id={'platform-tooltip-table' + index + '-' + itemIndex} className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.platform.value }</p>
+                                  <Tooltip
+                                    id={'platform-tooltip-table' + index + '-' + itemIndex}
+                                    html={item.platform.tooltip}
+                                    key={'platform-tooltip-table' + index + '-' + itemIndex}
+                                    place={"right"}
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    noArrow={true}                            
+                                  />
                                 </div>
                               )
                             }
@@ -1050,12 +1061,15 @@ export default function PricingTable(isCloud: any) {
                             {
                               (item.enterprise.value && item.enterprise.tooltip && 
                                 <div>
-                                  <p data-tooltip-target={'enterprise-tooltip-table' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.enterprise.value }</p>
-                                  <div data-tooltip id={'enterprise-tooltip-table' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                    <div className="p-5 bg-[#2D2E33] rounded-md">
-                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.enterprise.tooltip }</p>
-                                    </div>
-                                  </div>
+                                  <p data-tooltip-id={'enterprise-tooltip-table' + index + '-' + itemIndex} className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.enterprise.value }</p>
+                                  <Tooltip
+                                    id={'enterprise-tooltip-table' + index + '-' + itemIndex}
+                                    html={item.enterprise.tooltip}
+                                    key={'enterprise-tooltip-table' + index + '-' + itemIndex}
+                                    place={"right"}
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    noArrow={true}                            
+                                  />
                                 </div>
                               )
                             }
@@ -1092,12 +1106,15 @@ export default function PricingTable(isCloud: any) {
                           {
                             (item.tooltip &&
                               <div>
-                                <p data-tooltip-target={'table-section-tooltip-' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-black text-[22px] tracking-[0.44px] font-bold border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.title }</p>
-                                <div data-tooltip id={'table-section-tooltip-' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                  <div className="p-5 bg-[#2D2E33] rounded-md">
-                                    <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.tooltip }</p>
-                                  </div>
-                                </div>
+                                <p data-tooltip-id={'table-section-tooltip-' + index + '-' + itemIndex} className="text-black text-[22px] tracking-[0.44px] font-bold border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.title }</p>
+                                <Tooltip
+                                  id={'table-section-tooltip-' + index + '-' + itemIndex}
+                                  html={item.tooltip}
+                                  key={'table-section-tooltip-' + index + '-' + itemIndex}
+                                  place={"right"}
+                                  className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                  noArrow={true}                          
+                                />
                               </div>
                             )
                           }
@@ -1123,12 +1140,15 @@ export default function PricingTable(isCloud: any) {
                             {
                               (item.pro.value && item.pro.tooltip && 
                                 <div>
-                                  <p data-tooltip-target={'pro-tooltip-table' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.pro.value }</p>
-                                  <div data-tooltip id={'pro-tooltip-table' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                    <div className="p-5 bg-[#2D2E33] rounded-md">
-                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.pro.tooltip }</p>
-                                    </div>
-                                  </div>
+                                  <p data-tooltip-id={'pro-tooltip-table' + index + '-' + itemIndex} className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.pro.value }</p>
+                                  <Tooltip
+                                    id={'pro-tooltip-table' + index + '-' + itemIndex}
+                                    html={item.pro.tooltip}
+                                    key={'pro-tooltip-table' + index + '-' + itemIndex}
+                                    place={"right"}
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    noArrow={true}                            
+                                  />
                                 </div>
                               )
                             }
@@ -1154,12 +1174,15 @@ export default function PricingTable(isCloud: any) {
                             {
                               (item.platform.value && item.platform.tooltip && 
                                 <div>
-                                  <p data-tooltip-target={'platform-tooltip-table' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.platform.value }</p>
-                                  <div data-tooltip id={'platform-tooltip-table' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                    <div className="p-5 bg-[#2D2E33] rounded-md">
-                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.platform.tooltip }</p>
-                                    </div>
-                                  </div>
+                                  <p data-tooltip-id={'platform-tooltip-table' + index + '-' + itemIndex} className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.platform.value }</p>
+                                  <Tooltip
+                                    id={'platform-tooltip-table' + index + '-' + itemIndex}
+                                    html={item.platform.tooltip}
+                                    key={'platform-tooltip-table' + index + '-' + itemIndex}
+                                    place={"right"}
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    noArrow={true}                            
+                                  />
                                 </div>
                               )
                             }
@@ -1185,12 +1208,15 @@ export default function PricingTable(isCloud: any) {
                             {
                               (item.enterprise.value && item.enterprise.tooltip && 
                                 <div>
-                                  <p data-tooltip-target={'enterprise-tooltip-table' + index + '-' + itemIndex} data-tooltip-placement="right" className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.enterprise.value }</p>
-                                  <div data-tooltip id={'enterprise-tooltip-table' + index + '-' + itemIndex} role="tooltip" className="absolute z-10 invisible inline-block w-[259px] transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                                    <div className="p-5 bg-[#2D2E33] rounded-md">
-                                      <p className="text-white text-lg tracking-[0.44px] leading-[22px]">{ item.enterprise.tooltip }</p>
-                                    </div>
-                                  </div>
+                                  <p data-tooltip-id={'enterprise-tooltip-table' + index + '-' + itemIndex} className="text-[22px] text-black tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer">{ item.enterprise.value }</p>
+                                  <Tooltip
+                                    id={'enterprise-tooltip-table' + index + '-' + itemIndex}
+                                    html={item.enterprise.tooltip}
+                                    key={'enterprise-tooltip-table' + index + '-' + itemIndex}
+                                    place={"right"}
+                                    className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-[220px] !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                                    noArrow={true}                            
+                                  />
                                 </div>
                               )
                             }

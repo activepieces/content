@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 export default function PricingTable(isCloud: any) {
 
@@ -115,14 +117,17 @@ export default function PricingTable(isCloud: any) {
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-id={'pro-tooltip-' + index} className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
-                      <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
+                      <Tooltip
+                        id={'pro-tooltip-' + index}
+                        html={specItem.desc}
+                        key={'pro-tooltip-' + index}
+                        place={"right"}
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        noArrow={true}
+                      />
                     </div>  
                   );
                 }else{
@@ -147,14 +152,17 @@ export default function PricingTable(isCloud: any) {
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'pro-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-id={'pro-tooltip-' + index} className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
-                      <div data-tooltip id={'pro-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
+                      <Tooltip
+                        id={'pro-tooltip-' + index}
+                        html={specItem.desc}
+                        key={'pro-tooltip-' + index}
+                        place={"right"}
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        noArrow={true}
+                      />
                     </div>  
                   );
                 }else{
@@ -216,14 +224,17 @@ export default function PricingTable(isCloud: any) {
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'platform-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-id={'platform-tooltip-' + index} className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
-                      <div data-tooltip id={'platform-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
+                      <Tooltip
+                        id={'platform-tooltip-' + index}
+                        html={specItem.desc}
+                        key={'platform-tooltip-' + index}
+                        place={"right"}
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        noArrow={true}
+                      />
                     </div>  
                   );
                 }else{
@@ -265,14 +276,17 @@ export default function PricingTable(isCloud: any) {
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-id={'enterprise-tooltip-' + index} className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
-                      <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
+                      <Tooltip
+                        id={'enterprise-tooltip-' + index}
+                        html={specItem.desc}
+                        key={'enterprise-tooltip-' + index}
+                        place={"right"}
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        noArrow={true}
+                      />
                     </div>  
                   );
                 }else{
@@ -297,14 +311,17 @@ export default function PricingTable(isCloud: any) {
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <path d="M8.06167 14.5495L4.23917 10.727L2.9375 12.0195L8.06167 17.1437L19.0617 6.1437L17.7692 4.8512L8.06167 14.5495Z" fill="#666666"/>
                       </svg>
-                      <p data-tooltip-target={'enterprise-tooltip-' + index} data-tooltip-placement="right" className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
+                      <p data-tooltip-id={'enterprise-tooltip-' + index} className="text-[#666666] text-[18px] tracking-[0.44px] border-b border-[#6E6E6E] border-dashed cursor-pointer pb-0.5">
                         {specItem.spec}
                       </p>
-                      <div data-tooltip id={'enterprise-tooltip-' + index} role="tooltip" className="absolute z-10 invisible inline-block w-64 transition-opacity duration-300 rounded-lg shadow-sm opacity-0">
-                        <div className="p-5 bg-[#2D2E33] rounded-md">
-                          <p className="text-white text-[16px] tracking-[0.44px] leading-[22px]">{ specItem.desc }</p>
-                        </div>
-                      </div>
+                      <Tooltip
+                        id={'enterprise-tooltip-' + index}
+                        html={specItem.desc}
+                        key={'enterprise-tooltip-' + index}
+                        place={"right"}
+                        className='!p-5 !bg-[#2D2E33] !rounded-md !px-3 !py-3 !w-64 !text-white !text-[16px] !racking-[0.44px] !leading-[22px]'
+                        noArrow={true}
+                      />
                     </div>  
                   );
                 }else{
