@@ -23,12 +23,12 @@ export default function PricingTable(isCloud: any) {
     {"spec": "Custom templates", "desc": "Allow your users to build flows from your predefined templates"},
     {"spec": "Custom colors and logo", "desc": "Match your brand identity across all the projects under your platform"},
     {"spec": "Remove our branding (+$299/mo)", "desc": 'Remove the "Built with Activepieces" badge for 100% whitelabelling'},
-    {"spec": "Embed in your SaaS", "desc": "Use our Javascript SDK to embed our automation builder in your app"},
     {"spec": "Email and community support", "desc": "Get help from our active community forum or our support team on email"}
   ];
   const enterpriseSpecsCloud: { [key: string]: any } = [
     {"spec": "1 million+ monthly tasks", "desc": "Discounted pricing for bulk task usage"},
     {"spec": "150+ users", "desc": "Discounted pricing for big teams"},
+    {"spec": "Embed in your SaaS", "desc": "Use our Javascript SDK to embed our automation builder in your app"},
     {"spec": "Single Sign On (SSO)", "desc": "Allow your users to login with your existing auth provider"},
     {"spec": "User permissions", "desc": "Give your users custom roles and permissions"},
     {"spec": "Audit log", "desc": "View which user did what and when they did it to maximize security"},
@@ -38,6 +38,7 @@ export default function PricingTable(isCloud: any) {
   ];
   const enterpriseSpecsPrem: { [key: string]: any } = [
     {"spec": "150+ users", "desc": "Discounted pricing for big teams"},
+    {"spec": "Embed in your SaaS", "desc": "Use our Javascript SDK to embed our automation builder in your app"},
     {"spec": "Single Sign On (SSO)", "desc": "Allow your users to login with your existing auth provider"},
     {"spec": "User permissions", "desc": "Give your users custom roles and permissions"},
     {"spec": "Audit log", "desc": "View which user did what and when they did it to maximize security"},
@@ -108,7 +109,7 @@ export default function PricingTable(isCloud: any) {
               )
             }
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[395px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
             {(cloud && 
               proSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
@@ -203,7 +204,7 @@ export default function PricingTable(isCloud: any) {
             <p className="text-black text-[20px] font-bold leading-[35px]">Platform</p>
           </div>
           <div className="px-[30px] py-[20px] min-h-[270px] max-[1319px]:min-h-[288px] max-[1023px]:min-h-[333px] max-[779px]:min-h-full">
-            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Automate your <span className="font-bold">agency</span> clients work or embed Activepieces in your <span className="font-bold">SaaS</span></p>
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Best for <span className="font-bold">agencies</span> who manage automations for multiple clients</p>
             <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             <p className="text-black mb-[22px] flex flex-row items-center gap-x-[10px]">
               <span className="flex flex-row items-start">
@@ -215,7 +216,7 @@ export default function PricingTable(isCloud: any) {
             {(cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
             {(!cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[395px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
             {
               platformSpecs.map(function(specItem: any, index: number){
                 if(specItem.desc){
@@ -263,11 +264,11 @@ export default function PricingTable(isCloud: any) {
             <p className="text-black text-[20px] font-bold leading-[35px]">Enterprise</p>
           </div>
           <div className="px-[30px] py-[20px] min-h-[270px] max-[1319px]:min-h-[288px] max-[1023px]:min-h-[333px] max-[779px]:min-h-full">
-            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Advanced management, security, reporting and whitelabeling</p>
+            <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Advanced security, reporting and embedded automations</p>
             <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             <p className="text-black text-[40px] font-bold tracking-[1.5px] leading-[50px] max-w-[280px]">Custom Pricing</p>
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[375px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[395px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
             {(cloud && 
               enterpriseSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){

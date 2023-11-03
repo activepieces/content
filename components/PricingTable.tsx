@@ -350,7 +350,7 @@ export default function PricingTable(isCloud: any) {
             "ticked": false
           },
           "platform": {
-            "ticked": true
+            "ticked": false
           },
           "enterprise": {
             "ticked": true
@@ -779,7 +779,7 @@ export default function PricingTable(isCloud: any) {
             "ticked": false
           },
           "platform": {
-            "ticked": true
+            "ticked": false
           },
           "enterprise": {
             "ticked": true
