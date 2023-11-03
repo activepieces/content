@@ -26,7 +26,7 @@ export const GithubStickyWidget = ({ stars }: { stars: number }) => {
 
     }, [])
     return useEffectRan && <>
-        <div className={(hideGithubWidget || pathname.startsWith("/blog") ? "opacity-0 pointer-events-none " : "opacity-100 ") + " transition-all sticky w-full flex justify-center bottom-[30px] h-0 " +
+        <div className={(hideGithubWidget || pathname.startsWith("/blog") ? "opacity-0 pointer-events-none " : "opacity-100 ") + " transition-all sticky w-full flex justify-center bottom-[30px] h-0 z-[1] " +
             (showCookieConset ? "-translate-y-[145px]" : "-translate-y-[100px]")}>
             <div
                 className="bg-[#06FFB4] border border-solid border-black border-opacity-50 h-[70px] w-[350px] lg:w-[450px] rounded-xl text-h6-sm lg:text-h6-lg !font-bold flex justify-center gap-[20px] lg:gap-[40px] items-center">

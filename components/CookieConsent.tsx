@@ -11,7 +11,7 @@ export const CokkieConsent = (props: { show: boolean, setShow: (show: boolean) =
     }
     if (props.show) {
         return <>
-            <div className="fixed left-0 right-0 bottom-[10px] w-full  text-h6-sm  flex text-white bg-[#28282B] rounded-md overflow-hidden container flex-col lg:flex-row mx-auto justify-between items-center p-4  ">
+            <div className="fixed left-0 right-0 bottom-[10px] w-full  text-h6-sm  flex text-white bg-[#28282B] rounded-md overflow-hidden container flex-col lg:flex-row mx-auto justify-between items-center p-4 z-[1] ">
                 <div className="text-center lg:text-left mb-2 lg:mb-0">
                     This website uses cookies to ensure you get the best experience on our website. <Link href="/privacy" className="text-primary-medium ">Learn more</Link>
                 </div>

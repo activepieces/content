@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
         },
       ],
       url: "https://www.activepieces.com",
-    }
+    },
   };
 }
 
