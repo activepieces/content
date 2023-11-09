@@ -8,7 +8,7 @@ const FAQs: { question: string, answer: string }[] = [{
 },
 {
     question: "What are flows, steps and folders?",
-    answer: "Your automation is a flow. You add steps to build this flow. Folders are used to group flows together to organize your Activepieces dashboard."
+    answer: "Your automation is a flow. You add steps to build each of these flows. Folders are used to group flows together to organize your Activepieces dashboard."
 },
 {
     question: "What is your open source license?",
