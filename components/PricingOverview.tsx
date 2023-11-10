@@ -75,7 +75,7 @@ export default function PricingTable(isCloud: any) {
   return (
     <>
       <div className="pricing-overview w-full border border-[#000] rounded-md flex flex-row max-[779px]:flex-col max-[779px]:max-w-[360px] max-[779px]:w-full max-[779px]:mx-auto max-[779px]:border-0">
-        <div className="flex-1 border-r border-[#000] max-[779px]:mb-7 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md">
+        <div className="flex-1 border-r border-[#000] max-[779px]:mb-7 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md flex flex-col">
           <div className="bg-[#98F5F5] px-[30px] py-[10px] border-b border-[#000] rounded-tl-[5px] max-[779px]:rounded-tr-[5px]">
             {(cloud && <p className="text-black text-[20px] font-bold leading-[35px]">Pro</p>)}
             {(!cloud && <p className="text-black text-[20px] font-bold leading-[35px]">Open Source</p>)}
@@ -109,7 +109,7 @@ export default function PricingTable(isCloud: any) {
               )
             }
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[395px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px]">
             {(cloud && 
               proSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
@@ -181,6 +181,7 @@ export default function PricingTable(isCloud: any) {
               })
             )}
           </div>
+          <span className="flex-1"></span>
           <div className="border-t border-[#11111133] px-[30px] py-[20px]">
             {(cloud && (proPlanBtnLabel == 'Start free' || proPlanBtnLabel == 'Try free') &&
               <Link href="https://cloud.activepieces.com/sign-up" target="_blank" rel="noreferer noopener" className="hover:-translate-y-[3px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
@@ -199,7 +200,7 @@ export default function PricingTable(isCloud: any) {
             )}
           </div>
         </div>
-        <div className="flex-1 border-r border-[#000] max-[779px]:mb-7 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md">
+        <div className="flex-1 border-r border-[#000] max-[779px]:mb-7 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md flex flex-col">
           <div className="bg-[#06FFB4] px-[30px] py-[10px] border-b border-[#000] max-[779px]:rounded-tr-[5px] max-[779px]:rounded-tl-[5px]">
             <p className="text-black text-[20px] font-bold leading-[35px]">Platform</p>
           </div>
@@ -216,7 +217,7 @@ export default function PricingTable(isCloud: any) {
             {(cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">50,000 tasks per month then $1.5 per extra 1,000 tasks</p>)}
             {(!cloud && <p className="text-black text-[18px] leading-[26px] tracking-[0.44px] max-w-[325px]">Bring your own servers, process as many tasks as you want</p>)}
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[395px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px]">
             {
               platformSpecs.map(function(specItem: any, index: number){
                 if(specItem.desc){
@@ -253,13 +254,14 @@ export default function PricingTable(isCloud: any) {
               })
             } 
           </div>
+          <span className="flex-1"></span>
           <div className="border-t border-[#11111133] px-[30px] py-[20px]">
             <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Platform" className="hover:-translate-y-[3px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
               Talk to us
             </button>
           </div>
         </div>
-        <div className="flex-1 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md">
+        <div className="flex-1 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md flex flex-col">
           <div className="bg-[#FFF0BB] px-[30px] py-[10px] border-b border-[#000] rounded-tr-[5px] max-[779px]:rounded-tl-[5px]">
             <p className="text-black text-[20px] font-bold leading-[35px]">Enterprise</p>
           </div>
@@ -268,7 +270,7 @@ export default function PricingTable(isCloud: any) {
             <hr className="h-px border-0 border-t border-[#11111133] my-5" />
             <p className="text-black text-[40px] font-bold tracking-[1.5px] leading-[50px] max-w-[280px]">Custom Pricing</p>
           </div>
-          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px] min-h-[395px] max-[1319px]:min-h-[440px] max-[1023px]:min-h-[545px] max-[779px]:min-h-full">
+          <div className="border-t border-[#11111133] px-[30px] pt-[30px] pb-[20px]">
             {(cloud && 
               enterpriseSpecsCloud.map(function(specItem: any, index: number){
                 if(specItem.desc){
@@ -340,6 +342,7 @@ export default function PricingTable(isCloud: any) {
               })
             )}
           </div>
+          <span className="flex-1"></span>
           <div className="border-t border-[#11111133] px-[30px] py-[20px]">
             <button data-tally-open="nrO9gL" data-tally-layout="modal" data-tally-width="700" data-tally-auto-close="3000" data-plan="Enterprise" className="hover:-translate-y-[3px] transition p-4 text-center rounded m-0 flex items-center justify-center bg-black text-white text-[18px] font-bold tracking-[-0.11px] leading-4 w-fit">
               Talk to us
