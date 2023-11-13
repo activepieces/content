@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import GithubWidget from "./GithubWidget";
 import { usePathname } from 'next/navigation'
 import { CokkieConsent } from "./CookieConsent";
-import posthog from "posthog-js";
 
 const diffBetweenDatesInDays = (date1: Date, date2: Date) => {
     const diffInMs = Math.abs(date2.getTime() - date1.getTime());
@@ -21,7 +20,9 @@ export const GithubStickyWidget = ({ stars }: { stars: number }) => {
             setHideGithubWidget(true);
         }
 
-        setShowCookieConset(!(posthog.has_opted_in_capturing() || posthog.has_opted_out_capturing()))
+        // TODO: Replace this with localStorage
+        //setShowCookieConset(!((window as any).posthog.has_opted_in_capturing() || (window as any).posthog.has_opted_out_capturing()))
+        setShowCookieConset(true);
         setUseEffectRan(true);
 
     }, [])

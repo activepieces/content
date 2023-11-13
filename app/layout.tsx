@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar'
 import { GithubStickyWidget } from '../components/GithubStickyWidget'
 import '../styles/globals.css'
 import { Lato } from 'next/font/google'
-import { PHProvider, PostHogPageview } from './providers'
 import { Suspense } from 'react'
 import Script from 'next/script'
 import { getStars } from '../components/utils'
@@ -16,23 +15,30 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager */}
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TR47MDDQ');
+            `,
+          }}
+        />
+
         <Script async src="https://tally.so/widgets/embed.js" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-BL60V50BXE" />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'G-BL60V50BXE');
-          `}
-        </Script>
-        <Suspense>
-          <PostHogPageview />
-        </Suspense>
       </head>
-      <PHProvider>
         <body className={lato.className + "  relative bg-no-repeat bg-black bg-cover bg-center"} >
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `
+              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR47MDDQ"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+              `,
+            }}
+          />
 
           <Navbar stars={stars}></Navbar>
 
@@ -42,7 +48,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <GithubStickyWidget stars={stars}></GithubStickyWidget>
 
         </body>
-      </PHProvider>
+      {/*</PHProvider>*/}
     </html>
   )
 }

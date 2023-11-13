@@ -1,13 +1,12 @@
 import Link from "next/link"
-import posthog from "posthog-js";
 
 export const CokkieConsent = (props: { show: boolean, setShow: (show: boolean) => void }) => {
     const acceptCookies = () => {
-        posthog.opt_in_capturing();
+        (window as any).posthog.opt_in_capturing();
     };
 
     const declineCookies = () => {
-        posthog.opt_out_capturing();
+        (window as any).posthog.opt_out_capturing();
     }
     if (props.show) {
         return <>
