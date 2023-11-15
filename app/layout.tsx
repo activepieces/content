@@ -16,7 +16,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <head>
         {/* Google Tag Manager */}
-        <Script
+        <Script id="google-tag-manager"
           dangerouslySetInnerHTML={{
             __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
