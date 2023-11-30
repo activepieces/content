@@ -300,9 +300,7 @@ export default async function Privacy() {
                     regarding use of them, please contact us at:
                 </p><address>
                     Activepieces Inc. <br />
-                    256 Chapman Rd 105 #4 <br />
-                    Newark, DE 19702 <br />
-                    United States <br />
+                    95 Third Street, 2nd floor, San Francisco, CA 94103<br />
                     <a href="mailto:support@activepieces.com">support@activepieces.com</a>
                 </address>
             </div >

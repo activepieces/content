@@ -25,7 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 export default async function Privacy() {
     return (
-        <div className="container mx-auto p-4 text-white">
+        <div className="bg-white">
+        <div className="container mx-auto p-4 text-black">
             <h1 id="-privacy-policy-" className="text-3xl font-bold mb-4">Privacy Policy</h1>
             <p>Last updated: March 11, 2022</p>
             <p>Welcome to the web site (the &quot;Site&quot;) of Activepieces Inc. (&quot;Activepieces&quot;, &quot;we&quot;, &quot;us&quot; and/or &quot;our&quot;). This Site is operated by Activepieces and has been created to provide information about our company and its content and data linking platform and related services (together with the Site, the &quot;Service(s)&quot;) to our Service visitors (&quot;you&quot;, &quot;your&quot;). “Personal Data” means any information relating to, or which can reasonably be ascribed to an identified or identifiable natural person. There are from two (2) classes of users possibly impacted by the Service: Administrators for entities that contract with us or that might be interested in contracting with us (“Customers”) and the persons that Customers may collect information or data on that are in their Services (“Customer End Users”). This Privacy Policy sets forth Activepieces’ policy with respect to &quot;Personal Data&quot; that is collected from visitors to the Site and Services.</p>
@@ -121,6 +122,7 @@ export default async function Privacy() {
             <h2 className="text-2xl font-bold mt-4 mb-2" id="contacting-activepieces">Contacting Activepieces</h2>
             <p>To keep your Personal Data accurate, current, and complete, please contact us as specified below. We will take reasonable steps to update or correct Personal Data in our possession that you have previously submitted via the Services. Please also feel free to contact us if you have any questions about Activepieces’ Privacy Policy or the information practices of the Services.</p>
             <p>You may contact us as follows:  contact@activepieces.com  or mail us at  privacy@activepieces.com.</p>
+        </div>
         </div>
     );
 }
