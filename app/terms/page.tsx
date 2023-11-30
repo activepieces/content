@@ -28,7 +28,7 @@ export default async function Privacy() {
     return (
         <div className="bg-white">
             <div className="container mx-auto p-4 text-black">
-                <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
+                <h1 className="text-3xl font-bold mb-4">Terms of Service / Subscription Agreement</h1>
                 <p className="mb-8">Last updated: November 30, 2023</p>
                 <p className="text-base font-normal mb-6">
                     This Subscription Agreement (“Agreement”) is between Activepieces Inc. with offices at 95 Third Street, 2nd floor, San Francisco, CA 94103 (or, if a different corporate entity is listed as “Activepieces” on an Order Form [as defined below], (“Activepieces”), and the individual or entity signing or electronically accepting this Agreement, or any Order Form that references this Agreement (“Customer”). This Agreement is entered into on the earlier of, (a) Customer clicking “Agree” or “Yes” to the terms of this Agreement to gain initial access to, or use of, the Software, (b) Activepieces and Customer agreeing to an Order Form referencing this Agreement, or (c) Customer is given access to the Software (“Effective Date”).
