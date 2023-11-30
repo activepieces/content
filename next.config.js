@@ -35,7 +35,7 @@ const nextConfig = {
   },
   basePath: '',
   images: {
-    domains: ['cdn.activepieces.com', 'cloud.activepieces.com', 'auth.activepieces.com', 'ywkdmxjwsazhcvocivgw.supabase.co'],
+    domains: ['cdn.activepieces.com', 'cloud.activepieces.com', 'auth.activepieces.com', 'ywkdmxjwsazhcvocivgw.supabase.co', 'powerwa.it'],
   },
   experimental: {
     serverActions: true
