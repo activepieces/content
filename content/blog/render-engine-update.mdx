@@ -44,7 +44,7 @@ At the beginning I was not very familiar with rendering SVG lines or placing ste
 , where the current step tells its next/child step where to place itself within the graph, and each step was then responsible for drawing its own SVG lines that it needs, so we had components for (loops, branches and normal sequential steps)
 in which each had their own logic and HTML templates, that was not the most effecient way to do that by any means, and it was tedious to edit and extend.
 
-But with the help of Mo and his awesome idea of abstraction by separating the logic from the rendering itself, we were able to enhance our codebase and make it much more extendable,
+But with the help of [Mo](https://github.com/abuaboud) and his awesome idea of abstraction by separating the logic from the rendering itself, we were able to enhance our codebase and make it much more extendable,
 now the rendering logic is encapsulted in a flow-renderer file that has handlers for steps whether it is a loop, branch or otherwise, and after the renderer constructs the graph that's about to be drawn,
 it returns an SVG command that would draw all the lines you need, plus the coordinates for each step and other widgets so you can place them in your HTML template. 
 
