@@ -1,0 +1,65 @@
+---
+title: "Better Flow Builder, Happier Users"
+publishedOn: "Wed Dec 13 2023 13:41:03 GMT+0300 (GMT+03:00)"
+author: "Abdul-rahman Yasir"
+thumbnail: "/blog/builder-update/thumbnail.png"
+---
+_Before we begin, please consider supporting the Palestine Children's Relief Fund (PCRF) to help children affected by the crisis in Gaza. Even a small donation can make a big difference. Donate [here](https://www.pcrf.net/). Thank you for your compassion._
+
+We are gladly announcing the release of a much more compact flow rendering engine.
+Building flows now is a much better experience, you can notice how far we have come in regards to how flows are displayed.
+‍
+
+Our Approach
+------------
+
+The original rendering engine served its purpose but came with limitations. 
+Users encountered bulky layouts, excessive scrolling, and a general lack of cohesion that could make flows wider than they should be.
+In comes the experience gained throughout our journey and the continous feedback we got from our community, we were able to refactor our rendering engine to unlock more awesome features to come, and make 
+it much more elegant.
+
+‍
+Before and After: A Visual Comparison
+-------------------------------------
+
+![old_vs_new_1.png](/blog/builder-update/old_vs_new_1.png)
+This set of images shows you how much nicer the branch and the loop steps look when they are empty, you can notice the small details that made such a difference for the eye.
+‍
+
+![old_vs_new_2.png](/blog/builder-update/old_vs_new_2.png)
+Here you begin to notice how much more compact flows look when you start having branches within loops and/or the other way around.
+
+
+![old_vs_new_4.png](/blog/builder-update/old_vs_new_4.png)
+In the older version the flow got so much wider the more nested branches/loops you had, now they are a lot more leaner.
+
+
+![old_vs_new_5.png](/blog/builder-update/old_vs_new_5.png)
+One bug that took a tad bit longer than it should have while fixing is when branches/loops overlapped, now you can nest branches/loops as many as you like, without ever having them overlap each other.
+
+So What Changed Technically?
+----------------------------
+
+At the beginning I was not very familiar with rendering SVG lines or placing steps depending on them, so we started by building a rendering engine which basically starts drawing the graph taking a top down approach
+, where the current step tells its next/child step where to place itself within the graph, and each step was then responsible for drawing its own SVG lines that it needs, so we had components for (loops, branches and normal sequential steps)
+in which each had their own logic and HTML templates, that was not the most effecient way to do that by any means, and it was tedious to edit and extend.
+
+But with the help of Mo and his awesome idea of abstraction by separating the logic from the rendering itself, we were able to enhance our codebase and make it much more extendable,
+now the rendering logic is encapsulted in a flow-renderer file that has handlers for steps whether it is a loop, branch or otherwise, and after the renderer constructs the graph that's about to be drawn,
+it returns an SVG command that would draw all the lines you need, plus the coordinates for each step and other widgets so you can place them in your HTML template. 
+
+You can see all the changes in greater details [here](https://github.com/activepieces/activepieces/commit/a3cd53d401d7670fb8ddd7f3b36e6c4780fb52d7).
+
+Conclusion
+----------
+
+As we earn more and more experience and hear more from our lovely [community](https://community.activepieces.com), you are always going to see enhancements coming to our product, there are so many features we are currently planning, 
+the future is so very exciting.
+
+
+
+
+
+
+
+
