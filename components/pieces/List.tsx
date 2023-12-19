@@ -14,8 +14,8 @@ const PiecesList = ({ pieces }: { pieces: PieceBase[] }) => {
   const [showAllResults, setShowAllResults] = useState(false);
   const filteredPieces: (PieceBase | "webhook" | "loops" | "branches")[] = [
     ...pieces.filter((piece) =>
-      piece.displayName.toLowerCase().startsWith(searchTerm.toLowerCase())),
-    ...corePieces.filter((piece) => piece.toLowerCase().startsWith(searchTerm.toLowerCase()))
+      piece.displayName.toLowerCase().includes(searchTerm.toLowerCase())),
+    ...corePieces.filter((piece) => piece.toLowerCase().includes(searchTerm.toLowerCase()))
   ].sort(allPiecesSort)
 
 
