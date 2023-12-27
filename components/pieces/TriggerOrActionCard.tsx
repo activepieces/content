@@ -7,46 +7,7 @@ import { ActionBase, TriggerBase, TriggerStrategy } from "../../utils/piece-help
 import { ActionType, FlowTemplate, PackageType, PieceType, TriggerType } from "@activepieces/shared";
 import Link from "next/link";
 
-let template: FlowTemplate = {
-  "id": "YiwKlvgwmhYIIVKT0EMqx",
-  "name": "Untitled",
-  "description": "",
-  "tags": [],
-  "pieces": [],
-  created: (new Date()).toISOString(),
-  imageUrl: null,
-  updated: (new Date()).toISOString(),
-  userId: "WtvhvT5ddNc0Aqv5HZglC",
-  "blogUrl": "",
-  "template": {
-    "displayName": "Untitled",
-    "trigger": {
-      "name": "trigger",
-      "valid": false,
-      "displayName": "Select Trigger",
-      "nextAction": {
-        "name": "step_1",
-        "type": "PIECE",
-        "valid": false,
-        "settings": {
-          "input": {},
-          "pieceName": "",
-          "inputUiInfo": {},
-          "pieceVersion": "",
-          "pieceType": PieceType.OFFICIAL,
-          "packageType": PackageType.REGISTRY,
 
-        },
-        "displayName": ""
-      },
-      "type": TriggerType.EMPTY,
-      "settings": {
-        "inputUiInfo": {}
-      }
-    },
-    "valid": false
-  }
-}
 interface TriggerCardProps {
   logoUrl: string;
   triggerOrAction: ActionBase | TriggerBase;
@@ -59,9 +20,50 @@ const isTrigger = (triggerOrAction: ActionBase | TriggerBase): boolean => {
 
 const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion }: TriggerCardProps) => {
   const [showProperties, setShowProperties] = useState(false);
+  let template: FlowTemplate = {
+    "id": "YiwKlvgwmhYIIVKT0EMqx",
+    "name": "Untitled",
+    "description": "",
+    "tags": [],
+    "pieces": [],
+    created: (new Date()).toISOString(),
+    imageUrl: null,
+    updated: (new Date()).toISOString(),
+    userId: "WtvhvT5ddNc0Aqv5HZglC",
+    "blogUrl": "",
+    "template": {
+      "displayName": "Untitled",
+      "trigger": {
+        "name": "trigger",
+        "valid": false,
+        "displayName": "Select Trigger",
+        "nextAction": {
+          "name": "step_1",
+          "type": "PIECE",
+          "valid": false,
+          "settings": {
+            "input": {},
+            "pieceName": "",
+            "inputUiInfo": {},
+            "pieceVersion": "",
+            "pieceType": PieceType.OFFICIAL,
+            "packageType": PackageType.REGISTRY,
+
+          },
+          "displayName": ""
+        },
+        "type": TriggerType.EMPTY,
+        "settings": {
+          "inputUiInfo": {}
+        }
+      },
+      "valid": false
+    }
+  }
   template.name = triggerOrAction.displayName;
   template.template.displayName = triggerOrAction.displayName;
   template.pieces.push(pieceName)
+  debugger;
   if (isTrigger(triggerOrAction)) {
     template.template.trigger.displayName = triggerOrAction.displayName;
     template.template.trigger.type = TriggerType.PIECE;
