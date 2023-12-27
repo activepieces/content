@@ -4,7 +4,7 @@ import PieceLogo from "./PieceLogo";
 import Image from "next/image";
 import CollapsibleProperties from "./CollapsibleProperties";
 import { ActionBase, TriggerBase, TriggerStrategy } from "../../utils/piece-helper";
-import { ActionType, FlowTemplate, TriggerType } from "@activepieces/shared";
+import { ActionType, FlowTemplate, PackageType, PieceType, TriggerType } from "@activepieces/shared";
 import Link from "next/link";
 
 let template: FlowTemplate = {
@@ -13,7 +13,10 @@ let template: FlowTemplate = {
   "description": "",
   "tags": [],
   "pieces": [],
-  "pinnedOrder": null,
+  created: (new Date()).toISOString(),
+  imageUrl: null,
+  updated: (new Date()).toISOString(),
+  userId: "WtvhvT5ddNc0Aqv5HZglC",
   "blogUrl": "",
   "template": {
     "displayName": "Untitled",
@@ -27,11 +30,14 @@ let template: FlowTemplate = {
         "valid": false,
         "settings": {
           "input": {},
-          "pieceName": "@activepieces/piece-apitable",
+          "pieceName": "",
           "inputUiInfo": {},
-          "pieceVersion": "~0.0.4"
+          "pieceVersion": "",
+          "pieceType": PieceType.OFFICIAL,
+          "packageType": PackageType.REGISTRY,
+
         },
-        "displayName": "APITable"
+        "displayName": ""
       },
       "type": TriggerType.EMPTY,
       "settings": {
@@ -65,7 +71,9 @@ const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion
       "pieceName": pieceName,
       "triggerName": triggerOrAction.name,
       "inputUiInfo": {},
-      "pieceVersion": "~" + pieceVersion
+      "pieceVersion": "~" + pieceVersion,
+      "pieceType": PieceType.OFFICIAL,
+      "packageType": PackageType.REGISTRY,
     }
     delete template.template.trigger.nextAction;
   }
@@ -79,7 +87,9 @@ const TriggerOrActionCard = ({ triggerOrAction, logoUrl, pieceName, pieceVersion
         "pieceName": pieceName,
         "actionName": triggerOrAction.name,
         "inputUiInfo": {},
-        "pieceVersion": "~" + pieceVersion
+        "pieceVersion": "~" + pieceVersion,
+        "pieceType": PieceType.OFFICIAL,
+        "packageType": PackageType.REGISTRY,
       },
       displayName: triggerOrAction.displayName
     }

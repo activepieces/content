@@ -1,4 +1,4 @@
-import { ActionType, FlowTemplate, TriggerType } from "@activepieces/shared";
+import { ActionType, FlowTemplate, PackageType, PieceType, TriggerType } from "@activepieces/shared";
 import { ActionBase, DetailedPiece,  TriggerBase } from "../utils/piece-helper";
 
 export type ActionApp = {
@@ -117,7 +117,10 @@ const baseTemplate: FlowTemplate = {
     "description": "",
     "tags": [],
     "pieces": [],
-    "pinnedOrder": null,
+    created: (new Date()).toISOString(),
+    imageUrl: null,
+    updated: (new Date()).toISOString(),
+    userId: "WtvhvT5ddNc0Aqv5HZglC",
     "blogUrl": "",
     "template": {
         "displayName": "Trying Activepieces!",
@@ -134,7 +137,9 @@ const baseTemplate: FlowTemplate = {
                     "pieceName": "",
                     "actionName": "",
                     "inputUiInfo": {},
-                    "pieceVersion": ""
+                    "pieceVersion": "",
+                    "pieceType": PieceType.OFFICIAL,
+                    "packageType": PackageType.REGISTRY,
                 },
                 "displayName": ""
             },
@@ -144,7 +149,9 @@ const baseTemplate: FlowTemplate = {
                 "pieceVersion": "",
                 "triggerName": "",
                 "input": {},
-                "inputUiInfo": {}
+                "inputUiInfo": {},
+                "pieceType": PieceType.OFFICIAL,
+                "packageType": PackageType.REGISTRY,
             }
         },
         "valid": false

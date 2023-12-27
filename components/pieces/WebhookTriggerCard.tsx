@@ -10,7 +10,10 @@ let template: FlowTemplate = {
     "description": "",
     "tags": [],
     "pieces": [],
-    "pinnedOrder": null,
+    created: (new Date()).toISOString(),
+    imageUrl: null,
+    updated: (new Date()).toISOString(),
+    userId: "WtvhvT5ddNc0Aqv5HZglC",
     "blogUrl": "",
     "template": {
         "displayName": "Untitled",

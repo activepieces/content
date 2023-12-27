@@ -2,22 +2,26 @@
 import Image from "next/image";
 import { DetailedPiece } from "../../utils/piece-helper";
 import { useRef, useState } from "react";
-import { ControlledMenu, FocusableItem, MenuItem, useClick } from "@szhsin/react-menu";
-import { ActionType, FlowTemplate, TriggerType } from "@activepieces/shared";
+import { ControlledMenu, FocusableItem, MenuItem } from "@szhsin/react-menu";
+import { ActionType, FlowTemplate, PackageType, PieceType, TriggerType, } from "@activepieces/shared";
 const template: FlowTemplate = {
     "id": "jyEi8zZkVYIiP4nqWrH85",
     "name": "",
     "description": "",
     "tags": [],
     "pieces": [],
-    "pinnedOrder": null,
+    created: (new Date()).toISOString(),
+    imageUrl: null,
+    updated: (new Date()).toISOString(),
+    userId: "WtvhvT5ddNc0Aqv5HZglC",
     "blogUrl": "",
-    "template": {
-        "displayName": "Trying Activepieces!",
-        "trigger": {
+    template: {
+        displayName: "Testing Activepieces",
+        valid: false,
+        trigger: {
             "name": "trigger",
             "valid": false,
-            "displayName": "",
+            "displayName": "Trigger",
             "nextAction": {
                 "name": "step_1",
                 "type": ActionType.PIECE,
@@ -25,24 +29,27 @@ const template: FlowTemplate = {
                 "settings": {
                     "input": {},
                     "pieceName": "",
-                    "actionName": "",
+                    "pieceType": PieceType.OFFICIAL,
                     "inputUiInfo": {},
+                    "packageType": PackageType.REGISTRY,
                     "pieceVersion": ""
                 },
-                "displayName": ""
+                "displayName": "Action"
             },
             "type": TriggerType.PIECE,
             "settings": {
                 "pieceName": "",
                 "pieceVersion": "",
+                "pieceType": PieceType.OFFICIAL,
+                "packageType": PackageType.REGISTRY,
                 "triggerName": "",
                 "input": {},
                 "inputUiInfo": {}
             }
         },
-        "valid": false
     }
 }
+
 
 export interface CombinationsCreatorProps {
     triggerPieces: DetailedPiece[];
@@ -58,7 +65,7 @@ const CombinationsCreator = (props: CombinationsCreatorProps) => {
 
     const focusInnerInput = (type: number) => {
         let inputElement = null;
-        switch(type){
+        switch (type) {
             case 0:
                 inputElement = controlledMenuWhenActionRef?.current?.querySelector("input");
                 break;
