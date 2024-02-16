@@ -26,13 +26,13 @@ export default function PricingTable(isCloud: any) {
     {"spec": "Email and community support", "desc": "Get help from our active community forum or our support team on email"}
   ];
   const enterpriseSpecsCloud: { [key: string]: any } = [
-    {"spec": "1 million+ monthly tasks", "desc": "Discounted pricing for bulk task usage"},
-    {"spec": "150+ users", "desc": "Discounted pricing for big teams"},
+    {"spec": "Custom tasks", "desc": "Discounted pricing for bulk task usage"},
+    {"spec": "Custom users", "desc": "Discounted pricing for big teams"},
     {"spec": "Embed in your SaaS", "desc": "Use our Javascript SDK to embed our automation builder in your app"},
     {"spec": "Single Sign On (SSO)", "desc": "Allow your users to login with your existing auth provider"},
     {"spec": "User permissions", "desc": "Give your users custom roles and permissions"},
     {"spec": "Audit log", "desc": "View which user did what and when they did it to maximize security"},
-    {"spec": "Unlimited private pieces", "desc": "Keep all your custom pieces private and stay compliant"},
+    {"spec": "Custom private pieces", "desc": "Keep all your custom pieces private and stay compliant"},
     {"spec": "Custom reports", "desc": "Request custom dashboards with the metrics that you care for the most"},
     {"spec": "Dedicated support", "desc": "Get direct support in a private Slack channel"}
   ];
