@@ -19,7 +19,7 @@ export default function PricingTable(isCloud: any) {
             "value": "25"
           },
           "enterprise": {
-            "value": "Unlimited"
+            "value": "Custom"
           }
         },
         {
@@ -198,7 +198,7 @@ export default function PricingTable(isCloud: any) {
             "value": "2"
           },
           "enterprise": {
-            "value": "Unlimited"
+            "value": "Custom"
           }
         }
       ]
@@ -302,7 +302,7 @@ export default function PricingTable(isCloud: any) {
             "tooltip": "View the published version of the flow and edit the newer one"
           },
           "enterprise": {
-            "value": "Unlimited",
+            "value": "Custom",
             "tooltip": "View any previous version of the flow and restore it"
           }
         },
@@ -378,7 +378,7 @@ export default function PricingTable(isCloud: any) {
             "value": "25"
           },
           "enterprise": {
-            "value": "Unlimited"
+            "value": "Custom"
           }
         },
         {
@@ -556,7 +556,7 @@ export default function PricingTable(isCloud: any) {
             "value": "2"
           },
           "enterprise": {
-            "value": "Unlimited"
+            "value": "Custom"
           }
         }
       ]
@@ -660,7 +660,7 @@ export default function PricingTable(isCloud: any) {
             "tooltip": "View the published version of the flow and edit the newer one"
           },
           "enterprise": {
-            "value": "Unlimited",
+            "value": "Custom",
             "tooltip": "View any previous version of the flow and restore it"
           }
         },
