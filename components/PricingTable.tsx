@@ -750,7 +750,7 @@ export default function PricingTable(isCloud: any) {
               </div>
             </div>
             <div className="flex flex-row items-center justify-between px-[30px] py-4 flex-1 gap-x-[4px] max-[1023px]:px-4 max-[1023px]:w-[25%] max-[1023px]:flex-none bg-[#FFF0BB] rounded-tr-[5px]">
-              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Enterprise</p>
+              <p className="text-black text-[22px] tracking-[0.44px] font-bold">Custom</p>
               <p className="text-[#333] text-sm leading-[17px] tracking-[0.44px] max-w-[52px] text-center">Custom Pricing</p>
             </div>
           </div>
