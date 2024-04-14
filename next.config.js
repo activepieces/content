@@ -22,6 +22,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/report-issue',
+        destination: 'https://community.activepieces.com/c/need-help/5',
+        permanent: true
+      },
+      {
         source: '/roadmap',
         destination: 'https://github.com/orgs/activepieces/projects/53',
         permanent: true
