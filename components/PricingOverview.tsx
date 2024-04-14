@@ -26,23 +26,23 @@ export default function PricingTable(isCloud: any) {
     {"spec": "Email and community support", "desc": "Get help from our active community forum or our support team on email"}
   ];
   const enterpriseSpecsCloud: { [key: string]: any } = [
-    {"spec": "1 million+ monthly tasks", "desc": "Discounted pricing for bulk task usage"},
-    {"spec": "150+ users", "desc": "Discounted pricing for big teams"},
+    {"spec": "Custom tasks", "desc": "Discounted pricing for bulk task usage"},
+    {"spec": "Custom users", "desc": "Discounted pricing for big teams"},
     {"spec": "Embed in your SaaS", "desc": "Use our Javascript SDK to embed our automation builder in your app"},
     {"spec": "Single Sign On (SSO)", "desc": "Allow your users to login with your existing auth provider"},
     {"spec": "User permissions", "desc": "Give your users custom roles and permissions"},
     {"spec": "Audit log", "desc": "View which user did what and when they did it to maximize security"},
-    {"spec": "Unlimited private pieces", "desc": "Keep all your custom pieces private and stay compliant"},
+    {"spec": "Custom private pieces", "desc": "Keep all your custom pieces private and stay compliant"},
     {"spec": "Custom reports", "desc": "Request custom dashboards with the metrics that you care for the most"},
     {"spec": "Dedicated support", "desc": "Get direct support in a private Slack channel"}
   ];
   const enterpriseSpecsPrem: { [key: string]: any } = [
-    {"spec": "150+ users", "desc": "Discounted pricing for big teams"},
+    {"spec": "Custom users", "desc": "Discounted pricing for big teams"},
     {"spec": "Embed in your SaaS", "desc": "Use our Javascript SDK to embed our automation builder in your app"},
     {"spec": "Single Sign On (SSO)", "desc": "Allow your users to login with your existing auth provider"},
     {"spec": "User permissions", "desc": "Give your users custom roles and permissions"},
     {"spec": "Audit log", "desc": "View which user did what and when they did it to maximize security"},
-    {"spec": "Unlimited private pieces", "desc": "Keep all your custom pieces private and stay compliant"},
+    {"spec": "Custom private pieces", "desc": "Keep all your custom pieces private and stay compliant"},
     {"spec": "Custom reports", "desc": "Request custom dashboards with the metrics that you care for the most"},
     {"spec": "Dedicated support", "desc": "Get direct support in a private Slack channel"}
   ];
@@ -263,7 +263,7 @@ export default function PricingTable(isCloud: any) {
         </div>
         <div className="flex-1 max-[779px]:border max-[779px]:border-[#000] max-[779px]:rounded-md flex flex-col">
           <div className="bg-[#FFF0BB] px-[30px] py-[10px] border-b border-[#000] rounded-tr-[5px] max-[779px]:rounded-tl-[5px]">
-            <p className="text-black text-[20px] font-bold leading-[35px]">Enterprise</p>
+            <p className="text-black text-[20px] font-bold leading-[35px]">Custom</p>
           </div>
           <div className="px-[30px] py-[20px] min-h-[270px] max-[1319px]:min-h-[288px] max-[1023px]:min-h-[333px] max-[779px]:min-h-full">
             <p className="text-[18px] text-[#666] leading-[28px] tracking-[0.44px] max-[1319px]:min-h-[84px] max-[1023px]:min-h-[112px] max-[779px]:min-h-full">Advanced security, reporting and embedded automations</p>
